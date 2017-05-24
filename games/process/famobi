@@ -37,7 +37,7 @@ cat "$DIR/index_pre_famobi.html" |
   sed -E "s/\\(document, '\\/html5games\\/gameapi\\/v1\\.js\\?e='\\)//g" |
   sed -E $'s/^[ \t]*"(js\\/.*.js)",/<script src="\\1"><\\/script>/g' |
   sed -E 's/window.famobi_gameJS = \[/<\/script>/g' |
-  sed -E 's/(function\(\)\{)/<script> (\1/g' |
-  sed -E 's/        \];/)();/g' |
+  sed -E 's/(function\(\)\{)/<script> window.addEventListener("load",\1/g' |
+  sed -E 's/        \];/);/g' |
   sed -E 's/<head>/<head><script src="famobi_data.js"><\/script>/g' \
   >"$DIR/index.html"

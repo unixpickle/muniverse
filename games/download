@@ -19,7 +19,7 @@ do
   name=$(echo "$item" | jq -r .name)
   baseURL="$(echo "$item" | jq -r .base)"
 
-  if [ -d "$DEST/name" ]; then
+  if [ -d "$DEST/$name" ]; then
     echo "Already have $name."
     continue
   fi
