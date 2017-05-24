@@ -48,7 +48,24 @@
 
   // Advance the current timestamp.
   FakeTime.prototype.advance = function(millis) {
+    this._triggerTimers();
+    while (true) {
+      var nextTimer = this._nextTimer();
+      if (nextTimer === null) {
+        break;
+      }
+      var advance = 1 + (nextTimer.deadline - this._currentTime);
+      if (advance > millis) {
+        break;
+      }
+      millis -= advance;
+      this._currentTime += advance;
+      this._triggerTimers();
+    }
     this._currentTime += millis;
+  }
+
+  FakeTime.prototype._triggerTimers = function() {
     for (var i = 0; i < this._timers.length; ++i) {
       var timer = this._timers[i];
 
@@ -64,7 +81,20 @@
         --i;
       }
     }
-  }
+  };
+
+  FakeTime.prototype._nextTimer = function() {
+    var firstDeadline = -1;
+    var firstTimer = null;
+    for (var i = 0; i < this._timers.length; ++i) {
+      var timer = this._timers[i];
+      if (timer.deadline < firstDeadline || firstTimer === null) {
+        firstTimer = timer;
+        firstDeadline = timer.deadline;
+      }
+    }
+    return firstTimer;
+  };
 
   FakeTime.prototype._install = function() {
     this._backups['performance_now'] = performance.now;
@@ -164,7 +194,7 @@
 
     function VirtualDate() {
       if (arguments.length === 0) {
-        this._date = new RealDate(faketime._currentTime);
+        this._date = new RealDate(Math.round(faketime._currentTime));
       } else {
         var bindArgs = [RealDate];
         for (var i = 0; i < arguments.length; ++i) {
