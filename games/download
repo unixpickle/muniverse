@@ -1,0 +1,57 @@
+#!/bin/bash
+
+read_spec() {
+  cat spec.json
+}
+
+mkdir tmp
+trap "rm -r tmp" EXIT
+
+DEST="downloaded_games"
+if [ ! -d "$DEST" ]; then
+  mkdir "$DEST"
+fi
+
+count=$(read_spec | jq length)
+for i in $(seq 0 $((count-1)))
+do
+  item="$(read_spec | jq ".[$i]")"
+  name=$(echo "$item" | jq -r .name)
+  baseURL="$(echo "$item" | jq -r .base)"
+
+  if [ -d "$DEST/name" ]; then
+    echo "Already have $name."
+    continue
+  fi
+
+  echo "Downloading $name ..."
+
+  dldir="tmp/$name"
+  mkdir "$dldir"
+  echo "$item" > "$dldir/info.json"
+  curl -s "$baseURL" > "$dldir/index.html" || continue
+
+  for resource in $(echo "$item" | jq -r '.resources | .[]')
+  do
+    mkdir -p "$(dirname "$dldir/$resource")"
+    curl -s "$baseURL$resource" > "$dldir/$resource" || continue 2
+  done
+
+  for proc in $(echo "$item" | jq -r '.processors | .[]')
+  do
+    ./process/$proc "$dldir" || continue 2
+  done
+
+  touch "$dldir/muniverse_injections.js"
+  for injection in $(echo "$item" | jq -r '.injections | .[]')
+  do
+    cat "injections/$injection" >> "$dldir/muniverse_injections.js"
+  done
+
+  mv "$dldir/index.html" "$dldir/index_pre_inject.html"
+  cat "$dldir/index_pre_inject.html" |
+    sed -E 's/<head>/<head><script src="muniverse_injections.js"><\/script>/g' \
+    > "$dldir/index.html"
+
+  mv "$dldir" "$DEST"
+done
