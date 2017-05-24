@@ -37,21 +37,30 @@ do
     curl -s "$baseURL$resource" > "$dldir/$resource" || continue 2
   done
 
+  # Run site-specific processing scripts.
   for proc in $(echo "$item" | jq -r '.processors | .[]')
   do
     ./process/$proc "$dldir" || continue 2
   done
 
-  touch "$dldir/muniverse_injections.js"
-  for injection in $(echo "$item" | jq -r '.injections | .[]')
+  # Build up two JavaScript files to inject.
+  for place in top bottom
   do
-    cat "injections/$injection" >> "$dldir/muniverse_injections.js"
+    inject_file="$dldir/muniverse_${place}_injections.js"
+    touch "$inject_file"
+    for injection in $(echo "$item" | jq -r ".${place}_injections | .[]")
+    do
+      cat "injections/$injection" >> "$inject_file"
+    done
   done
 
+  # Inject JavaScript files at top & bottom of <head>.
   mv "$dldir/index.html" "$dldir/index_pre_inject.html"
   cat "$dldir/index_pre_inject.html" |
-    sed -E 's/<head>/<head><script src="muniverse_injections.js"><\/script>/g' \
+    sed -E 's/(<head>)/\1<script src="muniverse_top_injections.js"><\/script>/g' |
+    sed -E 's/(<\/head>)/<script src="muniverse_bottom_injections.js"><\/script>\1/g' \
     > "$dldir/index.html"
 
   mv "$dldir" "$DEST"
+  echo "Successfully downloaded $name"
 done
