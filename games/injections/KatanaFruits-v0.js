@@ -10,7 +10,7 @@
     this.refreshScore = function(x) {
       oldRefScore.call(this, x);
       window.muniverse.score = function() {
-        return x;
+        return Promise.resolve(x);
       };
     }
   }
@@ -64,7 +64,7 @@
     },
 
     score: function() {
-      return 0;
+      return Promise.resolve(0);
     },
 
     step: function(millis) {
