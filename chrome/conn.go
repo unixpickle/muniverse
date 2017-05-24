@@ -95,6 +95,7 @@ func (c *Conn) call(name string, params interface{},
 	c.sendLock.Unlock()
 
 	if err != nil {
+		c.gotError("write DevTools message", err)
 		return
 	}
 
