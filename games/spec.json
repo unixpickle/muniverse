@@ -3,6 +3,7 @@
     "name": "KatanaFruits-v0",
     "base": "http://games.cdn.famobi.com/html5games/k/katana-fruits/v1/",
     "top_injections": [
+      "faketime.js",
       "famobi.js"
     ],
     "bottom_injections": [
