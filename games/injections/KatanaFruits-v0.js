@@ -40,16 +40,24 @@
     });
   }
 
+  var gameOver = false;
   window.muniverse = {
     init: function() {
       return pollAndWait(MENU_TIMEOUT, function() {
-        return window.hasOwnProperty('s_oMenu');
+        return 'undefined' !== typeof s_oMenu;
       }).then(function() {
-        window.s_oMenu._onButPlayRelease();
+        s_oMenu._onButPlayRelease();
         return pollAndWait(MENU_TIMEOUT, function() {
-          return globalCHelpPanel !== null;
+          return globalCHelpPanel !== null &&
+            'undefined' !== typeof s_oGame;
         });
       }).then(function() {
+        var gameOverBackup = s_oGame.gameOver;
+        s_oGame.gameOver = function() {
+          gameOver = true;
+          gameOverBackup.call(this);
+        };
+
         globalCHelpPanel._onExit();
         window.faketime.pause();
       });
@@ -62,7 +70,7 @@
     step: function(millis) {
       return new Promise(function(resolve) {
         window.faketime.advance(millis);
-        resolve();
+        resolve(gameOver);
       });
     }
   };
