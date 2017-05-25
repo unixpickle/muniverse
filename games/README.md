@@ -1,9 +1,9 @@
 # Downloading games
 
-The [download](download) script downloads and prepares every game. It requires the `jq` command, which can be installed on Linux like so:
+The [download](download) script downloads and prepares every game. It depends on `jq` and `curl`, which can be installed on Linux like so:
 
 ```
-sudo apt-get install jq
+sudo apt-get install jq curl
 ```
 
 or on macOS like so:
