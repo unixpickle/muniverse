@@ -1,8 +1,8 @@
 # μniverse
 
-μniverse is my attempt to wrap a bunch of HTML5 games in a single API. This is similar to [openai/universe](https://github.com/openai/universe), except that it will avoid Flash and VNC.
+μniverse is my attempt to wrap a bunch of HTML5 games in a single API. This is similar to [openai/universe](https://github.com/openai/universe), except that it avoids Flash and VNC.
 
-This is a work in progress. See [Roadmap](#roadmap) to see how it's coming along.
+This is a work in progress. See [Roadmap](#roadmap) for more details.
 
 # Advantages over Universe
 

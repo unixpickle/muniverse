@@ -1,3 +1,5 @@
+// Stubs to make Famobi games work correctly.
+
 var _fgq = [];
 
 function fg_api(data) {

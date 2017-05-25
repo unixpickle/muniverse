@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# Process a Famobi game to bypass ads and asynchronous
+# script loading.
+# Also fetches some localization metadata.
 
 if [ $# -ne 1 ]; then
   echo 'Usage: famobi <directory>' >&2

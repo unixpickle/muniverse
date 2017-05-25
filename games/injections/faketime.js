@@ -1,3 +1,7 @@
+// API for controlling time in JavaScript.
+// Makes it possible to run most web applications faster
+// or slower than real time.
+
 (function() {
 
   // Frame rate when time is running "normally".
