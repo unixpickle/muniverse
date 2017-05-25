@@ -3,9 +3,10 @@ package chrome
 import (
 	"reflect"
 	"testing"
+	"time"
 )
 
-func TestConnCalls(t *testing.T) {
+func TestConnCall(t *testing.T) {
 	conn := testingConn(t, false)
 	defer conn.Close()
 
@@ -33,5 +34,36 @@ func TestConnCalls(t *testing.T) {
 
 	if !reflect.DeepEqual(actual, expected) {
 		t.Errorf("expected %v but got %v", expected, actual)
+	}
+}
+
+func TestConnPoll(t *testing.T) {
+	conn := testingConn(t, true)
+	defer conn.Close()
+
+	// Poll for event **before** triggering it.
+	var result struct {
+		Timestamp float64 `json:"timestamp"`
+	}
+	errChan := conn.poll("Page.loadEventFired", &result)
+
+	// Trigger reload event.
+	if err := conn.call("Page.enable", nil, nil); err != nil {
+		t.Fatal(err)
+	}
+	defer conn.call("Page.disable", nil, nil)
+	if err := conn.call("Page.reload", nil, nil); err != nil {
+		t.Fatal(err)
+	}
+
+	select {
+	case err := <-errChan:
+		if err != nil {
+			t.Error(err)
+		} else if result.Timestamp == 0 {
+			t.Error("got zero timestamp")
+		}
+	case <-time.After(time.Second * 20):
+		t.Error("load timeout")
 	}
 }

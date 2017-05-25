@@ -25,6 +25,10 @@ type Conn struct {
 	waitingLock sync.Mutex
 	waiting     map[int]*waitingCall
 
+	// Callers which are polling for events.
+	pollingLock sync.Mutex
+	polling     map[string][]*waitingCall
+
 	firstErrLock sync.RWMutex
 	firstErr     error
 }
@@ -42,6 +46,7 @@ func NewConn(websocketURL string) (conn *Conn, err error) {
 		ws:       ws,
 		doneChan: doneChan,
 		waiting:  map[int]*waitingCall{},
+		polling:  map[string][]*waitingCall{},
 	}
 	go func() {
 		defer close(doneChan)
@@ -87,10 +92,14 @@ func (c *Conn) call(name string, params interface{},
 	c.sendLock.Lock()
 	c.curID++
 	payload["id"] = c.curID
+
+	c.waitingLock.Lock()
 	c.waiting[c.curID] = &waitingCall{
 		OutPtr:   resObj,
 		DoneChan: doneChan,
 	}
+	c.waitingLock.Unlock()
+
 	err = c.ws.WriteJSON(payload)
 	c.sendLock.Unlock()
 
@@ -105,6 +114,48 @@ func (c *Conn) call(name string, params interface{},
 	case <-c.doneChan:
 		return errors.New("closed before reading return value")
 	}
+}
+
+// poll asynchronously waits for an event.
+//
+// This works very similarly to call, except that poll is
+// non-blocking and the error is sent over a channel.
+//
+// The event handler is guaranteed to be registered by the
+// time poll returns.
+// The returned channel is closed after the event arrives.
+// If no error occurs, the channel will be closed without
+// having any value sent to it.
+//
+// The resObj argument may be written after poll returns,
+// since poll is non-blocking.
+// However, it will never be written after the error
+// channel has been closed.
+func (c *Conn) poll(name string, resObj interface{}) <-chan error {
+	doneChan := make(chan error, 1)
+
+	c.pollingLock.Lock()
+	c.polling[name] = append(c.polling[name], &waitingCall{
+		OutPtr:   resObj,
+		DoneChan: doneChan,
+	})
+	c.pollingLock.Unlock()
+
+	res := make(chan error, 1)
+	go func() {
+		var err error
+		select {
+		case err = <-doneChan:
+		case <-c.doneChan:
+			err = errors.New("closed before receiving event")
+		}
+		if err != nil {
+			res <- essentials.AddCtx("poll DevTools "+name+" event", err)
+		}
+		close(res)
+	}()
+
+	return res
 }
 
 func (c *Conn) readLoop() {
@@ -126,7 +177,8 @@ func (c *Conn) readLoop() {
 		}
 
 		var obj struct {
-			ID int `json:"id"`
+			ID     int    `json:"id"`
+			Method string `json:"method"`
 		}
 		if err := json.Unmarshal(data, &obj); err != nil {
 			c.gotError(errContext, err)
@@ -138,6 +190,8 @@ func (c *Conn) readLoop() {
 			// condition where the remote disconnects after sending
 			// the return value.
 			c.handleReturnValue(obj.ID, data)
+		} else {
+			c.handleEvent(obj.Method, data)
 		}
 	}
 }
@@ -158,6 +212,21 @@ func (c *Conn) handleReturnValue(id int, data []byte) {
 	}
 	obj.Result = waiter.OutPtr
 	waiter.DoneChan <- json.Unmarshal(data, &obj)
+}
+
+func (c *Conn) handleEvent(method string, data []byte) {
+	c.pollingLock.Lock()
+	pollers := c.polling[method]
+	delete(c.polling, method)
+	c.pollingLock.Unlock()
+
+	for _, poller := range pollers {
+		var obj struct {
+			Params interface{} `json:"params"`
+		}
+		obj.Params = poller.OutPtr
+		poller.DoneChan <- json.Unmarshal(data, &obj)
+	}
 }
 
 func (c *Conn) gotError(ctx string, e error) {
