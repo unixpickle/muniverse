@@ -1,15 +1,25 @@
 FROM ubuntu:16.04
 
-# Install chromium-browser for its dependencies; it is an
-# old (i.e. stable) version that we won't use.
+# Install webserver and chromium dependencies.
+# We install chromium-browser for its dependencies;
+# we don't use the package itself because it is old.
 RUN apt-get update \
   && apt-get install -y \
      unzip \
+     golang \
+     git \
      chromium-browser \
      libgtk-3-dev \
      libosmesa-dev \
-  && apt-get remove -y chromium-browser \
+  && mkdir /go \
+  && export GOPATH=/go \
+  && go get github.com/unixpickle/fsserver \
+  && mv /go/bin/fsserver /usr/local/bin \
+  && apt-get remove -y chromium-browser golang git \
   && rm -rf /var/lib/apt/lists/*
+
+COPY run.sh /run.sh
+COPY downloaded_games /downloaded_games
 
 # Chromium revision 474638.
 # See https://github.com/scheib/chromium-latest-linux.
@@ -17,13 +27,9 @@ ENV chromeURL https://www.googleapis.com/download/storage/v1/b/chromium-browser-
 ADD $chromeURL /chrome.zip
 RUN unzip -q /chrome.zip \
   && rm /chrome.zip \
-  && ln -s /usr/lib/x86_64-linux-gnu/libOSMesa.so /chrome-linux/libosmesa.so
+  && ln -s /usr/lib/x86_64-linux-gnu/libOSMesa.so /chrome-linux/libosmesa.so \
+  && chmod +x /run.sh
 
 EXPOSE 9222
 
-ENTRYPOINT /chrome-linux/chrome \
-  --headless \
-  --mute-audio \
-  --no-sandbox \
-  --remote-debugging-port=9222 \
-  --remote-debugging-address=0.0.0.0
+ENTRYPOINT ["/run.sh"]
