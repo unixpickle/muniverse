@@ -1,8 +1,24 @@
-# Packaging games for μniverse
+# Downloading games
 
-The [download](download) script downloads and prepares every game. In particular, it creates a directory called `downloaded_games` and makes a sub-directory for each game it downloads.
+The [download](download) script downloads and prepares every game. It requires the `jq` command, which can be installed on Linux like so:
 
-Each game sub-directory contains an `index.html` file and various game-specific resource files. Each subdirectory also contains an `info.json` file with specific information about that game.
+```
+sudo apt-get install jq
+```
+
+or on macOS like so:
+
+```
+brew install jq
+```
+
+You should run the download script from inside this directory, like:
+
+```
+./download
+```
+
+The download script creates a directory called `downloaded_games` and makes a sub-directory for each game it downloads. Each game sub-directory contains an `index.html` file and various game-specific resource files. Each subdirectory also contains an `info.json` file with specific information about that game.
 
 # The `spec.json` file
 
