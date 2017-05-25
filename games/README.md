@@ -43,7 +43,9 @@ The [spec.json](spec.json) file contains a JSON array of game objects. Each game
   "processors": [
     "some_script"
   ],
-  "metadata": {}
+  "metadata": {},
+  "width": 320,
+  "height": 480
 }
 ```
 
@@ -56,6 +58,8 @@ The fields in a game object have the following meaning:
  * **resources:** a list of paths to download. All paths are relative to *base*. This list should be exhaustive; it should cover every resource consumed by the game.
  * **processors:** scripts from [process](process) to run on the downloaded game. More on this in [The download process](#the-download-process).
  * **metadata:** game-specific meta-data. This may be used to provide information to processor scripts.
+ * **width:** desired browser viewport width.
+ * **height:** desired browser viewport height.
 
 # The download process
 

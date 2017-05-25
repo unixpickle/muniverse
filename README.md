@@ -34,9 +34,6 @@ Here's what is done so far:
 
 Here's a (non-exhaustive) to-do list:
 
- * Get a Docker container to run headless Chrome.
- * Add `width` and `height` keys to game spec.
  * Go API for managing Docker containers.
-   * Figure out how to have multiple Docker containers listening on same port.
  * Simple interface for gym-like environment control.
  * Get more games.
