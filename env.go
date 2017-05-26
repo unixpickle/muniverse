@@ -31,7 +31,8 @@ func SpecForName(name string) *EnvSpec {
 
 // An Env controls a running environment.
 type Env struct {
-	spec EnvSpec
+	spec     EnvSpec
+	gameHost string
 
 	containerID string
 	devConn     *chrome.Conn
@@ -74,9 +75,36 @@ func NewEnvContainer(container string, spec *EnvSpec) (env *Env, err error) {
 
 	return &Env{
 		spec:        *spec,
+		gameHost:    "localhost",
 		containerID: id,
 		devConn:     conn,
 		killSocket:  killSock,
+	}, nil
+}
+
+// NewEnvChrome connects to an existing Chrome DevTools
+// server and runs an environment in there.
+//
+// The gameHost argument specifies where to load games.
+// For example, gameHost might be "localhost:8080" if the
+// game "Foobar" should be loaded from
+// "http://localhost/Foobar".
+//
+// The Chrome instance must have at least one page open,
+// since an open page is selected and used to run the
+// environment.
+func NewEnvChrome(host, gameHost string, spec *EnvSpec) (env *Env, err error) {
+	defer essentials.AddCtxTo("create environment", &err)
+
+	conn, err := connectDevTools(host)
+	if err != nil {
+		return
+	}
+
+	return &Env{
+		spec:     *spec,
+		gameHost: gameHost,
+		devConn:  conn,
 	}, nil
 }
 
@@ -159,35 +187,43 @@ func (e *Env) Step(millis int, events ...interface{}) (obs Obs, reward float64,
 
 // Close cleans up the resources associated with the
 // environment.
-func (e *Env) Close() error {
+// You should only call Close() once you are done using
+// the environment.
+func (e *Env) Close() (err error) {
+	defer essentials.AddCtxTo("close environment", &err)
+
 	errs := []error{
 		e.devConn.Close(),
-		exec.Command("docker", "kill", e.containerID).Run(),
+	}
+	if e.containerID != "" {
+		errs = append(errs, exec.Command("docker", "kill", e.containerID).Run())
 	}
 
-	// TODO: look into if this can ever produce an error,
-	// since the container might already have closed the
-	// socket by now.
-	//
-	// We don't close this *before* stopping the container
-	// since `docker kill` might fail if the container
-	// already died and was cleaned up.
-	e.killSocket.Close()
+	if e.killSocket != nil {
+		// TODO: look into if this can ever produce an error,
+		// since the container might already have closed the
+		// socket by now.
+		//
+		// We don't close this *before* stopping the container
+		// since `docker kill` might fail if the container
+		// already died and was cleaned up.
+		e.killSocket.Close()
+	}
 
-	// Any calls after Close() should trigger simple panics.
+	// Any calls after Close() should trigger simple errors.
 	e.devConn = nil
 	e.killSocket = nil
 
 	for _, err := range errs {
 		if err != nil {
-			return essentials.AddCtx("close environment", err)
+			return err
 		}
 	}
 	return nil
 }
 
 func (e *Env) envURL() string {
-	return "http://localhost/" + e.spec.Name
+	return "http://" + e.gameHost + "/" + e.spec.Name
 }
 
 func (e *Env) captureObservation() (obs Obs, err error) {
