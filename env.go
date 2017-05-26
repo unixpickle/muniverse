@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net"
 	"os/exec"
+	"strconv"
 	"strings"
 	"time"
 
@@ -14,7 +15,7 @@ import (
 )
 
 const portRange = "9000-9999"
-const refreshTimeout = time.Second * 20
+const refreshTimeout = time.Minute
 
 // SpecForName finds the first entry in EnvSpecs with the
 // given name.
@@ -32,6 +33,7 @@ func SpecForName(name string) *EnvSpec {
 type Env struct {
 	containerID string
 	devConn     *chrome.Conn
+	lastScore   float64
 
 	// Used to garbage collect the container if we
 	// exit ungracefully.
@@ -84,12 +86,19 @@ func NewEnvContainer(container string, spec *EnvSpec) (env *Env, err error) {
 func (e *Env) Reset() (obs Obs, err error) {
 	defer essentials.AddCtxTo("reset environment", &err)
 
-	if err := e.devConn.RefreshSync(time.After(refreshTimeout)); err != nil {
-		return nil, err
+	err = e.devConn.RefreshSync(time.After(refreshTimeout))
+	if err != nil {
+		return
 	}
-	if err := e.devConn.EvalPromise("window.muniverse.init();", nil); err != nil {
-		return nil, err
+	err = e.devConn.EvalPromise("window.muniverse.init();", nil)
+	if err != nil {
+		return
 	}
+	err = e.devConn.EvalPromise("window.muniverse.score();", &e.lastScore)
+	if err != nil {
+		return
+	}
+
 	return e.captureObservation()
 }
 
@@ -104,7 +113,8 @@ func (e *Env) Reset() (obs Obs, err error) {
 // the game has completed.
 //
 // The only supported event type is *chrome.MouseEvent.
-func (e *Env) Step(millis int, events ...interface{}) (obs Obs, done bool, err error) {
+func (e *Env) Step(millis int, events ...interface{}) (obs Obs, reward float64,
+	done bool, err error) {
 	defer essentials.AddCtxTo("step environment", &err)
 
 	for _, event := range events {
@@ -120,10 +130,18 @@ func (e *Env) Step(millis int, events ...interface{}) (obs Obs, done bool, err e
 		}
 	}
 
-	err = e.devConn.EvalPromise("window.muniverse.step();", &done)
+	timeStr := strconv.Itoa(millis)
+	err = e.devConn.EvalPromise("window.muniverse.step("+timeStr+");", &done)
 	if err != nil {
 		return
 	}
+
+	lastScore := e.lastScore
+	err = e.devConn.EvalPromise("window.muniverse.score();", &e.lastScore)
+	if err != nil {
+		return
+	}
+	reward = e.lastScore - lastScore
 
 	obs, err = e.captureObservation()
 	return
