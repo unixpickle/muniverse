@@ -21,9 +21,8 @@ RUN apt-get update \
 
 # Chromium revision 474638.
 # See https://github.com/scheib/chromium-latest-linux.
-ENV chromeURL https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F474638%2Fchrome-linux.zip?alt=media
-ADD $chromeURL /chrome.zip
-RUN unzip -q /chrome.zip \
+RUN curl https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F474638%2Fchrome-linux.zip?alt=media >/chrome.zip \
+  && unzip -q /chrome.zip \
   && rm /chrome.zip \
   && ln -s /usr/lib/x86_64-linux-gnu/libOSMesa.so /chrome-linux/libosmesa.so
 
