@@ -12,5 +12,5 @@ fsserver -path=/downloaded_games &
   "$@" &
 
 # Use a socket close to trigger termination.
-nc -l 1337
+tail -f /dev/null | nc -l 1337
 kill $(jobs -p)

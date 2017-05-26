@@ -262,7 +262,8 @@ func dockerRun(container string, spec *EnvSpec) (id string, err error) {
 
 	output, err := exec.Command("docker", args...).Output()
 	if err != nil {
-		return "", essentials.AddCtx("docker run", err)
+		return "", essentials.AddCtx("docker run",
+			fmt.Errorf("%s (make sure docker is up-to-date)", err))
 	}
 
 	return strings.TrimSpace(string(output)), nil
