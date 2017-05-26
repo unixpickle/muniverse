@@ -12,7 +12,7 @@ import (
 // It fails with an error if the timeout channel is either
 // closed or sent a message before the load completes.
 func (c *Conn) NavigateSync(urlStr string, timeout <-chan time.Time) (err error) {
-	essentials.AddCtxTo("DevTools synchronous page refresh", &err)
+	defer essentials.AddCtxTo("DevTools synchronous page load", &err)
 
 	// Prevent race condition where load happens before
 	// we get to call Page.navigate.

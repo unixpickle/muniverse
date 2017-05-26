@@ -140,6 +140,12 @@ func (e *Env) Reset() (obs Obs, err error) {
 	if err != nil {
 		return
 	}
+
+	err = e.dealWithLoadError()
+	if err != nil {
+		return
+	}
+
 	err = e.devConn.EvalPromise("window.muniverse.init();", nil)
 	if err != nil {
 		return
@@ -246,6 +252,26 @@ func (e *Env) captureObservation() (obs Obs, err error) {
 	return pngObs(pngData), nil
 }
 
+func (e *Env) dealWithLoadError() error {
+	// Sometimes, on macOS, loading the page in Chrome
+	// initially gives a net::ERR_NETWORK_CHANGED error.
+	// After a refresh, the error is usually fixed.
+	//
+	// We can check for this error semi-reliably by seeing
+	// if the muniverse JS module has been loaded.
+
+	var typeStr string
+	err := e.devConn.EvalPromise("Promise.resolve(typeof muniverse);", &typeStr)
+	if err != nil {
+		return err
+	}
+	if typeStr == "undefined" {
+		time.Sleep(time.Second * 5)
+		return e.devConn.NavigateSync(e.envURL(), time.After(refreshTimeout))
+	}
+	return nil
+}
+
 func dockerRun(container string, spec *EnvSpec) (id string, err error) {
 	args := []string{
 		"run",
@@ -258,7 +284,6 @@ func dockerRun(container string, spec *EnvSpec) (id string, err error) {
 		"-i",   // Give netcat a stdin to read from.
 		container,
 		fmt.Sprintf("--window-size=%d,%d", spec.Width, spec.Height),
-		"http://localhost/" + spec.Name,
 	}
 
 	output, err := exec.Command("docker", args...).Output()

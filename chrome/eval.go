@@ -1,6 +1,11 @@
 package chrome
 
-import "github.com/unixpickle/essentials"
+import (
+	"encoding/json"
+	"errors"
+
+	"github.com/unixpickle/essentials"
+)
 
 // EvalPromise evaluates a piece of JavaScript code which
 // returns a Promise.
@@ -8,8 +13,12 @@ import "github.com/unixpickle/essentials"
 // If retObj is non-nil, it is overwritten with the
 // unmarshalled result of the Promise.
 // Unmarshalling works like it does in encoding/json.
-func (c *Conn) EvalPromise(code string, retObj interface{}) error {
+func (c *Conn) EvalPromise(code string, retObj interface{}) (err error) {
+	defer essentials.AddCtxTo("eval promise", &err)
+
 	var rawResult struct {
+		ExceptionDetails interface{} `json:"exceptionDetails"`
+
 		Result struct {
 			Type  string      `json:"type"`
 			Value interface{} `json:"value"`
@@ -23,8 +32,13 @@ func (c *Conn) EvalPromise(code string, retObj interface{}) error {
 		"returnByValue": true,
 		"awaitPromise":  true,
 	}, &rawResult)
+
 	if resErr != nil {
-		return essentials.AddCtx("eval promise", resErr)
+		return resErr
+	} else if rawResult.ExceptionDetails != nil {
+		details, _ := json.Marshal(rawResult.ExceptionDetails)
+		return errors.New("uncaught exception: " + string(details))
 	}
+
 	return nil
 }
