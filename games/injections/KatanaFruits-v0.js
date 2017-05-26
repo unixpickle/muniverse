@@ -65,6 +65,9 @@
           gameOverBackup.call(this);
         };
 
+        // Block the exit button.
+        s_oGame.onExit = function() {};
+
         // Close help panel, exposing the game.
         globalCHelpPanel._onExit();
 
