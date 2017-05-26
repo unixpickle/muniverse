@@ -14,7 +14,11 @@ import (
 	"github.com/unixpickle/muniverse/chrome"
 )
 
-const portRange = "9000-9999"
+const (
+	portRange        = "9000-9999"
+	defaultContainer = "unixpickle/muniverse:0.1.0"
+)
+
 const refreshTimeout = time.Minute
 
 // SpecForName finds the first entry in EnvSpecs with the
@@ -41,6 +45,14 @@ type Env struct {
 	// Used to garbage collect the container if we
 	// exit ungracefully.
 	killSocket net.Conn
+}
+
+// NewEnv creates a new environment inside the default
+// Docker container.
+// This may take a few minutes to run the first time,
+// since it has to download a large container.
+func NewEnv(spec *EnvSpec) (*Env, error) {
+	return NewEnvContainer(defaultContainer, spec)
 }
 
 // NewEnvContainer creates a new environment inside a
