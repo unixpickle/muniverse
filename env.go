@@ -31,6 +31,8 @@ func SpecForName(name string) *EnvSpec {
 
 // An Env controls a running environment.
 type Env struct {
+	spec EnvSpec
+
 	containerID string
 	devConn     *chrome.Conn
 	lastScore   float64
@@ -71,10 +73,18 @@ func NewEnvContainer(container string, spec *EnvSpec) (env *Env, err error) {
 	}
 
 	return &Env{
+		spec:        *spec,
 		containerID: id,
 		devConn:     conn,
 		killSocket:  killSock,
 	}, nil
+}
+
+// Spec returns a copy of the specification used to create
+// this environment.
+func (e *Env) Spec() *EnvSpec {
+	res := e.spec
+	return &res
 }
 
 // Reset resets the environment and returns the first
@@ -86,7 +96,7 @@ func NewEnvContainer(container string, spec *EnvSpec) (env *Env, err error) {
 func (e *Env) Reset() (obs Obs, err error) {
 	defer essentials.AddCtxTo("reset environment", &err)
 
-	err = e.devConn.RefreshSync(time.After(refreshTimeout))
+	err = e.devConn.NavigateSync(e.envURL(), time.After(refreshTimeout))
 	if err != nil {
 		return
 	}
@@ -174,6 +184,10 @@ func (e *Env) Close() error {
 		}
 	}
 	return nil
+}
+
+func (e *Env) envURL() string {
+	return "http://localhost/" + e.spec.Name
 }
 
 func (e *Env) captureObservation() (obs Obs, err error) {

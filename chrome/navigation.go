@@ -7,15 +7,15 @@ import (
 	"github.com/unixpickle/essentials"
 )
 
-// RefreshSync refreshes the current page and waits for it
-// to finish loading.
+// NavigateSync navigates to the given page and waits for
+// it to finish loading.
 // It fails with an error if the timeout channel is either
 // closed or sent a message before the load completes.
-func (c *Conn) RefreshSync(timeout <-chan time.Time) (err error) {
+func (c *Conn) NavigateSync(urlStr string, timeout <-chan time.Time) (err error) {
 	essentials.AddCtxTo("DevTools synchronous page refresh", &err)
 
 	// Prevent race condition where load happens before
-	// we get to call Page.reload.
+	// we get to call Page.navigate.
 	if err := c.call("Page.stopLoading", nil, nil); err != nil {
 		return err
 	}
@@ -27,7 +27,8 @@ func (c *Conn) RefreshSync(timeout <-chan time.Time) (err error) {
 	}
 	defer c.call("Page.disable", nil, nil)
 
-	if err := c.call("Page.reload", nil, nil); err != nil {
+	params := map[string]string{"url": urlStr}
+	if err := c.call("Page.navigate", params, nil); err != nil {
 		return err
 	}
 
