@@ -33,9 +33,10 @@ Here's what is done so far:
  * Go API for interfacing with headless Chrome.
  * Mechanism for downloading & packaging games.
  * JavaScript interface for controlling time (timers, Date, etc.)
+ * Docker container for running headless Chrome.
+ * Go API for controlling Docker containers.
 
 Here's a (non-exhaustive) to-do list:
 
- * Go API for managing Docker containers.
  * Simple interface for gym-like environment control.
  * Get more games.
