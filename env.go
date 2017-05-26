@@ -14,6 +14,7 @@ import (
 )
 
 const portRange = "9000-9999"
+const refreshTimeout = time.Second * 20
 
 // SpecForName finds the first entry in EnvSpecs with the
 // given name.
@@ -74,6 +75,60 @@ func NewEnvContainer(container string, spec *EnvSpec) (env *Env, err error) {
 	}, nil
 }
 
+// Reset resets the environment and returns the first
+// observation.
+//
+// This should be called before the first step.
+// It should also be called every time an episode finishes
+// before steps are taken for the next episode.
+func (e *Env) Reset() (obs Obs, err error) {
+	defer essentials.AddCtxTo("reset environment", &err)
+
+	if err := e.devConn.RefreshSync(time.After(refreshTimeout)); err != nil {
+		return nil, err
+	}
+	if err := e.devConn.EvalPromise("window.muniverse.init();", nil); err != nil {
+		return nil, err
+	}
+	return e.captureObservation()
+}
+
+// Step takes a step in the environment.
+// In particular, it sends the given events and advances
+// the game by the given number of milliseconds.
+// After this is complete, it captures an observation.
+//
+// If done is true, then the game has ended and no more
+// steps should be taken before Reset is called.
+// For convenience, the observation will be set even if
+// the game has completed.
+//
+// The only supported event type is *chrome.MouseEvent.
+func (e *Env) Step(millis int, events ...interface{}) (obs Obs, done bool, err error) {
+	defer essentials.AddCtxTo("step environment", &err)
+
+	for _, event := range events {
+		switch event := event.(type) {
+		case *chrome.MouseEvent:
+			err = e.devConn.DispatchMouseEvent(event)
+			if err != nil {
+				return
+			}
+		default:
+			err = fmt.Errorf("unsupported event type: %T", event)
+			return
+		}
+	}
+
+	err = e.devConn.EvalPromise("window.muniverse.step();", &done)
+	if err != nil {
+		return
+	}
+
+	obs, err = e.captureObservation()
+	return
+}
+
 // Close cleans up the resources associated with the
 // environment.
 func (e *Env) Close() error {
@@ -97,10 +152,18 @@ func (e *Env) Close() error {
 
 	for _, err := range errs {
 		if err != nil {
-			return err
+			return essentials.AddCtx("close environment", err)
 		}
 	}
 	return nil
+}
+
+func (e *Env) captureObservation() (obs Obs, err error) {
+	pngData, err := e.devConn.ScreenshotPNG()
+	if err != nil {
+		return
+	}
+	return pngObs(pngData), nil
 }
 
 func dockerRun(container string, spec *EnvSpec) (id string, err error) {
