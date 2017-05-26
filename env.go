@@ -16,7 +16,7 @@ import (
 
 const (
 	portRange        = "9000-9999"
-	defaultContainer = "unixpickle/muniverse:0.1.1"
+	defaultContainer = "unixpickle/muniverse:0.1.2"
 )
 
 const refreshTimeout = time.Minute
@@ -255,6 +255,7 @@ func dockerRun(container string, spec *EnvSpec) (id string, err error) {
 		portRange + ":1337",
 		"-d",   // Run in detached mode.
 		"--rm", // Automatically delete the container.
+		"-i",   // Give netcat a stdin to read from.
 		container,
 		fmt.Sprintf("--window-size=%d,%d", spec.Width, spec.Height),
 		"http://localhost/" + spec.Name,
