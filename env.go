@@ -127,13 +127,12 @@ func (e *Env) Spec() *EnvSpec {
 	return &res
 }
 
-// Reset resets the environment and returns the first
-// observation.
+// Reset resets the environment to a starting state.
 //
 // This should be called before the first step.
 // It should also be called every time an episode finishes
 // before steps are taken for the next episode.
-func (e *Env) Reset() (obs Obs, err error) {
+func (e *Env) Reset() (err error) {
 	defer essentials.AddCtxTo("reset environment", &err)
 
 	err = e.devConn.NavigateSync(e.envURL(), time.After(refreshTimeout))
@@ -151,25 +150,21 @@ func (e *Env) Reset() (obs Obs, err error) {
 		return
 	}
 	err = e.devConn.EvalPromise("window.muniverse.score();", &e.lastScore)
-	if err != nil {
-		return
-	}
 
-	return e.captureObservation()
+	return
 }
 
 // Step takes a step in the environment.
 // In particular, it sends the given events and advances
 // the game by the given number of milliseconds.
-// After this is complete, it captures an observation.
 //
-// If done is true, then the game has ended and no more
+// If done is true, then the episode has ended and no more
 // steps should be taken before Reset is called.
-// For convenience, the observation will be set even if
-// the game has completed.
+// However, observations may be made even after the
+// episode has ended.
 //
 // The only supported event type is *chrome.MouseEvent.
-func (e *Env) Step(millis int, events ...interface{}) (obs Obs, reward float64,
+func (e *Env) Step(millis int, events ...interface{}) (reward float64,
 	done bool, err error) {
 	defer essentials.AddCtxTo("step environment", &err)
 
@@ -199,8 +194,16 @@ func (e *Env) Step(millis int, events ...interface{}) (obs Obs, reward float64,
 	}
 	reward = e.lastScore - lastScore
 
-	obs, err = e.captureObservation()
 	return
+}
+
+// Observe produces an observation for the current state.
+func (e *Env) Observe() (obs Obs, err error) {
+	pngData, err := e.devConn.ScreenshotPNG()
+	if err != nil {
+		return
+	}
+	return pngObs(pngData), nil
 }
 
 // Close cleans up the resources associated with the
@@ -242,14 +245,6 @@ func (e *Env) Close() (err error) {
 
 func (e *Env) envURL() string {
 	return "http://" + e.gameHost + "/" + e.spec.Name
-}
-
-func (e *Env) captureObservation() (obs Obs, err error) {
-	pngData, err := e.devConn.ScreenshotPNG()
-	if err != nil {
-		return
-	}
-	return pngObs(pngData), nil
 }
 
 func (e *Env) dealWithLoadError() error {
