@@ -11,4 +11,6 @@ fsserver -path=/downloaded_games &
   --disable-gpu \
   "$@" &
 
-wait
+# Use a socket close to trigger termination.
+nc -l 1337
+kill $(jobs -p)

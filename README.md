@@ -21,8 +21,10 @@ Most of the above advantages come from focusing on HTML5 games rather than Flash
 
 # Contents
 
- * [chrome/](chrome) - Go API for controlling a headless Chrome instance.
+ * [chrome/](chrome) - Go API for controlling a headless Chrome instance
  * [games/](games) - scripts for downloading & packaging games
+ * [container/](container) - build files for the Docker container
+ * [codegen/](codegen) - small program to auto-generate Go games registry
 
 # Roadmap
 

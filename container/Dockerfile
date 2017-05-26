@@ -8,6 +8,7 @@ RUN apt-get update \
      unzip \
      golang \
      git \
+     netcat-openbsd \
      chromium-browser \
      libgtk-3-dev \
      libosmesa-dev \
@@ -30,6 +31,6 @@ RUN unzip -q /chrome.zip \
   && ln -s /usr/lib/x86_64-linux-gnu/libOSMesa.so /chrome-linux/libosmesa.so \
   && chmod +x /run.sh
 
-EXPOSE 9222
+EXPOSE 9222 1337
 
 ENTRYPOINT ["/run.sh"]
