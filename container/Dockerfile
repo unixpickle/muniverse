@@ -19,17 +19,17 @@ RUN apt-get update \
   && apt-get remove -y chromium-browser golang git \
   && rm -rf /var/lib/apt/lists/*
 
-COPY run.sh /run.sh
-COPY downloaded_games /downloaded_games
-
 # Chromium revision 474638.
 # See https://github.com/scheib/chromium-latest-linux.
 ENV chromeURL https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F474638%2Fchrome-linux.zip?alt=media
 ADD $chromeURL /chrome.zip
 RUN unzip -q /chrome.zip \
   && rm /chrome.zip \
-  && ln -s /usr/lib/x86_64-linux-gnu/libOSMesa.so /chrome-linux/libosmesa.so \
-  && chmod +x /run.sh
+  && ln -s /usr/lib/x86_64-linux-gnu/libOSMesa.so /chrome-linux/libosmesa.so
+
+COPY run.sh /run.sh
+COPY downloaded_games /downloaded_games
+RUN chmod +x /run.sh
 
 EXPOSE 9222 1337
 
