@@ -1,6 +1,6 @@
 (function() {
 
-  var MENU_TIMEOUT = 10000;
+  var MENU_TIMEOUT = 60000;
 
   // Hijack score.
   var oldCInterface = window.CInterface;
