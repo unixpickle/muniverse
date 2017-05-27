@@ -31,6 +31,9 @@ type Conn struct {
 
 	firstErrLock sync.RWMutex
 	firstErr     error
+
+	logLock sync.RWMutex
+	log     []string
 }
 
 // NewConn connects to an endpoint's WebSocket URL.
@@ -52,6 +55,10 @@ func NewConn(websocketURL string) (conn *Conn, err error) {
 		defer close(doneChan)
 		conn.readLoop()
 	}()
+	if err := conn.call("Log.enable", nil, nil); err != nil {
+		conn.Close()
+		return nil, err
+	}
 	return
 }
 
@@ -68,6 +75,20 @@ func (c *Conn) Error() error {
 	c.firstErrLock.RLock()
 	defer c.firstErrLock.RUnlock()
 	return c.firstErr
+}
+
+// logCopy returns a copy of the console log messages.
+func (c *Conn) consoleLog() []string {
+	c.logLock.RLock()
+	defer c.logLock.RUnlock()
+	return append([]string{}, c.log...)
+}
+
+// clearLog clears the log returned by consoleLog.
+func (c *Conn) clearLog() {
+	c.logLock.Lock()
+	defer c.logLock.Unlock()
+	c.log = nil
 }
 
 // call makes an API call.
@@ -215,6 +236,21 @@ func (c *Conn) handleReturnValue(id int, data []byte) {
 }
 
 func (c *Conn) handleEvent(method string, data []byte) {
+	if method == "Log.entryAdded" {
+		var entryObj struct {
+			Params struct {
+				Entry struct {
+					Text string `json:"text"`
+				} `json:"entry"`
+			} `json:"params"`
+		}
+		if json.Unmarshal(data, &entryObj) == nil {
+			c.logLock.Lock()
+			c.log = append(c.log, entryObj.Params.Entry.Text)
+			c.logLock.Unlock()
+		}
+	}
+
 	c.pollingLock.Lock()
 	pollers := c.polling[method]
 	delete(c.polling, method)

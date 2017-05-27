@@ -2,6 +2,7 @@ package chrome
 
 import (
 	"errors"
+	"strings"
 	"time"
 
 	"github.com/unixpickle/essentials"
@@ -38,4 +39,38 @@ func (c *Conn) NavigateSync(urlStr string, timeout <-chan time.Time) (err error)
 	case <-timeout:
 		return errors.New("timeout exceeded")
 	}
+}
+
+// NavigateSafe is like NavigateSync, but it checks for
+// network related errors in the console and retries if
+// such errors are encountered.
+//
+// This is meant to deal with a bug in Chromium when
+// running under Docker where a net::ERR_NETWORK_CHANGED
+// error is triggered.
+// It is yet to be clear whether the error originates due
+// to Docker networking or due to Chromium.
+func (c *Conn) NavigateSafe(urlStr string, timeout <-chan time.Time) (err error) {
+	essentials.AddCtxTo("navigate safe", &err)
+
+RetryLoop:
+	for {
+		c.clearLog()
+		if err = c.NavigateSync(urlStr, timeout); err != nil {
+			return
+		}
+
+		// Give the log some time to come in.
+		// TODO: see if this is necessary.
+		time.Sleep(time.Second)
+
+		for _, item := range c.consoleLog() {
+			if strings.Contains(item, "net::ERR_NETWORK_CHANGED") {
+				continue RetryLoop
+			}
+		}
+
+		return
+	}
+
 }

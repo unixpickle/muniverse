@@ -135,12 +135,7 @@ func (e *Env) Spec() *EnvSpec {
 func (e *Env) Reset() (err error) {
 	defer essentials.AddCtxTo("reset environment", &err)
 
-	err = e.devConn.NavigateSync(e.envURL(), time.After(refreshTimeout))
-	if err != nil {
-		return
-	}
-
-	err = e.dealWithLoadError()
+	err = e.devConn.NavigateSafe(e.envURL(), time.After(refreshTimeout))
 	if err != nil {
 		return
 	}
@@ -245,26 +240,6 @@ func (e *Env) Close() (err error) {
 
 func (e *Env) envURL() string {
 	return "http://" + e.gameHost + "/" + e.spec.Name
-}
-
-func (e *Env) dealWithLoadError() error {
-	// Sometimes, on macOS, loading the page in Chrome
-	// initially gives a net::ERR_NETWORK_CHANGED error.
-	// After a refresh, the error is usually fixed.
-	//
-	// We can check for this error semi-reliably by seeing
-	// if the muniverse JS module has been loaded.
-
-	var typeStr string
-	err := e.devConn.EvalPromise("Promise.resolve(typeof muniverse);", &typeStr)
-	if err != nil {
-		return err
-	}
-	if typeStr == "undefined" {
-		time.Sleep(time.Second * 5)
-		return e.devConn.NavigateSync(e.envURL(), time.After(refreshTimeout))
-	}
-	return nil
 }
 
 func dockerRun(container string, spec *EnvSpec) (id string, err error) {
