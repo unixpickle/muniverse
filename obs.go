@@ -22,23 +22,52 @@ func RGB(o Obs) (buffer []uint8, width, height int, err error) {
 	if err != nil {
 		return
 	}
-	// TODO: optimize for *image.NRGBA and *image.RGBA.
+	width, height = img.Bounds().Dx(), img.Bounds().Dy()
 	switch img := img.(type) {
-	default:
-		width, height = img.Bounds().Dx(), img.Bounds().Dy()
-		min := img.Bounds().Min
-		buffer = make([]uint8, width*height*3)
-		for y := 0; y < height; y++ {
-			for x := 0; x < width; x++ {
-				r, g, b, _ := img.At(x+min.X, y+min.Y).RGBA()
-				idx := (x + y*width) * 3
-				buffer[idx] = uint8(r >> 8)
-				buffer[idx+1] = uint8(g >> 8)
-				buffer[idx+2] = uint8(b >> 8)
-			}
+	case *image.NRGBA:
+		if img.Stride != width*4 {
+			buffer = naiveRGB(img)
+		} else {
+			buffer = rgbaToRGB(img.Pix)
 		}
+	case *image.RGBA:
+		if img.Stride != width*4 {
+			buffer = naiveRGB(img)
+		} else {
+			buffer = rgbaToRGB(img.Pix)
+		}
+	default:
+		buffer = naiveRGB(img)
 	}
 	return
+}
+
+func rgbaToRGB(rgba []uint8) []uint8 {
+	buffer := make([]uint8, 3*(len(rgba)/4))
+	var destIdx int
+	for i := 0; i < len(rgba); i += 4 {
+		buffer[destIdx] = rgba[i]
+		buffer[destIdx+1] = rgba[i+1]
+		buffer[destIdx+2] = rgba[i+2]
+		destIdx += 3
+	}
+	return buffer
+}
+
+func naiveRGB(img image.Image) []uint8 {
+	width, height := img.Bounds().Dx(), img.Bounds().Dy()
+	min := img.Bounds().Min
+	buffer := make([]uint8, width*height*3)
+	for y := 0; y < height; y++ {
+		for x := 0; x < width; x++ {
+			r, g, b, _ := img.At(x+min.X, y+min.Y).RGBA()
+			idx := (x + y*width) * 3
+			buffer[idx] = uint8(r >> 8)
+			buffer[idx+1] = uint8(g >> 8)
+			buffer[idx+2] = uint8(b >> 8)
+		}
+	}
+	return buffer
 }
 
 type pngObs []byte
