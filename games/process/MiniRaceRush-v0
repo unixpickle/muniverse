@@ -1,0 +1,19 @@
+#!/bin/bash
+
+DIR="$1"
+
+oldName="$DIR/app.min.preprocess.js"
+mv "$DIR/app.min.js" "$oldName"
+cat "$oldName" |
+  sed -E 's/^loadPreAssets\(\);/window\.addEventListener\("load",loadPreAssets\);/g' \
+  > "$DIR/app.min.js"
+
+oldName="$DIR/index_pre_miniracerush.html"
+mv "$DIR/index.html" "$oldName"
+cat "$oldName" |
+  tail -c +4 | # Remove byte order mark
+  sed -E 's/<script src="VisibilityManager\.js"><\/script>//g' |
+  sed -E 's/<script src="app\.min\.js"><\/script>//g' |
+  sed -E 's/(<\/body>)/<script src="app\.min\.js"><\/script>\1/g' |
+  sed -E 's/(<\/body>)/<script src="VisibilityManager\.js"><\/script>\1/g' \
+  > "$DIR/index.html"

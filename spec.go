@@ -15,4 +15,11 @@ var EnvSpecs = []*EnvSpec{
 		Width:   320,
 		Height:  427,
 	},
+
+	{
+		Name:    "MiniRaceRush-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/m/mini-race-rush/v1/",
+		Width:   320,
+		Height:  497,
+	},
 }

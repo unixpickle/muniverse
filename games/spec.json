@@ -7,6 +7,7 @@
       "famobi.js"
     ],
     "bottom_injections": [
+      "utils.js",
       "KatanaFruits-v0.js"
     ],
     "resources": [
@@ -93,5 +94,60 @@
     },
     "width": 320,
     "height": 427
+  },
+  {
+    "name": "MiniRaceRush-v0",
+    "base": "http://games.cdn.famobi.com/html5games/m/mini-race-rush/v1/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "MiniRaceRush-v0.js"
+    ],
+    "resources": [
+      "TweenMax.min.js",
+      "howler.min.js",
+      "VisibilityManager.js",
+      "app.min.js",
+      "viewporter.js",
+      "audio/sound.ogg",
+      "audio/music.ogg",
+      "fg_i18n/en/images/preloadImage.jpg",
+      "fg_i18n/en/images/rotateDeviceImage.jpg",
+      "fg_i18n/en/images/hud_450x700.png",
+      "fg_i18n/en/images/uiButs.png",
+      "fg_i18n/en/images/gameElements.png",
+      "fg_i18n/en/images/levelSelect.png",
+      "fg_i18n/en/images/panels_450x700.png",
+      "images/fatNumbers_79x115.png",
+      "images/smallNumbers_21x28.png",
+      "images/mute_61x70.png",
+      "images/pickUps_107x99.png",
+      "images/driftEffect_59x61.png",
+      "images/skidmark_15x15.png",
+      "images/carExplode_155x141.png",
+      "images/debris_22x22.png",
+      "images/cars.png",
+      "images/ground0.jpg",
+      "images/ground1.jpg",
+      "images/ground2.jpg",
+      "images/ground3.jpg",
+      "images/ground4.jpg",
+      "images/ground5.jpg",
+      "images/ground6.jpg",
+      "images/bg.png",
+      "images/rotateDeviceMessage.jpg"
+    ],
+    "processors": [
+      "famobi",
+      "MiniRaceRush-v0"
+    ],
+    "metadata": {
+      "famobi_id": "mini-race-rush"
+    },
+    "width": 320,
+    "height": 497
   }
 ]
