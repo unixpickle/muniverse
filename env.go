@@ -151,7 +151,7 @@ func (e *Env) Reset() (err error) {
 
 // Step takes a step in the environment.
 // In particular, it sends the given events and advances
-// the game by the given number of milliseconds.
+// the game by the given amount of time.
 //
 // If done is true, then the episode has ended and no more
 // steps should be taken before Reset is called.
@@ -159,7 +159,7 @@ func (e *Env) Reset() (err error) {
 // episode has ended.
 //
 // The only supported event type is *chrome.MouseEvent.
-func (e *Env) Step(millis int, events ...interface{}) (reward float64,
+func (e *Env) Step(t time.Duration, events ...interface{}) (reward float64,
 	done bool, err error) {
 	defer essentials.AddCtxTo("step environment", &err)
 
@@ -176,6 +176,7 @@ func (e *Env) Step(millis int, events ...interface{}) (reward float64,
 		}
 	}
 
+	millis := int(t / time.Millisecond)
 	timeStr := strconv.Itoa(millis)
 	err = e.devConn.EvalPromise("window.muniverse.step("+timeStr+");", &done)
 	if err != nil {
