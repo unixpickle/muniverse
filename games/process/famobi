@@ -39,7 +39,7 @@ echo "$fgScript" | grep -E '(new fg_api|{"features")' > "$DIR/famobi_data.js"
 mv "$DIR/index.html" "$DIR/index_pre_famobi.html"
 cat "$DIR/index_pre_famobi.html" |
   sed -E "s/\\(document, '\\/html5games\\/gameapi\\/v1\\.js\\?e='\\)//g" |
-  sed -E $'s/^[ \t]*"(js\\/.*.js)",/<script src="\\1"><\\/script>/g' |
+  sed -E $'s/^[ \t]*"(.*.js)",/<script src="\\1"><\\/script>/g' |
   sed -E 's/window.famobi_gameJS = \[/<\/script>/g' |
   sed -E 's/(function\(\)\{)/<script> window.addEventListener("load",\1/g' |
   sed -E 's/        \];/);/g' |
