@@ -36,6 +36,21 @@ echo "$fgScript" | grep -E '(new fg_api|{"features")' > "$DIR/famobi_data.js"
 
 # Strip the code that normally loads all the scripts,
 # opting to manually load the scripts instead.
+#
+# We expect a format like:
+#
+#   window.famobi_gameJS = [
+#     "TweenMax.min.js",
+#     "howler.min.js",
+#     "VisibilityManager.js",
+#     "app.min.js",
+#     function(){
+#
+#       }
+#   ];
+#
+# If the curly braces are a bit different, you should
+# pre-process the index.html file first.
 mv "$DIR/index.html" "$DIR/index_pre_famobi.html"
 cat "$DIR/index_pre_famobi.html" |
   sed -E "s/\\(document, '\\/html5games\\/gameapi\\/v1\\.js\\?e='\\)//g" |
