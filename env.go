@@ -158,7 +158,8 @@ func (e *Env) Reset() (err error) {
 // However, observations may be made even after the
 // episode has ended.
 //
-// The only supported event type is *chrome.MouseEvent.
+// The only supported event types are *chrome.MouseEvent
+// and *chrome.KeyEvent.
 func (e *Env) Step(t time.Duration, events ...interface{}) (reward float64,
 	done bool, err error) {
 	defer essentials.AddCtxTo("step environment", &err)
@@ -167,11 +168,12 @@ func (e *Env) Step(t time.Duration, events ...interface{}) (reward float64,
 		switch event := event.(type) {
 		case *chrome.MouseEvent:
 			err = e.devConn.DispatchMouseEvent(event)
-			if err != nil {
-				return
-			}
+		case *chrome.KeyEvent:
+			err = e.devConn.DispatchKeyEvent(event)
 		default:
 			err = fmt.Errorf("unsupported event type: %T", event)
+		}
+		if err != nil {
 			return
 		}
 	}

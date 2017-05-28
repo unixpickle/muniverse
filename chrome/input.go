@@ -57,7 +57,7 @@ type KeyEvent struct {
 }
 
 // KeyEvents maps key codes to KeyEvent objects.
-var KeyEvents = map[string]*KeyEvent{
+var KeyEvents = map[string]KeyEvent{
 	"Backquote":    {Code: "Backquote", Text: "`", KeyIdentifier: "U+0060", Key: "`", WindowsVirtualKeyCode: 192, NativeVirtualKeyCode: 192},
 	"Digit1":       {Code: "Digit1", Text: "1", KeyIdentifier: "U+0031", Key: "1", WindowsVirtualKeyCode: 49, NativeVirtualKeyCode: 49},
 	"Digit2":       {Code: "Digit2", Text: "2", KeyIdentifier: "U+0032", Key: "2", WindowsVirtualKeyCode: 50, NativeVirtualKeyCode: 50},
