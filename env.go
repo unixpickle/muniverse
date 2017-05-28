@@ -21,18 +21,6 @@ const (
 
 const refreshTimeout = time.Minute
 
-// SpecForName finds the first entry in EnvSpecs with the
-// given name.
-// If no entry is found, nil is returned.
-func SpecForName(name string) *EnvSpec {
-	for _, s := range EnvSpecs {
-		if s.Name == name {
-			return s
-		}
-	}
-	return nil
-}
-
 // An Env controls a running environment.
 type Env struct {
 	spec     EnvSpec
