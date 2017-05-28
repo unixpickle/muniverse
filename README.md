@@ -36,8 +36,8 @@ Here's what is done so far:
  * JavaScript interface for controlling time (timers, Date, etc.)
  * Docker container for running headless Chrome.
  * Go API for controlling Docker containers.
+ * Simple interface for gym-like environment control.
 
 Here's a (non-exhaustive) to-do list:
 
- * Simple interface for gym-like environment control.
  * Get more games.
