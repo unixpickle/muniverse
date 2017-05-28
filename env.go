@@ -21,8 +21,40 @@ const (
 
 const refreshTimeout = time.Minute
 
-// An Env controls a running environment.
-type Env struct {
+// An Env controls and observes an environment.
+type Env interface {
+	// Spec returns details about the environment.
+	Spec() *EnvSpec
+
+	// Reset resets the environment to a start state.
+	Reset() error
+
+	// Step sends the given events and advances the
+	// episode by the given amount of time.
+	//
+	// If done is true, then the episode has ended.
+	// After an episode ends, Reset must be called once
+	// before Step may be called again.
+	// However, observations may be made even after the
+	// episode has ended.
+	//
+	// Typical event types are *chrome.MouseEvent and
+	// *chrome.KeyEvent.
+	Step(t time.Duration, events ...interface{}) (reward float64,
+		done bool, err error)
+
+	// Observe produces an observation for the current
+	// state of the environment.
+	Observe() (Obs, error)
+
+	// Close cleans up resources used by the environment.
+	//
+	// After Close is called, the Env should not be used
+	// anymore by any Goroutine.
+	Close() error
+}
+
+type rawEnv struct {
 	spec     EnvSpec
 	gameHost string
 
@@ -39,13 +71,13 @@ type Env struct {
 // Docker container.
 // This may take a few minutes to run the first time,
 // since it has to download a large container.
-func NewEnv(spec *EnvSpec) (*Env, error) {
+func NewEnv(spec *EnvSpec) (Env, error) {
 	return NewEnvContainer(defaultContainer, spec)
 }
 
 // NewEnvContainer creates a new environment inside a
 // Docker container of the given name.
-func NewEnvContainer(container string, spec *EnvSpec) (env *Env, err error) {
+func NewEnvContainer(container string, spec *EnvSpec) (env Env, err error) {
 	defer essentials.AddCtxTo("create environment", &err)
 
 	id, err := dockerRun(container, spec)
@@ -73,7 +105,7 @@ func NewEnvContainer(container string, spec *EnvSpec) (env *Env, err error) {
 		return
 	}
 
-	return &Env{
+	return &rawEnv{
 		spec:        *spec,
 		gameHost:    "localhost",
 		containerID: id,
@@ -93,7 +125,7 @@ func NewEnvContainer(container string, spec *EnvSpec) (env *Env, err error) {
 // The Chrome instance must have at least one page open,
 // since an open page is selected and used to run the
 // environment.
-func NewEnvChrome(host, gameHost string, spec *EnvSpec) (env *Env, err error) {
+func NewEnvChrome(host, gameHost string, spec *EnvSpec) (env Env, err error) {
 	defer essentials.AddCtxTo("create environment", &err)
 
 	conn, err := connectDevTools(host)
@@ -101,63 +133,45 @@ func NewEnvChrome(host, gameHost string, spec *EnvSpec) (env *Env, err error) {
 		return
 	}
 
-	return &Env{
+	return &rawEnv{
 		spec:     *spec,
 		gameHost: gameHost,
 		devConn:  conn,
 	}, nil
 }
 
-// Spec returns a copy of the specification used to create
-// this environment.
-func (e *Env) Spec() *EnvSpec {
-	res := e.spec
+func (r *rawEnv) Spec() *EnvSpec {
+	res := r.spec
 	return &res
 }
 
-// Reset resets the environment to a starting state.
-//
-// This should be called before the first step.
-// It should also be called every time an episode finishes
-// before steps are taken for the next episode.
-func (e *Env) Reset() (err error) {
+func (r *rawEnv) Reset() (err error) {
 	defer essentials.AddCtxTo("reset environment", &err)
 
-	err = e.devConn.NavigateSafe(e.envURL(), time.After(refreshTimeout))
+	err = r.devConn.NavigateSafe(r.envURL(), time.After(refreshTimeout))
 	if err != nil {
 		return
 	}
 
-	err = e.devConn.EvalPromise("window.muniverse.init();", nil)
+	err = r.devConn.EvalPromise("window.muniverse.init();", nil)
 	if err != nil {
 		return
 	}
-	err = e.devConn.EvalPromise("window.muniverse.score();", &e.lastScore)
+	err = r.devConn.EvalPromise("window.muniverse.score();", &r.lastScore)
 
 	return
 }
 
-// Step takes a step in the environment.
-// In particular, it sends the given events and advances
-// the game by the given amount of time.
-//
-// If done is true, then the episode has ended and no more
-// steps should be taken before Reset is called.
-// However, observations may be made even after the
-// episode has ended.
-//
-// The only supported event types are *chrome.MouseEvent
-// and *chrome.KeyEvent.
-func (e *Env) Step(t time.Duration, events ...interface{}) (reward float64,
+func (r *rawEnv) Step(t time.Duration, events ...interface{}) (reward float64,
 	done bool, err error) {
 	defer essentials.AddCtxTo("step environment", &err)
 
 	for _, event := range events {
 		switch event := event.(type) {
 		case *chrome.MouseEvent:
-			err = e.devConn.DispatchMouseEvent(event)
+			err = r.devConn.DispatchMouseEvent(event)
 		case *chrome.KeyEvent:
-			err = e.devConn.DispatchKeyEvent(event)
+			err = r.devConn.DispatchKeyEvent(event)
 		default:
 			err = fmt.Errorf("unsupported event type: %T", event)
 		}
@@ -168,45 +182,40 @@ func (e *Env) Step(t time.Duration, events ...interface{}) (reward float64,
 
 	millis := int(t / time.Millisecond)
 	timeStr := strconv.Itoa(millis)
-	err = e.devConn.EvalPromise("window.muniverse.step("+timeStr+");", &done)
+	err = r.devConn.EvalPromise("window.muniverse.step("+timeStr+");", &done)
 	if err != nil {
 		return
 	}
 
-	lastScore := e.lastScore
-	err = e.devConn.EvalPromise("window.muniverse.score();", &e.lastScore)
+	lastScore := r.lastScore
+	err = r.devConn.EvalPromise("window.muniverse.score();", &r.lastScore)
 	if err != nil {
 		return
 	}
-	reward = e.lastScore - lastScore
+	reward = r.lastScore - lastScore
 
 	return
 }
 
-// Observe produces an observation for the current state.
-func (e *Env) Observe() (obs Obs, err error) {
-	pngData, err := e.devConn.ScreenshotPNG()
+func (r *rawEnv) Observe() (obs Obs, err error) {
+	pngData, err := r.devConn.ScreenshotPNG()
 	if err != nil {
 		return
 	}
 	return pngObs(pngData), nil
 }
 
-// Close cleans up the resources associated with the
-// environment.
-// You should only call Close() once you are done using
-// the environment.
-func (e *Env) Close() (err error) {
+func (r *rawEnv) Close() (err error) {
 	defer essentials.AddCtxTo("close environment", &err)
 
 	errs := []error{
-		e.devConn.Close(),
+		r.devConn.Close(),
 	}
-	if e.containerID != "" {
-		errs = append(errs, exec.Command("docker", "kill", e.containerID).Run())
+	if r.containerID != "" {
+		errs = append(errs, exec.Command("docker", "kill", r.containerID).Run())
 	}
 
-	if e.killSocket != nil {
+	if r.killSocket != nil {
 		// TODO: look into if this can ever produce an error,
 		// since the container might already have closed the
 		// socket by now.
@@ -214,12 +223,12 @@ func (e *Env) Close() (err error) {
 		// We don't close this *before* stopping the container
 		// since `docker kill` might fail if the container
 		// already died and was cleaned up.
-		e.killSocket.Close()
+		r.killSocket.Close()
 	}
 
 	// Any calls after Close() should trigger simple errors.
-	e.devConn = nil
-	e.killSocket = nil
+	r.devConn = nil
+	r.killSocket = nil
 
 	for _, err := range errs {
 		if err != nil {
@@ -229,8 +238,8 @@ func (e *Env) Close() (err error) {
 	return nil
 }
 
-func (e *Env) envURL() string {
-	return "http://" + e.gameHost + "/" + e.spec.Name
+func (r *rawEnv) envURL() string {
+	return "http://" + r.gameHost + "/" + r.spec.Name
 }
 
 func dockerRun(container string, spec *EnvSpec) (id string, err error) {
