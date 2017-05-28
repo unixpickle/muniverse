@@ -233,8 +233,7 @@
 
   FakeTime.prototype._installPerformance = function() {
     window.performance.now = function() {
-      var elapsed = this._currentTime - this._startTime;
-      return elapsed + window.performance.navigationStart;
+      return this._currentTime;
     }.bind(this);
   };
 
