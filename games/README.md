@@ -45,7 +45,8 @@ The [spec.json](spec.json) file contains a JSON array of game objects. Each game
   ],
   "metadata": {},
   "width": 320,
-  "height": 480
+  "height": 480,
+  "key_whitelist": ["KeyLeft", "KeyRight"]
 }
 ```
 
@@ -60,6 +61,7 @@ The fields in a game object have the following meaning:
  * **metadata:** game-specific meta-data. This may be used to provide information to processor scripts.
  * **width:** desired browser viewport width.
  * **height:** desired browser viewport height.
+ * **key_whitelist:** a list of allowed key codes.
 
 # The download process
 

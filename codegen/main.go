@@ -51,6 +51,8 @@ type EnvSpec struct {
 	BaseURL string
 	Width   int
 	Height  int
+
+	KeyWhitelist []string
 }
 
 var EnvSpecs = []*EnvSpec{ {{- range .}}
@@ -59,6 +61,13 @@ var EnvSpecs = []*EnvSpec{ {{- range .}}
 		BaseURL: "{{.base}}",
 		Width:   {{.width}},
 		Height:  {{.height}},
+		{{- $length := len .key_whitelist -}}
+		{{if gt $length 0}}
+
+		KeyWhitelist: []string{
+			{{- range .key_whitelist}}
+			"{{.}}", {{- end}}
+		}, {{- end}}
 	},
 {{end -}} }
 `

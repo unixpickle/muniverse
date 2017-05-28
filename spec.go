@@ -6,6 +6,8 @@ type EnvSpec struct {
 	BaseURL string
 	Width   int
 	Height  int
+
+	KeyWhitelist []string
 }
 
 var EnvSpecs = []*EnvSpec{
@@ -21,5 +23,10 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/m/mini-race-rush/v1/",
 		Width:   320,
 		Height:  497,
+
+		KeyWhitelist: []string{
+			"KeyLeft",
+			"KeyRight",
+		},
 	},
 }

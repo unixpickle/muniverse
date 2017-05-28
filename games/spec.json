@@ -93,7 +93,8 @@
       "famobi_id": "katana-fruits"
     },
     "width": 320,
-    "height": 427
+    "height": 427,
+    "key_whitelist": []
   },
   {
     "name": "MiniRaceRush-v0",
@@ -148,6 +149,7 @@
       "famobi_id": "mini-race-rush"
     },
     "width": 320,
-    "height": 497
+    "height": 497,
+    "key_whitelist": ["KeyLeft", "KeyRight"]
   }
 ]
