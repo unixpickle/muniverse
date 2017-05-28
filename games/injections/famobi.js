@@ -17,6 +17,16 @@ fg_api.prototype.__ = function(key) {
   var res = this._data.game_i18n.en[key] ||
     this._data.game_i18n.default[key] ||
     this._data.branding[key];
+  if ('undefined' === typeof res) {
+    var languages = Object.keys(this._data.game_i18n);
+    for (var i = 0; i < languages.length; ++i) {
+      res = res || this._data.game_i18n[languages[i]][key];
+    }
+  }
+  if ('undefined' === typeof res) {
+    console.log('No famobi key found: ' + key);
+    return null;
+  }
   return res.replace('{lang}', 'en');
 }
 
