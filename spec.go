@@ -29,6 +29,13 @@ var EnvSpecs = []*EnvSpec{
 			"KeyRight",
 		},
 	},
+
+	{
+		Name:    "Jewelish-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/j/jewelish/10-4bc4e/",
+		Width:   320,
+		Height:  433,
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+DIR="$1"
+
+# The formatting of index.html is different than
+# normal because *somebody* likes putting things on
+# newlines in a silly way.
+mv "$DIR/index.html" "$DIR/index_pre_jewelish.html"
+cat "$DIR/index_pre_jewelish.html" |
+  sed -E $'s/function\\(\\)\r/function\\(\\) \\{/g' |
+  sed -E $'s/^( |\t)*\\{\r//g' |
+  sed -E 's/(window.famobi_gameJS =)/\1 \[/g' |
+  sed -E "s/\\['(js\\/all.js)'/\"\\1\"/g" \
+  > "$DIR/index.html"
+
+# Various hooks to control the game.
+# Also, avoid ?v=1.1 on data URLs.
+mv "$DIR/js/all.js" "$DIR/js/all.preproc.js"
+cat "$DIR/js/all.preproc.js" |
+  sed -E 's/(t\.main\.showIngameScreen\(\)\})/\1,window.injectedPlay=this.mButtonPlayClick.onClick/g' |
+  sed -E 's/(advance:function\(\)\{if\(\!this\.mGameOver\))/\1window.injectedGame=this;/g' |
+  sed -E 's/\+"\?v=1\.1"//g' \
+  > "$DIR/js/all.js"

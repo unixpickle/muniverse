@@ -16,7 +16,7 @@ import (
 
 const (
 	portRange        = "9000-9999"
-	defaultContainer = "unixpickle/muniverse:0.2.1"
+	defaultContainer = "unixpickle/muniverse:0.3.0"
 )
 
 const refreshTimeout = time.Minute
