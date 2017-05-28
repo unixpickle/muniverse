@@ -17,6 +17,8 @@
           gameOver = true;
           oldEnd();
         };
+        window.toggleManualPause = function() {
+        };
         initGame();
         window.faketime.pause();
       });
