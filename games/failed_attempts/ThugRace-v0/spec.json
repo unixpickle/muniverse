@@ -1,0 +1,69 @@
+{
+  "name": "ThugRacer-v0",
+  "base": "http://games.cdn.famobi.com/html5games/t/thug-racer/v330/",
+  "top_injections": [
+    "faketime.js",
+    "famobi.js"
+  ],
+  "bottom_injections": [
+    "utils.js",
+    "ThugRacer-v0.js"
+  ],
+  "resources": [
+    "html/html.nocache.js",
+    "assets/hud0.txt",
+    "assets/font_32.fnt",
+    "assets/assets0.txt",
+    "assets/cars0.txt",
+    "styles.css",
+    "assets/cars0.png",
+    "assets/sfx/SFX_carpass_1.mp3",
+    "assets/sfx/SFX_CleanBusted.mp3",
+    "assets/sfx/SFX_transitionWoosh.mp3",
+    "assets/sfx/SFX_bleepsTypeFour01.mp3",
+    "assets/sfx/SFX_gravelLoop.mp3",
+    "assets/sfx/SFX_CleanThugRacer1.mp3",
+    "assets/sfx/SFX_wheelSpinStart.mp3",
+    "assets/sfx/SFX_countdownGO.mp3",
+    "assets/sfx/SFX_smallCrash3.mp3",
+    "assets/sfx/SFX_beepbeepbeep.mp3",
+    "assets/sfx/SFX_checkpoint.mp3",
+    "assets/sfx/SFX_engineLoop.mp3",
+    "assets/sfx/SFX_bigCrash5.mp3",
+    "assets/sfx/SFX_bigCrash4.mp3",
+    "assets/sfx/SFX_bigCrash3.mp3",
+    "assets/sfx/SFX_bigCrash2.mp3",
+    "assets/sfx/SFX_bigCrash1.mp3",
+    "assets/sfx/SFX_smallCrash1.mp3",
+    "assets/sfx/SFX_smallCrash2.mp3",
+    "assets/sfx/SFX_skidLong1.mp3",
+    "assets/sfx/SFX_getReady.mp3",
+    "assets/sfx/SFX_coundown321.mp3",
+    "assets/thug.mp3",
+    "assets/police.mp3",
+    "assets/squeal.wav",
+    "assets/gameend.png",
+    "assets/helpoverlay.png",
+    "assets/overlay75.png",
+    "assets/bgNight.png",
+    "assets/bgUrban.png",
+    "assets/bgVenice.png",
+    "assets/bgDesert.png",
+    "assets/logo.png",
+    "assets/busted02.png",
+    "assets/busted01.png",
+    "assets/assets0.png",
+    "assets/font_32.png",
+    "assets/hud0.png"
+  ],
+  "processors": [
+    "ThugRacer-v0",
+    "famobi"
+  ],
+  "metadata": {
+    "famobi_id": "thug-racer"
+  },
+  "width": 512,
+  "height": 304,
+  "key_whitelist": ["KeyLeft", "KeyRight", "KeyDown"]
+}

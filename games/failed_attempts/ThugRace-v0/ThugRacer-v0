@@ -1,0 +1,23 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Download deferred JS files.
+accessCode=$(cat "$DIR/html/html.nocache.js" |
+             grep ac= |
+             sed -E "s/^.*ac='([A-Z0-9]*)'.*$/\\1/g")
+baseURL=$(cat "$DIR/info.json" | jq -r '.base')
+mkdir -p "$DIR/html/deferredjs/$accessCode"
+for i in 1 2
+do
+  curl -s "${baseURL}html/deferredjs/$accessCode/$i.cache.js" \
+    > "$DIR/html/deferredjs/$accessCode/$i.cache.js"
+done
+curl -s "${baseURL}html/$accessCode.cache.js" > "$DIR/html/$accessCode.cache.js"
+
+# Fix the format of index.html
+mv "$DIR/index.html" "$DIR/index_pre_thugracer.html"
+cat "$DIR/index_pre_thugracer.html" |
+  sed -E "s/'js\\/all\\.js',//g" |
+  sed -E 's/\?ignore//g' \
+  > "$DIR/index.html"
