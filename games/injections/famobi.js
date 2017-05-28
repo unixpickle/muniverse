@@ -14,7 +14,9 @@ fg_api.prototype.__ = function(key) {
   if (key === 'preload_image') {
     return fg_api.EMPTY_IMAGE;
   }
-  var res = this._data.game_i18n.en[key] || this._data.branding[key];
+  var res = this._data.game_i18n.en[key] ||
+    this._data.game_i18n.default[key] ||
+    this._data.branding[key];
   return res.replace('{lang}', 'en');
 }
 
@@ -28,4 +30,7 @@ fg_api.prototype.moreGamesLink = function() {
 };
 
 fg_api.prototype.submitHighscore = function() {
+};
+
+fg_api.prototype.showAd = function() {
 };

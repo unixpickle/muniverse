@@ -127,6 +127,7 @@
       if ('string' === typeof func) {
         func = new Function(func);
       }
+      millis = millis || 1;
 
       var extraArgs = [];
       for (var i = 2; i < arguments.length; ++i) {
