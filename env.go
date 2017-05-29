@@ -212,7 +212,8 @@ func (r *rawEnv) Close() (err error) {
 		r.devConn.Close(),
 	}
 	if r.containerID != "" {
-		errs = append(errs, exec.Command("docker", "kill", r.containerID).Run())
+		_, e := dockerCommand("kill", r.containerID)
+		errs = append(errs, e)
 	}
 
 	if r.killSocket != nil {
@@ -256,7 +257,7 @@ func dockerRun(container string, spec *EnvSpec) (id string, err error) {
 		fmt.Sprintf("--window-size=%d,%d", spec.Width, spec.Height),
 	}
 
-	output, err := exec.Command("docker", args...).Output()
+	output, err := dockerCommand(args...)
 	if err != nil {
 		return "", essentials.AddCtx("docker run",
 			fmt.Errorf("%s (make sure docker is up-to-date)", err))
@@ -267,7 +268,7 @@ func dockerRun(container string, spec *EnvSpec) (id string, err error) {
 
 func dockerBoundPorts(containerID string) (mapping map[string]string, err error) {
 	defer essentials.AddCtxTo("docker inspect", &err)
-	rawJSON, err := exec.Command("docker", "inspect", containerID).Output()
+	rawJSON, err := dockerCommand("inspect", containerID)
 	if err != nil {
 		return nil, err
 	}
@@ -291,6 +292,17 @@ func dockerBoundPorts(containerID string) (mapping map[string]string, err error)
 			return nil, errors.New("unexpected number of host ports")
 		}
 		mapping[containerPort] = hostPorts[0].HostPort
+	}
+	return
+}
+
+func dockerCommand(args ...string) (output []byte, err error) {
+	output, err = exec.Command("docker", args...).Output()
+	if err != nil {
+		if eo, ok := err.(*exec.ExitError); ok && len(eo.Stderr) > 0 {
+			stderrMsg := strings.TrimSpace(string(eo.Stderr))
+			err = fmt.Errorf("%s: %s", eo.String(), stderrMsg)
+		}
 	}
 	return
 }
