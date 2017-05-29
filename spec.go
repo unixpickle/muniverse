@@ -36,6 +36,17 @@ var EnvSpecs = []*EnvSpec{
 		Width:   320,
 		Height:  433,
 	},
+
+	{
+		Name:    "BubblesShooter-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/b/bubbles-shooter/11-2be95/",
+		Width:   522,
+		Height:  348,
+
+		KeyWhitelist: []string{
+			"Space",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

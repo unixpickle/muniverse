@@ -1,0 +1,14 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Prepare for the famobi script.
+# Opt to manually inject js/all.js and delete
+# the famobi_gameJS declaration.
+mv "$DIR/index.html" "$DIR/html_pre_bubblesshooter.html"
+cat "$DIR/html_pre_bubblesshooter.html" |
+  sed -E 's/window\.famobi_gameJS = \[.*//g' |
+  sed -E $'s/\\/\\/ do nothing,.*//g' |
+  sed -E $'s/^( |\t)*\\}\\];//g' |
+  sed -E 's/(<\/body>)/<script src="js\/all.js"><\/script>\1/g' \
+  > "$DIR/index.html"
