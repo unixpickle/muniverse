@@ -156,6 +156,7 @@
   }
 
   FakeTime.prototype._installInterval = function() {
+    var runningIntervals = {};
     window.setInterval = function() {
       var timeoutArgs = [];
       for (var i = 0; i < arguments.length; ++i) {
@@ -168,15 +169,16 @@
 
       var tickHandler = timeoutArgs[0];
       var id;
+      var timers = this._timers;
       timeoutArgs[0] = function() {
         tickHandler.apply(this, arguments);
         // Deal with case where clearInterval is called
         // from within the handler.
-        if (timeouts.hasOwnProperty(id)) {
+        if (runningIntervals.hasOwnProperty(id)) {
           var newID = setTimeout.apply(window, timeoutArgs);
 
           // Reuse the original timer ID.
-          this._timers.forEach(function(timer) {
+          timers.forEach(function(timer) {
             if (timer.id === newID) {
               timer.id = id;
             }
@@ -184,12 +186,13 @@
         }
       };
       id = setTimeout.apply(window, timeoutArgs);
-
+      runningIntervals[id] = true;
       return id;
     }.bind(this);
 
     window.clearInterval = function(id) {
       clearTimeout(id);
+      delete runningIntervals[id];
     }
   };
 
