@@ -25,8 +25,8 @@ var EnvSpecs = []*EnvSpec{
 		Height:  497,
 
 		KeyWhitelist: []string{
-			"KeyLeft",
-			"KeyRight",
+			"ArrowLeft",
+			"ArrowRight",
 		},
 	},
 
@@ -55,8 +55,8 @@ var EnvSpecs = []*EnvSpec{
 		Height:  320,
 
 		KeyWhitelist: []string{
-			"KeyLeft",
-			"KeyRight",
+			"ArrowLeft",
+			"ArrowRight",
 		},
 	},
 }

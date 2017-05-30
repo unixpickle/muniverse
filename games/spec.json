@@ -150,7 +150,7 @@
     },
     "width": 320,
     "height": 497,
-    "key_whitelist": ["KeyLeft", "KeyRight"]
+    "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
     "name": "Jewelish-v0",
@@ -525,6 +525,6 @@
     },
     "width": 480,
     "height": 320,
-    "key_whitelist": ["KeyLeft", "KeyRight"]
+    "key_whitelist": ["ArrowLeft", "ArrowRight"]
   }
 ]
