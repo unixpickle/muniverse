@@ -251,6 +251,7 @@
     "base": "http://games.cdn.famobi.com/html5games/b/bubbles-shooter/11-2be95/",
     "top_injections": [
       "faketime.js",
+      "faketime_id.js",
       "famobi.js"
     ],
     "bottom_injections": [
