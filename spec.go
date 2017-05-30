@@ -47,6 +47,18 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 	},
+
+	{
+		Name:    "PenguinSkip-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/p/penguin-skip/72b65ff0/",
+		Width:   480,
+		Height:  320,
+
+		KeyWhitelist: []string{
+			"KeyLeft",
+			"KeyRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
