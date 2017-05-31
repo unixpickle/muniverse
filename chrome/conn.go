@@ -77,7 +77,7 @@ func (c *Conn) Error() error {
 	return c.firstErr
 }
 
-// logCopy returns a copy of the console log messages.
+// consoleLog returns a copy of the console log messages.
 func (c *Conn) consoleLog() []string {
 	c.logLock.RLock()
 	defer c.logLock.RUnlock()
