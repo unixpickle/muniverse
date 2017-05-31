@@ -77,8 +77,9 @@ func (c *Conn) Error() error {
 	return c.firstErr
 }
 
-// consoleLog returns a copy of the console log messages.
-func (c *Conn) consoleLog() []string {
+// ConsoleLog returns a copy of the console log messages.
+// This may be cleared on page refresh.
+func (c *Conn) ConsoleLog() []string {
 	c.logLock.RLock()
 	defer c.logLock.RUnlock()
 	return append([]string{}, c.log...)

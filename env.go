@@ -52,6 +52,14 @@ type Env interface {
 	// After Close is called, the Env should not be used
 	// anymore by any Goroutine.
 	Close() error
+
+	// Log returns internal log messages.
+	// For example, it might return information about 404
+	// errors.
+	//
+	// The returned list is a copy and may be modified by
+	// the caller.
+	Log() []string
 }
 
 type rawEnv struct {
@@ -237,6 +245,10 @@ func (r *rawEnv) Close() (err error) {
 		}
 	}
 	return nil
+}
+
+func (r *rawEnv) Log() []string {
+	return r.devConn.ConsoleLog()
 }
 
 func (r *rawEnv) envURL() string {

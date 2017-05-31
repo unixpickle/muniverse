@@ -64,7 +64,7 @@ RetryLoop:
 		// TODO: see if this is necessary.
 		time.Sleep(time.Second)
 
-		for _, item := range c.consoleLog() {
+		for _, item := range c.ConsoleLog() {
 			if strings.Contains(item, "net::ERR_NETWORK_CHANGED") {
 				continue RetryLoop
 			}
