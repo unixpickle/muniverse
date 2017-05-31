@@ -13,5 +13,5 @@ fsserver -path=/downloaded_games &
   "$@" &
 
 # Use a socket close to trigger termination.
-nc -l 1337
+netwait -port 1337 -timeout 1m
 kill -9 $(jobs -p)

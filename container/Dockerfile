@@ -31,7 +31,9 @@ RUN curl https://www.googleapis.com/download/storage/v1/b/chromium-browser-snaps
 
 COPY run.sh /run.sh
 COPY downloaded_games /downloaded_games
-RUN chmod +x /run.sh
+COPY netwait /go/src/netwait
+RUN chmod +x /run.sh \
+  && go build -o /usr/local/bin/netwait /go/src/netwait/main.go
 
 EXPOSE 9222 1337
 
