@@ -59,6 +59,18 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 	},
+
+	{
+		Name:    "MinimalDots-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/m/minimal-dots/v2/",
+		Width:   320,
+		Height:  480,
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

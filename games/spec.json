@@ -526,5 +526,52 @@
     "width": 480,
     "height": 320,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
+  },
+  {
+    "name": "MinimalDots-v0",
+    "base": "http://games.cdn.famobi.com/html5games/m/minimal-dots/v2/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "MinimalDots-v0.js"
+    ],
+    "resources": [
+      "dist/all.js",
+      "data.js",
+      "loading-logo.png",
+      "images/background.png",
+      "images/copyright-sheet0.png",
+      "images/animation-sheet0.png",
+      "images/ltap-sheet0.png",
+      "images/title-sheet0.png",
+      "images/pauset-sheet0.png",
+      "images/playbtn-sheet0.png",
+      "images/audiobtn-sheet0.png",
+      "images/audiobtn-sheet1.png",
+      "images/restartbtn-sheet0.png",
+      "images/exitbtn-sheet0.png",
+      "images/blackdot-sheet0.png",
+      "images/whitedot-sheet0.png",
+      "images/ghostdotup-sheet0.png",
+      "images/sprite-sheet0.png",
+      "media/end.ogg",
+      "media/move.ogg",
+      "media/points.ogg",
+      "media/tap.ogg",
+      "fg_i18n/en/images/pauset-sheet0.png"
+    ],
+    "processors": [
+      "MinimalDots-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "minimal-dots"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": ["ArrowLeft", "ArrowRight"]
   }
 ]

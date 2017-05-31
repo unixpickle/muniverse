@@ -1,0 +1,18 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Format famobi_gameJS properly.
+mv "$DIR/index.html" "$DIR/index_pre_minimaldots.html"
+cat "$DIR/index_pre_minimaldots.html" |
+  sed -E $'s/"dist\\/all\\.js\\",/\\\n/g' |
+  sed -E $'s/^( |\t)*\\}\\];/  \\}\\\n ];/g' |
+  sed -E 's/(<\/body>)/<script src="dist\/all\.js"><\/script>\1/g' \
+  > "$DIR/index.html"
+
+# Remove byte order mark from index.html.
+oldName="$DIR/index_pre_minimaldots.html"
+mv "$DIR/index.html" "$oldName"
+cat "$oldName" |
+  tail -c +4 \
+  > "$DIR/index.html"
