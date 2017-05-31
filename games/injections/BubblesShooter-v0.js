@@ -8,7 +8,9 @@
     init: function() {
       return pollAndWait(MENU_TIMEOUT, function() {
         return 'undefined' !== typeof window.gameEngine &&
-          gameEngine.scenes.length === 4;
+          gameEngine.scenes.length === 4 &&
+          gameEngine.scenes[0].state === 2 &&
+          'undefined' !== typeof gameEngine.scenes[3].levelManager.jsonString;
       }).then(function() {
         var cb = function() {
           gameIsOver = true;
