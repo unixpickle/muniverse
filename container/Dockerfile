@@ -19,9 +19,12 @@ RUN apt-get update \
   && apt-get remove -y chromium-browser golang git \
   && rm -rf /var/lib/apt/lists/*
 
-# Chromium revision 474638.
-# See https://github.com/scheib/chromium-latest-linux.
-RUN curl https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F474638%2Fchrome-linux.zip?alt=media >/chrome.zip \
+# Chromium revision 464640.
+# See:
+# https://www.chromium.org/getting-involved/download-chromium.
+# https://github.com/scheib/chromium-latest-linux
+# https://omahaproxy.appspot.com
+RUN curl https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F464640%2Fchrome-linux.zip?alt=media >/chrome.zip \
   && unzip -q /chrome.zip \
   && rm /chrome.zip \
   && ln -s /usr/lib/x86_64-linux-gnu/libOSMesa.so /chrome-linux/libosmesa.so
