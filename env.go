@@ -266,7 +266,6 @@ func dockerRun(container string, spec *EnvSpec) (id string, err error) {
 		"--rm", // Automatically delete the container.
 		"-i",   // Give netcat a stdin to read from.
 		container,
-		"--disable-webgl",
 		fmt.Sprintf("--window-size=%d,%d", spec.Width, spec.Height),
 	}
 
