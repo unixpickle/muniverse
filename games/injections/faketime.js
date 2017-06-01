@@ -81,7 +81,11 @@
       // doesn't cause an infinite loop.
       if (this._currentTime > timer.deadline) {
         this._timers.splice(i, 1);
-        timer.func();
+        try {
+          timer.func();
+        } catch (e) {
+          console.log('exception in timer', e);
+        }
         --i;
       }
     }
@@ -173,7 +177,11 @@
 
       var tickHandler = timeoutArgs[0];
       timeoutArgs[0] = function() {
-        tickHandler.apply(this, arguments);
+        try {
+          tickHandler.apply(this, arguments);
+        } catch (e) {
+          console.log('exception in interval', e);
+        }
         // Deal with case where clearInterval is called
         // from within the handler.
         if (timeouts.hasOwnProperty(id)) {

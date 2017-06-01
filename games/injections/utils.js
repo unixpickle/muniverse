@@ -4,15 +4,21 @@ function pollAndWait(timeout, check) {
   return new Promise(function(resolve, reject) {
     var ival;
     ival = setInterval(function() {
-      if (check()) {
-        clearInterval(ival);
-        resolve();
+      try {
+        if (!check()) {
+          timeout -= INTERVAL;
+          if (timeout < 0) {
+            clearInterval(ival);
+            reject('timeout surpassed');
+          }
+          return;
+        }
+      } catch (e) {
+        reject(e);
+        return;
       }
-      timeout -= INTERVAL;
-      if (timeout < 0) {
-        clearInterval(ival);
-        reject('timeout surpassed');
-      }
+      clearInterval(ival);
+      resolve();
     }, INTERVAL);
   });
 }
