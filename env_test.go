@@ -16,6 +16,7 @@ func TestEnvs(t *testing.T) {
 				t.Error(err)
 				return
 			}
+			defer env.Close()
 			for i := 0; i < 2; i++ {
 				if err := env.Reset(); err != nil {
 					t.Error(err)
