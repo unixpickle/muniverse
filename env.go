@@ -176,7 +176,9 @@ func (r *rawEnv) Reset() (err error) {
 	if err != nil {
 		return
 	}
+
 	err = r.devConn.EvalPromise(ctx, "window.muniverse.score();", &r.lastScore)
+	err = essentials.AddCtx("get score", err)
 
 	return
 }
@@ -212,6 +214,7 @@ func (r *rawEnv) Step(t time.Duration, events ...interface{}) (reward float64,
 	lastScore := r.lastScore
 	err = r.devConn.EvalPromise(ctx, "window.muniverse.score();", &r.lastScore)
 	if err != nil {
+		err = essentials.AddCtx("get score", err)
 		return
 	}
 	reward = r.lastScore - lastScore
