@@ -12,6 +12,7 @@
     init: function() {
       return pollAndWait(MENU_TIMEOUT, function() {
         return typeof cr_getC2Runtime !== 'undefined' &&
+          cr_getC2Runtime().running_layout &&
           cr_getC2Runtime().running_layout.name === 'Game';
       }).then(function() {
         var actions = [

@@ -10,6 +10,7 @@
     init: function() {
       return pollAndWait(MENU_TIMEOUT, function() {
         return 'undefined' !== typeof cr_getC2Runtime &&
+          cr_getC2Runtime().running_layout &&
           cr_getC2Runtime().running_layout.name === 'MainScreen';
       }).then(function() {
         var rt = cr_getC2Runtime();
