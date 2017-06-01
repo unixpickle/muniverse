@@ -1,6 +1,7 @@
 package muniverse
 
 import (
+	"context"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -19,7 +20,7 @@ const (
 	defaultContainer = "unixpickle/muniverse:0.6.3"
 )
 
-const refreshTimeout = time.Minute
+const callTimeout = time.Minute * 2
 
 // An Env controls and observes an environment.
 type Env interface {
@@ -88,17 +89,21 @@ func NewEnv(spec *EnvSpec) (Env, error) {
 func NewEnvContainer(container string, spec *EnvSpec) (env Env, err error) {
 	defer essentials.AddCtxTo("create environment", &err)
 
-	id, err := dockerRun(container, spec)
+	ctx, cancel := callCtx()
+	defer cancel()
+
+	id, err := dockerRun(ctx, container, spec)
 	if err != nil {
 		return
 	}
 
-	ports, err := dockerBoundPorts(id)
+	ports, err := dockerBoundPorts(ctx, id)
 	if err != nil {
 		return
 	}
 
-	killSock, err := net.Dial("tcp", "localhost:"+ports["1337/tcp"])
+	killSock, err := (&net.Dialer{}).DialContext(ctx, "tcp",
+		"localhost:"+ports["1337/tcp"])
 	if err != nil {
 		return
 	}
@@ -108,7 +113,7 @@ func NewEnvContainer(container string, spec *EnvSpec) (env Env, err error) {
 		}
 	}()
 
-	conn, err := connectDevTools("localhost:" + ports["9222/tcp"])
+	conn, err := connectDevTools(ctx, "localhost:"+ports["9222/tcp"])
 	if err != nil {
 		return
 	}
@@ -136,7 +141,10 @@ func NewEnvContainer(container string, spec *EnvSpec) (env Env, err error) {
 func NewEnvChrome(host, gameHost string, spec *EnvSpec) (env Env, err error) {
 	defer essentials.AddCtxTo("create environment", &err)
 
-	conn, err := connectDevTools(host)
+	ctx, cancel := callCtx()
+	defer cancel()
+
+	conn, err := connectDevTools(ctx, host)
 	if err != nil {
 		return
 	}
@@ -156,16 +164,19 @@ func (r *rawEnv) Spec() *EnvSpec {
 func (r *rawEnv) Reset() (err error) {
 	defer essentials.AddCtxTo("reset environment", &err)
 
-	err = r.devConn.NavigateSafe(r.envURL(), time.After(refreshTimeout))
+	ctx, cancel := callCtx()
+	defer cancel()
+
+	err = r.devConn.NavigateSafe(ctx, r.envURL())
 	if err != nil {
 		return
 	}
 
-	err = r.devConn.EvalPromise("window.muniverse.init();", nil)
+	err = r.devConn.EvalPromise(ctx, "window.muniverse.init();", nil)
 	if err != nil {
 		return
 	}
-	err = r.devConn.EvalPromise("window.muniverse.score();", &r.lastScore)
+	err = r.devConn.EvalPromise(ctx, "window.muniverse.score();", &r.lastScore)
 
 	return
 }
@@ -174,12 +185,15 @@ func (r *rawEnv) Step(t time.Duration, events ...interface{}) (reward float64,
 	done bool, err error) {
 	defer essentials.AddCtxTo("step environment", &err)
 
+	ctx, cancel := callCtx()
+	defer cancel()
+
 	for _, event := range events {
 		switch event := event.(type) {
 		case *chrome.MouseEvent:
-			err = r.devConn.DispatchMouseEvent(event)
+			err = r.devConn.DispatchMouseEvent(ctx, event)
 		case *chrome.KeyEvent:
-			err = r.devConn.DispatchKeyEvent(event)
+			err = r.devConn.DispatchKeyEvent(ctx, event)
 		default:
 			err = fmt.Errorf("unsupported event type: %T", event)
 		}
@@ -190,13 +204,13 @@ func (r *rawEnv) Step(t time.Duration, events ...interface{}) (reward float64,
 
 	millis := int(t / time.Millisecond)
 	timeStr := strconv.Itoa(millis)
-	err = r.devConn.EvalPromise("window.muniverse.step("+timeStr+");", &done)
+	err = r.devConn.EvalPromise(ctx, "window.muniverse.step("+timeStr+");", &done)
 	if err != nil {
 		return
 	}
 
 	lastScore := r.lastScore
-	err = r.devConn.EvalPromise("window.muniverse.score();", &r.lastScore)
+	err = r.devConn.EvalPromise(ctx, "window.muniverse.score();", &r.lastScore)
 	if err != nil {
 		return
 	}
@@ -206,7 +220,10 @@ func (r *rawEnv) Step(t time.Duration, events ...interface{}) (reward float64,
 }
 
 func (r *rawEnv) Observe() (obs Obs, err error) {
-	pngData, err := r.devConn.ScreenshotPNG()
+	ctx, cancel := callCtx()
+	defer cancel()
+
+	pngData, err := r.devConn.ScreenshotPNG(ctx)
 	if err != nil {
 		return
 	}
@@ -216,11 +233,14 @@ func (r *rawEnv) Observe() (obs Obs, err error) {
 func (r *rawEnv) Close() (err error) {
 	defer essentials.AddCtxTo("close environment", &err)
 
+	ctx, cancel := callCtx()
+	defer cancel()
+
 	errs := []error{
 		r.devConn.Close(),
 	}
 	if r.containerID != "" {
-		_, e := dockerCommand("kill", r.containerID)
+		_, e := dockerCommand(ctx, "kill", r.containerID)
 		errs = append(errs, e)
 	}
 
@@ -255,7 +275,12 @@ func (r *rawEnv) envURL() string {
 	return "http://" + r.gameHost + "/" + r.spec.Name
 }
 
-func dockerRun(container string, spec *EnvSpec) (id string, err error) {
+func callCtx() (context.Context, context.CancelFunc) {
+	return context.WithTimeout(context.Background(), callTimeout)
+}
+
+func dockerRun(ctx context.Context, container string, spec *EnvSpec) (id string,
+	err error) {
 	args := []string{
 		"run",
 		"-p",
@@ -269,7 +294,7 @@ func dockerRun(container string, spec *EnvSpec) (id string, err error) {
 		fmt.Sprintf("--window-size=%d,%d", spec.Width, spec.Height),
 	}
 
-	output, err := dockerCommand(args...)
+	output, err := dockerCommand(ctx, args...)
 	if err != nil {
 		return "", essentials.AddCtx("docker run",
 			fmt.Errorf("%s (make sure docker is up-to-date)", err))
@@ -278,9 +303,10 @@ func dockerRun(container string, spec *EnvSpec) (id string, err error) {
 	return strings.TrimSpace(string(output)), nil
 }
 
-func dockerBoundPorts(containerID string) (mapping map[string]string, err error) {
+func dockerBoundPorts(ctx context.Context,
+	containerID string) (mapping map[string]string, err error) {
 	defer essentials.AddCtxTo("docker inspect", &err)
-	rawJSON, err := dockerCommand("inspect", containerID)
+	rawJSON, err := dockerCommand(ctx, "inspect", containerID)
 	if err != nil {
 		return nil, err
 	}
@@ -308,8 +334,8 @@ func dockerBoundPorts(containerID string) (mapping map[string]string, err error)
 	return
 }
 
-func dockerCommand(args ...string) (output []byte, err error) {
-	output, err = exec.Command("docker", args...).Output()
+func dockerCommand(ctx context.Context, args ...string) (output []byte, err error) {
+	output, err = exec.CommandContext(ctx, "docker", args...).Output()
 	if err != nil {
 		if eo, ok := err.(*exec.ExitError); ok && len(eo.Stderr) > 0 {
 			stderrMsg := strings.TrimSpace(string(eo.Stderr))
@@ -319,15 +345,19 @@ func dockerCommand(args ...string) (output []byte, err error) {
 	return
 }
 
-func connectDevTools(host string) (conn *chrome.Conn, err error) {
+func connectDevTools(ctx context.Context, host string) (conn *chrome.Conn,
+	err error) {
 	var endpoints []*chrome.Endpoint
 	for i := 0; i < 5; i++ {
-		endpoints, err = chrome.Endpoints(host)
+		endpoints, err = chrome.Endpoints(ctx, host)
 		if err == nil {
 			break
 		}
-		// Give Chrome a moment to start up if needed.
-		time.Sleep(time.Second)
+		select {
+		case <-time.After(time.Second):
+		case <-ctx.Done():
+			return nil, ctx.Err()
+		}
 	}
 	if err != nil {
 		return
@@ -335,7 +365,7 @@ func connectDevTools(host string) (conn *chrome.Conn, err error) {
 
 	for _, ep := range endpoints {
 		if ep.Type == "page" {
-			return chrome.NewConn(ep.WebSocketURL)
+			return chrome.NewConn(ctx, ep.WebSocketURL)
 		}
 	}
 

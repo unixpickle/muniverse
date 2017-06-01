@@ -1,6 +1,10 @@
 package chrome
 
-import "github.com/unixpickle/essentials"
+import (
+	"context"
+
+	"github.com/unixpickle/essentials"
+)
 
 // KeyEventType is a JavaScript keyboard event type.
 type KeyEventType string
@@ -123,9 +127,9 @@ var KeyEvents = map[string]KeyEvent{
 }
 
 // DispatchKeyEvent triggers a keyboard event.
-func (c *Conn) DispatchKeyEvent(k *KeyEvent) (err error) {
+func (c *Conn) DispatchKeyEvent(ctx context.Context, k *KeyEvent) (err error) {
 	defer essentials.AddCtxTo("dispatch key event", &err)
-	return c.call("Input.dispatchKeyEvent", k, nil)
+	return c.call(ctx, "Input.dispatchKeyEvent", k, nil)
 }
 
 // MouseEventType is a JavaScript mouse event type.
@@ -160,7 +164,7 @@ type MouseEvent struct {
 }
 
 // DispatchMouseEvent triggers a mouse event.
-func (c *Conn) DispatchMouseEvent(m *MouseEvent) (err error) {
+func (c *Conn) DispatchMouseEvent(ctx context.Context, m *MouseEvent) (err error) {
 	defer essentials.AddCtxTo("dispatch mouse event", &err)
-	return c.call("Input.dispatchMouseEvent", m, nil)
+	return c.call(ctx, "Input.dispatchMouseEvent", m, nil)
 }

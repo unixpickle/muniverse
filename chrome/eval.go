@@ -1,6 +1,7 @@
 package chrome
 
 import (
+	"context"
 	"encoding/json"
 	"errors"
 
@@ -13,7 +14,8 @@ import (
 // If retObj is non-nil, it is overwritten with the
 // unmarshalled result of the Promise.
 // Unmarshalling works like it does in encoding/json.
-func (c *Conn) EvalPromise(code string, retObj interface{}) (err error) {
+func (c *Conn) EvalPromise(ctx context.Context, code string,
+	retObj interface{}) (err error) {
 	defer essentials.AddCtxTo("eval promise", &err)
 
 	var rawResult struct {
@@ -27,7 +29,7 @@ func (c *Conn) EvalPromise(code string, retObj interface{}) (err error) {
 
 	rawResult.Result.Value = retObj
 
-	resErr := c.call("Runtime.evaluate", map[string]interface{}{
+	resErr := c.call(ctx, "Runtime.evaluate", map[string]interface{}{
 		"expression":    code,
 		"returnByValue": true,
 		"awaitPromise":  true,

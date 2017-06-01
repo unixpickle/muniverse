@@ -2,6 +2,7 @@ package chrome
 
 import (
 	"bytes"
+	"context"
 	"encoding/base64"
 	"io/ioutil"
 
@@ -10,28 +11,30 @@ import (
 
 // ScreenshotPNG captures a screenshot of the page and
 // returns the raw PNG image data.
-func (c *Conn) ScreenshotPNG() (imageData []byte, err error) {
+func (c *Conn) ScreenshotPNG(ctx context.Context) (imageData []byte, err error) {
 	defer essentials.AddCtxTo("capture PNG screenshot", &err)
-	return c.captureScreenshot(nil)
+	return c.captureScreenshot(ctx, nil)
 }
 
 // ScreenshotJPEG captures a compressed screenshot of the
 // page and returns the raw JPEG image data.
 //
 // The quality is an integer in the range [0, 100].
-func (c *Conn) ScreenshotJPEG(quality int) (imageData []byte, err error) {
+func (c *Conn) ScreenshotJPEG(ctx context.Context, quality int) (imageData []byte,
+	err error) {
 	defer essentials.AddCtxTo("capture JPEG screenshot", &err)
-	return c.captureScreenshot(map[string]interface{}{
+	return c.captureScreenshot(ctx, map[string]interface{}{
 		"format":  "jpeg",
 		"quality": quality,
 	})
 }
 
-func (c *Conn) captureScreenshot(params interface{}) ([]byte, error) {
+func (c *Conn) captureScreenshot(ctx context.Context, params interface{}) ([]byte,
+	error) {
 	var resObj struct {
 		Data string `json:"data"`
 	}
-	if err := c.call("Page.captureScreenshot", params, &resObj); err != nil {
+	if err := c.call(ctx, "Page.captureScreenshot", params, &resObj); err != nil {
 		return nil, err
 	}
 	dataReader := bytes.NewReader([]byte(resObj.Data))

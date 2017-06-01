@@ -1,6 +1,7 @@
 package chrome
 
 import (
+	"context"
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
@@ -30,7 +31,8 @@ type Endpoint struct {
 //
 // For example, the host might be "localhost:9222" and the
 // result might include a list of open tabs.
-func Endpoints(host string) (endpoints []*Endpoint, err error) {
+func Endpoints(ctx context.Context, host string) (endpoints []*Endpoint,
+	err error) {
 	defer essentials.AddCtxTo("list DevTools endpoints", &err)
 	u := url.URL{
 		Host:   host,
@@ -38,7 +40,12 @@ func Endpoints(host string) (endpoints []*Endpoint, err error) {
 		Path:   "/json",
 	}
 
-	resp, err := http.Get(u.String())
+	req, err := http.NewRequest("GET", u.String(), nil)
+	if err != nil {
+		return
+	}
+	req = req.WithContext(ctx)
+	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return nil, err
 	}

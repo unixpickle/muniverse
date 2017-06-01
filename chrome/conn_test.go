@@ -1,6 +1,7 @@
 package chrome
 
 import (
+	"context"
 	"reflect"
 	"testing"
 	"time"
@@ -20,7 +21,8 @@ func TestConnCall(t *testing.T) {
 		} `json:"result"`
 	}
 
-	resErr := conn.call("Runtime.evaluate", map[string]interface{}{
+	ctx := context.Background()
+	resErr := conn.call(ctx, "Runtime.evaluate", map[string]interface{}{
 		"expression":    "(function(){return {number: (3+2)*3, string: 'hi'};})()",
 		"returnByValue": true,
 	}, &actual)
@@ -45,14 +47,15 @@ func TestConnPoll(t *testing.T) {
 	var result struct {
 		Timestamp float64 `json:"timestamp"`
 	}
-	errChan := conn.poll("Page.loadEventFired", &result)
+	ctx := context.Background()
+	errChan := conn.poll(ctx, "Page.loadEventFired", &result)
 
 	// Trigger reload event.
-	if err := conn.call("Page.enable", nil, nil); err != nil {
+	if err := conn.call(ctx, "Page.enable", nil, nil); err != nil {
 		t.Fatal(err)
 	}
-	defer conn.call("Page.disable", nil, nil)
-	if err := conn.call("Page.reload", nil, nil); err != nil {
+	defer conn.call(ctx, "Page.disable", nil, nil)
+	if err := conn.call(ctx, "Page.reload", nil, nil); err != nil {
 		t.Fatal(err)
 	}
 

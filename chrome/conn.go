@@ -1,10 +1,12 @@
 package chrome
 
 import (
+	"context"
 	"encoding/json"
 	"errors"
 	"io"
 	"io/ioutil"
+	"net"
 	"sync"
 
 	"github.com/gorilla/websocket"
@@ -37,9 +39,13 @@ type Conn struct {
 }
 
 // NewConn connects to an endpoint's WebSocket URL.
-func NewConn(websocketURL string) (conn *Conn, err error) {
+func NewConn(ctx context.Context, websocketURL string) (conn *Conn, err error) {
 	defer essentials.AddCtxTo("connect to DevTools endpoint", &err)
-	dialer := websocket.Dialer{}
+	dialer := websocket.Dialer{
+		NetDial: func(network, addr string) (net.Conn, error) {
+			return (&net.Dialer{}).DialContext(ctx, network, addr)
+		},
+	}
 	ws, _, err := dialer.Dial(websocketURL, nil)
 	if err != nil {
 		return
@@ -55,7 +61,7 @@ func NewConn(websocketURL string) (conn *Conn, err error) {
 		defer close(doneChan)
 		conn.readLoop()
 	}()
-	if err := conn.call("Log.enable", nil, nil); err != nil {
+	if err := conn.call(ctx, "Log.enable", nil, nil); err != nil {
 		conn.Close()
 		return nil, err
 	}
@@ -101,7 +107,7 @@ func (c *Conn) clearLog() {
 // Just because a call fails with an error doesn't mean
 // the connection is dead; it could simply mean that the
 // result didn't unmarshal.
-func (c *Conn) call(name string, params interface{},
+func (c *Conn) call(ctx context.Context, name string, params interface{},
 	resObj interface{}) (err error) {
 	defer essentials.AddCtxTo("DevTools "+name+" call", &err)
 
@@ -135,6 +141,8 @@ func (c *Conn) call(name string, params interface{},
 		return unmarshalErr
 	case <-c.doneChan:
 		return errors.New("closed before reading return value")
+	case <-ctx.Done():
+		return ctx.Err()
 	}
 }
 
@@ -153,7 +161,8 @@ func (c *Conn) call(name string, params interface{},
 // since poll is non-blocking.
 // However, it will never be written after the error
 // channel has been closed.
-func (c *Conn) poll(name string, resObj interface{}) <-chan error {
+func (c *Conn) poll(ctx context.Context, name string,
+	resObj interface{}) <-chan error {
 	doneChan := make(chan error, 1)
 
 	c.pollingLock.Lock()
@@ -170,6 +179,8 @@ func (c *Conn) poll(name string, resObj interface{}) <-chan error {
 		case err = <-doneChan:
 		case <-c.doneChan:
 			err = errors.New("closed before receiving event")
+		case <-ctx.Done():
+			err = ctx.Err()
 		}
 		if err != nil {
 			res <- essentials.AddCtx("poll DevTools "+name+" event", err)

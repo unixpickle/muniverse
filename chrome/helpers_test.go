@@ -1,6 +1,7 @@
 package chrome
 
 import (
+	"context"
 	"os"
 	"testing"
 )
@@ -15,7 +16,7 @@ func testingHost(t *testing.T) string {
 
 func testingConn(t *testing.T, page bool) *Conn {
 	host := testingHost(t)
-	endpoints, err := Endpoints(host)
+	endpoints, err := Endpoints(context.Background(), host)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -26,7 +27,8 @@ func testingConn(t *testing.T, page bool) *Conn {
 		if page && endpoint.Type != "page" {
 			continue
 		}
-		conn, err := NewConn(endpoint.WebSocketURL)
+		ctx := context.Background()
+		conn, err := NewConn(ctx, endpoint.WebSocketURL)
 		if err != nil {
 			t.Fatal(err)
 		}
