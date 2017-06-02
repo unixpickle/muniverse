@@ -20,10 +20,12 @@ func TestEnvs(t *testing.T) {
 			for i := 0; i < 2; i++ {
 				if err := env.Reset(); err != nil {
 					t.Error(err)
+					t.Log(env.Log())
 					break
 				}
 				if _, _, err := env.Step(time.Millisecond); err != nil {
 					t.Error(err)
+					t.Log(env.Log())
 					break
 				}
 			}

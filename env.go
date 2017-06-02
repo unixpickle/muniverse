@@ -17,7 +17,7 @@ import (
 
 const (
 	portRange        = "9000-9999"
-	defaultContainer = "unixpickle/muniverse:0.6.6"
+	defaultContainer = "unixpickle/muniverse:0.7.0"
 )
 
 const callTimeout = time.Minute * 2

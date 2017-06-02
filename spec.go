@@ -71,6 +71,19 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 	},
+
+	{
+		Name:    "BurninRubber-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/b/burnin-rubber/11-bc4df/",
+		Width:   320,
+		Height:  480,
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"Space",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

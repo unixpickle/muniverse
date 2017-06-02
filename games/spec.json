@@ -624,5 +624,79 @@
     "width": 320,
     "height": 480,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
+  },
+  {
+    "name": "BurninRubber-v0",
+    "base": "http://games.cdn.famobi.com/html5games/b/burnin-rubber/11-bc4df/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "BurninRubber-v0.js"
+    ],
+    "resources": [
+      "index.css",
+      "images/orientation.jpg",
+      "js/all.js",
+      "assets/UI/PreLoaderBackground.jpg",
+      "assets/UI/PreloaderBar.jpg",
+      "assets/UI/PreloaderBarBackground.jpg",
+      "assets/globals.json",
+      "assets/data.json",
+      "assets/loadingArray.json",
+      "assets/localization.json",
+      "assets/audio/sfx/Audio_SFX.ogg",
+      "assets/audio/music/Game_Music.ogg",
+      "assets/sprites/Explosion1.jpg",
+      "assets/sprites/Explosion1.xml",
+      "assets/UI/MenuCarIcons.png",
+      "assets/UI/MenuCarIcons.xml",
+      "assets/UI/MenuWeaponIcons.png",
+      "assets/UI/MenuWeaponIcons.xml",
+      "assets/sprites/CarsAtlas.png",
+      "assets/sprites/CarsAtlas.xml",
+      "assets/sprites/WeaponsAtlas.png",
+      "assets/sprites/WeaponsAtlas.xml",
+      "assets/sprites/EffectsAdditiveAtlas.jpg",
+      "assets/sprites/EffectsAdditiveAtlas.xml",
+      "assets/sprites/MiscAtlas.png",
+      "assets/sprites/MiscAtlas.xml",
+      "assets/UI/InterfaceAtlas.png",
+      "assets/UI/InterfaceAtlas.xml",
+      "assets/fonts/Impact144.png",
+      "assets/fonts/Impact144.xml",
+      "assets/fonts/VipnagorgiallaDigits144.png",
+      "assets/fonts/VipnagorgiallaDigits144.xml",
+      "assets/UI/MainMenuBackground.jpg",
+      "assets/UI/DefaultMenuBackground.jpg",
+      "assets/UI/DefaultOverlay.png",
+      "assets/UI/DeadOverlay.png",
+      "assets/UI/NewIcon.png",
+      "assets/UI/Help.jpg",
+      "assets/sprites/BrakeButton.png",
+      "assets/sprites/streetsHigh/StreetWater.jpg",
+      "assets/sprites/streetsHigh/StreetCity.jpg",
+      "assets/sprites/streetsHigh/StreetCanyon.jpg",
+      "assets/sprites/streetsHigh/StreetDesert.jpg",
+      "assets/sprites/streetsHigh/StreetGrass.jpg",
+      "assets/sprites/streetsHigh/StreetSnow.jpg",
+      "assets/UI/ButtonBigSheet_384x128.jpg",
+      "assets/UI/ButtonWideSheet_590x128.jpg",
+      "assets/UI/ButtonSquareSheet_290x194.jpg",
+      "assets/UI/ButtonPauseSheet_64x64.png",
+      "assets/UI/ButtonSoundSheet_96x64.png"
+    ],
+    "processors": [
+      "BurninRubber-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "burnin-rubber"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "Space"]
   }
 ]
