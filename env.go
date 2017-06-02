@@ -367,11 +367,10 @@ func dockerCommand(ctx context.Context, args ...string) (output []byte, err erro
 
 func connectDevTools(ctx context.Context, host string) (conn *chrome.Conn,
 	err error) {
-	var endpoints []*chrome.Endpoint
 	for i := 0; i < chromeConnectAttempts; i++ {
-		endpoints, err = chrome.Endpoints(ctx, host)
+		conn, err = attemptDevTools(ctx, host)
 		if err == nil {
-			break
+			return
 		}
 		select {
 		case <-time.After(time.Second):
@@ -379,6 +378,12 @@ func connectDevTools(ctx context.Context, host string) (conn *chrome.Conn,
 			return nil, ctx.Err()
 		}
 	}
+	return
+}
+
+func attemptDevTools(ctx context.Context, host string) (conn *chrome.Conn,
+	err error) {
+	endpoints, err := chrome.Endpoints(ctx, host)
 	if err != nil {
 		return
 	}
