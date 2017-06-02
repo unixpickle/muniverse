@@ -8,6 +8,8 @@
   var FRAME_RATE = 30;
 
   function FakeTime() {
+    this.animationFrameRate = FRAME_RATE;
+
     // Used to track virtual time.
     this._startTime = new Date().getTime();
     this._currentTime = this._startTime;
@@ -254,8 +256,8 @@
       return setTimeout(function() {
         // Yup, for some reason `this` is the callback.
         callback.call(callback, performance.now());
-      }, FRAME_RATE);
-    };
+      }, 1000/this.animationFrameRate);
+    }.bind(this);
     window.cancelAnimationFrame = function(id) {
       clearTimeout(id);
     }
