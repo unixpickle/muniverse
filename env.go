@@ -385,7 +385,7 @@ func attemptDevTools(ctx context.Context, host string) (conn *chrome.Conn,
 	}
 
 	for _, ep := range endpoints {
-		if ep.Type == "page" {
+		if ep.Type == "page" && ep.WebSocketURL != "" {
 			return chrome.NewConn(ctx, ep.WebSocketURL)
 		}
 	}
