@@ -20,7 +20,10 @@ const (
 	defaultContainer = "unixpickle/muniverse:0.7.0"
 )
 
-const callTimeout = time.Minute * 2
+const (
+	callTimeout           = time.Minute * 2
+	chromeConnectAttempts = 10
+)
 
 // This error message occurs very infrequently when doing
 // `docker run` on my machine running Ubuntu 16.04.1.
@@ -365,7 +368,7 @@ func dockerCommand(ctx context.Context, args ...string) (output []byte, err erro
 func connectDevTools(ctx context.Context, host string) (conn *chrome.Conn,
 	err error) {
 	var endpoints []*chrome.Endpoint
-	for i := 0; i < 5; i++ {
+	for i := 0; i < chromeConnectAttempts; i++ {
 		endpoints, err = chrome.Endpoints(ctx, host)
 		if err == nil {
 			break
