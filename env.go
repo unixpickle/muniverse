@@ -119,19 +119,15 @@ func NewEnvContainer(container string, spec *EnvSpec) (env Env, err error) {
 		return
 	}
 
-	killSock, err := (&net.Dialer{}).DialContext(ctx, "tcp",
-		"localhost:"+ports["1337/tcp"])
+	conn, err := connectDevTools(ctx, "localhost:"+ports["9222/tcp"])
 	if err != nil {
 		return
 	}
-	defer func() {
-		if err != nil {
-			killSock.Close()
-		}
-	}()
 
-	conn, err := connectDevTools(ctx, "localhost:"+ports["9222/tcp"])
+	killSock, err := (&net.Dialer{}).DialContext(ctx, "tcp",
+		"localhost:"+ports["1337/tcp"])
 	if err != nil {
+		conn.Close()
 		return
 	}
 
