@@ -22,6 +22,10 @@ const (
 
 const callTimeout = time.Minute * 2
 
+// This error message occurs very infrequently when doing
+// `docker run` on my machine running Ubuntu 16.04.1.
+const occasionalDockerErr = "Error response from daemon: device or resource busy."
+
 // An Env controls and observes an environment.
 type Env interface {
 	// Spec returns details about the environment.
@@ -92,7 +96,17 @@ func NewEnvContainer(container string, spec *EnvSpec) (env Env, err error) {
 	ctx, cancel := callCtx()
 	defer cancel()
 
-	id, err := dockerRun(ctx, container, spec)
+	var id string
+
+	// Retry as a workaround for an occasional error given
+	// by `docker run`.
+	for i := 0; i < 3; i++ {
+		id, err = dockerRun(ctx, container, spec)
+		if err == nil || !strings.Contains(err.Error(), occasionalDockerErr) {
+			break
+		}
+	}
+
 	if err != nil {
 		return
 	}
