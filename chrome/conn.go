@@ -41,6 +41,9 @@ type Conn struct {
 // NewConn connects to an endpoint's WebSocket URL.
 func NewConn(ctx context.Context, websocketURL string) (conn *Conn, err error) {
 	defer essentials.AddCtxTo("connect to DevTools endpoint", &err)
+	if websocketURL == "" {
+		return nil, errors.New("empty websocket URL")
+	}
 	dialer := websocket.Dialer{
 		NetDial: func(network, addr string) (net.Conn, error) {
 			return (&net.Dialer{}).DialContext(ctx, network, addr)
