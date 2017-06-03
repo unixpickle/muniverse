@@ -9,6 +9,7 @@ import (
 	"os/exec"
 	"strconv"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/unixpickle/essentials"
@@ -350,7 +351,11 @@ func dockerBoundPorts(ctx context.Context,
 	return
 }
 
+var dockerLock sync.Mutex
+
 func dockerCommand(ctx context.Context, args ...string) (output []byte, err error) {
+	dockerLock.Lock()
+	defer dockerLock.Unlock()
 	output, err = exec.CommandContext(ctx, "docker", args...).Output()
 	if err != nil {
 		if eo, ok := err.(*exec.ExitError); ok && len(eo.Stderr) > 0 {
