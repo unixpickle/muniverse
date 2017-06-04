@@ -21,6 +21,9 @@
     },
     runActions: function(actions) {
       actions.forEach((x) => cr_getC2Runtime().actsBySid[x].run());
+    },
+    disableActions: function(actions) {
+      actions.forEach((x) => cr_getC2Runtime().actsBySid[x].run = () => null);
     }
   };
 

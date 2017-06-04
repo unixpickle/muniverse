@@ -2,7 +2,6 @@
 
   var c2 = window.construct2api;
 
-
   window.muniverse = {
     init: function() {
       return c2.waitStart('Game').then(function() {

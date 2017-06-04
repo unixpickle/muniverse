@@ -389,6 +389,7 @@
     ],
     "bottom_injections": [
       "utils.js",
+      "construct2.js",
       "PenguinSkip-v0.js"
     ],
     "resources": [
@@ -587,6 +588,7 @@
     ],
     "bottom_injections": [
       "utils.js",
+      "construct2.js",
       "MinimalDots-v0.js"
     ],
     "resources": [
@@ -698,5 +700,94 @@
     "width": 320,
     "height": 480,
     "key_whitelist": ["ArrowLeft", "ArrowRight", "Space"]
+  },
+  {
+    "name": "OnetConnectClassic-v0",
+    "base": "http://games.cdn.famobi.com/html5games/o/onet-connect-classic/v160/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "OnetConnectClassic-v0.js"
+    ],
+    "resources": [
+      "js/all.js",
+      "data.js",
+      "images/tiles-sheet0.png",
+      "images/tiles-sheet1.png",
+      "images/tiles-sheet2.png",
+      "images/dots-sheet0.png",
+      "images/line-sheet0.png",
+      "images/title-sheet0.png",
+      "images/infobutton-sheet1.png",
+      "images/infobutton-sheet0.png",
+      "images/soundmenu-sheet0.png",
+      "images/soundmenu-sheet1.png",
+      "images/brandingplaceholderbutton_transparent-sheet0.png",
+      "images/themebutton-sheet0.png",
+      "images/themebutton-sheet1.png",
+      "images/themebutton-sheet2.png",
+      "images/credits-sheet0.png",
+      "images/cupsymbol-sheet0.png",
+      "images/menufont.png",
+      "images/startbutton-sheet0.png",
+      "images/pause-sheet0.png",
+      "images/pausebuttons-sheet0.png",
+      "images/pausebuttons-sheet1.png",
+      "images/pausebuttons-sheet2.png",
+      "images/soundbutton-sheet0.png",
+      "images/soundbutton-sheet1.png",
+      "images/uisymbols-sheet0.png",
+      "images/gamefont.png",
+      "images/gamebuttons-sheet0.png",
+      "images/gamebuttons-sheet1.png",
+      "images/mark-sheet0.png",
+      "images/tutorial-sheet0.png",
+      "images/popup-sheet0.png",
+      "images/bonus-sheet0.png",
+      "images/bonus-sheet1.png",
+      "images/9patch.png",
+      "images/shinetitle-sheet0.png",
+      "images/gametilebg.png",
+      "images/bonuslid-sheet0.png",
+      "images/sunray-sheet0.png",
+      "images/sparkparticle.png",
+      "images/bonusballs-sheet0.png",
+      "images/bonusballs-sheet1.png",
+      "images/shine-sheet0.png",
+      "images/tileempty.png",
+      "images/tilepurple.png",
+      "images/tilestar.png",
+      "images/gradient-sheet0.png",
+      "images/popfx-sheet0.png",
+      "images/popfx-sheet1.png",
+      "images/autoshuffle-sheet0.png",
+      "images/nomatch-sheet0.png",
+      "media/clock.ogg",
+      "media/bonus.ogg",
+      "media/bonusopen.ogg",
+      "media/buttons.ogg",
+      "media/end.ogg",
+      "media/match.ogg",
+      "media/play.ogg",
+      "media/pop.ogg",
+      "media/tile.ogg",
+      "media/music.ogg",
+      "media/noshuffle.ogg",
+      "media/nom.ogg"
+    ],
+    "processors": [
+      "OnetConnectClassic-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "onet-connect-classic"
+    },
+    "width": 480,
+    "height": 320,
+    "key_whitelist": []
   }
 ]

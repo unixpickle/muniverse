@@ -84,6 +84,13 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 	},
+
+	{
+		Name:    "OnetConnectClassic-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/o/onet-connect-classic/v160/",
+		Width:   480,
+		Height:  320,
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
