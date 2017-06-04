@@ -838,5 +838,45 @@
     "width": 480,
     "height": 320,
     "key_whitelist": []
+  },
+  {
+    "name": "SmartyBubbles-v0",
+    "base": "http://games.cdn.famobi.com/html5games/s/smarty-bubbles/v030/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "SmartyBubbles-v0.js"
+    ],
+    "resources": [
+      "styles.min.css",
+      "js/all.js",
+      "res/strings.json",
+      "res/sprites_1_hd.png",
+      "res/sprites_1_hd.json",
+      "res/sprites_1.png",
+      "res/sprites_1.json",
+      "res/sprites_0.png",
+      "res/sprites_0.json",
+      "res/logo.png",
+      "res/chunkfive_e.png",
+      "res/chunkfive_d.png",
+      "res/chunkfive_c.png",
+      "res/chunkfive_b.png",
+      "res/chunkfive_a.png",
+      "res/chunkfive.fnt"
+    ],
+    "processors": [
+      "SmartyBubbles-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "smarty-bubbles"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": []
   }
 ]

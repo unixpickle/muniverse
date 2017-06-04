@@ -98,6 +98,13 @@ var EnvSpecs = []*EnvSpec{
 		Width:   480,
 		Height:  320,
 	},
+
+	{
+		Name:    "SmartyBubbles-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/smarty-bubbles/v030/",
+		Width:   320,
+		Height:  480,
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

@@ -6,6 +6,7 @@ import (
 	"errors"
 	"io"
 	"io/ioutil"
+	"log"
 	"net"
 	"sync"
 
@@ -259,6 +260,7 @@ func (c *Conn) handleEvent(method string, data []byte) {
 				} `json:"entry"`
 			} `json:"params"`
 		}
+		log.Println(string(data))
 		if json.Unmarshal(data, &entryObj) == nil {
 			c.logLock.Lock()
 			c.log = append(c.log, entryObj.Params.Entry.Text)

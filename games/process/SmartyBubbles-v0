@@ -1,0 +1,18 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Format famobi_gameJS properly.
+mv "$DIR/index.html" "$DIR/index_pre_onetconnect.html"
+cat "$DIR/index_pre_onetconnect.html" |
+  sed -E 's/src="\/html5games\/gameapi\/v1\/invisPreloadImage\.png"//g' |
+  sed -E "s/'(js\\/all\\.js)\\',//g" |
+  sed -E 's/(<\/body>)/<script src="js\/all\.js"><\/script>\1/g' \
+  > "$DIR/index.html"
+
+# Inject a hook into the game.
+mv "$DIR/js/all.js" "$DIR/js/all.preproc.js"
+cat "$DIR/js/all.preproc.js" |
+  sed -E 's/(pauseGame:function\(\)\{)/\1return;/g' |
+  sed -E 's/(var r=function\(\)\{var t=this;)/\1window.globalAppObject=this;/g' \
+  > "$DIR/js/all.js"
