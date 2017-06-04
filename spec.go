@@ -91,6 +91,13 @@ var EnvSpecs = []*EnvSpec{
 		Width:   480,
 		Height:  320,
 	},
+
+	{
+		Name:    "DontCrash-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/d/dont-crash/v2/",
+		Width:   480,
+		Height:  320,
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

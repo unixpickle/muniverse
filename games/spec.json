@@ -789,5 +789,54 @@
     "width": 480,
     "height": 320,
     "key_whitelist": []
+  },
+  {
+    "name": "DontCrash-v0",
+    "base": "http://games.cdn.famobi.com/html5games/d/dont-crash/v2/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "DontCrash-v0.js"
+    ],
+    "resources": [
+      "dist/all.js",
+      "data.js",
+      "images/bg-sheet0.png",
+      "images/bg-sheet1.png",
+      "images/play-sheet0.png",
+      "images/player-sheet0.png",
+      "images/steerarea-sheet0.png",
+      "images/yellow-sheet0.png",
+      "images/counter.png",
+      "images/cloud-sheet0.png",
+      "images/leaderboard-sheet0.png",
+      "images/moregames-sheet0.png",
+      "images/rate-sheet0.png",
+      "images/restart-sheet0.png",
+      "images/share-sheet0.png",
+      "images/crash-sheet0.png",
+      "images/fadeout.png",
+      "images/splashlogo-sheet0.png",
+      "images/rotate-sheet0.png",
+      "media/carhorncur.ogg",
+      "media/wrong.ogg",
+      "media/pop.ogg",
+      "media/fall.ogg",
+      "media/gain.ogg"
+    ],
+    "processors": [
+      "DontCrash-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "dont-crash"
+    },
+    "width": 480,
+    "height": 320,
+    "key_whitelist": []
   }
 ]
