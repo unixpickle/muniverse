@@ -1,18 +1,14 @@
 (function() {
 
-  var MENU_TIMEOUT = 60000;
-
   var OBJECT_UID_SCORE = 27;
   var OBJECT_UID_PAUSE = 117;
   var OBJECT_UID_GAME_OVER = 53;
 
+  var c2 = window.construct2api;
+
   window.muniverse = {
     init: function() {
-      return pollAndWait(MENU_TIMEOUT, function() {
-        return 'undefined' !== typeof cr_getC2Runtime &&
-          cr_getC2Runtime().running_layout &&
-          cr_getC2Runtime().running_layout.name === 'MainScreen';
-      }).then(function() {
+      return c2.waitStart('MainScreen').then(function() {
         var rt = cr_getC2Runtime();
         rt.layouts.MainScreen.stopRunning();
         rt.layouts.GameplayScreen.startRunning();

@@ -1,20 +1,11 @@
 (function() {
 
-  var MENU_TIMEOUT = 60000;
+  var c2 = window.construct2api;
 
-  function getGlobalVar(name) {
-    var res;
-    cr_getC2Runtime().all_global_vars.forEach((x) => x.name === name && (res = x));
-    return res;
-  }
 
   window.muniverse = {
     init: function() {
-      return pollAndWait(MENU_TIMEOUT, function() {
-        return typeof cr_getC2Runtime !== 'undefined' &&
-          cr_getC2Runtime().running_layout &&
-          cr_getC2Runtime().running_layout.name === 'Game';
-      }).then(function() {
+      return c2.waitStart('Game').then(function() {
         var actions = [
           "8367457620323879",
           "3273814180686107",
@@ -49,7 +40,7 @@
           "3365321696316076",
           "9618512613392364"
         ];
-        actions.forEach((x) => cr_getC2Runtime().actsBySid[x].run());
+        c2.runActions(actions);
         window.faketime.pause();
 
         // Re-render the scene.
@@ -58,10 +49,10 @@
     },
     step: function(millis) {
       window.faketime.advance(millis);
-      return Promise.resolve(getGlobalVar('GameOver').getValue() === 1);
+      return Promise.resolve(c2.globalVar('GameOver').getValue() === 1);
     },
     score: function() {
-      return Promise.resolve(getGlobalVar('Score').getValue());
+      return Promise.resolve(c2.globalVar('Score').getValue());
     }
   };
 
