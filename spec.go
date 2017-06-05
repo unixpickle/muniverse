@@ -105,6 +105,18 @@ var EnvSpecs = []*EnvSpec{
 		Width:   320,
 		Height:  480,
 	},
+
+	{
+		Name:    "StreetPursuit-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/street-pursuit/7-8cd52b/",
+		Width:   320,
+		Height:  497,
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

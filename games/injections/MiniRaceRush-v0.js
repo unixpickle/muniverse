@@ -28,7 +28,7 @@
     },
     step: function(millis) {
       window.faketime.advance(millis);
-      return gameOver;
+      return Promise.resolve(gameOver);
     }
   };
 

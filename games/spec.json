@@ -878,5 +878,58 @@
     "width": 320,
     "height": 480,
     "key_whitelist": []
+  },
+  {
+    "name": "StreetPursuit-v0",
+    "base": "http://games.cdn.famobi.com/html5games/s/street-pursuit/7-8cd52b/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "MiniRaceRush-v0.js"
+    ],
+    "resources": [
+      "js/all.js",
+      "audio/sound.ogg",
+      "audio/music.ogg",
+      "fg_i18n/en/images/preloadImage.jpg",
+      "images/rotateDeviceMessage.jpg",
+      "images/splashScreen.jpg",
+      "fg_i18n/en/images/hud_450x700.png",
+      "fg_i18n/en/images/uiButs.png",
+      "fg_i18n/en/images/gameElements.png",
+      "fg_i18n/en/images/levelSelect.png",
+      "fg_i18n/en/images/levelSelect2.png",
+      "images/EN/panels_450x700.png",
+      "images/fatNumbers_79x115.png",
+      "images/smallNumbers_21x28.png",
+      "images/mute_61x70.png",
+      "images/pickUps_107x99.png",
+      "images/driftEffect_59x61.png",
+      "images/skidmark_15x15.png",
+      "images/carExplode_155x141.png",
+      "images/debris_22x22.png",
+      "images/cars.png",
+      "images/ground0.jpg",
+      "images/ground1.jpg",
+      "images/ground2.jpg",
+      "images/ground3.jpg",
+      "images/ground4.jpg",
+      "images/ground5.jpg",
+      "images/ground6.jpg",
+      "images/ground7.jpg"
+    ],
+    "processors": [
+      "famobi",
+      "StreetPursuit-v0"
+    ],
+    "metadata": {
+      "famobi_id": "street-pursuit"
+    },
+    "width": 320,
+    "height": 497,
+    "key_whitelist": ["ArrowLeft", "ArrowRight"]
   }
 ]
