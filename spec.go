@@ -117,6 +117,13 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 	},
+
+	{
+		Name:    "GoldMinerTom-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/g/gold-miner-tom/v120/",
+		Width:   480,
+		Height:  320,
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
