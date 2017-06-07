@@ -124,6 +124,18 @@ var EnvSpecs = []*EnvSpec{
 		Width:   480,
 		Height:  320,
 	},
+
+	{
+		Name:    "UfoRun-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/u/ufo-run/6f9ac9a0/",
+		Width:   480,
+		Height:  321,
+
+		KeyWhitelist: []string{
+			"Space",
+			"ArrowUp",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
