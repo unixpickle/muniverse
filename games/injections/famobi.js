@@ -44,3 +44,12 @@ fg_api.prototype.submitHighscore = function() {
 
 fg_api.prototype.showAd = function() {
 };
+
+fg_api.prototype.log = function() {
+  console.log('Famobi log:', arguments);
+}
+
+window.famobi_analytics = {
+  trackScreen: function() {},
+  trackEvent: function() {}
+};

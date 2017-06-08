@@ -136,6 +136,18 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 	},
+
+	{
+		Name:    "BirdyRush-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/b/birdy-rush/v040/",
+		Width:   320,
+		Height:  533,
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
