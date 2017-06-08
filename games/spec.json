@@ -1327,5 +1327,49 @@
     "width": 320,
     "height": 533,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
+  },
+  {
+    "name": "HexBlitz-v0",
+    "base": "http://games.cdn.famobi.com/html5games/h/hex-blitz/v270/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "HexBlitz-v0.js"
+    ],
+    "resources": [
+      "js/all.js",
+      "audio/sound.ogg",
+      "audio/music.ogg",
+      "images/loader.png",
+      "images/loadSpinner.png",
+      "images/bgMain0.jpg",
+      "images/bgMain1.jpg",
+      "images/splashLogo.png",
+      "images/bgMain2.jpg",
+      "images/flare.png",
+      "images/linesVert.png",
+      "images/linesHoriz.png",
+      "images/uiButs.png",
+      "images/uiElements.png",
+      "images/gameElements.png",
+      "images/hintNumbers_35x39.png",
+      "images/scoreNumbers_39x45.png",
+      "images/timerNumbers_39x45.png",
+      "images/firework0_150x150.png",
+      "images/firework1_175x175.png"
+    ],
+    "processors": [
+      "HexBlitz-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "hex-blitz"
+    },
+    "width": 480,
+    "height": 320,
+    "key_whitelist": []
   }
 ]
