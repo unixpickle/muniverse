@@ -42,7 +42,14 @@ fg_api.prototype.moreGamesLink = function() {
 fg_api.prototype.submitHighscore = function() {
 };
 
-fg_api.prototype.showAd = function() {
+fg_api.prototype.showAd = function(cb) {
+  cb();
+};
+
+fg_api.prototype.gameOver = function() {
+};
+
+fg_api.prototype.levelUp = function() {
 };
 
 fg_api.prototype.log = function() {

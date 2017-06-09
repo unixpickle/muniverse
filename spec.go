@@ -228,6 +228,33 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 	},
+
+	{
+		Name:    "NutRush-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/n/nut-rush/v030/",
+		Width:   480,
+		Height:  320,
+	},
+
+	{
+		Name:    "NutRush-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/n/nut-rush/v030/",
+		Width:   480,
+		Height:  320,
+
+		VariantOf:   "NutRush-v0",
+		VariantOpts: "{\"level\":2}",
+	},
+
+	{
+		Name:    "NutRush-v2",
+		BaseURL: "http://games.cdn.famobi.com/html5games/n/nut-rush/v030/",
+		Width:   480,
+		Height:  320,
+
+		VariantOf:   "NutRush-v0",
+		VariantOpts: "{\"level\":3}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

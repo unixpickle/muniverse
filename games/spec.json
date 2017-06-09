@@ -1489,5 +1489,63 @@
     "width": 480,
     "height": 320,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
+  },
+  {
+    "name": "NutRush-v0",
+    "base": "http://games.cdn.famobi.com/html5games/n/nut-rush/v030/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "NutRush-v0.js"
+    ],
+    "resources": [
+      "js/all.js",
+      "audio/sound.ogg",
+      "audio/music.ogg",
+      "images/preloadImage.jpg",
+      "images/background1.jpg",
+      "images/background2.jpg",
+      "images/background3.jpg",
+      "images/EN/title1.png",
+      "images/EN/title2.png",
+      "images/rotateDeviceMessage.jpg",
+      "images/splashScreen.jpg",
+      "images/EN/hud.png",
+      "images/playBut.png",
+      "images/EN/panels_424x315.png",
+      "images/numbers_17x30.png",
+      "images/leaf_78x37.png",
+      "images/squirrel_256x126.png",
+      "images/acorn_105x106.png",
+      "images/EN/branches_110x173.png",
+      "images/mute_39x39.png"
+    ],
+    "processors": [
+      "NutRush-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "nut-rush"
+    },
+    "width": 480,
+    "height": 320,
+    "key_whitelist": []
+  },
+  {
+    "name": "NutRush-v1",
+    "variant_of": "NutRush-v0",
+    "variant_opts": {
+      "level": 2
+    }
+  },
+  {
+    "name": "NutRush-v2",
+    "variant_of": "NutRush-v0",
+    "variant_opts": {
+      "level": 3
+    }
   }
 ]
