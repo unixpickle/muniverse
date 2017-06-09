@@ -702,6 +702,30 @@
     "key_whitelist": ["ArrowLeft", "ArrowRight", "Space"]
   },
   {
+    "name": "BurninRubber-v1",
+    "variant_of": "BurninRubber-v0",
+    "variant_opts": {
+      "car": 0,
+      "weapon": 1
+    }
+  },
+  {
+    "name": "BurninRubber-v2",
+    "variant_of": "BurninRubber-v0",
+    "variant_opts": {
+      "car": 1,
+      "weapon": 0
+    }
+  },
+  {
+    "name": "BurninRubber-v3",
+    "variant_of": "BurninRubber-v0",
+    "variant_opts": {
+      "car": 1,
+      "weapon": 1
+    }
+  },
+  {
     "name": "OnetConnectClassic-v0",
     "base": "http://games.cdn.famobi.com/html5games/o/onet-connect-classic/v160/",
     "top_injections": [
@@ -1076,6 +1100,12 @@
     "width": 480,
     "height": 320,
     "key_whitelist": []
+  },
+  {
+    "name": "GoldMinerTom-v1",
+    "variant_of": "GoldMinerTom-v0",
+    "width": 320,
+    "height": 480
   },
   {
     "name": "UfoRun-v0",

@@ -8,6 +8,9 @@ type EnvSpec struct {
 	Height  int
 
 	KeyWhitelist []string
+
+	VariantOf   string
+	VariantOpts string
 }
 
 var EnvSpecs = []*EnvSpec{
@@ -86,6 +89,54 @@ var EnvSpecs = []*EnvSpec{
 	},
 
 	{
+		Name:    "BurninRubber-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/b/burnin-rubber/11-bc4df/",
+		Width:   320,
+		Height:  480,
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"Space",
+		},
+
+		VariantOf:   "BurninRubber-v0",
+		VariantOpts: "{\"car\":0,\"weapon\":1}",
+	},
+
+	{
+		Name:    "BurninRubber-v2",
+		BaseURL: "http://games.cdn.famobi.com/html5games/b/burnin-rubber/11-bc4df/",
+		Width:   320,
+		Height:  480,
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"Space",
+		},
+
+		VariantOf:   "BurninRubber-v0",
+		VariantOpts: "{\"car\":1,\"weapon\":0}",
+	},
+
+	{
+		Name:    "BurninRubber-v3",
+		BaseURL: "http://games.cdn.famobi.com/html5games/b/burnin-rubber/11-bc4df/",
+		Width:   320,
+		Height:  480,
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"Space",
+		},
+
+		VariantOf:   "BurninRubber-v0",
+		VariantOpts: "{\"car\":1,\"weapon\":1}",
+	},
+
+	{
 		Name:    "OnetConnectClassic-v0",
 		BaseURL: "http://games.cdn.famobi.com/html5games/o/onet-connect-classic/v160/",
 		Width:   480,
@@ -123,6 +174,16 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/g/gold-miner-tom/v120/",
 		Width:   480,
 		Height:  320,
+	},
+
+	{
+		Name:    "GoldMinerTom-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/g/gold-miner-tom/v120/",
+		Width:   320,
+		Height:  480,
+
+		VariantOf:   "GoldMinerTom-v0",
+		VariantOpts: "{}",
 	},
 
 	{
