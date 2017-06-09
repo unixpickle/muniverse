@@ -24,6 +24,12 @@
     },
     disableActions: function(actions) {
       actions.forEach((x) => cr_getC2Runtime().actsBySid[x].run = () => null);
+    },
+    disableObject: function(uid) {
+      var obj = cr_getC2Runtime().objectsByUid[uid] || {};
+      obj.width = 0;
+      obj.height = 0;
+      obj.visible = false;
     }
   };
 

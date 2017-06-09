@@ -155,6 +155,18 @@ var EnvSpecs = []*EnvSpec{
 		Width:   480,
 		Height:  320,
 	},
+
+	{
+		Name:    "RedHead-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/r/red-head/v1/",
+		Width:   480,
+		Height:  320,
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
