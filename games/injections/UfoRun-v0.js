@@ -12,7 +12,7 @@
   var gameOver = false;
 
   function replaceAction(act, func) {
-    cr_getC2Runtime()[ACTS_BY_SID]['2680802799716757'][ACTION_RUN] = func;
+    cr_getC2Runtime()[ACTS_BY_SID][act][ACTION_RUN] = func;
   };
 
   function playButtonCoordinates() {

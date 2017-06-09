@@ -1547,5 +1547,55 @@
     "variant_opts": {
       "level": 3
     }
+  },
+  {
+    "name": "KibaKumbaShadowRun-v0",
+    "base": "http://games.cdn.famobi.com/html5games/k/kk-shadow-run/v3/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "KibaKumbaShadowRun-v0.js"
+    ],
+    "resources": [
+      "dist/all.js",
+      "loading-logo.png",
+      "images/tiledbackground.png",
+      "images/block.png",
+      "images/player-sheet0.png",
+      "images/player-sheet1.png",
+      "images/player-sheet2.png",
+      "images/block2.png",
+      "images/item-sheet0.png",
+      "images/particles.png",
+      "images/sprite-sheet0.png",
+      "images/sprite3-sheet0.png",
+      "images/block4.png",
+      "fg_i18n/en/images/tiledbackground2.png",
+      "fg_i18n/en/images/startscreen-sheet0.png",
+      "fg_i18n/en/images/storyscreen-sheet0.png",
+      "fg_i18n/en/images/controls-sheet0.png",
+      "fg_i18n/en/images/storyscreen2-sheet0.png",
+      "images/spritefont.png"
+    ],
+    "processors": [
+      "KibaKumbaShadowRun-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "kk-shadow-run"
+    },
+    "width": 560,
+    "height": 320,
+    "key_whitelist": []
+  },
+  {
+    "name": "KibaKumbaShadowRun-v1",
+    "variant_of": "KibaKumbaShadowRun-v0",
+    "variant_opts": {
+      "character": 1
+    }
   }
 ]

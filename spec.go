@@ -255,6 +255,23 @@ var EnvSpecs = []*EnvSpec{
 		VariantOf:   "NutRush-v0",
 		VariantOpts: "{\"level\":3}",
 	},
+
+	{
+		Name:    "KibaKumbaShadowRun-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/k/kk-shadow-run/v3/",
+		Width:   560,
+		Height:  320,
+	},
+
+	{
+		Name:    "KibaKumbaShadowRun-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/k/kk-shadow-run/v3/",
+		Width:   560,
+		Height:  320,
+
+		VariantOf:   "KibaKumbaShadowRun-v0",
+		VariantOpts: "{\"character\":1}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
