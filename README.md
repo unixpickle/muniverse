@@ -41,3 +41,6 @@ Here's what is done so far:
 Here's a (non-exhaustive) to-do list:
 
  * Get more games.
+ * Error on step without corresponding reset.
+ * Get WebGL to work without occasional failures.
+ * Better way to verify connection to keep-alive socket.
