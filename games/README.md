@@ -22,7 +22,7 @@ The download script creates a directory called `downloaded_games` and makes a su
 
 # The `spec.json` file
 
-The [spec.json](spec.json) file contains a JSON array of game objects. Each game object contains various information about a game. Here's what a game object might look like:
+The [spec.json](spec.json) file contains a JSON array of game objects. Each game object contains various information about a game. There are two general types of game objects: base objects and variant objects. A base object defines lots of information about a game, such URLs for downloading game assets. A variant object references a base object and applies some slight modifications to it. Here's what a base object might look like:
 
 ```json
 {
@@ -50,7 +50,7 @@ The [spec.json](spec.json) file contains a JSON array of game objects. Each game
 }
 ```
 
-The fields in a game object have the following meaning:
+The fields in a base object have the following meaning:
 
  * **name:** a CamelCase name with a version number after it.
  * **base:** the base URL to fetch as `index.html`. Also the URL to which resource paths are relative.
@@ -63,6 +63,27 @@ The fields in a game object have the following meaning:
  * **height:** desired browser viewport height.
  * **key_whitelist:** a list of allowed key codes.
 
+Variant objects define games which are derived from other games. Here's what a variant object might look like:
+
+```json
+{
+  "name": "SomeGame-v1",
+  "variant_of": "SomeGame-v0",
+  "variant_opts": {
+    "level": 3,
+    "color": "brown"
+  },
+  "width": 480
+}
+```
+
+A variant object includes some fields which a base object does not:
+
+ * **variant_of:** name of base object to inherit from.
+ * **variant_opts:** (optional) object to be passed to the game during execution. The object is assigned to `window.muniverse_variant` before `window.muniverse.init()` is called.
+
+In addition to the above fields, a variant object may define its own **width**, **height**, and **key_whitelist**. If one of those fields is not defined, it is inherited from the base object.
+
 # The download process
 
 When a game is downloaded, three basic steps are taken:
@@ -72,6 +93,8 @@ When a game is downloaded, three basic steps are taken:
  * The `index.html` file is modified to include the injected scripts from `top_injections` and `bottom_injections`.
 
 A processor script can find out information about a game by looking at the game's `info.json` file. The `info.json` file is located in the root of the game directory and contains a copy of the game object from `spec.json`.
+
+All base objects in the `spec.json` file specify how to download a game. Variant objects, on the other hand, do not specify how to download or prepare a game. Rather, variants use the downloaded directory of their base games.
 
 # Adding a game
 
@@ -90,3 +113,5 @@ In order to provide the above API, you will likely want to do a few things:
  * Write a processor script to make the code easier to handle.
    * Remove unwanted content like ads or analytics.
    * Patch JS code to manipulate it more easily.
+
+For game variants, `window.muniverse_variant` will be set before `window.muniverse.init()` is called. This way, you can modify game initialization based on the game variant.

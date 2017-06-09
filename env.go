@@ -186,6 +186,14 @@ func (r *rawEnv) Reset() (err error) {
 		return
 	}
 
+	if r.spec.VariantOpts != "" {
+		rawCode := "window.muniverse_variant=" + r.spec.VariantOpts
+		err = r.devConn.EvalPromise(ctx, "Promise.resolve("+rawCode+")", nil)
+		if err != nil {
+			return
+		}
+	}
+
 	err = r.devConn.EvalPromise(ctx, "window.muniverse.init();", nil)
 	if err != nil {
 		return
@@ -289,7 +297,11 @@ func (r *rawEnv) Log() []string {
 }
 
 func (r *rawEnv) envURL() string {
-	return "http://" + r.gameHost + "/" + r.spec.Name
+	baseName := r.spec.Name
+	if r.spec.VariantOf != "" {
+		baseName = r.spec.VariantOf
+	}
+	return "http://" + r.gameHost + "/" + baseName
 }
 
 func callCtx() (context.Context, context.CancelFunc) {

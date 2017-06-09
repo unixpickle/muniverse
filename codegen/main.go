@@ -4,9 +4,12 @@ package main
 
 import (
 	"encoding/json"
-	"html/template"
+	"errors"
+	"fmt"
 	"io/ioutil"
 	"os"
+	"strconv"
+	"text/template"
 
 	"github.com/unixpickle/essentials"
 )
@@ -16,7 +19,7 @@ func main() {
 	if err != nil {
 		essentials.Die(err)
 	}
-	var specObj interface{}
+	var specObj []map[string]interface{}
 	if err := json.Unmarshal(spec, &specObj); err != nil {
 		essentials.Die(err)
 	}
@@ -34,13 +37,53 @@ func main() {
 	}
 }
 
-func writeSpec(f *os.File, specObj interface{}) error {
+func writeSpec(f *os.File, specObj []map[string]interface{}) error {
 	t := template.New("template")
 	t, err := t.Parse(TemplateSource)
 	if err != nil {
 		return err
 	}
+	if err := fillVariantFields(specObj); err != nil {
+		return err
+	}
 	return t.Execute(f, specObj)
+}
+
+func fillVariantFields(spec []map[string]interface{}) error {
+	byName := map[string]map[string]interface{}{}
+	for _, item := range spec {
+		name, ok := item["name"].(string)
+		if !ok {
+			return errors.New("missing or invalid name attribute")
+		}
+		byName[name] = item
+	}
+	for _, item := range spec {
+		if parent, ok := item["variant_of"].(string); ok {
+			ref, ok := byName[parent]
+			if !ok {
+				return fmt.Errorf("make variant of %s: spec not found", parent)
+			}
+
+			// Inherit missing values.
+			for key, val := range ref {
+				if _, ok := item[key]; !ok {
+					item[key] = val
+				}
+			}
+
+			opts, ok := item["variant_opts"]
+			if !ok {
+				opts = map[string]interface{}{}
+			}
+			data, err := json.Marshal(opts)
+			if err != nil {
+				return essentials.AddCtx("marshal variant opts", err)
+			}
+			item["variant_opts"] = strconv.Quote(string(data))
+		}
+	}
+	return nil
 }
 
 var TemplateSource = `package muniverse
@@ -53,6 +96,9 @@ type EnvSpec struct {
 	Height  int
 
 	KeyWhitelist []string
+
+	VariantOf   string
+	VariantOpts string
 }
 
 var EnvSpecs = []*EnvSpec{ {{- range .}}
@@ -68,6 +114,11 @@ var EnvSpecs = []*EnvSpec{ {{- range .}}
 			{{- range .key_whitelist}}
 			"{{.}}", {{- end}}
 		}, {{- end}}
+		{{- if .variant_of}}
+
+		VariantOf:   "{{.variant_of}}",
+		VariantOpts: {{.variant_opts}},
+		{{- end}}
 	},
 {{end -}} }
 

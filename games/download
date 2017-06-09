@@ -17,6 +17,13 @@ for i in $(seq 0 $((count-1)))
 do
   item="$(read_spec | jq ".[$i]")"
   name=$(echo "$item" | jq -r .name)
+  variantOf=$(echo "$item" | jq -r .variant_of)
+
+  if [ "$variantOf" != "null" ]; then
+    echo "Skipping variant $name of $variantOf."
+    continue
+  fi
+
   baseURL="$(echo "$item" | jq -r .base)"
 
   if [ -d "$DEST/$name" ]; then
