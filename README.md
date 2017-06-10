@@ -13,9 +13,10 @@ Compared to OpenAI Universe, μniverse will give the following advantages:
    * Play games faster than real-time on fast machines.
  * No need for a neural network to read scores from screenshots.
  * Fewer [glitches](https://github.com/openai/universe/issues/187) due to menu automation.
+ * No unsafe actions (e.g. pressing the Main Menu button).
  * No Docker containers without accompanying source code
-   * All code to generate containers will be included
-   * Scripts to download & package games
+   * All code to generate containers is included
+   * Open source scripts to download & package games
 
 Most of the above advantages come from focusing on HTML5 games rather than Flash games.
 
