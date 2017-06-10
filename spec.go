@@ -272,6 +272,18 @@ var EnvSpecs = []*EnvSpec{
 		VariantOf:   "KibaKumbaShadowRun-v0",
 		VariantOpts: "{\"character\":1}",
 	},
+
+	{
+		Name:    "Knightower-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/k/knightower/3-c82d31/",
+		Width:   320,
+		Height:  480,
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

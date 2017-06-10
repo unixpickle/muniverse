@@ -1597,5 +1597,58 @@
     "variant_opts": {
       "character": 1
     }
+  },
+  {
+    "name": "Knightower-v0",
+    "base": "http://games.cdn.famobi.com/html5games/k/knightower/3-c82d31/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "Knightower-v0.js"
+    ],
+    "resources": [
+      "icon-256.png",
+      "js/all.js",
+      "data.js",
+      "images/loading-sheet0.png",
+      "media/bird.ogg",
+      "media/pop.ogg",
+      "media/scream.ogg",
+      "media/step.ogg",
+      "media/windloop.ogg",
+      "images/player-sheet0.png",
+      "images/player-sheet1.png",
+      "images/player-sheet2.png",
+      "images/platform-sheet0.png",
+      "images/platform-sheet1.png",
+      "images/platform-sheet2.png",
+      "images/control-sheet0.png",
+      "images/background-sheet0.png",
+      "images/tower-sheet0.png",
+      "images/platform2-sheet0.png",
+      "images/txt.png",
+      "images/birds-sheet0.png",
+      "images/birds-sheet1.png",
+      "images/title-sheet0.png",
+      "images/buttons-sheet0.png",
+      "images/taptuto-sheet0.png",
+      "images/tiledbackground.png",
+      "images/more_games600x253_onwhite-sheet0.png",
+      "fg_i18n/en/images/loading-sheet0.png"
+    ],
+    "processors": [
+      "Knightower-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "knightower"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": ["ArrowLeft", "ArrowRight"]
   }
 ]
