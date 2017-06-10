@@ -9,6 +9,8 @@
       return pollAndWait(MENU_TIMEOUT, function() {
         return window.gameState === 'start';
       }).then(function() {
+        document.body.style.overflow = 'hidden';
+
         window.faketime.pause();
 
         window.initGameEndFail = () => gameOver = true;
