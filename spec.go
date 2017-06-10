@@ -311,6 +311,34 @@ var EnvSpecs = []*EnvSpec{
 		Height:  420,
 		Options: "{}",
 	},
+
+	{
+		Name:    "PaperPlaneFlight-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/p/paper-plane-flight/v3/",
+		Width:   560,
+		Height:  420,
+		Options: "{}",
+	},
+
+	{
+		Name:    "PaperPlaneFlight-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/p/paper-plane-flight/v3/",
+		Width:   560,
+		Height:  420,
+		Options: "{\"planeType\":\"yellow\"}",
+
+		VariantOf: "PaperPlaneFlight-v0",
+	},
+
+	{
+		Name:    "PaperPlaneFlight-v2",
+		BaseURL: "http://games.cdn.famobi.com/html5games/p/paper-plane-flight/v3/",
+		Width:   560,
+		Height:  420,
+		Options: "{\"planeType\":\"violetSecond\"}",
+
+		VariantOf: "PaperPlaneFlight-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+DIR="$1"
+
+mv "$DIR/assets/main/sounds/Szymon%20Matuszewski%20-%20Shield_2_cut1_min.mp3" \
+  "$DIR/assets/main/sounds/Szymon Matuszewski - Shield_2_cut1_min.mp3"
+mv "$DIR/assets/main/fonts/FranklinGothicMedium60_padding2_Full%20Black.fnt" \
+  "$DIR/assets/main/fonts/FranklinGothicMedium60_padding2_Full Black.fnt"
+
+# Format famobi_gameJS properly.
+mv "$DIR/index.html" "$DIR/index_pre_paperplaneflight.html"
+cat "$DIR/index_pre_paperplaneflight.html" |
+  sed -E $'s/"jsembed104\\.js", "flambe\\.js", /\\\n/g' |
+  sed -E $'s/\\}\\];/\\}\\\n \\];/g' |
+  sed -E 's/(<\/body>)/<script src="jsembed104.js"><\/script>\1/g' |
+  sed -E 's/(<\/body>)/<script src="flambe.js"><\/script>\1/g' \
+  > "$DIR/index.html"
+
+# Inject a way to access JavaScript objects.
+mv "$DIR/targets/main-html.min.js" "$DIR/targets/main_html.min.preprocess.js"
+cat "$DIR/targets/main_html.min.preprocess.js" |
+  sed -E 's/(i\.MainHolder=T)/window\.globalGameObj=i;\1/g' \
+  > "$DIR/targets/main-html.min.js"
