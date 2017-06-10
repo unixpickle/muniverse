@@ -6,11 +6,11 @@ type EnvSpec struct {
 	BaseURL string
 	Width   int
 	Height  int
+	Options string
 
 	KeyWhitelist []string
 
-	VariantOf   string
-	VariantOpts string
+	VariantOf string
 }
 
 var EnvSpecs = []*EnvSpec{
@@ -19,6 +19,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/k/katana-fruits/v1/",
 		Width:   320,
 		Height:  427,
+		Options: "{}",
 	},
 
 	{
@@ -26,6 +27,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/m/mini-race-rush/v1/",
 		Width:   320,
 		Height:  497,
+		Options: "{}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",
@@ -38,6 +40,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/j/jewelish/10-4bc4e/",
 		Width:   320,
 		Height:  433,
+		Options: "{}",
 	},
 
 	{
@@ -45,6 +48,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/b/bubbles-shooter/11-2be95/",
 		Width:   522,
 		Height:  348,
+		Options: "{}",
 
 		KeyWhitelist: []string{
 			"Space",
@@ -56,6 +60,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/p/penguin-skip/72b65ff0/",
 		Width:   480,
 		Height:  320,
+		Options: "{}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",
@@ -68,6 +73,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/m/minimal-dots/v2/",
 		Width:   320,
 		Height:  480,
+		Options: "{}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",
@@ -80,6 +86,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/b/burnin-rubber/11-bc4df/",
 		Width:   320,
 		Height:  480,
+		Options: "{\"car\":0,\"weapon\":0}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",
@@ -93,6 +100,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/b/burnin-rubber/11-bc4df/",
 		Width:   320,
 		Height:  480,
+		Options: "{\"car\":0,\"weapon\":1}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",
@@ -100,8 +108,7 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 
-		VariantOf:   "BurninRubber-v0",
-		VariantOpts: "{\"car\":0,\"weapon\":1}",
+		VariantOf: "BurninRubber-v0",
 	},
 
 	{
@@ -109,6 +116,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/b/burnin-rubber/11-bc4df/",
 		Width:   320,
 		Height:  480,
+		Options: "{\"car\":1,\"weapon\":0}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",
@@ -116,8 +124,7 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 
-		VariantOf:   "BurninRubber-v0",
-		VariantOpts: "{\"car\":1,\"weapon\":0}",
+		VariantOf: "BurninRubber-v0",
 	},
 
 	{
@@ -125,6 +132,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/b/burnin-rubber/11-bc4df/",
 		Width:   320,
 		Height:  480,
+		Options: "{\"car\":1,\"weapon\":1}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",
@@ -132,8 +140,7 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 
-		VariantOf:   "BurninRubber-v0",
-		VariantOpts: "{\"car\":1,\"weapon\":1}",
+		VariantOf: "BurninRubber-v0",
 	},
 
 	{
@@ -141,6 +148,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/o/onet-connect-classic/v160/",
 		Width:   480,
 		Height:  320,
+		Options: "{}",
 	},
 
 	{
@@ -148,6 +156,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/d/dont-crash/v2/",
 		Width:   480,
 		Height:  320,
+		Options: "{}",
 	},
 
 	{
@@ -155,6 +164,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/s/smarty-bubbles/v030/",
 		Width:   320,
 		Height:  480,
+		Options: "{}",
 	},
 
 	{
@@ -162,6 +172,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/s/street-pursuit/7-8cd52b/",
 		Width:   320,
 		Height:  497,
+		Options: "{}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",
@@ -174,6 +185,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/g/gold-miner-tom/v120/",
 		Width:   480,
 		Height:  320,
+		Options: "{}",
 	},
 
 	{
@@ -181,9 +193,9 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/g/gold-miner-tom/v120/",
 		Width:   320,
 		Height:  480,
+		Options: "{}",
 
-		VariantOf:   "GoldMinerTom-v0",
-		VariantOpts: "{}",
+		VariantOf: "GoldMinerTom-v0",
 	},
 
 	{
@@ -191,6 +203,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/u/ufo-run/6f9ac9a0/",
 		Width:   480,
 		Height:  321,
+		Options: "{}",
 
 		KeyWhitelist: []string{
 			"Space",
@@ -203,6 +216,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/b/birdy-rush/v040/",
 		Width:   320,
 		Height:  533,
+		Options: "{}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",
@@ -215,6 +229,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/h/hex-blitz/v270/",
 		Width:   480,
 		Height:  320,
+		Options: "{}",
 	},
 
 	{
@@ -222,6 +237,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/r/red-head/v1/",
 		Width:   480,
 		Height:  320,
+		Options: "{}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",
@@ -234,6 +250,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/n/nut-rush/v030/",
 		Width:   480,
 		Height:  320,
+		Options: "{\"level\":1}",
 	},
 
 	{
@@ -241,9 +258,9 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/n/nut-rush/v030/",
 		Width:   480,
 		Height:  320,
+		Options: "{\"level\":2}",
 
-		VariantOf:   "NutRush-v0",
-		VariantOpts: "{\"level\":2}",
+		VariantOf: "NutRush-v0",
 	},
 
 	{
@@ -251,9 +268,9 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/n/nut-rush/v030/",
 		Width:   480,
 		Height:  320,
+		Options: "{\"level\":3}",
 
-		VariantOf:   "NutRush-v0",
-		VariantOpts: "{\"level\":3}",
+		VariantOf: "NutRush-v0",
 	},
 
 	{
@@ -261,6 +278,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/k/kk-shadow-run/v3/",
 		Width:   560,
 		Height:  320,
+		Options: "{\"character\":0}",
 	},
 
 	{
@@ -268,9 +286,9 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/k/kk-shadow-run/v3/",
 		Width:   560,
 		Height:  320,
+		Options: "{\"character\":1}",
 
-		VariantOf:   "KibaKumbaShadowRun-v0",
-		VariantOpts: "{\"character\":1}",
+		VariantOf: "KibaKumbaShadowRun-v0",
 	},
 
 	{
@@ -278,6 +296,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/k/knightower/3-c82d31/",
 		Width:   320,
 		Height:  480,
+		Options: "{}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",
@@ -290,6 +309,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "http://games.cdn.famobi.com/html5games/b/burger-maker/v1/",
 		Width:   560,
 		Height:  420,
+		Options: "{}",
 	},
 }
 

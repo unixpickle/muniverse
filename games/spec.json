@@ -699,12 +699,16 @@
     },
     "width": 320,
     "height": 480,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "Space"]
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "Space"],
+    "options": {
+      "car": 0,
+      "weapon": 0
+    }
   },
   {
     "name": "BurninRubber-v1",
     "variant_of": "BurninRubber-v0",
-    "variant_opts": {
+    "options": {
       "car": 0,
       "weapon": 1
     }
@@ -712,7 +716,7 @@
   {
     "name": "BurninRubber-v2",
     "variant_of": "BurninRubber-v0",
-    "variant_opts": {
+    "options": {
       "car": 1,
       "weapon": 0
     }
@@ -720,7 +724,7 @@
   {
     "name": "BurninRubber-v3",
     "variant_of": "BurninRubber-v0",
-    "variant_opts": {
+    "options": {
       "car": 1,
       "weapon": 1
     }
@@ -1532,19 +1536,22 @@
     },
     "width": 480,
     "height": 320,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "options": {
+      "level": 1
+    }
   },
   {
     "name": "NutRush-v1",
     "variant_of": "NutRush-v0",
-    "variant_opts": {
+    "options": {
       "level": 2
     }
   },
   {
     "name": "NutRush-v2",
     "variant_of": "NutRush-v0",
-    "variant_opts": {
+    "options": {
       "level": 3
     }
   },
@@ -1589,12 +1596,15 @@
     },
     "width": 560,
     "height": 320,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "options": {
+      "character": 0
+    }
   },
   {
     "name": "KibaKumbaShadowRun-v1",
     "variant_of": "KibaKumbaShadowRun-v0",
-    "variant_opts": {
+    "options": {
       "character": 1
     }
   },

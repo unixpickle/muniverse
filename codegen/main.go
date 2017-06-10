@@ -43,13 +43,16 @@ func writeSpec(f *os.File, specObj []map[string]interface{}) error {
 	if err != nil {
 		return err
 	}
-	if err := fillVariantFields(specObj); err != nil {
+	if err := inheritVariantFields(specObj); err != nil {
+		return err
+	}
+	if err := formatOptionsField(specObj); err != nil {
 		return err
 	}
 	return t.Execute(f, specObj)
 }
 
-func fillVariantFields(spec []map[string]interface{}) error {
+func inheritVariantFields(spec []map[string]interface{}) error {
 	byName := map[string]map[string]interface{}{}
 	for _, item := range spec {
 		name, ok := item["name"].(string)
@@ -64,24 +67,27 @@ func fillVariantFields(spec []map[string]interface{}) error {
 			if !ok {
 				return fmt.Errorf("make variant of %s: spec not found", parent)
 			}
-
-			// Inherit missing values.
 			for key, val := range ref {
 				if _, ok := item[key]; !ok {
 					item[key] = val
 				}
 			}
-
-			opts, ok := item["variant_opts"]
-			if !ok {
-				opts = map[string]interface{}{}
-			}
-			data, err := json.Marshal(opts)
-			if err != nil {
-				return essentials.AddCtx("marshal variant opts", err)
-			}
-			item["variant_opts"] = strconv.Quote(string(data))
 		}
+	}
+	return nil
+}
+
+func formatOptionsField(spec []map[string]interface{}) error {
+	for _, item := range spec {
+		opts, ok := item["options"]
+		if !ok {
+			opts = map[string]interface{}{}
+		}
+		data, err := json.Marshal(opts)
+		if err != nil {
+			return essentials.AddCtx("marshal options", err)
+		}
+		item["options"] = strconv.Quote(string(data))
 	}
 	return nil
 }
@@ -94,11 +100,11 @@ type EnvSpec struct {
 	BaseURL string
 	Width   int
 	Height  int
+	Options string
 
 	KeyWhitelist []string
 
-	VariantOf   string
-	VariantOpts string
+	VariantOf string
 }
 
 var EnvSpecs = []*EnvSpec{ {{- range .}}
@@ -107,6 +113,7 @@ var EnvSpecs = []*EnvSpec{ {{- range .}}
 		BaseURL: "{{.base}}",
 		Width:   {{.width}},
 		Height:  {{.height}},
+		Options: {{.options}},
 		{{- $length := len .key_whitelist -}}
 		{{if gt $length 0}}
 
@@ -116,8 +123,7 @@ var EnvSpecs = []*EnvSpec{ {{- range .}}
 		}, {{- end}}
 		{{- if .variant_of}}
 
-		VariantOf:   "{{.variant_of}}",
-		VariantOpts: {{.variant_opts}},
+		VariantOf: "{{.variant_of}}",
 		{{- end}}
 	},
 {{end -}} }

@@ -62,6 +62,7 @@ The fields in a base object have the following meaning:
  * **width:** desired browser viewport width.
  * **height:** desired browser viewport height.
  * **key_whitelist:** a list of allowed key codes.
+ * **options:** (optional) object to be passed as an argument to `window.muniverse.init()`. If absent, `{}` is used as a default.
 
 Variant objects define games which are derived from other games. Here's what a variant object might look like:
 
@@ -69,7 +70,7 @@ Variant objects define games which are derived from other games. Here's what a v
 {
   "name": "SomeGame-v1",
   "variant_of": "SomeGame-v0",
-  "variant_opts": {
+  "options": {
     "level": 3,
     "color": "brown"
   },
@@ -77,12 +78,7 @@ Variant objects define games which are derived from other games. Here's what a v
 }
 ```
 
-A variant object includes some fields which a base object does not:
-
- * **variant_of:** name of base object to inherit from.
- * **variant_opts:** (optional) object to be passed to the game during execution. The object is assigned to `window.muniverse_variant` before `window.muniverse.init()` is called.
-
-In addition to the above fields, a variant object may define its own **width**, **height**, and **key_whitelist**. If one of those fields is not defined, it is inherited from the base object.
+A variant object's **variant_of** field indicates the base object from which the variant is derived. In addition to the **variant_of** field, a variant object may define its own **width**, **height**, **key_whitelist**, and **options**. If one of those fields is not defined, it is inherited from the base object.
 
 # The download process
 
@@ -102,7 +98,7 @@ The first thing to do is figure out what resources the game uses. Try to build a
 
 Every game must expose a `window.muniverse` object with three functions, all of which return Promises. These functions are:
 
- * **init:** get the game to a logical starting point, where an agent can immediately start making actions. The game should be paused in some way so that *step* needn't be called immediately after *init*.
+ * **init(options):** get the game to a logical starting point, where an agent can immediately start making actions. The game should be paused in some way so that *step* needn't be called immediately after *init*. The options argument is the same as the `options` object in the game spec.
  * **score:** get the current (numerical) score.
  * **step(millis):** advance the game by the given number of milliseconds. Return a boolean which is `true` if the game has ended.
 
@@ -113,5 +109,3 @@ In order to provide the above API, you will likely want to do a few things:
  * Write a processor script to make the code easier to handle.
    * Remove unwanted content like ads or analytics.
    * Patch JS code to manipulate it more easily.
-
-For game variants, `window.muniverse_variant` will be set before `window.muniverse.init()` is called. This way, you can modify game initialization based on the game variant.

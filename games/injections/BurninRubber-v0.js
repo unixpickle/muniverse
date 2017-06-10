@@ -32,8 +32,7 @@
   var gameOver = false;
 
   window.muniverse = {
-    init: function() {
-      var options = window.muniverse_variant || {car: 0, weapon: 0};
+    init: function(options) {
       return pollAndWait(MENU_TIMEOUT, function() {
         return 'undefined' !== typeof window.game &&
           window.game.isBooted &&

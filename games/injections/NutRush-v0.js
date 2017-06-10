@@ -5,8 +5,7 @@
   var gameOver = false;
 
   window.muniverse = {
-    init: function() {
-      var options = window.muniverse_variant || {level: 1};
+    init: function(options) {
       return pollAndWait(MENU_TIMEOUT, function() {
         return window.gameState === 'start';
       }).then(function() {

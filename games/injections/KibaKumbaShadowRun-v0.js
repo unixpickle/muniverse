@@ -43,8 +43,7 @@
   var gameOver = false;
 
   window.muniverse = {
-    init: function() {
-      var options = window.muniverse_variant || {character: 0};
+    init: function(options) {
       return pollAndWait(LOAD_TIMEOUT, function() {
         return window.cr_getC2Runtime &&
           cr_getC2Runtime().$ &&

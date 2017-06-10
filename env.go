@@ -186,15 +186,8 @@ func (r *rawEnv) Reset() (err error) {
 		return
 	}
 
-	if r.spec.VariantOpts != "" {
-		rawCode := "window.muniverse_variant=" + r.spec.VariantOpts
-		err = r.devConn.EvalPromise(ctx, "Promise.resolve("+rawCode+")", nil)
-		if err != nil {
-			return
-		}
-	}
-
-	err = r.devConn.EvalPromise(ctx, "window.muniverse.init();", nil)
+	initCode := "window.muniverse.init(" + r.spec.Options + ");"
+	err = r.devConn.EvalPromise(ctx, initCode, nil)
 	if err != nil {
 		return
 	}
