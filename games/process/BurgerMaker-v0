@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Don't use online jQuery and jQueryUI.
+curl -s 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js' \
+  > "$DIR/jquery.min.js" || exit 1
+curl -s 'http://code.jquery.com/ui/1.11.4/jquery-ui.min.js' \
+  > "$DIR/jquery-ui.min.js" || exit 1
+mv "$DIR/index.html" "$DIR/index_pre_burgermaker.html"
+cat "$DIR/index_pre_burgermaker.html" |
+  sed -E 's/<script src="\/\/.*"><\/script>//g' |
+  sed -E 's/(<head>)/\1<script src="jquery-ui.min.js"><\/script>/g' |
+  sed -E 's/(<head>)/\1<script src="jquery.min.js"><\/script>/g' \
+  > "$DIR/index.html"

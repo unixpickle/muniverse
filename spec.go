@@ -284,6 +284,13 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 	},
+
+	{
+		Name:    "BurgerMaker-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/b/burger-maker/v1/",
+		Width:   560,
+		Height:  420,
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
