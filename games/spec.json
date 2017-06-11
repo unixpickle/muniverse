@@ -2011,7 +2011,6 @@
       "RabbitPunch-v0.js"
     ],
     "resources": [
-      "?fg_domain=play.famobi.com&fg_aid=A1000-1&fg_uid=b1ed2d15-2f25-4175-9325-10c7711876a0&fg_pid=4638e320-4444-4514-81c4-d80a8c662371&fg_beat=686",
       "jquery-2.1.1.min.js",
       "bgimage.gif",
       "c2runtime.min.js",
@@ -2083,5 +2082,71 @@
     "width": 480,
     "height": 270,
     "key_whitelist": []
+  },
+  {
+    "name": "KumbaKarate-v0",
+    "base": "http://games.cdn.famobi.com/html5games/k/kumba-karate/v2/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "KumbaKarate-v0.js"
+    ],
+    "resources": [
+      "main.css",
+      "spell.loader.js",
+      "html5/spell.js",
+      "html5/data.js",
+      "library/kumbakarate/hud/font.png",
+      "library/spell/OpenSans14px.png",
+      "library/spell/defaultAppearance.png",
+      "library/kumbakarate/background.png",
+      "library/kumbakarate/effect/explosion_normal_sprite.png",
+      "library/kumbakarate/effect/shadow.png",
+      "library/kumbakarate/enemy/bohrer_erscheint_sprite.png",
+      "library/kumbakarate/enemy/bohrer_loch_erscheint_sprite.png",
+      "library/kumbakarate/enemy/bohrer_sprite.png",
+      "library/kumbakarate/enemy/penguin_sprite.png",
+      "library/kumbakarate/enemy/roflcopter_sprite.png",
+      "library/kumbakarate/hud/buttons.png",
+      "library/kumbakarate/hud/combo_leiste.png",
+      "library/kumbakarate/hud/combo_leiste_fill.png",
+      "library/kumbakarate/hud/combo_leiste_red.png",
+      "library/kumbakarate/hud/finger.png",
+      "library/kumbakarate/hud/heart_empty.png",
+      "library/kumbakarate/hud/heart_full.png",
+      "library/kumbakarate/hud/legal.png",
+      "library/kumbakarate/hud/logo.png",
+      "library/kumbakarate/hud/pfeil.png",
+      "library/kumbakarate/hud/tap.png",
+      "library/kumbakarate/player/kumba1.png",
+      "library/kumbakarate/player/kumba2.png",
+      "library/kumbakarate/screen04.png",
+      "library/kumbakarate/music_soundtrack.ogg",
+      "library/kumbakarate/sfx/sound_boom.ogg",
+      "library/kumbakarate/sfx/sound_hit.ogg",
+      "library/kumbakarate/sfx/sound_punch_1.ogg",
+      "library/kumbakarate/sfx/sound_punch_2.ogg",
+      "library/kumbakarate/sfx/sound_punch_3.ogg",
+      "library/kumbakarate/sfx/sound_whirl.ogg",
+      "library/kumbakarate/music_soundtrack.ogg",
+      "library/kumbakarate/sfx/sound_punch_1.ogg",
+      "library/kumbakarate/sfx/sound_punch_2.ogg",
+      "library/kumbakarate/sfx/sound_punch_2.ogg",
+      "library/kumbakarate/sfx/sound_hit.ogg",
+      "library/kumbakarate/sfx/sound_punch_3.ogg"
+    ],
+    "processors": [
+      "KumbaKarate-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "kumba-karate"
+    },
+    "width": 480,
+    "height": 380,
+    "key_whitelist": ["ArrowUp", "ArrowDown", "ArrowRight", "ArrowLeft"]
   }
 ]

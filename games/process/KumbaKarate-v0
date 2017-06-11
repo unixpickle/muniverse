@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Format famobi_gameJS properly.
+mv "$DIR/index.html" "$DIR/index_pre_kumbakarate.html"
+cat "$DIR/index_pre_kumbakarate.html" |
+  sed -E $'s/"spell\\.loader\\.js",/\\\n/g' |
+  sed -E $'s/\\}\\];/\\}\\\n \\];/g' |
+  sed -E 's/(<\/body>)/<script src="spell.loader.js"><\/script>\1/g' \
+  > "$DIR/index.html"

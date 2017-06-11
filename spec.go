@@ -355,6 +355,21 @@ var EnvSpecs = []*EnvSpec{
 		Height:  270,
 		Options: "{}",
 	},
+
+	{
+		Name:    "KumbaKarate-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/k/kumba-karate/v2/",
+		Width:   480,
+		Height:  380,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowUp",
+			"ArrowDown",
+			"ArrowRight",
+			"ArrowLeft",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
