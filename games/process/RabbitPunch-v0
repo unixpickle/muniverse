@@ -1,0 +1,12 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Format famobi_gameJS properly.
+mv "$DIR/index.html" "$DIR/index_pre_rabbitpunch.html"
+cat "$DIR/index_pre_rabbitpunch.html" |
+  tail -c +4 |
+  sed -E $'s/"c2runtime\\.min\\.js",/\\\n/g' |
+  sed -E $'s/\\}\\];/\\}\\\n \\];/g' |
+  sed -E 's/(<\/body>)/<script src="c2runtime.min.js"><\/script>\1/g' \
+  > "$DIR/index.html"
