@@ -339,6 +339,14 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "PaperPlaneFlight-v0",
 	},
+
+	{
+		Name:    "OfficeLove-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/o/office-love/v1/",
+		Width:   320,
+		Height:  510,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

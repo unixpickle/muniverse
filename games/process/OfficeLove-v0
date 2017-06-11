@@ -1,0 +1,22 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Format famobi_gameJS properly.
+mv "$DIR/index.html" "$DIR/index_pre_officelove.html"
+cat "$DIR/index_pre_officelove.html" |
+  sed -E 's/"src\/.*",//g' |
+  sed -E 's/"ol\.min\.js",//g' |
+  sed -E 's/\/\/.*//g' |
+  sed -E 's/(<\/body>)/<script src="src\/lib\/phaser.min.js"><\/script>\1/g' |
+  sed -E 's/(<\/body>)/<script src="src\/lib\/dataku.min.js"><\/script>\1/g' |
+  sed -E 's/(<\/body>)/<script src="src\/lib\/global.min.js"><\/script>\1/g' |
+  sed -E 's/(<\/body>)/<script src="src\/lib\/scalemanager2.min.js"><\/script>\1/g' |
+  sed -E 's/(<\/body>)/<script src="src\/lib\/scream.min.js"><\/script>\1/g' |
+  sed -E 's/(<\/body>)/<script src="src\/game\/boot.min.js"><\/script>\1/g' |
+  sed -E 's/(<\/body>)/<script src="src\/game\/cpreloader.min.js"><\/script>\1/g' |
+  sed -E 's/(<\/body>)/<script src="src\/game\/cmainmenu.min.js"><\/script>\1/g' |
+  sed -E 's/(<\/body>)/<script src="src\/game\/cgame.min.js"><\/script>\1/g' |
+  sed -E 's/(<\/body>)/<script src="src\/class\/csound.min.js"><\/script>\1/g' |
+  sed -E 's/(<\/body>)/<script src="ol.min.js"><\/script>\1/g' \
+  > "$DIR/index.html"
