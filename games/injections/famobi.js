@@ -43,7 +43,9 @@ fg_api.prototype.submitHighscore = function() {
 };
 
 fg_api.prototype.showAd = function(cb) {
-  cb();
+  if ('function' === typeof cb) {
+    cb();
+  }
 };
 
 fg_api.prototype.gameOver = function() {
