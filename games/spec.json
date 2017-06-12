@@ -2148,5 +2148,77 @@
     "width": 480,
     "height": 380,
     "key_whitelist": ["ArrowUp", "ArrowDown", "ArrowRight", "ArrowLeft"]
+  },
+  {
+    "name": "Twins-v0",
+    "base": "http://games.cdn.famobi.com/html5games/t/twins/v2/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "Twins-v0.js"
+    ],
+    "resources": [
+      "?fg_domain=play.famobi.com&fg_aid=A1000-1&fg_uid=af7d19d1-2977-4c5f-a1cf-e69f2eca8ff9&fg_pid=4638e320-4444-4514-81c4-d80a8c662371&fg_beat=626",
+      "js/all.js",
+      "data.js",
+      "loading-logo.png",
+      "images/background-sheet0.png",
+      "images/title-sheet0.png",
+      "images/score.png",
+      "media/fail.ogg",
+      "media/move.ogg",
+      "media/select.ogg",
+      "media/cancel.ogg",
+      "media/points.ogg",
+      "media/game.ogg",
+      "media/items.ogg",
+      "images/circle-sheet0.png",
+      "images/circle-sheet1.png",
+      "images/copyright-sheet0.png",
+      "images/ltap-sheet0.png",
+      "images/shine-sheet0.png",
+      "images/blue-sheet0.png",
+      "images/boxh-sheet0.png",
+      "images/boxv-sheet0.png",
+      "images/boxh3-sheet0.png",
+      "images/boxh3-sheet1.png",
+      "images/bmotiondown-sheet0.png",
+      "images/smotionup-sheet0.png",
+      "images/windowbox-sheet0.png",
+      "images/startbtn-sheet0.png",
+      "images/startbtn-sheet1.png",
+      "images/soundbtn-sheet0.png",
+      "images/soundbtn-sheet1.png",
+      "images/musicbtn-sheet0.png",
+      "images/musicbtn-sheet1.png",
+      "images/instructionsbtn-sheet0.png",
+      "images/closebtn-sheet0.png",
+      "images/item1-sheet0.png",
+      "images/item2-sheet0.png",
+      "images/item3-sheet0.png",
+      "images/item4-sheet0.png",
+      "images/item5-sheet0.png",
+      "images/item6-sheet0.png",
+      "images/item7-sheet0.png",
+      "images/item8-sheet0.png",
+      "images/sprite-sheet0.png",
+      "images/sprite2-sheet0.png",
+      "fg_i18n/en/images/windowbox-sheet0.png",
+      "fg_i18n/en/images/info-sheet0.png"
+    ],
+    "processors": [
+      "Twins-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "twins"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": ["ArrowLeft", "ArrowRight"]
   }
 ]

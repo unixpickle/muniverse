@@ -30,6 +30,13 @@
       obj.width = 0;
       obj.height = 0;
       obj.visible = false;
+    },
+    hijackAction: function(sid, func) {
+      var oldRun = cr_getC2Runtime().actsBySid[sid].run;
+      cr_getC2Runtime().actsBySid[sid].run = function() {
+        func();
+        return oldRun.apply(this, arguments);
+      }
     }
   };
 

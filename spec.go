@@ -370,6 +370,19 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 		},
 	},
+
+	{
+		Name:    "Twins-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/t/twins/v2/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
