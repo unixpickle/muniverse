@@ -309,6 +309,7 @@ func dockerRun(ctx context.Context, container string, spec *EnvSpec) (id string,
 		portRange + ":9222",
 		"-p",
 		portRange + ":1337",
+		"--shm-size=200m",
 		"-d",   // Run in detached mode.
 		"--rm", // Automatically delete the container.
 		"-i",   // Give netcat a stdin to read from.
