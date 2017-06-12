@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# Takes a recording directory and exports each episode
+# as a video file.
+
+if [ $# -ne 2 ]; then
+  echo 'Usage: export-recording <fps> <directory>' >&2
+  exit 1
+fi
+
+# Deal with case when no files are found.
+shopt -s nullglob
+
+FPS="$1"
+DIR="$2"
+
+cd "$DIR"
+for name in env*-0000.png
+do
+  baseName=$(echo "$name" | sed -E 's/env([0-9]*)-.*/\1/g')
+  echo "Exporting env$baseName.mp4 ..."
+  ffmpeg -r "$FPS" \
+      -i env$baseName-%04d.png \
+      -c:v libx264 \
+      -pix_fmt yuv420p \
+      -crf 23 \
+      -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" \
+      -loglevel error \
+      env$baseName.mp4 || exit 1
+  echo "Exported env$baseName.mp4"
+done
