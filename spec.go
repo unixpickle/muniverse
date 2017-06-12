@@ -391,6 +391,14 @@ var EnvSpecs = []*EnvSpec{
 		Height:  480,
 		Options: "{}",
 	},
+
+	{
+		Name:    "SpringPanda-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/spring-panda/v040/",
+		Width:   270,
+		Height:  480,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
