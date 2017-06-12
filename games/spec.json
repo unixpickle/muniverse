@@ -2220,5 +2220,62 @@
     "width": 320,
     "height": 480,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
+  },
+  {
+    "name": "Babel-v0",
+    "base": "http://games.cdn.famobi.com/html5games/b/babel/v040/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "Babel-v0.js"
+    ],
+    "resources": [
+      "js/all.js",
+      "data.js",
+      "loading-logo.png",
+      "images/sprite-sheet0.png",
+      "images/camera-sheet0.png",
+      "images/sprite2-sheet0.png",
+      "images/sprite3-sheet0.png",
+      "images/sprite4-sheet0.png",
+      "images/sprite5-sheet0.png",
+      "images/hill-sheet0.png",
+      "images/clound-sheet0.png",
+      "fg_i18n/en/images/sprite6-sheet0.png",
+      "images/stone-sheet0.png",
+      "images/stone-sheet1.png",
+      "images/particles.png",
+      "images/spritefont.png",
+      "images/sprite8-sheet0.png",
+      "images/fin-sheet0.png",
+      "images/gre.png",
+      "images/sprite7-sheet0.png",
+      "images/font.png",
+      "images/sprite9-sheet0.png",
+      "images/sprite10-sheet0.png",
+      "images/sprite11-sheet0.png",
+      "media/a1_07138.ogg",
+      "media/star1.ogg",
+      "media/a5_02038.ogg",
+      "media/a5_02040.ogg",
+      "media/a5_04117.ogg",
+      "fg_i18n/en/images/sprite7-sheet0.png",
+      "fg_i18n/en/images/fin-sheet0.png",
+      "fg_i18n/en/images/sprite10-sheet0.png"
+    ],
+    "processors": [
+      "Babel-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "babel"
+    },
+    "width": 270,
+    "height": 480,
+    "key_whitelist": []
   }
 ]
