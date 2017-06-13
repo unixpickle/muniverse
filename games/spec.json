@@ -2341,5 +2341,63 @@
     "width": 270,
     "height": 480,
     "key_whitelist": []
+  },
+  {
+    "name": "Traffic-v0",
+    "base": "http://games.cdn.famobi.com/html5games/t/traffic/v050/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "Traffic-v0.js"
+    ],
+    "resources": [
+      "fonts/open-sans-v13-latin-700.woff2",
+      "js/all.js",
+      "data.js",
+      "loading-logo.png",
+      "images/logo-sheet0.png",
+      "images/play_button-sheet0.png",
+      "images/restart_button-sheet0.png",
+      "images/pause_button-sheet0.png",
+      "images/play_buttons-sheet0.png",
+      "images/restart_buttons-sheet0.png",
+      "images/home_button-sheet0.png",
+      "images/sound_button-sheet0.png",
+      "images/pause_text-sheet0.png",
+      "images/player-sheet2.png",
+      "images/player-sheet0.png",
+      "images/player-sheet1.png",
+      "images/road-sheet0.png",
+      "images/grass-sheet0.png",
+      "images/car-sheet0.png",
+      "images/car2-sheet0.png",
+      "images/tree-sheet0.png",
+      "images/car3-sheet0.png",
+      "images/car4-sheet0.png",
+      "images/up_button-sheet0.png",
+      "images/down_button-sheet0.png",
+      "images/particles.png",
+      "images/tiledbackground.png",
+      "images/cars-sheet0.png",
+      "images/sprite-sheet0.png",
+      "media/score.ogg",
+      "media/ui1.ogg",
+      "media/music.ogg",
+      "media/music.ogg"
+    ],
+    "processors": [
+      "Traffic-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "traffic"
+    },
+    "width": 320,
+    "height": 486,
+    "key_whitelist": []
   }
 ]

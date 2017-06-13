@@ -399,6 +399,14 @@ var EnvSpecs = []*EnvSpec{
 		Height:  480,
 		Options: "{}",
 	},
+
+	{
+		Name:    "Traffic-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/t/traffic/v050/",
+		Width:   320,
+		Height:  486,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
