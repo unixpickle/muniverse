@@ -407,6 +407,34 @@ var EnvSpecs = []*EnvSpec{
 		Height:  486,
 		Options: "{}",
 	},
+
+	{
+		Name:    "CartoonFlight-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/c/cartoon-flight/v3/",
+		Width:   321,
+		Height:  480,
+		Options: "{\"scoreMode\":\"distance\"}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
+
+	{
+		Name:    "CartoonFlight-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/c/cartoon-flight/v3/",
+		Width:   321,
+		Height:  480,
+		Options: "{\"scoreMode\":\"stars\"}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+
+		VariantOf: "CartoonFlight-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Format famobi_gameJS properly.
+mv "$DIR/index.html" "$DIR/index_pre_cartoonflight.html"
+cat "$DIR/index_pre_cartoonflight.html" |
+  tail -c +4 |
+  sed -E $'s/"dist\\/all\\.js",/\\\n/g' |
+  sed -E $'s/\\}\\];/\\}\\\n \\];/g' |
+  sed -E 's/(<\/body>)/<script src="dist\/all\.js"><\/script>\1/g' \
+  > "$DIR/index.html"
+
+# Prevent the domain-based game lock.
+mv "$DIR/dist/all.js" "$DIR/dist/all.preproc.js"
+cat "$DIR/dist/all.preproc.js" |
+  sed -E 's/("SPONSOR_URL",1,)window\.famobi\.__\("more_games_url"\)/\1"localhost"/g' |
+  sed -E 's/("SPONSOR_URL_LIST",1,)"famobi.com"/\1"localhost"/g' \
+  > "$DIR/dist/all.js"
