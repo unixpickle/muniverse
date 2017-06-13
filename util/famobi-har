@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Used to get resource names for Famobi games.
+#
+# Load a game in Chrome with the developer console open.
+# After requests are done, right click a request in the
+# "Network" tab and go to Copy > Copy All as HAR.
+# Now paste the data into a file (or use `pbpaste`) and
+# pipe it into this command.
+
+jq -r '.log.entries[] | .request.url' |
+  grep -E '^http://games.cdn.famobi.com/html5games/[a-z]/[a-z-]*/[0-9a-z\-]*/' |
+  sed -E 's/.*\/html5games\/[a-z]\/[a-z-]*\/[0-9a-z\-]*\/(.*)/"\1",/g'
