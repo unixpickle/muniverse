@@ -2564,5 +2564,81 @@
     "options": {
       "scoreMode": "stars"
     }
+  },
+  {
+    "name": "GoldMine-v0",
+    "base": "http://games.cdn.famobi.com/html5games/g/gold-mine/v130/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "GoldMine-v0.js"
+    ],
+    "resources": [
+      "js/all.js",
+      "data.js",
+      "images/block-sheet0.png",
+      "images/block-sheet1.png",
+      "images/helper-sheet0.png",
+      "images/miner_entity_000_layer_01-sheet0.png",
+      "images/miner_entity_000_layer_2-sheet0.png",
+      "images/miner_entity_000_layer_2-sheet1.png",
+      "images/miner_entity_000_layer_4-sheet0.png",
+      "images/miner_entity_000_layer_7-sheet0.png",
+      "images/miner_entity_000_layer_3-sheet0.png",
+      "images/miner_entity_000_layer_5-sheet1.png",
+      "images/miner_entity_000_layer_5-sheet0.png",
+      "images/hudt.png",
+      "images/purplerockt.png",
+      "images/hudbg-sheet0.png",
+      "images/standwood-sheet0.png",
+      "images/particles.png",
+      "images/font.png",
+      "images/cam-sheet0.png",
+      "images/font2.png",
+      "images/checker-sheet0.png",
+      "images/button-sheet0.png",
+      "images/blackt.png",
+      "images/pause-sheet0.png",
+      "images/more_games600x253_onwhite-sheet0.png",
+      "images/pausebuttons-sheet1.png",
+      "images/pausebuttons-sheet0.png",
+      "images/gameoverbuttons-sheet0.png",
+      "images/gameoverbuttons-sheet1.png",
+      "images/soundbutton-sheet0.png",
+      "images/soundbutton-sheet1.png",
+      "images/title-sheet0.png",
+      "images/dig-sheet0.png",
+      "images/spritesareloading-sheet0.png",
+      "images/newdepth-sheet0.png",
+      "images/bubble-sheet0.png",
+      "images/bubble-sheet1.png",
+      "images/bubble-sheet2.png",
+      "images/info-sheet0.png",
+      "images/famobiinfo-sheet0.png",
+      "images/nextlevel-sheet0.png",
+      "images/spritefont.png",
+      "media/ball.ogg",
+      "media/expo.ogg",
+      "media/great.ogg",
+      "media/punch.ogg",
+      "media/score.ogg",
+      "media/tap.ogg",
+      "media/woosh.ogg",
+      "miner.scon"
+    ],
+    "processors": [
+      "GoldMine-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "gold-mine"
+    },
+    "width": 480,
+    "height": 320,
+    "key_whitelist": []
   }
 ]

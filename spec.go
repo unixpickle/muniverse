@@ -435,6 +435,14 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "CartoonFlight-v0",
 	},
+
+	{
+		Name:    "GoldMine-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/g/gold-mine/v130/",
+		Width:   480,
+		Height:  320,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
