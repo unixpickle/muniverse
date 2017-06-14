@@ -2670,5 +2670,71 @@
     "width": 480,
     "height": 320,
     "key_whitelist": []
+  },
+  {
+    "name": "ProtectThePlanet-v0",
+    "base": "http://games.cdn.famobi.com/html5games/p/protect-the-planet/v2/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "ProtectThePlanet-v0.js"
+    ],
+    "resources": [
+      "build/ProtectThePlanet.min.js",
+      "Content/loading_bg.jpg",
+      "Content/bar.png",
+      "Content/bar_bg.png",
+      "Content/orientation.png",
+      "Content/menu_lq.png",
+      "Content/bg_lq.png",
+      "Content/tutorial_lq.png",
+      "Content/font_lq.png",
+      "Content/scorefont_lq.png",
+      "Content/menu_lq.xml",
+      "Content/bg_lq.xml",
+      "Content/tutorial_lq.xml",
+      "Content/font_lq.xml",
+      "Content/scorefont_lq.xml",
+      "Content/click.mp3",
+      "Content/game_lq.png",
+      "Content/planet_lq.png",
+      "Content/game_lq.xml",
+      "Content/planet_lq.xml",
+      "Content/menu.png",
+      "Content/bg.png",
+      "Content/game.png",
+      "Content/planet.png",
+      "Content/tutorial.png",
+      "Content/font.png",
+      "Content/tutorial.xml",
+      "Content/game.xml",
+      "Content/font.xml",
+      "Content/menu.xml",
+      "Content/bg.xml",
+      "Content/planet.xml",
+      "Content/scorefont.png",
+      "Content/scorefont.xml",
+      "Content/DST-Aethereal_optimized.ogg",
+      "Content/explosion.mp3",
+      "Content/fighter_explosion.mp3",
+      "Content/lazer.mp3",
+      "Content/fighter_lazer.mp3",
+      "Content/gameover.mp3",
+      "Content/highscore.mp3",
+      "Content/Achievement0.mp3"
+    ],
+    "processors": [
+      "ProtectThePlanet-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "protect-the-planet"
+    },
+    "width": 1024,
+    "height": 640,
+    "key_whitelist": []
   }
 ]

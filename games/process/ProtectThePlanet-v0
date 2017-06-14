@@ -1,0 +1,18 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Format famobi_gameJS properly.
+mv "$DIR/index.html" "$DIR/index_pre_ptt.html"
+cat "$DIR/index_pre_ptt.html" |
+  tail -c +4 |
+  sed -E $'s/"build\/ProtectThePlanet.min.js",/\\\n/g' |
+  sed -E $'s/\\}\\];/\\}\\\n \\];/g' |
+  sed -E 's/(<\/body>)/<script src="build\/ProtectThePlanet\.min\.js"><\/script>\1/g' \
+  > "$DIR/index.html"
+
+mv "$DIR/build/ProtectThePlanet.min.js" "$DIR/build/ProtectThePlanet.preproc.js"
+cat "$DIR/build/ProtectThePlanet.preproc.js" |
+  sed -E 's/(e\.Game=function\(t,i,s,n,r,a,o,h\)\{)/\1globalGameObj = this;/g' |
+  sed -E 's/(t\.send=function\(t,e\)\{)/\1return;/g' \
+  > "$DIR/build/ProtectThePlanet.min.js"
