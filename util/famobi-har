@@ -9,5 +9,5 @@
 # pipe it into this command.
 
 jq -r '.log.entries[] | .request.url' |
-  grep -E '^http://games.cdn.famobi.com/html5games/[a-z]/[a-z-]*/[0-9a-z\-]*/' |
-  sed -E 's/.*\/html5games\/[a-z]\/[a-z-]*\/[0-9a-z\-]*\/(.*)/"\1",/g'
+  grep -E '^http://games.cdn.famobi.com/html5games/[a-z]/[a-z0-9-]*/[0-9a-z\-]*/' |
+  sed -E 's/.*\/html5games\/[a-z]\/[a-z0-9-]*\/[0-9a-z\-]*\/(.*)/"\1",/g'
