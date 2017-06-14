@@ -467,6 +467,14 @@ var EnvSpecs = []*EnvSpec{
 		Height:  270,
 		Options: "{}",
 	},
+
+	{
+		Name:    "PizzaNinja3-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/p/pizza-ninja-3/v090/",
+		Width:   480,
+		Height:  288,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
