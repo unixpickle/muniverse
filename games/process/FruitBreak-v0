@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DIR="$1"
+
+for i in {1..3}
+do
+  mv "$DIR/media/swipe-${i}%20(2).ogg" "$DIR/media/swipe-$i (2).ogg"
+done
+
+# Format famobi_gameJS properly.
+mv "$DIR/index.html" "$DIR/index_pre_fruitbreak.html"
+cat "$DIR/index_pre_fruitbreak.html" |
+  sed -E $'s/\'js\\/all\\.js\',/\\\n/g' |
+  sed -E 's/navigator\.serviceWorker\.register\(/\/\//g' |
+  sed -E 's/(<\/body>)/<script src="js\/all\.js"><\/script>\1/g' \
+  > "$DIR/index.html"
