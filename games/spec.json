@@ -2640,5 +2640,35 @@
     "width": 480,
     "height": 320,
     "key_whitelist": []
+  },
+  {
+    "name": "Basketball-v0",
+    "base": "http://games.cdn.famobi.com/html5games/b/basketball/v070/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "Basketball-v0.js"
+    ],
+    "resources": [
+      "js/css.css",
+      "js/all.js",
+      "res/background.png",
+      "res/title.png",
+      "res/ball.png",
+      "res/hoop.png"
+    ],
+    "processors": [
+      "Basketball-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "basketball"
+    },
+    "width": 480,
+    "height": 320,
+    "key_whitelist": []
   }
 ]
