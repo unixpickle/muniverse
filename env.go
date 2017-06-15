@@ -31,6 +31,9 @@ const (
 const occasionalDockerErr = "Error response from daemon: device or resource busy."
 
 // An Env controls and observes an environment.
+//
+// It is not safe to run an methods on an Env from more
+// than one Goroutine at a time.
 type Env interface {
 	// Spec returns details about the environment.
 	Spec() *EnvSpec

@@ -15,17 +15,16 @@ FPS="$1"
 DIR="$2"
 
 cd "$DIR"
-for name in env*-0000.png
+for name in recording_*
 do
-  baseName=$(echo "$name" | sed -E 's/env([0-9]*)-.*/\1/g')
-  echo "Exporting env$baseName.mp4 ..."
+  echo "Exporting $name ..."
   ffmpeg -r "$FPS" \
-      -i env$baseName-%04d.png \
+      -i "$name/frames/%d.png" \
       -c:v libx264 \
       -pix_fmt yuv420p \
       -crf 23 \
       -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" \
       -loglevel error \
-      env$baseName.mp4 || exit 1
-  echo "Exported env$baseName.mp4"
+      "$name.mp4" || continue
+  echo "Exported $name.mp4"
 done
