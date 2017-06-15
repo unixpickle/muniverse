@@ -447,8 +447,8 @@ var EnvSpecs = []*EnvSpec{
 	{
 		Name:    "Basketball-v0",
 		BaseURL: "http://games.cdn.famobi.com/html5games/b/basketball/v070/",
-		Width:   480,
-		Height:  320,
+		Width:   320,
+		Height:  480,
 		Options: "{}",
 	},
 
