@@ -256,12 +256,17 @@ func (c *Conn) handleEvent(method string, data []byte) {
 			Params struct {
 				Entry struct {
 					Text string `json:"text"`
+					URL  string `json:"url"`
 				} `json:"entry"`
 			} `json:"params"`
 		}
 		if json.Unmarshal(data, &entryObj) == nil {
 			c.logLock.Lock()
-			c.log = append(c.log, entryObj.Params.Entry.Text)
+			msg := entryObj.Params.Entry.Text
+			if entryObj.Params.Entry.URL != "" {
+				msg += " (URL: " + entryObj.Params.Entry.URL + ")"
+			}
+			c.log = append(c.log, msg)
 			c.logLock.Unlock()
 		}
 	}
