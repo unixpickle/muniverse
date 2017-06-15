@@ -488,6 +488,44 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 	},
+
+	{
+		Name:    "Shards-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/shards/v220/",
+		Width:   320,
+		Height:  512,
+		Options: "{\"level\":0}",
+	},
+
+	{
+		Name:    "Shards-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/shards/v220/",
+		Width:   320,
+		Height:  512,
+		Options: "{\"level\":1}",
+
+		VariantOf: "Shards-v0",
+	},
+
+	{
+		Name:    "Shards-v2",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/shards/v220/",
+		Width:   320,
+		Height:  512,
+		Options: "{\"level\":2}",
+
+		VariantOf: "Shards-v0",
+	},
+
+	{
+		Name:    "Shards-v3",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/shards/v220/",
+		Width:   320,
+		Height:  512,
+		Options: "{\"level\":3}",
+
+		VariantOf: "Shards-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

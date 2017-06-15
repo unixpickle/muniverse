@@ -2991,5 +2991,101 @@
     "width": 320,
     "height": 480,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
+  },
+  {
+    "name": "Shards-v0",
+    "base": "http://games.cdn.famobi.com/html5games/s/shards/v220/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "Shards-v0.js"
+    ],
+    "resources": [
+      "css/app.css",
+      "js/all.js",
+      "assets/orientation.jpg",
+      "assets/pattern.png",
+      "assets/sfx.ogg",
+      "assets/Main.ogg",
+      "assets/Backgrounds/Title.jpg",
+      "assets/800/SplashFont.xml",
+      "assets/800/Splash.png",
+      "assets/800/Splash.json",
+      "assets/800/GUI_Shards.png",
+      "assets/800/Shards_game.png",
+      "assets/800/Hourglass.png",
+      "assets/800/Font.xml",
+      "assets/800/Shards_game.json",
+      "assets/800/Hourglass.json",
+      "assets/800/GUI_Shards.json",
+      "assets/800/Font_fore.xml",
+      "assets/800/Font_back.xml",
+      "assets/320/SplashFont.xml",
+      "assets/320/Splash.png",
+      "assets/320/Splash.json",
+      "assets/320/GUI_Shards.png",
+      "assets/320/Shards_game.png",
+      "assets/320/Hourglass.png",
+      "assets/320/Font.xml",
+      "assets/320/Shards_game.json",
+      "assets/320/Hourglass.json",
+      "assets/320/GUI_Shards.json",
+      "assets/320/Font_fore.xml",
+      "assets/320/Font_back.xml",
+      "assets/levels.bin",
+      "assets/text.json",
+      "assets/config.json",
+      "assets/Music0.ogg",
+      "assets/Music1.ogg",
+      "assets/Music2.ogg",
+      "assets/Music3.ogg",
+      "assets/Backgrounds/Background_01.jpg",
+      "assets/Backgrounds/Background_02.jpg",
+      "assets/Backgrounds/Background_03.jpg",
+      "assets/Backgrounds/Background_04.jpg",
+      "assets/Backgrounds/Background_05.jpg",
+      "assets/Backgrounds/Background_06.jpg",
+      "assets/Backgrounds/Background_07.jpg",
+      "assets/Backgrounds/Background_08.jpg",
+      "assets/Backgrounds/Background_09.jpg",
+      "assets/Backgrounds/Background_10.jpg"
+    ],
+    "processors": [
+      "Shards-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "shards"
+    },
+    "width": 320,
+    "height": 512,
+    "key_whitelist": [],
+    "options": {
+      "level": 0
+    }
+  },
+  {
+    "name": "Shards-v1",
+    "variant_of": "Shards-v0",
+    "options": {
+      "level": 1
+    }
+  },
+  {
+    "name": "Shards-v2",
+    "variant_of": "Shards-v0",
+    "options": {
+      "level": 2
+    }
+  },
+  {
+    "name": "Shards-v3",
+    "variant_of": "Shards-v0",
+    "options": {
+      "level": 3
+    }
   }
 ]
