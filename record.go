@@ -90,10 +90,13 @@ func (r *Recording) WriteObs(obs Obs) (err error) {
 }
 
 // WriteStep adds a step to the Recording.
-func (r *Recording) WriteStep(t time.Duration, events []interface{}, reward float64,
-	done bool) (err error) {
-	step := recordingStep{Time: t, Reward: reward, Done: done}
-	for _, event := range events {
+func (r *Recording) WriteStep(info *StepInfo) (err error) {
+	step := recordingStep{
+		Time:   info.Time,
+		Reward: info.Reward,
+		Done:   info.Done,
+	}
+	for _, event := range info.Events {
 		switch event := event.(type) {
 		case *chrome.KeyEvent:
 			step.Events = append(step.Events, recordingEvent{KeyEvent: event})
@@ -141,22 +144,23 @@ func (r *Recording) ReadObs(idx int) (obs Obs, err error) {
 
 // ReadStep reads the step at the given index.
 // It fails if the index is out of range.
-func (r *Recording) ReadStep(idx int) (t time.Duration, events []interface{},
-	reward float64, done bool, err error) {
+func (r *Recording) ReadStep(idx int) (info *StepInfo, err error) {
 	defer essentials.AddCtxTo("read step", &err)
 	if idx < 0 || idx >= r.NumSteps() {
 		err = errors.New("index out of range")
 		return
 	}
 	step := r.info.Steps[idx]
-	t = step.Time
-	reward = step.Reward
-	done = step.Done
+	info = &StepInfo{
+		Time:   step.Time,
+		Reward: step.Reward,
+		Done:   step.Done,
+	}
 	for _, evt := range step.Events {
 		if evt.KeyEvent != nil {
-			events = append(events, evt.KeyEvent)
+			info.Events = append(info.Events, evt.KeyEvent)
 		} else if evt.MouseEvent != nil {
-			events = append(events, evt.MouseEvent)
+			info.Events = append(info.Events, evt.MouseEvent)
 		}
 	}
 	return
@@ -233,7 +237,12 @@ func (r *recordEnv) Step(t time.Duration, events ...interface{}) (reward float64
 	if err != nil {
 		return
 	}
-	err = r.curRec.WriteStep(t, events, reward, done)
+	err = r.curRec.WriteStep(&StepInfo{
+		Time:   t,
+		Events: events,
+		Reward: reward,
+		Done:   done,
+	})
 	return
 }
 
@@ -245,6 +254,16 @@ func (r *recordEnv) createDir() error {
 		return errors.New("record to " + r.destDir + ": not a directory")
 	}
 	return nil
+}
+
+// StepInfo stores information about a step in an
+// environment and the result of that step.
+type StepInfo struct {
+	Time   time.Duration
+	Events []interface{}
+
+	Reward float64
+	Done   bool
 }
 
 type recordingInfo struct {
