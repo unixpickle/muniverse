@@ -475,6 +475,19 @@ var EnvSpecs = []*EnvSpec{
 		Height:  288,
 		Options: "{}",
 	},
+
+	{
+		Name:    "TimberMan-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/t/timber-man/v1/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

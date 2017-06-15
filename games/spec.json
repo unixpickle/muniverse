@@ -2936,5 +2936,60 @@
     "width": 480,
     "height": 288,
     "key_whitelist": []
+  },
+  {
+    "name": "TimberMan-v0",
+    "base": "http://games.cdn.famobi.com/html5games/t/timber-man/v1/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "TimberMan-v0.js"
+    ],
+    "resources": [
+      "jquery-2.1.1.min.js",
+      "c2runtime.min.js",
+      "data.js",
+      "loading-logo.png",
+      "images/branch-sheet0.png",
+      "images/branch-sheet1.png",
+      "images/man-sheet0.png",
+      "images/man-sheet1.png",
+      "images/treecollision-sheet0.png",
+      "images/background.png",
+      "images/stump-sheet0.png",
+      "images/mancollision-sheet0.png",
+      "images/rip-sheet0.png",
+      "images/timebar-sheet0.png",
+      "images/timebarcontainer-sheet0.png",
+      "images/overpanel-sheet0.png",
+      "images/tw-sheet0.png",
+      "images/playbtn-sheet0.png",
+      "images/scoretxt.png",
+      "images/sprite-sheet0.png",
+      "images/sprite5-sheet0.png",
+      "images/sprite6-sheet0.png",
+      "images/logo-sheet0.png",
+      "images/sound-sheet0.png",
+      "images/sound-sheet1.png",
+      "media/cut.ogg",
+      "media/death.ogg",
+      "media/menu.ogg",
+      "media/theme.ogg",
+      "fg_i18n/en/images/overpanel-sheet0.png"
+    ],
+    "processors": [
+      "TimberMan-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "timber-man"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": ["ArrowLeft", "ArrowRight"]
   }
 ]
