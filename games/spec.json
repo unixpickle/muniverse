@@ -3051,7 +3051,8 @@
       "assets/Backgrounds/Background_07.jpg",
       "assets/Backgrounds/Background_08.jpg",
       "assets/Backgrounds/Background_09.jpg",
-      "assets/Backgrounds/Background_10.jpg"
+      "assets/Backgrounds/Background_10.jpg",
+      "assets/Backgrounds/Background_11.jpg"
     ],
     "processors": [
       "Shards-v0",
