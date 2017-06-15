@@ -70,7 +70,7 @@ func CreateRecording(path string) (rec *Recording, err error) {
 func (r *Recording) WriteObs(obs Obs) (err error) {
 	defer essentials.AddCtxTo("write observation", &err)
 
-	data, err := pngDataFromObs(obs)
+	data, err := ObsPNG(obs)
 	if err != nil {
 		return
 	}

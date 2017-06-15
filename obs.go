@@ -42,6 +42,23 @@ func RGB(o Obs) (buffer []uint8, width, height int, err error) {
 	return
 }
 
+// ObsPNG encodes an observation as PNG data.
+func ObsPNG(obs Obs) ([]byte, error) {
+	if po, ok := obs.(pngObs); ok {
+		return po, nil
+	} else {
+		img, err := obs.Image()
+		if err != nil {
+			return nil, err
+		}
+		var buf bytes.Buffer
+		if err := png.Encode(&buf, img); err != nil {
+			return nil, err
+		}
+		return buf.Bytes(), nil
+	}
+}
+
 func rgbaToRGB(rgba []uint8) []uint8 {
 	buffer := make([]uint8, 3*(len(rgba)/4))
 	var destIdx int
@@ -75,20 +92,4 @@ type pngObs []byte
 func (p pngObs) Image() (img image.Image, err error) {
 	defer essentials.AddCtxTo("decode PNG observation", &err)
 	return png.Decode(bytes.NewReader(p))
-}
-
-func pngDataFromObs(obs Obs) ([]byte, error) {
-	if po, ok := obs.(pngObs); ok {
-		return po, nil
-	} else {
-		img, err := obs.Image()
-		if err != nil {
-			return nil, err
-		}
-		var buf bytes.Buffer
-		if err := png.Encode(&buf, img); err != nil {
-			return nil, err
-		}
-		return buf.Bytes(), nil
-	}
 }
