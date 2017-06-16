@@ -54,6 +54,9 @@
 
         // From now on, time only passes due to step().
         window.faketime.pause();
+
+        // Hide popup UI.
+        window.faketime.advance(100);
       });
     },
 

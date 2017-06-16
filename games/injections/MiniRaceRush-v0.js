@@ -7,6 +7,11 @@
 
   var gameOver = false;
 
+  // Remove scrollbars.
+  window.addEventListener('load', function() {
+    document.body.style.overflow = 'hidden';
+  })
+
   window.muniverse = {
     init: function() {
       return pollAndWait(MENU_TIMEOUT, function() {

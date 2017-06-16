@@ -315,16 +315,16 @@ var EnvSpecs = []*EnvSpec{
 	{
 		Name:    "PaperPlaneFlight-v0",
 		BaseURL: "http://games.cdn.famobi.com/html5games/p/paper-plane-flight/v3/",
-		Width:   560,
-		Height:  420,
+		Width:   320,
+		Height:  480,
 		Options: "{}",
 	},
 
 	{
 		Name:    "PaperPlaneFlight-v1",
 		BaseURL: "http://games.cdn.famobi.com/html5games/p/paper-plane-flight/v3/",
-		Width:   560,
-		Height:  420,
+		Width:   320,
+		Height:  480,
 		Options: "{\"planeType\":\"yellow\"}",
 
 		VariantOf: "PaperPlaneFlight-v0",
@@ -333,8 +333,8 @@ var EnvSpecs = []*EnvSpec{
 	{
 		Name:    "PaperPlaneFlight-v2",
 		BaseURL: "http://games.cdn.famobi.com/html5games/p/paper-plane-flight/v3/",
-		Width:   560,
-		Height:  420,
+		Width:   320,
+		Height:  480,
 		Options: "{\"planeType\":\"violetSecond\"}",
 
 		VariantOf: "PaperPlaneFlight-v0",

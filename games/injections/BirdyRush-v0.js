@@ -28,7 +28,8 @@
           window.game.isRunning &&
           window.game.state &&
           window.game.state.getCurrentState().key === 'GameState' &&
-          childAtPath(PLAY_BUTTON);
+          childAtPath(PLAY_BUTTON) &&
+          window.game.tweens.getAll().length === 0;
       }).then(function() {
         window.faketime.pause();
 

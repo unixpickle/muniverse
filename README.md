@@ -42,16 +42,6 @@ Here's what is done so far:
 
 Here's a (non-exhaustive) to-do list:
 
- * Don't show menu in BirdyRush-v0
- * Fix game over logic in Traffic-v0
- * Remove scrollbars in:
-   * OfficeLove-v0
-   * MiniRaceRush-v0
-   * StreetPursuit-v0
- * Advance initial time further in:
-   * KatanaFruits-v0
-   * PizzaNinja3-v0
- * Fix aspect ratio on PaperPlaneFlight
  * Get more games.
  * Python bindings & Gym integration.
  * Error on step without corresponding reset.

@@ -31,7 +31,7 @@
     },
     step: function(millis) {
       window.faketime.advance(millis);
-      return Promise.resolve(gameOver);
+      return Promise.resolve(gameOver || !!c2.globalVar('gameover').getValue());
     },
     score: function() {
       return Promise.resolve(c2.globalVar('score').getValue());

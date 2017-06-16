@@ -36,7 +36,7 @@
 
         // Hit checkbox to begin game.
         r793.r607();
-        window.faketime.advance(50);
+        window.faketime.advance(3000);
 
         // Disable pause button.
         game.stage.children[0].children[23].clbck = () => 0;
