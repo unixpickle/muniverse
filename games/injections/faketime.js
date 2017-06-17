@@ -30,7 +30,8 @@
   }
 
   // Play the application at normal speed.
-  FakeTime.prototype.play = function() {
+  FakeTime.prototype.play = function(speed) {
+    speed = speed || 1;
     if (this._realtimeInterval !== null) {
       return;
     }
@@ -38,7 +39,7 @@
     var backup = this._backups.setInterval.bind(window);
     this._realtimeInterval = backup.call(window, function() {
       var newTime = this._realTime();
-      this.advance(Math.max(0, newTime-lastTime));
+      this.advance(speed*Math.max(0, newTime-lastTime));
       lastTime = newTime;
     }.bind(this), 1000/FRAME_RATE);
   };
