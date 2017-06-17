@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DIR="$1"
+
+mv "$DIR/index.html" "$DIR/index_pre_zop.html"
+cat "$DIR/index_pre_zop.html" |
+  sed -E $'s/\'js\\/all\\.js\',/\\\n/g' |
+  sed -E $'s/\\}\\];/\\}\\\n \\];/g' |
+  sed -E "s/<link href='\\/\\/fonts\\.googleapis.*$//g" |
+  sed -E 's/(<\/body>)/<script src="js\/all\.js"><\/script>\1/g' \
+  > "$DIR/index.html"

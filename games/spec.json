@@ -3088,5 +3088,37 @@
     "options": {
       "level": 3
     }
+  },
+  {
+    "name": "Zop-v0",
+    "base": "http://games.cdn.famobi.com/html5games/z/zop/v070/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "Zop-v0.js"
+    ],
+    "resources": [
+      "js/all.js",
+      "icons/material_design_icons.woff"
+    ],
+    "processors": [
+      "Zop-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "zop"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": []
+  },
+  {
+    "name": "Zop-v1",
+    "variant_of": "Zop-v0",
+    "width": 480,
+    "height": 320
   }
 ]

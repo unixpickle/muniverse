@@ -526,6 +526,24 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "Shards-v0",
 	},
+
+	{
+		Name:    "Zop-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/z/zop/v070/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+	},
+
+	{
+		Name:    "Zop-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/z/zop/v070/",
+		Width:   480,
+		Height:  320,
+		Options: "{}",
+
+		VariantOf: "Zop-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
