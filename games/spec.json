@@ -3120,5 +3120,92 @@
     "variant_of": "Zop-v0",
     "width": 480,
     "height": 320
+  },
+  {
+    "name": "DotsMania-v0",
+    "base": "http://games.cdn.famobi.com/html5games/d/dots-mania/19-4aace/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "DotsMania-v0.js"
+    ],
+    "resources": [
+      "css/game.css",
+      "assets/UI/rotate_screen.png",
+      "assets/ico/256x256.png",
+      "assets/ico/144x144.png",
+      "assets/ico/72x72.png",
+      "assets/ico/48x48.png",
+      "assets/ico/36x36.png",
+      "js/all.js",
+      "assets/images/splash.png",
+      "assets/images/splah_dots.png",
+      "assets/images/splash.json",
+      "assets/sfx/ogg/menu.ogg",
+      "assets/sfx/ogg/game.ogg",
+      "assets/images/images.png",
+      "assets/sfx/ogg/gameover.ogg",
+      "assets/sfx/ogg/connect2.ogg",
+      "assets/sfx/ogg/connect3.ogg",
+      "assets/sfx/ogg/connect4.ogg",
+      "assets/images/images.json",
+      "assets/sfx/ogg/connect5.ogg",
+      "assets/sfx/ogg/connect6.ogg",
+      "assets/sfx/ogg/connect7.ogg",
+      "assets/sfx/ogg/connect8.ogg",
+      "assets/sfx/ogg/connect9.ogg",
+      "assets/sfx/ogg/connect10.ogg",
+      "assets/sfx/ogg/connect11.ogg",
+      "assets/sfx/ogg/connect12.ogg",
+      "assets/sfx/ogg/connect13.ogg",
+      "assets/sfx/ogg/connect-square.ogg",
+      "assets/sfx/ogg/boost-erase-dot.ogg",
+      "assets/sfx/ogg/boost-erase-color.ogg",
+      "assets/sfx/ogg/boost-time.ogg",
+      "assets/sfx/ogg/menuYes.ogg",
+      "assets/sfx/ogg/menuNo.ogg",
+      "assets/sfx/ogg/shop-blocked.ogg"
+    ],
+    "processors": [
+      "DotsMania-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "dots-mania"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": [],
+    "options": {
+      "mode": "time",
+      "bonus": false
+    }
+  },
+  {
+    "name": "DotsMania-v1",
+    "variant_of": "DotsMania-v0",
+    "options": {
+      "mode": "moves",
+      "bonus": false
+    }
+  },
+  {
+    "name": "DotsMania-v2",
+    "variant_of": "DotsMania-v0",
+    "options": {
+      "mode": "time",
+      "bonus": true
+    }
+  },
+  {
+    "name": "DotsMania-v3",
+    "variant_of": "DotsMania-v0",
+    "options": {
+      "mode": "moves",
+      "bonus": true
+    }
   }
 ]

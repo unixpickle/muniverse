@@ -544,6 +544,44 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "Zop-v0",
 	},
+
+	{
+		Name:    "DotsMania-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/d/dots-mania/19-4aace/",
+		Width:   320,
+		Height:  480,
+		Options: "{\"bonus\":false,\"mode\":\"time\"}",
+	},
+
+	{
+		Name:    "DotsMania-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/d/dots-mania/19-4aace/",
+		Width:   320,
+		Height:  480,
+		Options: "{\"bonus\":false,\"mode\":\"moves\"}",
+
+		VariantOf: "DotsMania-v0",
+	},
+
+	{
+		Name:    "DotsMania-v2",
+		BaseURL: "http://games.cdn.famobi.com/html5games/d/dots-mania/19-4aace/",
+		Width:   320,
+		Height:  480,
+		Options: "{\"bonus\":true,\"mode\":\"time\"}",
+
+		VariantOf: "DotsMania-v0",
+	},
+
+	{
+		Name:    "DotsMania-v3",
+		BaseURL: "http://games.cdn.famobi.com/html5games/d/dots-mania/19-4aace/",
+		Width:   320,
+		Height:  480,
+		Options: "{\"bonus\":true,\"mode\":\"moves\"}",
+
+		VariantOf: "DotsMania-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
