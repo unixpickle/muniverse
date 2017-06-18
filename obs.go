@@ -93,3 +93,11 @@ func (p pngObs) Image() (img image.Image, err error) {
 	defer essentials.AddCtxTo("decode PNG observation", &err)
 	return png.Decode(bytes.NewReader(p))
 }
+
+type imageObs struct {
+	Img image.Image
+}
+
+func (i *imageObs) Image() (image.Image, error) {
+	return i.Img, nil
+}
