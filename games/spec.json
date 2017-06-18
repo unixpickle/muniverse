@@ -3207,5 +3207,111 @@
       "mode": "moves",
       "bonus": true
     }
+  },
+  {
+    "name": "FitItQuick-v0",
+    "base": "http://games.cdn.famobi.com/html5games/f/fit-it-quick/v010/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "FitItQuick-v0.js"
+    ],
+    "resources": [
+      "js/all.js",
+      "css/phaser-mobile.css",
+      "music/menu.mp3",
+      "music/click.mp3",
+      "music/hidding.mp3",
+      "music/showing.mp3",
+      "music/wins.mp3",
+      "assets/1x/McBubble.png",
+      "assets/1x/gameTitle.png",
+      "assets/1x/CharStudioMc.png",
+      "assets/1x/hintObject.png",
+      "assets/1x/sound_icons.png",
+      "assets/1x/sound_icons.xml",
+      "assets/1x/level_icons.png",
+      "assets/1x/level_icons.xml",
+      "assets/1x/gameMenu.png",
+      "assets/1x/gameMenu.xml",
+      "assets/1x/buttons.png",
+      "assets/1x/buttons.xml",
+      "assets/1x/texts.xml",
+      "assets/1x/dialogs.png",
+      "assets/1x/dialogs.xml",
+      "assets/1x/preloader_background.png",
+      "assets/1x/blocks.png",
+      "assets/1x/blocks.xml",
+      "assets/1x/loader.png",
+      "assets/1x/loader.xml",
+      "assets/1x/rotate.gif",
+      "fg_i18n/en/images/1x/texts.png",
+      "assets/2x/McBubble.png",
+      "assets/2x/gameTitle.png",
+      "assets/2x/CharStudioMc.png",
+      "assets/2x/hintObject.png",
+      "assets/2x/sound_icons.png",
+      "assets/2x/sound_icons.xml",
+      "assets/2x/level_icons.png",
+      "assets/2x/level_icons.xml",
+      "assets/2x/gameMenu.png",
+      "assets/2x/gameMenu.xml",
+      "assets/2x/buttons.png",
+      "assets/2x/buttons.xml",
+      "assets/2x/texts.xml",
+      "assets/2x/dialogs.png",
+      "assets/2x/dialogs.xml",
+      "assets/2x/preloader_background.png",
+      "assets/2x/blocks.png",
+      "assets/2x/blocks.xml",
+      "assets/2x/loader.png",
+      "assets/2x/loader.xml",
+      "assets/2x/rotate.gif",
+      "fg_i18n/en/images/2x/texts.png"
+    ],
+    "processors": [
+      "FitItQuick-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "fit-it-quick"
+    },
+    "width": 430,
+    "height": 320,
+    "key_whitelist": [],
+    "options": {
+      "level": 1
+    }
+  },
+  {
+    "name": "FitItQuick-v1",
+    "variant_of": "FitItQuick-v0",
+    "options": {
+      "level": 2
+    }
+  },
+  {
+    "name": "FitItQuick-v2",
+    "variant_of": "FitItQuick-v0",
+    "options": {
+      "level": 3
+    }
+  },
+  {
+    "name": "FitItQuick-v3",
+    "variant_of": "FitItQuick-v0",
+    "options": {
+      "level": 4
+    }
+  },
+  {
+    "name": "FitItQuick-v4",
+    "variant_of": "FitItQuick-v0",
+    "options": {
+      "level": 5
+    }
   }
 ]

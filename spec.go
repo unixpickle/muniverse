@@ -582,6 +582,54 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "DotsMania-v0",
 	},
+
+	{
+		Name:    "FitItQuick-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/fit-it-quick/v010/",
+		Width:   430,
+		Height:  320,
+		Options: "{\"level\":1}",
+	},
+
+	{
+		Name:    "FitItQuick-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/fit-it-quick/v010/",
+		Width:   430,
+		Height:  320,
+		Options: "{\"level\":2}",
+
+		VariantOf: "FitItQuick-v0",
+	},
+
+	{
+		Name:    "FitItQuick-v2",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/fit-it-quick/v010/",
+		Width:   430,
+		Height:  320,
+		Options: "{\"level\":3}",
+
+		VariantOf: "FitItQuick-v0",
+	},
+
+	{
+		Name:    "FitItQuick-v3",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/fit-it-quick/v010/",
+		Width:   430,
+		Height:  320,
+		Options: "{\"level\":4}",
+
+		VariantOf: "FitItQuick-v0",
+	},
+
+	{
+		Name:    "FitItQuick-v4",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/fit-it-quick/v010/",
+		Width:   430,
+		Height:  320,
+		Options: "{\"level\":5}",
+
+		VariantOf: "FitItQuick-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
