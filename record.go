@@ -45,7 +45,7 @@ func OpenRecording(path string) (rec *Recording, err error) {
 // CreateRecording creates a new Recording at the given
 // path.
 func CreateRecording(path string) (rec *Recording, err error) {
-	defer essentials.AddCtxTo("open recording", &err)
+	defer essentials.AddCtxTo("create recording", &err)
 	if err = os.Mkdir(path, recordingPerm); err != nil {
 		return
 	}
