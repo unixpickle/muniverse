@@ -648,6 +648,44 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "StackTowerClassic-v0",
 	},
+
+	{
+		Name:    "TowerMania-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/t/tower-mania/v3/",
+		Width:   320,
+		Height:  455,
+		Options: "{\"level\":0}",
+	},
+
+	{
+		Name:    "TowerMania-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/t/tower-mania/v3/",
+		Width:   320,
+		Height:  455,
+		Options: "{\"level\":1}",
+
+		VariantOf: "TowerMania-v0",
+	},
+
+	{
+		Name:    "TowerMania-v2",
+		BaseURL: "http://games.cdn.famobi.com/html5games/t/tower-mania/v3/",
+		Width:   320,
+		Height:  455,
+		Options: "{\"level\":2}",
+
+		VariantOf: "TowerMania-v0",
+	},
+
+	{
+		Name:    "TowerMania-v3",
+		BaseURL: "http://games.cdn.famobi.com/html5games/t/tower-mania/v3/",
+		Width:   320,
+		Height:  455,
+		Options: "{\"level\":3}",
+
+		VariantOf: "TowerMania-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
