@@ -3313,5 +3313,48 @@
     "options": {
       "level": 5
     }
+  },
+  {
+    "name": "StackTowerClassic-v0",
+    "base": "http://games.cdn.famobi.com/html5games/s/stack-tower-classic/v110/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "StackTowerClassic-v0.js"
+    ],
+    "resources": [
+      "js/all.js",
+      "snd/audiosprite.ogg",
+      "snd/audiosprite.ogg",
+      "img/MainAtlas.xml",
+      "img/strings_enGB.json",
+      "img/bg.jpg",
+      "img/fog.png",
+      "img/MainAtlas.png",
+      "img/MainFontNumeric.png",
+      "img/MainFontNumeric1.png",
+      "img/TranspPixel.png",
+      "snd/audiosprite.ogg",
+      "snd/audiosprite.ogg"
+    ],
+    "processors": [
+      "StackTowerClassic-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "stack-tower-classic"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": []
+  },
+  {
+    "name": "StackTowerClassic-v1",
+    "variant_of": "StackTowerClassic-v0",
+    "width": 390,
+    "height": 390
   }
 ]

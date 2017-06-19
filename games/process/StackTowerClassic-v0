@@ -1,0 +1,14 @@
+#!/bin/bash
+
+DIR="$1"
+
+mv "$DIR/index.html" "$DIR/index_pre_stacktowerclassic.html"
+cat "$DIR/index_pre_stacktowerclassic.html" |
+  sed -E "s/'js\\/all\\.js',//g" |
+  sed -E 's/(<\/body>)/<script src="js\/all\.js"><\/script>\1/g' \
+  > "$DIR/index.html"
+
+mv "$DIR/js/all.js" "$DIR/js/all.preproc.js"
+cat "$DIR/js/all.preproc.js" |
+  sed -E 's/(var Main=function\(\)\{)/\1window.globalMain=this;/g' \
+  > "$DIR/js/all.js"

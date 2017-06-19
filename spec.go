@@ -630,6 +630,24 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "FitItQuick-v0",
 	},
+
+	{
+		Name:    "StackTowerClassic-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/stack-tower-classic/v110/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+	},
+
+	{
+		Name:    "StackTowerClassic-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/stack-tower-classic/v110/",
+		Width:   390,
+		Height:  390,
+		Options: "{}",
+
+		VariantOf: "StackTowerClassic-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
