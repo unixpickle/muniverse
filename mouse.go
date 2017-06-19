@@ -16,6 +16,9 @@ const (
 type mouseEnv struct {
 	Env
 
+	initX int
+	initY int
+
 	curX int
 	curY int
 }
@@ -23,17 +26,20 @@ type mouseEnv struct {
 // MouseEnv creates a wrapped environment which renders a
 // pointer at the current mouse location.
 //
+// At every episode, the mouse is initialized to the given
+// x and y coordinates.
+//
 // By default, Chrome will not render a mouse.
 // Thus, it is necessary to render a mouse manually.
 //
 // When the resulting Env is closed, e is closed as well.
-func MouseEnv(e Env) Env {
-	return &mouseEnv{Env: e}
+func MouseEnv(e Env, initX, initY int) Env {
+	return &mouseEnv{Env: e, initX: initX, initY: initY}
 }
 
 func (m *mouseEnv) Reset() error {
-	m.curX = -20
-	m.curY = -20
+	m.curX = m.initX
+	m.curY = m.initY
 	return m.Env.Reset()
 }
 
