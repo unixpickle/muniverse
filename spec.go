@@ -694,6 +694,32 @@ var EnvSpecs = []*EnvSpec{
 		Height:  544,
 		Options: "{}",
 	},
+
+	{
+		Name:    "ColorCircles-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/c/color-circles/v070/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"Space",
+		},
+	},
+
+	{
+		Name:    "ColorCircles-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/c/color-circles/v070/",
+		Width:   390,
+		Height:  390,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"Space",
+		},
+
+		VariantOf: "ColorCircles-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

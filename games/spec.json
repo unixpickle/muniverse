@@ -3679,5 +3679,66 @@
     "width": 320,
     "height": 544,
     "key_whitelist": []
+  },
+  {
+    "name": "ColorCircles-v0",
+    "base": "http://games.cdn.famobi.com/html5games/c/color-circles/v070/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "ColorCircles-v0.js"
+    ],
+    "resources": [
+      "icon-256.png",
+      "js/all.js",
+      "data.js",
+      "loading-logo.png",
+      "images/player-sheet0.png",
+      "images/ground-sheet0.png",
+      "images/obstacle-sheet0.png",
+      "images/star-sheet0.png",
+      "images/switch-sheet0.png",
+      "images/ui_blackoverlay-sheet0.png",
+      "images/ui_checkbox-sheet0.png",
+      "images/ui_button-sheet0.png",
+      "images/ui_dialog.png",
+      "images/ui_image-sheet2.png",
+      "images/ui_image-sheet0.png",
+      "images/ui_image-sheet1.png",
+      "images/ui_animation-sheet0.png",
+      "images/ui_animation-sheet1.png",
+      "images/particles_stars.png",
+      "images/particles_smoke.png",
+      "images/sprite-sheet0.png",
+      "images/moregamesbutton-sheet0.png",
+      "images/sprite2-sheet0.png",
+      "media/jump.ogg",
+      "media/hit.ogg",
+      "media/click.ogg",
+      "media/collect.ogg",
+      "config.txt",
+      "stylesheet.css",
+      "varelaround-regular-webfont.woff2"
+    ],
+    "processors": [
+      "ColorCircles-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "color-circles"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": ["Space"]
+  },
+  {
+    "name": "ColorCircles-v1",
+    "variant_of": "ColorCircles-v0",
+    "width": 390,
+    "height": 390
   }
 ]
