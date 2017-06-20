@@ -686,6 +686,14 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "TowerMania-v0",
 	},
+
+	{
+		Name:    "GroovySki-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/g/groovy-ski/8-52acd9/",
+		Width:   320,
+		Height:  544,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
