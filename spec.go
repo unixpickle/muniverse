@@ -736,6 +736,14 @@ var EnvSpecs = []*EnvSpec{
 		Height:  487,
 		Options: "{}",
 	},
+
+	{
+		Name:    "Colorpop-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/c/colorpop/v120/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
