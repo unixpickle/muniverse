@@ -720,6 +720,14 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "ColorCircles-v0",
 	},
+
+	{
+		Name:    "SnowSmasher-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/snow-smasher/v4/",
+		Width:   320,
+		Height:  550,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

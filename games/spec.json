@@ -3740,5 +3740,56 @@
     "variant_of": "ColorCircles-v0",
     "width": 390,
     "height": 390
+  },
+  {
+    "name": "SnowSmasher-v0",
+    "base": "http://games.cdn.famobi.com/html5games/s/snow-smasher/v4/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "SnowSmasher-v0.js"
+    ],
+    "resources": [
+      "jquery-2.1.1.min.js",
+      "c2runtime.min.js",
+      "data.js",
+      "loading-logo.png",
+      "images/background-sheet0.png",
+      "images/border-sheet0.png",
+      "images/ball-sheet0.png",
+      "images/ball-sheet1.png",
+      "images/paddle-sheet0.png",
+      "images/brick-sheet0.png",
+      "images/laser-sheet0.png",
+      "images/designbottom-sheet0.png",
+      "images/designtop-sheet0.png",
+      "images/shadowtop-sheet0.png",
+      "images/life1-sheet0.png",
+      "images/life1-sheet1.png",
+      "images/powerfire-sheet0.png",
+      "images/powerheart-sheet0.png",
+      "images/powerlaser-sheet0.png",
+      "images/powerpoints-sheet0.png",
+      "images/laserbeam-sheet0.png",
+      "images/startpage-sheet0.png",
+      "images/loadersprite-sheet0.png",
+      "images/buttongames1-sheet0.png",
+      "images/resultpage-sheet0.png",
+      "images/bottimline-sheet0.png"
+    ],
+    "processors": [
+      "SnowSmasher-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "snow-smasher"
+    },
+    "width": 320,
+    "height": 550,
+    "key_whitelist": []
   }
 ]
