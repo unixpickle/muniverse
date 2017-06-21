@@ -3791,5 +3791,50 @@
     "width": 320,
     "height": 550,
     "key_whitelist": []
+  },
+  {
+    "name": "Multisquare-v0",
+    "base": "http://games.cdn.famobi.com/html5games/m/multisquare/17-687f3/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "Multisquare-v0.js"
+    ],
+    "resources": [
+      "fonts/gothic.woff",
+      "js/all.js",
+      "audio/pop.ogg",
+      "fg_i18n/en/images/bestScore_btn.png",
+      "img/dofon.png",
+      "img/guarda.png",
+      "img/moreGames_btn.png",
+      "img/pause.png",
+      "img/play_btn.png",
+      "img/pointer.png",
+      "img/restart_btn.png",
+      "img/resume_btn.png",
+      "img/square.png",
+      "img/square1.png",
+      "img/square2.png",
+      "img/square3.png",
+      "img/square4.png",
+      "img/square5.png",
+      "img/square6.png",
+      "img/title.png",
+      "fg_i18n/en/images/tutext.png"
+    ],
+    "processors": [
+      "Multisquare-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "multisquare"
+    },
+    "width": 320,
+    "height": 487,
+    "key_whitelist": []
   }
 ]

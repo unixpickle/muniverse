@@ -728,6 +728,14 @@ var EnvSpecs = []*EnvSpec{
 		Height:  550,
 		Options: "{}",
 	},
+
+	{
+		Name:    "Multisquare-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/m/multisquare/17-687f3/",
+		Width:   320,
+		Height:  487,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
