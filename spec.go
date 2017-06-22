@@ -744,6 +744,89 @@ var EnvSpecs = []*EnvSpec{
 		Height:  480,
 		Options: "{}",
 	},
+
+	{
+		Name:    "FruitPulp-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/fruit-pulp/v080/",
+		Width:   320,
+		Height:  480,
+		Options: "{\"level\":1}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+	},
+
+	{
+		Name:    "FruitPulp-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/fruit-pulp/v080/",
+		Width:   320,
+		Height:  480,
+		Options: "{\"level\":2}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+
+		VariantOf: "FruitPulp-v0",
+	},
+
+	{
+		Name:    "FruitPulp-v2",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/fruit-pulp/v080/",
+		Width:   320,
+		Height:  480,
+		Options: "{\"level\":3}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+
+		VariantOf: "FruitPulp-v0",
+	},
+
+	{
+		Name:    "FruitPulp-v3",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/fruit-pulp/v080/",
+		Width:   320,
+		Height:  480,
+		Options: "{\"level\":4}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+
+		VariantOf: "FruitPulp-v0",
+	},
+
+	{
+		Name:    "FruitPulp-v4",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/fruit-pulp/v080/",
+		Width:   320,
+		Height:  480,
+		Options: "{\"level\":5}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+
+		VariantOf: "FruitPulp-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

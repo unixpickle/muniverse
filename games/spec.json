@@ -3919,5 +3919,81 @@
     "width": 320,
     "height": 480,
     "key_whitelist": []
+  },
+  {
+    "name": "FruitPulp-v0",
+    "base": "http://games.cdn.famobi.com/html5games/f/fruit-pulp/v080/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "FruitPulp-v0.js"
+    ],
+    "resources": [
+      "js/all.js",
+      "gfx_preloader/bg.jpg",
+      "gfx_preloader/fruit0.png",
+      "sfx/music.m4a",
+      "sfx/match.m4a",
+      "sfx/single_pop.m4a",
+      "sfx/drop.m4a",
+      "sfx/sidemove.m4a",
+      "sfx/rotate.m4a",
+      "sfx/game_over.m4a",
+      "sfx/level_unlock.m4a",
+      "sfx/star_count_update.m4a",
+      "sfx/win.m4a",
+      "sfx/level_completed_menu.m4a",
+      "sfx/level_completed_star.m4a",
+      "sfx/button.m4a",
+      "gfx_noatlas/menubg.jpg",
+      "gfx_noatlas/ingamebg.jpg",
+      "fonts/ubuntu.fnt",
+      "gfx/atlas_0.png",
+      "fonts/ubuntu_0.png"
+    ],
+    "processors": [
+      "FruitPulp-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "fruit-pulp"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"],
+    "options": {
+      "level": 1
+    }
+  },
+  {
+    "name": "FruitPulp-v1",
+    "variant_of": "FruitPulp-v0",
+    "options": {
+      "level": 2
+    }
+  },
+  {
+    "name": "FruitPulp-v2",
+    "variant_of": "FruitPulp-v0",
+    "options": {
+      "level": 3
+    }
+  },
+  {
+    "name": "FruitPulp-v3",
+    "variant_of": "FruitPulp-v0",
+    "options": {
+      "level": 4
+    }
+  },
+  {
+    "name": "FruitPulp-v4",
+    "variant_of": "FruitPulp-v0",
+    "options": {
+      "level": 5
+    }
   }
 ]
