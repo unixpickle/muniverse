@@ -32,7 +32,7 @@ escapedURL=$(echo "$playURL" |
 scriptBase='http://api.famobi.com/gameapi/script'
 fgScriptURL=$(echo "$scriptBase/$fgUID/$fgPID?_location=$escapedURL")
 fgScript=$(curl -s "$fgScriptURL" || exit 1)
-echo "$fgScript" | grep -E '(new fg_api|{"features")' > "$DIR/famobi_data.js"
+echo "$fgScript" | grep -A 1 -E 'new fg_api' > "$DIR/famobi_data.js"
 
 # Strip the code that normally loads all the scripts,
 # opting to manually load the scripts instead.
