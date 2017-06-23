@@ -3995,5 +3995,108 @@
     "options": {
       "level": 5
     }
+  },
+  {
+    "name": "JewelExplode-v0",
+    "base": "http://games.cdn.famobi.com/html5games/j/jewel-explode/v080/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "JewelExplode-v0.js"
+    ],
+    "resources": [
+      "assets/img/rotate_screen.png",
+      "assets/Lora-Bold.ttf",
+      "js/all.js",
+      "css/style.css",
+      "assets/img/splash.png",
+      "assets/lang.xml",
+      "assets/img/inlogic_logo.png",
+      "assets/img/game_border.png",
+      "assets/favicon/icon-512x512.png",
+      "assets/favicon/icon-144x144.png",
+      "assets/favicon/icon-76x76.png",
+      "assets/favicon/icon-48x48.png",
+      "assets/img/menu_arow.png",
+      "assets/img/lock.png",
+      "assets/img/jewels.png",
+      "assets/img/cups.png",
+      "assets/img/GamBnsFall.png",
+      "assets/img/GamDiaAnm.png",
+      "assets/img/GamBnsBomb.png",
+      "assets/img/GamBnsCross.png",
+      "assets/img/GamFlame.png",
+      "assets/img/GamParticles.png",
+      "assets/img/GamBnsSpectrum.png",
+      "assets/img/GamBlock.png",
+      "assets/img/level_icons.png",
+      "assets/img/button_bg.png",
+      "assets/img/button.png",
+      "assets/img/button_time_bar.png",
+      "assets/img/menu_icons.png",
+      "assets/img/menu_icon_options.png",
+      "assets/img/menu_icon_more_games.png",
+      "assets/img/MnuFK.png",
+      "assets/img/StarParticles.png",
+      "assets/img/anim_ornament_down.png",
+      "assets/img/dialog_bg.png",
+      "assets/img/dialog_gradient.png",
+      "assets/img/level_selector.png",
+      "assets/img/fontGame.png",
+      "assets/img/fontGame.json",
+      "assets/img/language.png",
+      "assets/music/menu.ogg",
+      "assets/music/game.ogg",
+      "assets/music/win.ogg",
+      "assets/music/over.ogg",
+      "assets/music/cross.ogg",
+      "assets/music/destroy.ogg",
+      "assets/music/explode.ogg",
+      "assets/music/spectrum.ogg"
+    ],
+    "processors": [
+      "JewelExplode-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "jewel-explode"
+    },
+    "width": 320,
+    "height": 533,
+    "key_whitelist": [],
+    "options": {
+      "level": 0
+    }
+  },
+  {
+    "name": "JewelExplode-v1",
+    "variant_of": "JewelExplode-v0",
+    "options": {
+      "level": 1
+    }
+  },
+  {
+    "name": "JewelExplode-v2",
+    "variant_of": "JewelExplode-v0",
+    "options": {
+      "level": 2
+    }
+  },
+  {
+    "name": "JewelExplode-v3",
+    "variant_of": "JewelExplode-v0",
+    "options": {
+      "level": 3
+    }
+  },
+  {
+    "name": "JewelExplode-v4",
+    "variant_of": "JewelExplode-v0",
+    "options": {
+      "level": 4
+    }
   }
 ]

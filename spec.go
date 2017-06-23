@@ -827,6 +827,54 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "FruitPulp-v0",
 	},
+
+	{
+		Name:    "JewelExplode-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/j/jewel-explode/v080/",
+		Width:   320,
+		Height:  533,
+		Options: "{\"level\":0}",
+	},
+
+	{
+		Name:    "JewelExplode-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/j/jewel-explode/v080/",
+		Width:   320,
+		Height:  533,
+		Options: "{\"level\":1}",
+
+		VariantOf: "JewelExplode-v0",
+	},
+
+	{
+		Name:    "JewelExplode-v2",
+		BaseURL: "http://games.cdn.famobi.com/html5games/j/jewel-explode/v080/",
+		Width:   320,
+		Height:  533,
+		Options: "{\"level\":2}",
+
+		VariantOf: "JewelExplode-v0",
+	},
+
+	{
+		Name:    "JewelExplode-v3",
+		BaseURL: "http://games.cdn.famobi.com/html5games/j/jewel-explode/v080/",
+		Width:   320,
+		Height:  533,
+		Options: "{\"level\":3}",
+
+		VariantOf: "JewelExplode-v0",
+	},
+
+	{
+		Name:    "JewelExplode-v4",
+		BaseURL: "http://games.cdn.famobi.com/html5games/j/jewel-explode/v080/",
+		Width:   320,
+		Height:  533,
+		Options: "{\"level\":4}",
+
+		VariantOf: "JewelExplode-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

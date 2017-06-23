@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Format famobi_gameJS properly.
+mv "$DIR/index.html" "$DIR/index_pre_jewelexplode.html"
+cat "$DIR/index_pre_jewelexplode.html" |
+  sed -E $'s/\'js\\/all\\.js\',/\\\n/g' |
+  sed -E $'s/\\}\\];/\\}\\\n \\];/g' |
+  sed -E 's/(<\/body>)/<script src="js\/all\.js"><\/script>\1/g' \
+  > "$DIR/index.html"
+
+# Disable google analytics.
+mv "$DIR/js/all.js" "$DIR/js/all.preproc.js"
+cat "$DIR/js/all.preproc.js" |
+  sed -E 's/\!function\(r,t,e,i,s,h,a\)\{r.Google.*_gaTrack\("send","pageview"\);//g' \
+  > "$DIR/js/all.js"
