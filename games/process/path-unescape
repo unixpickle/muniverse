@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd "$1"
+find . -name '*%20*' |
+  while read line
+  do
+    mv "$line" "$(echo "$line" | sed -E 's/%20/ /g')"
+  done

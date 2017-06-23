@@ -875,6 +875,20 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "JewelExplode-v0",
 	},
+
+	{
+		Name:    "ZooPinball-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/z/zoo-pinball/5-1454c9/",
+		Width:   320,
+		Height:  544,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"Space",
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
