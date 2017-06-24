@@ -18,7 +18,7 @@ import (
 
 const (
 	portRange        = "9000-9999"
-	defaultContainer = "unixpickle/muniverse:0.49.0"
+	defaultContainer = "unixpickle/muniverse:0.50.0"
 )
 
 const (

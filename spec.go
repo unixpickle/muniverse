@@ -889,6 +889,14 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 	},
+
+	{
+		Name:    "BubbleHamsters-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/b/bubble-hamsters/5-1bbcb7/",
+		Width:   320,
+		Height:  460,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
