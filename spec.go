@@ -897,6 +897,24 @@ var EnvSpecs = []*EnvSpec{
 		Height:  460,
 		Options: "{}",
 	},
+
+	{
+		Name:    "FlyingSchool-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/flying-school/8-066c1e/",
+		Width:   480,
+		Height:  320,
+		Options: "{\"scoreMode\":\"distance\"}",
+	},
+
+	{
+		Name:    "FlyingSchool-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/flying-school/8-066c1e/",
+		Width:   480,
+		Height:  320,
+		Options: "{\"scoreMode\":\"stars\"}",
+
+		VariantOf: "FlyingSchool-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
