@@ -4580,5 +4580,75 @@
     "options": {
       "scoreMode": "stars"
     }
+  },
+  {
+    "name": "CarCrossing-v0",
+    "base": "http://games.cdn.famobi.com/html5games/c/car-crossing/v130/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "CarCrossing-v0.js"
+    ],
+    "resources": [
+      "js/all.js",
+      "data.js",
+      "bg.png",
+      "loading-logo.png",
+      "images/buttonaudio-sheet0.png",
+      "images/buttonaudio-sheet1.png",
+      "images/buttonexit-sheet0.png",
+      "images/buttonplay-sheet0.png",
+      "images/buttonrestart-sheet0.png",
+      "images/buttoncredits-sheet0.png",
+      "images/cars-sheet0.png",
+      "images/cars-sheet1.png",
+      "images/carsidebottom-sheet0.png",
+      "images/carsideleft-sheet0.png",
+      "images/carsideright-sheet0.png",
+      "images/carsidetop-sheet0.png",
+      "images/trucks-sheet0.png",
+      "images/trucks-sheet1.png",
+      "images/trucksideright-sheet0.png",
+      "images/trucksideleft-sheet0.png",
+      "images/trucksidebottom-sheet0.png",
+      "images/startpoint-default-000.jpg",
+      "images/gamebg-sheet0.png",
+      "images/lampbottom-sheet0.png",
+      "images/lampleft-sheet0.png",
+      "images/lampright-sheet0.png",
+      "images/lamptop-sheet0.png",
+      "images/gameover-sheet0.png",
+      "images/gameover-sheet2.png",
+      "images/gameover-sheet1.png",
+      "images/roadarea-sheet0.png",
+      "images/tracks-sheet0.png",
+      "images/orientationshadow-default-000.jpg",
+      "images/orientationmessages.png",
+      "images/pointstxt.png",
+      "images/helpscreen-sheet0.png",
+      "images/scorebox-sheet0.png",
+      "images/menubg-sheet0.png",
+      "images/fadescreen-default-000.jpg",
+      "images/creditslogo-sheet0.png",
+      "images/creditsbg-sheet0.png",
+      "images/moregamesbutton-sheet0.png",
+      "media/press_button.ogg",
+      "media/crash.ogg",
+      "media/upgrade.ogg",
+      "media/win.ogg"
+    ],
+    "processors": [
+      "CarCrossing-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "car-crossing"
+    },
+    "width": 320,
+    "height": 570,
+    "key_whitelist": []
   }
 ]

@@ -915,6 +915,14 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "FlyingSchool-v0",
 	},
+
+	{
+		Name:    "CarCrossing-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/c/car-crossing/v130/",
+		Width:   320,
+		Height:  570,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
