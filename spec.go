@@ -923,6 +923,19 @@ var EnvSpecs = []*EnvSpec{
 		Height:  570,
 		Options: "{}",
 	},
+
+	{
+		Name:    "DoggyDive-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/d/doggy-dive/5-671a84/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

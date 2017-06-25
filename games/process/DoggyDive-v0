@@ -1,0 +1,29 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Format famobi_gameJS properly.
+mv "$DIR/index.html" "$DIR/index_pre_doggydive.html"
+cat "$DIR/index_pre_doggydive.html" |
+  sed -E "s/'js\\/all\\.js',//g" |
+  sed -E $'s/\\}\\];/\\}\\\n \\];/g' |
+  sed -E 's/(<\/body>)/<script src="js\/all\.js"><\/script>\1/g' \
+  > "$DIR/index.html"
+
+# Download font stylesheet and raw fonts.
+mkdir "$DIR/lato"
+cssData="$(curl -s 'https://fonts.googleapis.com/css?family=Lato')"
+urls="$(echo "$cssData" | grep 'https://' | sed -E 's/^.*url\(([^\)]*)\).*$/\1/g')"
+for url in $urls
+do
+  base="$(echo "$url" | sed -E 's/^.*\/([^\/]*.(woff2|ttf))$/\1/g')"
+  curl -s "$url" > "$DIR/lato/$base"
+done
+cssData="$(echo "$cssData" | sed -E 's/url\(.*\/([^\/]*.(woff2|ttf))\)/url\(\1\)/g')"
+echo "$cssData" > "$DIR/lato/lato.css"
+
+# Inject font into script.
+mv "$DIR/data.js" "$DIR/data.preproc.js"
+cat "$DIR/data.preproc.js" |
+  sed -E 's/https:\/\/fonts\.googleapis\.com\/css\?family=Lato/lato\/lato.css/g' \
+  > "$DIR/data.js"
