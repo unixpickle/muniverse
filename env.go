@@ -34,6 +34,19 @@ const occasionalDockerErr = "Error response from daemon: device or resource busy
 //
 // It is not safe to run an methods on an Env from more
 // than one Goroutine at a time.
+//
+// The lifecycle of an environment is as follows:
+// First, Reset is called to start an episode.
+// Then, Step and Observe may be called repeatedly in any
+// order until Step returns done=true to signal that the
+// episode has ended.
+// Once the episode has ended, Observe may be called but
+// Step may not be.
+// Call Reset to start a new episode and begin the process
+// over again.
+//
+// When you are done with an Env, you must close it to
+// clean up resources associated with it.
 type Env interface {
 	// Spec returns details about the environment.
 	Spec() *EnvSpec
@@ -81,6 +94,7 @@ type rawEnv struct {
 	containerID string
 	devConn     *chrome.Conn
 	lastScore   float64
+	needsReset  bool
 
 	// Used to garbage collect the container if we
 	// exit ungracefully.
@@ -167,9 +181,10 @@ func NewEnvChrome(host, gameHost string, spec *EnvSpec) (env Env, err error) {
 	}
 
 	return &rawEnv{
-		spec:     *spec,
-		gameHost: gameHost,
-		devConn:  conn,
+		spec:       *spec,
+		gameHost:   gameHost,
+		devConn:    conn,
+		needsReset: true,
 	}, nil
 }
 
@@ -198,12 +213,21 @@ func (r *rawEnv) Reset() (err error) {
 	err = r.devConn.EvalPromise(ctx, "window.muniverse.score();", &r.lastScore)
 	err = essentials.AddCtx("get score", err)
 
+	if err == nil {
+		r.needsReset = false
+	}
+
 	return
 }
 
 func (r *rawEnv) Step(t time.Duration, events ...interface{}) (reward float64,
 	done bool, err error) {
 	defer essentials.AddCtxTo("step environment", &err)
+
+	if r.needsReset {
+		err = errors.New("environment needs reset")
+		return
+	}
 
 	ctx, cancel := callCtx()
 	defer cancel()
@@ -227,6 +251,10 @@ func (r *rawEnv) Step(t time.Duration, events ...interface{}) (reward float64,
 	err = r.devConn.EvalPromise(ctx, "window.muniverse.step("+timeStr+");", &done)
 	if err != nil {
 		return
+	}
+
+	if done {
+		r.needsReset = true
 	}
 
 	lastScore := r.lastScore
