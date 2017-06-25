@@ -4749,5 +4749,57 @@
     "width": 320,
     "height": 480,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
+  },
+  {
+    "name": "StickFreak-v0",
+    "base": "http://games.cdn.famobi.com/html5games/s/stick-freak/89f33144/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "StickFreak-v0.js"
+    ],
+    "resources": [
+      "css/game.css",
+      "css/normalize.css",
+      "assets/img/rotate_screen.png",
+      "assets/fnt/PT_Sans-Caption-Web-Regular.ttf",
+      "js/all.js",
+      "assets/img/splash/logo-2.png",
+      "assets/img/splash/splash.png",
+      "assets/img/splash/loading-1.png",
+      "assets/img/splash/loading-2.png",
+      "assets/img/splash/buttonLoad.png",
+      "assets/favicon/icon-144x144.png",
+      "assets/favicon/icon-72x72.png",
+      "assets/favicon/icon-48x48.png",
+      "assets/img/stckFrkImgs.png",
+      "assets/img/stckFrkImgs.json",
+      "assets/img/buttons.png",
+      "assets/img/sipky.png",
+      "assets/img/hero_1.png",
+      "assets/img/hero_2.png",
+      "assets/img/hero_3.png",
+      "assets/img/hero_4.png",
+      "assets/img/hero_5.png",
+      "assets/img/hero_6.png",
+      "assets/img/button-fajka.png",
+      "assets/img/vlajky.png",
+      "assets/music/menuMusic.ogg",
+      "assets/music/gameMusic.ogg",
+      "assets/music/perfect.ogg"
+    ],
+    "processors": [
+      "StickFreak-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "stick-freak"
+    },
+    "width": 320,
+    "height": 533,
+    "key_whitelist": []
   }
 ]

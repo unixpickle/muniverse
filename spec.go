@@ -936,6 +936,14 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 	},
+
+	{
+		Name:    "StickFreak-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/stick-freak/89f33144/",
+		Width:   320,
+		Height:  533,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
