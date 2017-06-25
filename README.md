@@ -28,6 +28,7 @@ Most of the above advantages come from focusing on HTML5 games rather than Flash
  * [container/](container) - build files for the Docker container
  * [codegen/](codegen) - small program to auto-generate Go games registry
  * [util/](util) - small tools which come in handy while using µniverse.
+ * [bindings/](bindings) - bindings for other programming languages.
 
 # Roadmap
 
