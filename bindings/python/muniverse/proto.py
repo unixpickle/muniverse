@@ -34,3 +34,4 @@ def write_object(pipe, obj):
         raise ProtoError('BSON encode error: ' + str(exc))
     pipe.write(struct.pack('<I', len(data)))
     pipe.write(data)
+    pipe.flush()

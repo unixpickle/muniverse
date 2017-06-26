@@ -165,9 +165,8 @@ class _Session:
             while True:
                 payload = proto.read_object(self.proc.stdout)
                 if not 'ID' in payload:
-                    raise ProtoError('')
+                    raise ProtoError('missing ID in response')
                 call_id = payload['ID']
-                print('got payload ' + str(payload))
                 self.waiting_lock.acquire()
                 try:
                     if not call_id in self.waiting:
