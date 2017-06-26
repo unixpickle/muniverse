@@ -9,7 +9,9 @@ import muniverse
 
 def main():
     spec = muniverse.spec_for_name('KatanaFruits-v0')
-    print(str(spec))
+    env = muniverse.Env(spec)
+    env.reset()
+    env.close()
 
 if __name__ == '__main__':
     main()

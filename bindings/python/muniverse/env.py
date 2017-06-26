@@ -27,7 +27,7 @@ class Env:
             raise ValueError('must set both chrome_host and game_host')
         elif (not container is None) and (not chrome_host is None):
             raise ValueError('cannot mix chrome_host and container options')
-        call_obj = {'spec': spec}
+        call_obj = {'Spec': spec}
         call_name = 'NewEnv'
         if not container is None:
             call_obj['Container'] = container

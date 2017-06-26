@@ -95,8 +95,8 @@ class Handle:
         results in an error on the back-end.
         """
         res = self.call(name, args)
-        if 'error' in res:
-            raise CallError(res['error'])
+        if 'Error' in res:
+            raise CallError(res['Error'])
         return res
 
 class _Session:
@@ -188,7 +188,6 @@ class _Session:
                 waiting = self.waiting[uid]
                 waiting['error'] = exc
                 waiting['event'].set()
-                del self.waiting[uid]
         finally:
             self.waiting = None
             self.waiting_lock.release()
