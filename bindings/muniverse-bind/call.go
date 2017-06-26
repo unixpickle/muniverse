@@ -14,16 +14,16 @@ import (
 // Call is a message sent from an API front-end to the API
 // back-end (this program).
 type Call struct {
-	ID string
+	ID string `bson:"ID"`
 
-	SpecForName     *CallSpecForName
-	NewEnv          *CallNewEnv
-	NewEnvContainer *CallNewEnvContainer
-	NewEnvChrome    *CallNewEnvChrome
-	CloseEnv        *CallCloseEnv
-	Reset           *CallReset
-	Step            *CallStep
-	Observe         *CallObserve
+	SpecForName     *CallSpecForName     `bson:"SpecForName"`
+	NewEnv          *CallNewEnv          `bson:"NewEnv"`
+	NewEnvContainer *CallNewEnvContainer `bson:"NewEnvContainer"`
+	NewEnvChrome    *CallNewEnvChrome    `bson:"NewEnvChrome"`
+	CloseEnv        *CallCloseEnv        `bson:"CloseEnv"`
+	Reset           *CallReset           `bson:"Reset"`
+	Step            *CallStep            `bson:"Step"`
+	Observe         *CallObserve         `bson:"Observe"`
 }
 
 // ReadCall decodes a Call from an input stream.
@@ -46,43 +46,43 @@ func readObject(r io.Reader, objOut interface{}) error {
 }
 
 type CallSpecForName struct {
-	Name string
+	Name string `bson:"Name"`
 }
 
 type CallNewEnv struct {
-	Spec *muniverse.EnvSpec
+	Spec *muniverse.EnvSpec `bson:"Spec"`
 }
 
 type CallNewEnvContainer struct {
-	Container string
-	Spec      *muniverse.EnvSpec
+	Container string             `bson:"Container"`
+	Spec      *muniverse.EnvSpec `bson:"Spec"`
 }
 
 type CallNewEnvChrome struct {
-	Host     string
-	GameHost string
-	Spec     *muniverse.EnvSpec
+	Host     string             `bson:"Host"`
+	GameHost string             `bson:"GameHost"`
+	Spec     *muniverse.EnvSpec `bson:"Spec"`
 }
 
 type CallCloseEnv struct {
-	UID string
+	UID string `bson:"UID"`
 }
 
 type CallReset struct {
-	UID string
+	UID string `bson:"UID"`
 }
 
 type CallStep struct {
-	UID     string
-	Seconds float64
-	Events  []*Event
+	UID     string   `bson:"UID"`
+	Seconds float64  `bson:"Seconds"`
+	Events  []*Event `bson:"Events"`
 }
 
 type CallObserve struct {
-	UID string
+	UID string `bson:"UID"`
 }
 
 type Event struct {
-	KeyEvent   *chrome.KeyEvent
-	MouseEvent *chrome.MouseEvent
+	KeyEvent   *chrome.KeyEvent   `bson:"KeyEvent"`
+	MouseEvent *chrome.MouseEvent `bson:"MouseEvent"`
 }
