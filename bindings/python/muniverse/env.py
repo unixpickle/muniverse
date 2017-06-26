@@ -2,6 +2,8 @@
 API for controlling muniverse environments.
 """
 
+import numpy as np
+
 from .handle import Handle
 
 class Env:
@@ -50,6 +52,20 @@ class Env:
         Reset the environment to a starting state.
         """
         self.handle.checked_call('Reset', {'UID': self.uid})
+
+    def observe(self):
+        """
+        Capture a screenshot of the environment.
+
+        The returned value is a 3D numpy array.
+        The first index is y, the second is x, the third
+        is depth (where depth goes in RGB order).
+        """
+        res = self.handle.checked_call('Observe', {'UID': self.uid})
+        obs = res['Observation']
+        dim = [obs['Height'], obs['Width'], 3]
+        data = obs['RGB']
+        return np.frombuffer(data, dtype=np.uint8).reshape(dim)
 
     def close(self):
         """
