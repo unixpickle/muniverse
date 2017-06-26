@@ -70,3 +70,7 @@ Here's a (non-exhaustive) to-do list:
  * Python bindings & Gym integration.
  * Get WebGL to work without occasional failures.
  * Better way to verify connection to keep-alive socket.
+
+# License
+
+This is under a BSD 2-clause license. See [LICENSE](LICENSE).
