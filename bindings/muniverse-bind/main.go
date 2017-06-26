@@ -124,13 +124,25 @@ func (b *Server) newEnv(call *Call) *Response {
 	var err error
 	switch true {
 	case call.NewEnv != nil:
-		env, err = muniverse.NewEnv(call.NewEnv.Spec)
+		if call.NewEnv.Spec == nil {
+			err = errors.New("null specification")
+		} else {
+			env, err = muniverse.NewEnv(call.NewEnv.Spec)
+		}
 	case call.NewEnvContainer != nil:
-		env, err = muniverse.NewEnvContainer(call.NewEnvContainer.Container,
-			call.NewEnvContainer.Spec)
+		if call.NewEnvContainer.Spec == nil {
+			err = errors.New("null specification")
+		} else {
+			env, err = muniverse.NewEnvContainer(call.NewEnvContainer.Container,
+				call.NewEnvContainer.Spec)
+		}
 	case call.NewEnvChrome != nil:
-		env, err = muniverse.NewEnvChrome(call.NewEnvChrome.Host,
-			call.NewEnvChrome.GameHost, call.NewEnvChrome.Spec)
+		if call.NewEnvChrome.Spec == nil {
+			err = errors.New("null specification")
+		} else {
+			env, err = muniverse.NewEnvChrome(call.NewEnvChrome.Host,
+				call.NewEnvChrome.GameHost, call.NewEnvChrome.Spec)
+		}
 	default:
 		panic("unreachable")
 	}
