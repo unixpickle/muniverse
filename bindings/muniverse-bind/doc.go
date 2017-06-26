@@ -56,7 +56,28 @@
 // The call and response are the same as NewEnv, except
 // that the call has "Host" and "GameHost" arguments.
 //
-// The CloseEnv closes an environment.
+// The CloseEnv call closes an environment.
 // The call takes a "UID" argument.
 // The response has no fields.
+//
+// The Reset call resets an environment.
+// The call takes a "UID" argument.
+// The response has no fields.
+//
+// The Step call takes a step in an environment.
+// It takes three arguments: a "UID" string, a "Seconds"
+// floating point, and an "Events" array.
+// Each event in the "Events" array contains either a
+// "KeyEvent" or "MouseEvent" field.
+// The contents of those fields match chrome.KeyEvent and
+// chrome.MouseEvent.
+// The response has a "StepResult" field which is an
+// object containing a "Reward" and "Done" field.
+//
+// The Observe call takes an environment screenshot.
+// It takes a "UID" argument.
+// The response has an "Observation" field which is an
+// object containing "Width", "Height", and "RGB" fields.
+// The "Width" and "Height" are integers.
+// The "RGB" field is 24-bit RGB data.
 package main

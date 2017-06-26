@@ -1,10 +1,12 @@
 package main
 
 import (
+	"errors"
 	"io"
 	"os"
 	"strconv"
 	"sync"
+	"time"
 
 	"github.com/unixpickle/essentials"
 	"github.com/unixpickle/muniverse"
@@ -66,6 +68,12 @@ func (b *Server) handleCall(call *Call) *Response {
 		return b.newEnv(call)
 	case call.CloseEnv != nil:
 		return b.closeEnv(call)
+	case call.Reset != nil:
+		return b.reset(call)
+	case call.Step != nil:
+		return b.step(call)
+	case call.Observe != nil:
+		return b.observe(call)
 	default:
 		essentials.Die("malformed call")
 	}
@@ -115,13 +123,79 @@ func (b *Server) closeEnv(call *Call) *Response {
 	delete(b.envsByUID, call.CloseEnv.UID)
 	b.envsLock.Unlock()
 
-	resp := &Response{}
 	if !ok {
-		errMsg := "environment does not exist"
-		resp.Error = &errMsg
+		return ErrorResponse(errors.New("environment does not exist"))
 	} else if err := env.Close(); err != nil {
-		errMsg := err.Error()
-		resp.Error = &errMsg
+		return ErrorResponse(err)
 	}
-	return resp
+	return &Response{}
+}
+
+func (b *Server) reset(call *Call) *Response {
+	env, errResp := b.lookupEnv(call.Reset.UID)
+	if errResp != nil {
+		return errResp
+	}
+	if err := env.Reset(); err != nil {
+		return ErrorResponse(err)
+	}
+	return &Response{}
+}
+
+func (b *Server) step(call *Call) *Response {
+	env, errResp := b.lookupEnv(call.Reset.UID)
+	if errResp != nil {
+		return errResp
+	}
+	t := time.Duration(float64(time.Second) * call.Step.Seconds)
+	var events []interface{}
+	for _, evt := range call.Step.Events {
+		if evt.KeyEvent != nil {
+			events = append(events, evt.KeyEvent)
+		} else if evt.MouseEvent != nil {
+			events = append(events, evt.MouseEvent)
+		}
+	}
+	reward, done, err := env.Step(t, events)
+	if err != nil {
+		return ErrorResponse(err)
+	}
+	return &Response{
+		StepResult: &StepResult{
+			Reward: reward,
+			Done:   done,
+		},
+	}
+}
+
+func (b *Server) observe(call *Call) *Response {
+	env, errResp := b.lookupEnv(call.Reset.UID)
+	if errResp != nil {
+		return errResp
+	}
+	obs, err := env.Observe()
+	if err != nil {
+		return ErrorResponse(err)
+	}
+	data, width, height, err := muniverse.RGB(obs)
+	if err != nil {
+		return ErrorResponse(err)
+	}
+	return &Response{
+		Observation: &Observation{
+			Width:  width,
+			Height: height,
+			RGB:    data,
+		},
+	}
+}
+
+func (b *Server) lookupEnv(uid string) (env muniverse.Env, errResp *Response) {
+	b.envsLock.RLock()
+	defer b.envsLock.RUnlock()
+	if env, ok := b.envsByUID[uid]; ok {
+		return env, nil
+	} else {
+		return nil, ErrorResponse(errors.New("environment does not exist"))
+	}
 }

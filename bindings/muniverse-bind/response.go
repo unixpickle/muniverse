@@ -17,8 +17,16 @@ type Response struct {
 
 	Error *string
 
-	Spec *muniverse.EnvSpec
-	UID  *string
+	Spec        *muniverse.EnvSpec
+	UID         *string
+	StepResult  *StepResult
+	Observation *Observation
+}
+
+// ErrorResponse creates a *Response with an error.
+func ErrorResponse(e error) *Response {
+	errMsg := e.Error()
+	return &Response{Error: &errMsg}
 }
 
 // WriteResponse encodes a response to an output stream.
@@ -34,4 +42,15 @@ func WriteResponse(w io.Writer, r *Response) (err error) {
 	}
 	_, err = w.Write(data)
 	return err
+}
+
+type StepResult struct {
+	Reward float64
+	Done   bool
+}
+
+type Observation struct {
+	Width  int
+	Height int
+	RGB    []byte
 }

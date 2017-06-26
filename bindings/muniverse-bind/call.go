@@ -6,6 +6,7 @@ import (
 
 	"github.com/unixpickle/essentials"
 	"github.com/unixpickle/muniverse"
+	"github.com/unixpickle/muniverse/chrome"
 
 	"gopkg.in/mgo.v2/bson"
 )
@@ -20,6 +21,9 @@ type Call struct {
 	NewEnvContainer *CallNewEnvContainer
 	NewEnvChrome    *CallNewEnvChrome
 	CloseEnv        *CallCloseEnv
+	Reset           *CallReset
+	Step            *CallStep
+	Observe         *CallObserve
 }
 
 // ReadCall decodes a Call from an input stream.
@@ -58,4 +62,23 @@ type CallNewEnvChrome struct {
 
 type CallCloseEnv struct {
 	UID string
+}
+
+type CallReset struct {
+	UID string
+}
+
+type CallStep struct {
+	UID     string
+	Seconds float64
+	Events  []*Event
+}
+
+type CallObserve struct {
+	UID string
+}
+
+type Event struct {
+	KeyEvent   *chrome.KeyEvent
+	MouseEvent *chrome.MouseEvent
 }
