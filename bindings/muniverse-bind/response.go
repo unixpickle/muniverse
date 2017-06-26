@@ -13,14 +13,14 @@ import (
 // Response is a message sent from the API back-end to an
 // API front-end in response to a Call.
 type Response struct {
-	ID string
+	ID string `bson:"ID"`
 
-	Error *string
+	Error *string `bson:"Error,omitempty"`
 
-	Spec        *muniverse.EnvSpec
-	UID         *string
-	StepResult  *StepResult
-	Observation *Observation
+	Spec        *muniverse.EnvSpec `bson:"Spec,omitempty"`
+	UID         *string            `bson:"UID,omitempty"`
+	StepResult  *StepResult        `bson:"StepResult,omitempty"`
+	Observation *Observation       `bson:"Observation,omitempty"`
 }
 
 // ErrorResponse creates a *Response with an error.
