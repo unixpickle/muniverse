@@ -97,6 +97,7 @@ class Handle:
         res = self.call(name, args)
         if 'error' in res:
             raise CallError(res['error'])
+        return res
 
 class _Session:
     """
@@ -137,10 +138,10 @@ class _Session:
         Make a named API call and wait for the response.
         """
         self.current_id_lock.acquire()
-        call_id = self.current_id
+        call_id = str(self.current_id)
         self.current_id += 1
         self.current_id_lock.release()
-        call_obj = {'id': call_id, name: args}
+        call_obj = {'ID': call_id, name: args}
         waiting_obj = {'event': threading.Event()}
         self.waiting_lock.acquire()
         try:
@@ -172,8 +173,8 @@ class _Session:
                     if not call_id in self.waiting:
                         raise ProtoError('unregistered call ID: ' + call_id)
                     waiting = self.waiting[call_id]
-                    waiting.payload = payload
-                    waiting.event.set()
+                    waiting['payload'] = payload
+                    waiting['event'].set()
                     del self.waiting[call_id]
                 finally:
                     self.waiting_lock.release()
@@ -185,8 +186,8 @@ class _Session:
         try:
             for uid in self.waiting:
                 waiting = self.waiting[uid]
-                waiting.error = exc
-                waiting.event.set()
+                waiting['error'] = exc
+                waiting['event'].set()
                 del self.waiting[uid]
         finally:
             self.waiting = None
