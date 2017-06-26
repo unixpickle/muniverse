@@ -6,6 +6,7 @@ import sys
 sys.path.insert(0, '..')
 
 import muniverse
+import numpy as np
 
 def main():
     print('Looking up environment...')
@@ -18,14 +19,16 @@ def main():
         print('Getting observation...')
         obs = env.observe()
         print(ascii_art(obs))
+        print('Taking a step...')
+
     finally:
         env.close()
 
 def ascii_art(img):
-    brightness = np.sum(buf, axis=2) / 3
-    downsampled = brightness[::5, ::5]
+    brightness = np.sum(img, axis=2) / 3
+    downsampled = brightness[::14, ::7]
     binary = downsampled > 128
-    width, height = binary.shape
+    height, width = binary.shape
     res = ''
     for y in range(0, height):
         if res != '':
