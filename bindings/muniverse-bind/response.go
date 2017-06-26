@@ -48,12 +48,12 @@ func writeObject(w io.Writer, obj interface{}) error {
 }
 
 type StepResult struct {
-	Reward float64
-	Done   bool
+	Reward float64 `bson:"Reward"`
+	Done   bool    `bson:"Done"`
 }
 
 type Observation struct {
-	Width  int
-	Height int
-	RGB    []byte
+	Width  int    `bson:"Width"`
+	Height int    `bson:"Height"`
+	RGB    []byte `bson:"RGB"`
 }
