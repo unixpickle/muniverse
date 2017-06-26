@@ -47,12 +47,6 @@ func TestProtocol(t *testing.T) {
 		})
 		spec := resp.Spec
 		expected := muniverse.SpecForName(name)
-
-		// Needed for reflect.DeepEqual to work.
-		if spec != nil && len(spec.KeyWhitelist) == 0 {
-			spec.KeyWhitelist = nil
-		}
-
 		if !reflect.DeepEqual(spec, expected) {
 			t.Errorf("bad spec for name %#v: got %#v but expected %#v",
 				name, spec, expected)

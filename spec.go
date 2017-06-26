@@ -2,15 +2,15 @@ package muniverse
 
 // An EnvSpec contains meta-data about an environment.
 type EnvSpec struct {
-	Name    string
-	BaseURL string
-	Width   int
-	Height  int
-	Options string
+	Name    string `bson:"Name"`
+	BaseURL string `bson:"BaseURL"`
+	Width   int    `bson:"Width"`
+	Height  int    `bson:"Height"`
+	Options string `bson:"Options"`
 
-	KeyWhitelist []string
+	KeyWhitelist []string `bson:"KeyWhitelist,omitempty"`
 
-	VariantOf string
+	VariantOf string `bson:"VariantOf"`
 }
 
 var EnvSpecs = []*EnvSpec{
