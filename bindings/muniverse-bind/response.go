@@ -15,12 +15,12 @@ import (
 type Response struct {
 	ID string
 
-	Error *string
+	Error *string `bson:",omitempty"`
 
-	Spec        *muniverse.EnvSpec
-	UID         *string
-	StepResult  *StepResult
-	Observation *Observation
+	Spec        *muniverse.EnvSpec `bson:",omitempty"`
+	UID         *string            `bson:",omitempty"`
+	StepResult  *StepResult        `bson:",omitempty"`
+	Observation *Observation       `bson:",omitempty"`
 }
 
 // ErrorResponse creates a *Response with an error.
