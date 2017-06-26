@@ -4,3 +4,4 @@ environments.
 """
 
 from .env import Env
+from .spec import spec_for_name

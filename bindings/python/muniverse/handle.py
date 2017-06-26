@@ -106,17 +106,14 @@ class _Session:
         try:
             self.proc = subprocess.Popen(['muniverse-bind'],
                                          stdin=subprocess.PIPE,
-                                         stdout=subprocess.PIPE,
-                                         stderr=subprocess.PIPE)
+                                         stdout=subprocess.PIPE)
         except OSError:
             gopath = os.environ['GOPATH']
             exc_path = os.path.join(gopath, 'bin', 'muniverse-bind')
             self.proc = subprocess.Popen([exc_path],
                                          stdin=subprocess.PIPE,
-                                         stdout=subprocess.PIPE,
-                                         stderr=subprocess.PIPE)
-        self.read_thread = threading.Thread(target=self._read_loop,
-                                            args=(self,))
+                                         stdout=subprocess.PIPE)
+        self.read_thread = threading.Thread(target=self._read_loop)
         self.read_thread.start()
         self.waiting_lock = threading.Lock()
         self.waiting = {}
@@ -170,6 +167,7 @@ class _Session:
                 if not 'ID' in payload:
                     raise ProtoError('')
                 call_id = payload['ID']
+                print('got payload ' + str(payload))
                 self.waiting_lock.acquire()
                 try:
                     if not call_id in self.waiting:
