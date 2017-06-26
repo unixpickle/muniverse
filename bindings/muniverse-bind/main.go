@@ -140,7 +140,7 @@ func (b *Server) newEnv(call *Call) *Response {
 		response.Error = &message
 	} else {
 		b.envsLock.Lock()
-		uid := strconv.FormatInt(b.currentUID, 0)
+		uid := strconv.FormatInt(b.currentUID, 10)
 		b.currentUID++
 		b.envsByUID[uid] = env
 		b.envsLock.Unlock()
@@ -175,7 +175,7 @@ func (b *Server) reset(call *Call) *Response {
 }
 
 func (b *Server) step(call *Call) *Response {
-	env, errResp := b.lookupEnv(call.Reset.UID)
+	env, errResp := b.lookupEnv(call.Step.UID)
 	if errResp != nil {
 		return errResp
 	}
@@ -188,7 +188,7 @@ func (b *Server) step(call *Call) *Response {
 			events = append(events, evt.MouseEvent)
 		}
 	}
-	reward, done, err := env.Step(t, events)
+	reward, done, err := env.Step(t, events...)
 	if err != nil {
 		return ErrorResponse(err)
 	}
@@ -201,7 +201,7 @@ func (b *Server) step(call *Call) *Response {
 }
 
 func (b *Server) observe(call *Call) *Response {
-	env, errResp := b.lookupEnv(call.Reset.UID)
+	env, errResp := b.lookupEnv(call.Observe.UID)
 	if errResp != nil {
 		return errResp
 	}

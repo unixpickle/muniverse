@@ -30,9 +30,12 @@ func ErrorResponse(e error) *Response {
 }
 
 // WriteResponse encodes a response to an output stream.
-func WriteResponse(w io.Writer, r *Response) (err error) {
-	defer essentials.AddCtxTo("write response", &err)
-	data, err := bson.Marshal(r)
+func WriteResponse(w io.Writer, r *Response) error {
+	return essentials.AddCtx("write response", writeObject(w, r))
+}
+
+func writeObject(w io.Writer, obj interface{}) error {
+	data, err := bson.Marshal(obj)
 	if err != nil {
 		return err
 	}

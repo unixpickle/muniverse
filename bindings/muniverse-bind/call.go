@@ -29,16 +29,20 @@ type Call struct {
 // ReadCall decodes a Call from an input stream.
 func ReadCall(r io.Reader) (call *Call, err error) {
 	defer essentials.AddCtxTo("read call", &err)
+	err = readObject(r, &call)
+	return
+}
+
+func readObject(r io.Reader, objOut interface{}) error {
 	var len uint32
 	if err := binary.Read(r, binary.LittleEndian, &len); err != nil {
-		return nil, err
+		return err
 	}
 	data := make([]byte, int(len))
 	if _, err := io.ReadFull(r, data); err != nil {
-		return nil, err
+		return err
 	}
-	err = bson.Unmarshal(data, &call)
-	return
+	return bson.Unmarshal(data, objOut)
 }
 
 type CallSpecForName struct {
