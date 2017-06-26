@@ -13,10 +13,10 @@ import (
 )
 
 func main() {
-	(&Server{
+	essentials.Die((&Server{
 		Input:  os.Stdin,
 		Output: os.Stdout,
-	}).Run()
+	}).Run())
 }
 
 type Server struct {
@@ -26,38 +26,71 @@ type Server struct {
 	envsLock   sync.RWMutex
 	currentUID int64
 	envsByUID  map[string]muniverse.Env
-
-	writeChan chan<- *Response
 }
 
-func (b *Server) Run() {
+// Run runs the server until an unrecoverable error is
+// encountered.
+// Typically, Run will not return until the input stream
+// has been closed or produces an error.
+func (b *Server) Run() error {
 	b.envsByUID = map[string]muniverse.Env{}
-	respChan := make(chan *Response, 1)
-	b.writeChan = respChan
-	go b.writeLoop(respChan)
-	b.readLoop()
-}
 
-func (b *Server) readLoop() {
+	done := make(chan struct{})
+	errChan := make(chan error, 1)
+	gotError := func(e error) {
+		select {
+		case errChan <- e:
+			close(done)
+		default:
+		}
+	}
+
+	var wg sync.WaitGroup
+
+	// Synchronize all responses to prevent overlapping
+	// writes to one io.Writer.
+	respChan := make(chan *Response, 1)
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		for {
+			select {
+			case r := <-respChan:
+				if err := WriteResponse(b.Output, r); err != nil {
+					gotError(err)
+					return
+				}
+			case <-done:
+				return
+			}
+		}
+	}()
+
+ReadLoop:
 	for {
 		call, err := ReadCall(b.Input)
+		select {
+		case <-done:
+			break ReadLoop
+		default:
+		}
 		if err != nil {
-			essentials.Die(err)
+			gotError(err)
+			break
 		}
 		go func() {
 			response := b.handleCall(call)
 			response.ID = call.ID
-			b.writeChan <- response
+			select {
+			case respChan <- response:
+			case <-done:
+			}
 		}()
 	}
-}
 
-func (b *Server) writeLoop(outgoing <-chan *Response) {
-	for r := range outgoing {
-		if err := WriteResponse(b.Output, r); err != nil {
-			essentials.Die(err)
-		}
-	}
+	wg.Wait()
+
+	return <-errChan
 }
 
 func (b *Server) handleCall(call *Call) *Response {
@@ -75,9 +108,8 @@ func (b *Server) handleCall(call *Call) *Response {
 	case call.Observe != nil:
 		return b.observe(call)
 	default:
-		essentials.Die("malformed call")
+		return ErrorResponse(errors.New("malformed call"))
 	}
-	panic("unreachable")
 }
 
 func (b *Server) specForName(call *Call) *Response {
