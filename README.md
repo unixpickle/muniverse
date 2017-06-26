@@ -1,8 +1,31 @@
-# μniverse
+# μniverse [![GoDoc](https://godoc.org/github.com/unixpickle/muniverse?status.svg)](https://godoc.org/github.com/unixpickle/muniverse)
 
-μniverse is my attempt to wrap a bunch of HTML5 games in a single API. This is similar to [openai/universe](https://github.com/openai/universe), except that it avoids Flash and VNC.
+μniverse is my attempt to wrap a bunch of HTML5 games in a single API. This is similar to [openai/universe](https://github.com/openai/universe), except that it avoids Flash and VNC. For more on this, see [Advantages over Universe](#advantages-over-universe)
 
 This is a work in progress. See [Roadmap](#roadmap) for more details.
+
+# Getting Started
+
+µniverse depends on a few software projects. It requires fairly new versions, so package managers like `apt-get` may not be suitable. Here are the packages and links to downloads:
+
+ * [Docker >= 17.03](https://docs.docker.com/engine/installation/#time-based-release-schedule)
+ * [Go >= 1.8](https://golang.org/dl/)
+
+Installing Go is particularly involved, as you will want to create a `GOPATH`. See [here](https://golang.org/doc/code.html#GOPATH) for details on that.
+
+Once you have Go and Docker, you can download µniverse in one easy step:
+
+```
+go get github.com/unixpickle/muniverse
+```
+
+The first time you use µniverse, it will pull a somewhat large Docker container. I recommend you do this manually before you use µniverse:
+
+```
+docker pull unixpickle/muniverse:0.54.0
+```
+
+For an example of how to use µniverse to train an RL agent, see [muniverse-agent](https://github.com/unixpickle/muniverse-agent). You may also want to checkout the [GoDoc](https://godoc.org/github.com/unixpickle/muniverse) for API details.
 
 # Advantages over Universe
 
