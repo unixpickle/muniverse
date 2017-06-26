@@ -13,3 +13,9 @@ class ProtoError(MuniverseError):
     Low-level protocol error.
     """
     pass
+
+class CallError(MuniverseError):
+    """
+    Error returned by muniverse API.
+    """
+    pass

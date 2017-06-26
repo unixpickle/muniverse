@@ -7,7 +7,7 @@ import subprocess
 import threading
 
 from . import proto
-from .errors import ProtoError, MuniverseError
+from .errors import ProtoError, MuniverseError, CallError
 
 # Enable global variables, which are used to share one
 # global process between otherwise separate objects.
@@ -88,6 +88,15 @@ class Handle:
             return self.session.call(name, args)
         finally:
             self.call_lock.release()
+
+    def checked_call(self, name, args):
+        """
+        Like call(), but raises a CallError if the call
+        results in an error on the back-end.
+        """
+        res = self.call(name, args)
+        if 'error' in res:
+            raise CallError(res['error'])
 
 class _Session:
     """
