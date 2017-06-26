@@ -11,4 +11,7 @@ def spec_for_name(name):
     If the specification is not found, None is returned.
     """
     handle = Handle()
-    return handle.checked_call('SpecForName', {'Name': name})['Spec']
+    try:
+        return handle.checked_call('SpecForName', {'Name': name})['Spec']
+    finally:
+        handle.close()
