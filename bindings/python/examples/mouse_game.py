@@ -16,10 +16,21 @@ def main():
     try:
         print('Resetting environment...')
         env.reset()
+
         print('Getting observation...')
         obs = env.observe()
         print(ascii_art(obs))
-        print('Taking a step...')
+
+        print('Playing game...')
+        step_idx = 0
+        action = muniverse.MouseAction('mousePressed', x=100, y=100, click_count=1)
+        actions = [action, action.with_event('mouseReleased')]
+        while True:
+            reward, done = env.step(0.1, actions[step_idx % 2])
+            step_idx += 1
+            print('reward: ' + str(reward))
+            if done:
+                break
 
     finally:
         env.close()

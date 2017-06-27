@@ -12,6 +12,9 @@ def spec_for_name(name):
     """
     handle = Handle()
     try:
-        return handle.checked_call('SpecForName', {'Name': name})['Spec']
+        res = handle.checked_call('SpecForName', {'Name': name})
+        if 'Spec' in res:
+            return res['Spec']
+        return None
     finally:
         handle.close()

@@ -67,7 +67,7 @@ class Env:
         data = obs['RGB']
         return np.frombuffer(data, dtype=np.uint8).reshape(dim)
 
-    def step(self, seconds, actions):
+    def step(self, seconds, *actions):
         """
         Send actions to the environment and advance time.
 
@@ -84,7 +84,7 @@ class Env:
             'Events': events
         }
         res = self.handle.checked_call('Step', args)
-        info = res['StepInfo']
+        info = res['StepResult']
         return info['Reward'], info['Done']
 
     def close(self):
