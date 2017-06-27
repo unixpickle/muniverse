@@ -7,7 +7,7 @@ import subprocess
 import threading
 
 from . import proto
-from .errors import ProtoError, MuniverseError, CallError
+from .errors import MuniverseError, ProtoError, CallError, LaunchError
 
 # Enable global variables, which are used to share one
 # global process between otherwise separate objects.
@@ -26,9 +26,8 @@ class Handle:
         """
         Create a new handle.
 
-        This may throw a FileNotFoundError or a related
-        error if the muniverse-bind command cannot be
-        executed.
+        This will throw an error if the muniverse-bind
+        command cannot be executed.
         """
         global _CURRENT_SESSION
         global _CURRENT_SESSION_LOCK
@@ -109,11 +108,16 @@ class _Session:
                                          stdin=subprocess.PIPE,
                                          stdout=subprocess.PIPE)
         except OSError:
-            gopath = os.environ['GOPATH']
-            exc_path = os.path.join(gopath, 'bin', 'muniverse-bind')
-            self.proc = subprocess.Popen([exc_path],
-                                         stdin=subprocess.PIPE,
-                                         stdout=subprocess.PIPE)
+            if not 'GOPATH' in os.environ:
+                raise LaunchError('failed to run muniverse-bind command')
+            try:
+                gopath = os.environ['GOPATH']
+                exc_path = os.path.join(gopath, 'bin', 'muniverse-bind')
+                self.proc = subprocess.Popen([exc_path],
+                                             stdin=subprocess.PIPE,
+                                             stdout=subprocess.PIPE)
+            except OSError:
+                raise LaunchError('failed to run muniverse-bind command')
         self.read_thread = threading.Thread(target=self._read_loop)
         self.read_thread.start()
         self.waiting_lock = threading.Lock()

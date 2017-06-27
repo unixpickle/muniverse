@@ -19,3 +19,9 @@ class CallError(MuniverseError):
     Error returned by muniverse API.
     """
     pass
+
+class LaunchError(MuniverseError):
+    """
+    Error trying to launchg muniverse-bind.
+    """
+    pass
