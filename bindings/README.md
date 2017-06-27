@@ -13,3 +13,11 @@ go get -u github.com/unixpickle/muniverse/bindings/muniverse-bind
 ```
 
 Whenever you want to update µniverse, you simply need to re-run the above command to update `muniverse-bind`. Any language bindings should automatically find and use the new executable.
+
+## Python bindings
+
+Once you have completed the above steps, you can install the `muniverse` Python package like so:
+
+```
+pip install muniverse
+```

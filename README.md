@@ -25,7 +25,7 @@ The first time you use µniverse, it will pull a somewhat large Docker container
 docker pull unixpickle/muniverse:0.54.0
 ```
 
-For an example of how to use µniverse to train an RL agent, see [muniverse-agent](https://github.com/unixpickle/muniverse-agent). You may also want to checkout the [GoDoc](https://godoc.org/github.com/unixpickle/muniverse) for API details.
+Once you have µniverse installed, you may want to install [bindings](bindings) for other languages such as Python. If you want to use µniverse from Go, [muniverse-agent](https://github.com/unixpickle/muniverse-agent) might serve as a good starting point. You may also want to checkout the [GoDoc](https://godoc.org/github.com/unixpickle/muniverse) for API details.
 
 # Advantages over Universe
 
@@ -63,11 +63,12 @@ Here's what is done so far:
  * Docker container for running headless Chrome.
  * Go API for controlling Docker containers.
  * Simple interface for gym-like environment control.
+ * Python bindings
 
 Here's a (non-exhaustive) to-do list:
 
  * Get more games.
- * Python bindings & Gym integration.
+ * Gym integration.
  * Get WebGL to work without occasional failures.
  * Better way to verify connection to keep-alive socket.
 
