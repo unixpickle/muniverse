@@ -944,6 +944,24 @@ var EnvSpecs = []*EnvSpec{
 		Height:  533,
 		Options: "{}",
 	},
+
+	{
+		Name:    "Lectro-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/l/lectro/v2/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+	},
+
+	{
+		Name:    "Lectro-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/l/lectro/v2/",
+		Width:   390,
+		Height:  390,
+		Options: "{}",
+
+		VariantOf: "Lectro-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

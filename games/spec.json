@@ -4801,5 +4801,61 @@
     "width": 320,
     "height": 533,
     "key_whitelist": []
+  },
+  {
+    "name": "Lectro-v0",
+    "base": "http://games.cdn.famobi.com/html5games/l/lectro/v2/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "Lectro-v0.js"
+    ],
+    "resources": [
+      "jquery-2.1.1.min.js",
+      "c2runtime.min.js",
+      "data.js",
+      "loading-logo.png",
+      "images/player-sheet0.png",
+      "images/player-sheet1.png",
+      "images/player_angle-sheet0.png",
+      "images/circuit-sheet0.png",
+      "images/circuit-sheet1.png",
+      "images/circuit-sheet2.png",
+      "images/play_btn-sheet0.png",
+      "images/title-sheet0.png",
+      "images/sound-sheet0.png",
+      "images/sound-sheet1.png",
+      "images/spawner-sheet0.png",
+      "images/retry-sheet0.png",
+      "images/back-sheet0.png",
+      "images/more_games-sheet0.png",
+      "images/score_hud.png",
+      "images/tutorial.png",
+      "images/score_hud.png",
+      "media/launch.ogg",
+      "media/land.ogg",
+      "media/music.ogg",
+      "icon-256.png"
+    ],
+    "processors": [
+      "Lectro-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "lectro"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": []
+  },
+  {
+    "name": "Lectro-v1",
+    "variant_of": "Lectro-v0",
+    "width": 390,
+    "height": 390
   }
 ]
