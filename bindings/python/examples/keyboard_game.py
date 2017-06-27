@@ -1,5 +1,6 @@
 """
-Simple program to demonstrate how to use muniverse.
+Simple program to demonstrate how to use muniverse on a
+game that takes keyboard events.
 """
 
 import sys
