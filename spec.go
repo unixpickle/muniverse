@@ -962,6 +962,44 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "Lectro-v0",
 	},
+
+	{
+		Name:    "StreetBallStar-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/street-ball-star/7-7489fa/",
+		Width:   320,
+		Height:  480,
+		Options: "{\"mode\":\"time\"}",
+	},
+
+	{
+		Name:    "StreetBallStar-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/street-ball-star/7-7489fa/",
+		Width:   480,
+		Height:  360,
+		Options: "{\"mode\":\"time\"}",
+
+		VariantOf: "StreetBallStar-v0",
+	},
+
+	{
+		Name:    "StreetBallStar-v2",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/street-ball-star/7-7489fa/",
+		Width:   320,
+		Height:  480,
+		Options: "{\"mode\":\"challenge\"}",
+
+		VariantOf: "StreetBallStar-v0",
+	},
+
+	{
+		Name:    "StreetBallStar-v3",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/street-ball-star/7-7489fa/",
+		Width:   480,
+		Height:  360,
+		Options: "{\"mode\":\"challenge\"}",
+
+		VariantOf: "StreetBallStar-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
