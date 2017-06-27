@@ -35,8 +35,10 @@
 //
 // The SpecForName call looks up an environment by name.
 // The call takes a "Name" string argument.
-// The response has a "Spec" field which is either null or
-// an environment specification object.
+// The response has a "Spec" field which is an environment
+// specification object.
+// If the environment was not found, the "Spec" field will
+// be absent.
 //
 // The NewEnv call creates an environment from an
 // environment specification object.
@@ -80,4 +82,12 @@
 // object containing "Width", "Height", and "RGB" fields.
 // The "Width" and "Height" are integers.
 // The "RGB" field is 24-bit RGB data.
+//
+// The KeyForCode call looks up the default fields of a
+// key event given its code.
+// It takes a "Code" argument.
+// The response has a "KeyEvent" field with the fields
+// from the chrome.KeyEvent object.
+// If the code was not found, the "KeyEvent" field will be
+// absent.
 package main

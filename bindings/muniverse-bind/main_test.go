@@ -53,6 +53,19 @@ func TestProtocol(t *testing.T) {
 		}
 	}
 
+	// Test KeyForCode.
+	for _, code := range []string{"ArrowLeft", "", "Space"} {
+		resp := safeCall(&Call{
+			KeyForCode: &CallKeyForCode{Code: code},
+		})
+		actual := resp.KeyEvent
+		expected := chrome.KeyEvents[code]
+		if !reflect.DeepEqual(actual, &expected) {
+			t.Errorf("bad key for code %#v: got %#v but expected %#v",
+				code, actual, &expected)
+		}
+	}
+
 	// Test environment lifecycle.
 	for _, name := range []string{"KatanaFruits-v0", "MinimalDots-v0"} {
 		spec := muniverse.SpecForName(name)

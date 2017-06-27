@@ -10,6 +10,7 @@ import (
 
 	"github.com/unixpickle/essentials"
 	"github.com/unixpickle/muniverse"
+	"github.com/unixpickle/muniverse/chrome"
 )
 
 func main() {
@@ -107,6 +108,8 @@ func (b *Server) handleCall(call *Call) *Response {
 		return b.step(call)
 	case call.Observe != nil:
 		return b.observe(call)
+	case call.KeyForCode != nil:
+		return b.keyForCode(call)
 	default:
 		return ErrorResponse(errors.New("malformed call"))
 	}
@@ -114,7 +117,6 @@ func (b *Server) handleCall(call *Call) *Response {
 
 func (b *Server) specForName(call *Call) *Response {
 	return &Response{
-		ID:   call.ID,
 		Spec: muniverse.SpecForName(call.SpecForName.Name),
 	}
 }
@@ -231,6 +233,13 @@ func (b *Server) observe(call *Call) *Response {
 			Height: height,
 			RGB:    data,
 		},
+	}
+}
+
+func (b *Server) keyForCode(call *Call) *Response {
+	evt := chrome.KeyEvents[call.KeyForCode.Code]
+	return &Response{
+		KeyEvent: &evt,
 	}
 }
 

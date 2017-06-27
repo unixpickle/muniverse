@@ -24,6 +24,7 @@ type Call struct {
 	Reset           *CallReset           `bson:"Reset"`
 	Step            *CallStep            `bson:"Step"`
 	Observe         *CallObserve         `bson:"Observe"`
+	KeyForCode      *CallKeyForCode      `bson:"KeyForCode"`
 }
 
 // ReadCall decodes a Call from an input stream.
@@ -80,6 +81,10 @@ type CallStep struct {
 
 type CallObserve struct {
 	UID string `bson:"UID"`
+}
+
+type CallKeyForCode struct {
+	Code string `bson:"Code"`
 }
 
 type Event struct {
