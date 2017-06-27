@@ -67,6 +67,26 @@ class Env:
         data = obs['RGB']
         return np.frombuffer(data, dtype=np.uint8).reshape(dim)
 
+    def step(self, seconds, actions):
+        """
+        Send actions to the environment and advance time.
+
+        The return value is a tuple (reward, done).
+        If done is True, then no more steps can be taken
+        until a reset().
+        """
+        events = []
+        for action in actions:
+            events.append(action.to_bsonable())
+        args = {
+            'UID': self.uid,
+            'Seconds': seconds,
+            'Events': events
+        }
+        res = self.handle.checked_call('Step', args)
+        info = res['StepInfo']
+        return info['Reward'], info['Done']
+
     def close(self):
         """
         Stop and clean up the environment.
