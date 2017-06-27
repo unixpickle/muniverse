@@ -85,7 +85,7 @@ class Env:
         }
         res = self.handle.checked_call('Step', args)
         info = res['StepResult']
-        return info['Reward'], info['Done']
+        return info['Reward'], info['Done'] != 0
 
     def close(self):
         """

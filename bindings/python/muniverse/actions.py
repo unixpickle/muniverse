@@ -50,7 +50,7 @@ class MouseAction:
         """
         Create an event object for the back-end.
         """
-        return self.bson_obj
+        return {'MouseEvent': self.bson_obj}
 
     def with_event(self, event):
         """
@@ -95,7 +95,7 @@ class KeyAction:
         """
         Create an event object for the back-end.
         """
-        return self.bson_obj
+        return {'KeyEvent': self.bson_obj}
 
     def with_event(self, event):
         """
