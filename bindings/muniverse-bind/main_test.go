@@ -59,10 +59,14 @@ func TestProtocol(t *testing.T) {
 			KeyForCode: &CallKeyForCode{Code: code},
 		})
 		actual := resp.KeyEvent
-		expected := chrome.KeyEvents[code]
-		if !reflect.DeepEqual(actual, &expected) {
+		evt, ok := chrome.KeyEvents[code]
+		var expected *chrome.KeyEvent
+		if ok {
+			expected = &evt
+		}
+		if !reflect.DeepEqual(actual, expected) {
 			t.Errorf("bad key for code %#v: got %#v but expected %#v",
-				code, actual, &expected)
+				code, actual, expected)
 		}
 	}
 
