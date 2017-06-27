@@ -1,3 +1,4 @@
 downloaded_games/
 __pycache__/
+*.pyc
 
