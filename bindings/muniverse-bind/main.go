@@ -237,9 +237,13 @@ func (b *Server) observe(call *Call) *Response {
 }
 
 func (b *Server) keyForCode(call *Call) *Response {
-	evt := chrome.KeyEvents[call.KeyForCode.Code]
-	return &Response{
-		KeyEvent: &evt,
+	evt, ok := chrome.KeyEvents[call.KeyForCode.Code]
+	if ok {
+		return &Response{
+			KeyEvent: &evt,
+		}
+	} else {
+		return &Response{}
 	}
 }
 
