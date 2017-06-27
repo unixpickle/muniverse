@@ -6,6 +6,7 @@ import (
 
 	"github.com/unixpickle/essentials"
 	"github.com/unixpickle/muniverse"
+	"github.com/unixpickle/muniverse/chrome"
 
 	"gopkg.in/mgo.v2/bson"
 )
@@ -21,6 +22,7 @@ type Response struct {
 	UID         *string            `bson:"UID,omitempty"`
 	StepResult  *StepResult        `bson:"StepResult,omitempty"`
 	Observation *Observation       `bson:"Observation,omitempty"`
+	KeyEvent    *chrome.KeyEvent   `bson:"KeyEvent,omitempty"`
 }
 
 // ErrorResponse creates a *Response with an error.
