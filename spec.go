@@ -1000,6 +1000,14 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "StreetBallStar-v0",
 	},
+
+	{
+		Name:    "BaseballPro-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/b/baseball-pro/v050/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
