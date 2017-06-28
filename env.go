@@ -222,7 +222,7 @@ func (r *rawEnv) Reset() (err error) {
 	}
 
 	var is404 bool
-	check404 := "Promise.resolve(!window.munivense && document.title.startsWith('404'));"
+	check404 := "Promise.resolve(!window.muniverse && document.title.startsWith('404'));"
 	err = r.devConn.EvalPromise(ctx, check404, &is404)
 	if err != nil {
 		return
