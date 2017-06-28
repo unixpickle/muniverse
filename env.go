@@ -111,7 +111,24 @@ func NewEnv(spec *EnvSpec) (Env, error) {
 
 // NewEnvContainer creates a new environment inside a
 // new Docker container of the given Docker image.
-func NewEnvContainer(image string, spec *EnvSpec) (env Env, err error) {
+func NewEnvContainer(image string, spec *EnvSpec) (Env, error) {
+	return newEnvDocker(image, "", spec)
+}
+
+// NewEnvGamesDir creates a new environment with a custom
+// games directory.
+// The directory should contain subdirectories for each
+// base game, similar to the downloaded_games directory in
+// the default image.
+//
+// The directory path is slightly restricted.
+// In particular, it cannot contain a ':' (colon).
+// See https://github.com/moby/moby/issues/8604 for more.
+func NewEnvGamesDir(dir string, spec *EnvSpec) (Env, error) {
+	return newEnvDocker(defaultImage, dir, spec)
+}
+
+func newEnvDocker(image, volume string, spec *EnvSpec) (env Env, err error) {
 	defer essentials.AddCtxTo("create environment", &err)
 
 	ctx, cancel := callCtx()
@@ -122,7 +139,7 @@ func NewEnvContainer(image string, spec *EnvSpec) (env Env, err error) {
 	// Retry as a workaround for an occasional error given
 	// by `docker run`.
 	for i := 0; i < 3; i++ {
-		id, err = dockerRun(ctx, image, spec)
+		id, err = dockerRun(ctx, image, volume, spec)
 		if err == nil || !strings.Contains(err.Error(), occasionalDockerErr) {
 			break
 		}
@@ -332,8 +349,8 @@ func callCtx() (context.Context, context.CancelFunc) {
 	return context.WithTimeout(context.Background(), callTimeout)
 }
 
-func dockerRun(ctx context.Context, container string, spec *EnvSpec) (id string,
-	err error) {
+func dockerRun(ctx context.Context, container, volume string,
+	spec *EnvSpec) (id string, err error) {
 	args := []string{
 		"run",
 		"-p",
@@ -344,9 +361,15 @@ func dockerRun(ctx context.Context, container string, spec *EnvSpec) (id string,
 		"-d",   // Run in detached mode.
 		"--rm", // Automatically delete the container.
 		"-i",   // Give netcat a stdin to read from.
-		container,
-		fmt.Sprintf("--window-size=%d,%d", spec.Width, spec.Height),
 	}
+	if volume != "" {
+		if strings.Contains(volume, ":") {
+			return "", errors.New("path contains colons: " + volume)
+		}
+		args = append(args, "-v", volume+":/downloaded_games")
+	}
+	args = append(args, container,
+		fmt.Sprintf("--window-size=%d,%d", spec.Width, spec.Height))
 
 	output, err := dockerCommand(ctx, args...)
 	if err != nil {
