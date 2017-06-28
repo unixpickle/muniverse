@@ -1008,6 +1008,24 @@ var EnvSpecs = []*EnvSpec{
 		Height:  480,
 		Options: "{}",
 	},
+
+	{
+		Name:    "SoccerGirl-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/soccer-girl/v050/",
+		Width:   320,
+		Height:  646,
+		Options: "{}",
+	},
+
+	{
+		Name:    "SoccerGirl-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/soccer-girl/v050/",
+		Width:   426,
+		Height:  320,
+		Options: "{}",
+
+		VariantOf: "SoccerGirl-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

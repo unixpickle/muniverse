@@ -5138,5 +5138,52 @@
     "width": 320,
     "height": 480,
     "key_whitelist": []
+  },
+  {
+    "name": "SoccerGirl-v0",
+    "base": "http://games.cdn.famobi.com/html5games/s/soccer-girl/v050/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "SoccerGirl-v0.js"
+    ],
+    "resources": [
+      "fonts/Calibri_gdi.woff",
+      "js/all.js",
+      "snd/sprite.ogg",
+      "snd/sprite.ogg",
+      "img/bg.jpg",
+      "img/MainAtlas.png",
+      "img/MainFontNumeric.png",
+      "img/MainFontNumeric1.png",
+      "img/MenuAtlas.png",
+      "img/TranspPixel.png",
+      "img/levels.json",
+      "img/MainAtlas.xml",
+      "img/MenuAtlas.xml",
+      "img/strings_enGB.json",
+      "snd/sprite.json",
+      "snd/sprite.ogg",
+      "snd/sprite.ogg"
+    ],
+    "processors": [
+      "SoccerGirl-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "soccer-girl"
+    },
+    "width": 320,
+    "height": 646,
+    "key_whitelist": []
+  },
+  {
+    "name": "SoccerGirl-v1",
+    "variant_of": "SoccerGirl-v0",
+    "width": 426,
+    "height": 320
   }
 ]
