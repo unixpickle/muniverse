@@ -221,6 +221,16 @@ func (r *rawEnv) Reset() (err error) {
 		return
 	}
 
+	var is404 bool
+	check404 := "Promise.resolve(!window.munivense && document.title.startsWith('404'));"
+	err = r.devConn.EvalPromise(ctx, check404, &is404)
+	if err != nil {
+		return
+	}
+	if is404 {
+		return errors.New("likely 404 page (no base game found)")
+	}
+
 	initCode := "window.muniverse.init(" + r.spec.Options + ");"
 	err = r.devConn.EvalPromise(ctx, initCode, nil)
 	if err != nil {
