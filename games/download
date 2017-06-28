@@ -4,6 +4,11 @@ read_spec() {
   cat spec.json
 }
 
+if [ $# -ne 0 -a $# -ne 1 ]; then
+  echo 'Usage: ./download [base_game]' >&2
+  exit 1
+fi
+
 mkdir tmp
 trap "rm -r tmp" EXIT
 
@@ -18,6 +23,11 @@ do
   item="$(read_spec | jq ".[$i]")"
   name=$(echo "$item" | jq -r .name)
   variantOf=$(echo "$item" | jq -r .variant_of)
+
+  if [ $# -eq 1 -a "$name" != "$1" ]; then
+    echo "Skipping $name."
+    continue
+  fi
 
   if [ "$variantOf" != "null" ]; then
     echo "Skipping variant $name of $variantOf."

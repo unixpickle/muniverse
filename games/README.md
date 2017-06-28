@@ -20,6 +20,12 @@ You should run the download script from inside this directory, like:
 
 The download script creates a directory called `downloaded_games` and makes a sub-directory for each game it downloads. Each game sub-directory contains an `index.html` file and various game-specific resource files. Each subdirectory also contains an `info.json` file with specific information about that game.
 
+To download only a specific game, you can specify the game name as an argument, like in:
+
+```
+./download Babel-v0
+```
+
 # The `spec.json` file
 
 The [spec.json](spec.json) file contains a JSON array of game objects. Each game object contains various information about a game. There are two general types of game objects: base objects and variant objects. A base object defines lots of information about a game, such URLs for downloading game assets. A variant object references a base object and applies some slight modifications to it. Here's what a base object might look like:
