@@ -17,8 +17,8 @@ import (
 )
 
 const (
-	portRange        = "9000-9999"
-	defaultContainer = "unixpickle/muniverse:0.56.0"
+	portRange    = "9000-9999"
+	defaultImage = "unixpickle/muniverse:0.56.0"
 )
 
 const (
@@ -102,16 +102,16 @@ type rawEnv struct {
 }
 
 // NewEnv creates a new environment inside the default
-// Docker container.
+// Docker image.
 // This may take a few minutes to run the first time,
-// since it has to download a large container.
+// since it has to download a large Docker image.
 func NewEnv(spec *EnvSpec) (Env, error) {
-	return NewEnvContainer(defaultContainer, spec)
+	return NewEnvContainer(defaultImage, spec)
 }
 
 // NewEnvContainer creates a new environment inside a
-// Docker container of the given name.
-func NewEnvContainer(container string, spec *EnvSpec) (env Env, err error) {
+// new Docker container of the given Docker image.
+func NewEnvContainer(image string, spec *EnvSpec) (env Env, err error) {
 	defer essentials.AddCtxTo("create environment", &err)
 
 	ctx, cancel := callCtx()
@@ -122,7 +122,7 @@ func NewEnvContainer(container string, spec *EnvSpec) (env Env, err error) {
 	// Retry as a workaround for an occasional error given
 	// by `docker run`.
 	for i := 0; i < 3; i++ {
-		id, err = dockerRun(ctx, container, spec)
+		id, err = dockerRun(ctx, image, spec)
 		if err == nil || !strings.Contains(err.Error(), occasionalDockerErr) {
 			break
 		}
