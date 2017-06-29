@@ -5206,6 +5206,6 @@
     "metadata": {},
     "width": 600,
     "height": 150,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Space"]
+    "key_whitelist": ["ArrowUp", "ArrowDown", "Space"]
   }
 ]
