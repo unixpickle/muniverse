@@ -1026,6 +1026,22 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "SoccerGirl-v0",
 	},
+
+	{
+		Name:    "TRex-v0",
+		BaseURL: "https://chromedino.com/",
+		Width:   600,
+		Height:  150,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+			"Space",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

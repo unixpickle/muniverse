@@ -1,0 +1,18 @@
+#!/bin/bash
+
+DIR="$1"
+
+mv "$DIR/index.html" "$DIR/index_pre_trex.html"
+cat "$DIR/index_pre_trex.html" |
+  sed -E 's/\/assets/assets/g' |
+  sed -E '/<center>/q' \
+  > "$DIR/index.html"
+echo '<script src="js/game.js"></script>' >> "$DIR/index.html"
+echo '</center></body></html>' >> "$DIR/index.html"
+
+# Disable CSS animation and install game hook.
+mv "$DIR/js/game.js" "$DIR/js/game.preproc.js"
+cat "$DIR/js/game.preproc.js" |
+  sed -E 's/(intro) \.4s (ease-out 1 both)/\1 0s \2/g' |
+  sed -E "s/(new Runner)/window.globalRunner = \1/g" \
+  > "$DIR/js/game.js"

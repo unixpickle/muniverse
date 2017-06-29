@@ -5185,5 +5185,27 @@
     "variant_of": "SoccerGirl-v0",
     "width": 426,
     "height": 320
+  },
+  {
+    "name": "TRex-v0",
+    "base": "https://chromedino.com/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "TRex-v0.js"
+    ],
+    "resources": [
+      "assets/offline-sprite-1x.png",
+      "assets/offline-sprite-2x.png",
+      "js/game.js"
+    ],
+    "processors": [
+      "TRex-v0"
+    ],
+    "metadata": {},
+    "width": 600,
+    "height": 150,
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Space"]
   }
 ]
