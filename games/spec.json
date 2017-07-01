@@ -5263,5 +5263,63 @@
     "options": {
       "scoreMode": "totalGems"
     }
+  },
+  {
+    "name": "FitzColor-v0",
+    "base": "http://games.cdn.famobi.com/html5games/f/fitz-color/v2/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "FitzColor-v0.js"
+    ],
+    "resources": [
+      "dist/all.js",
+      "images/loader-sheet0.png",
+      "images/bg.png",
+      "fg_i18n/en/images/logo-sheet0.png",
+      "images/buttonplay-sheet0.png",
+      "images/buttonmore-sheet0.png",
+      "images/buttonfacebook-sheet0.png",
+      "images/sf_normal.png",
+      "images/sf_bold.png",
+      "images/bartop-sheet0.png",
+      "images/bartop-sheet1.png",
+      "images/timer.png",
+      "fg_i18n/en/images/gameover-sheet0.png",
+      "images/buttonreplay-sheet0.png",
+      "images/buttonmenu-sheet0.png",
+      "fg_i18n/en/images/transscreen-sheet0.png",
+      "images/scroller-sheet0.png",
+      "images/gray-sheet0.png",
+      "fg_i18n/en/images/switch-sheet0.png",
+      "images/sf_bold2.png",
+      "images/sf_bold3.png",
+      "images/sf_bold4.png",
+      "images/sf_bold5.png"
+    ],
+    "processors": [
+      "FitzColor-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "fitz-color"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": [],
+    "options": {
+      "difficulty": "normal"
+    }
+  },
+  {
+    "name": "FitzColor-v1",
+    "variant_of": "FitzColor-v0",
+    "options": {
+      "difficulty": "hard"
+    }
   }
 ]

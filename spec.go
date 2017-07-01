@@ -1072,6 +1072,24 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "HopDontStop-v0",
 	},
+
+	{
+		Name:    "FitzColor-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/fitz-color/v2/",
+		Width:   320,
+		Height:  480,
+		Options: "{\"difficulty\":\"normal\"}",
+	},
+
+	{
+		Name:    "FitzColor-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/f/fitz-color/v2/",
+		Width:   320,
+		Height:  480,
+		Options: "{\"difficulty\":\"hard\"}",
+
+		VariantOf: "FitzColor-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
