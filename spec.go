@@ -1040,6 +1040,38 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 	},
+
+	{
+		Name:    "HopDontStop-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/h/hop-dont-stop/v040/",
+		Width:   320,
+		Height:  498,
+		Options: "{\"scoreMode\":\"distance\"}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+	},
+
+	{
+		Name:    "HopDontStop-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/h/hop-dont-stop/v040/",
+		Width:   320,
+		Height:  498,
+		Options: "{\"scoreMode\":\"totalGems\"}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+
+		VariantOf: "HopDontStop-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

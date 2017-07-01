@@ -5207,5 +5207,61 @@
     "width": 600,
     "height": 150,
     "key_whitelist": ["ArrowUp", "ArrowDown", "Space"]
+  },
+  {
+    "name": "HopDontStop-v0",
+    "base": "http://games.cdn.famobi.com/html5games/h/hop-dont-stop/v040/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "HopDontStop-v0.js"
+    ],
+    "resources": [
+      "images/bg.jpg",
+      "js/all.js",
+      "audio/sound.ogg",
+      "audio/music.ogg",
+      "images/preloadImage.jpg",
+      "images/background0.jpg",
+      "images/rotateDeviceMessage.jpg",
+      "images/splashScreen.jpg",
+      "images/hud.png",
+      "images/uiButs.png",
+      "images/panels_450x700.png",
+      "images/numbersWhite_24x37.png",
+      "images/numbersOrange_17x24.png",
+      "images/mute_58x56.png",
+      "images/branches_222x42.png",
+      "images/branchElements.png",
+      "images/hero_154x198.png",
+      "images/hitBlock_156x139.png",
+      "images/collectGem_107x99.png",
+      "images/dust_49x47.png",
+      "images/topFlare.png",
+      "images/boostShade.png"
+    ],
+    "processors": [
+      "HopDontStop-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "hop-dont-stop"
+    },
+    "width": 320,
+    "height": 498,
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"],
+    "options": {
+      "scoreMode": "distance"
+    }
+  },
+  {
+    "name": "HopDontStop-v1",
+    "variant_of": "HopDontStop-v0",
+    "options": {
+      "scoreMode": "totalGems"
+    }
   }
 ]
