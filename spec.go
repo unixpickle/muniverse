@@ -1090,6 +1090,20 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "FitzColor-v0",
 	},
+
+	{
+		Name:    "SushiNinjaDash-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/s/sushi-ninja-dash/v3/",
+		Width:   320,
+		Height:  470,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

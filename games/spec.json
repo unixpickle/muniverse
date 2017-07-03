@@ -5321,5 +5321,82 @@
     "options": {
       "difficulty": "hard"
     }
+  },
+  {
+    "name": "SushiNinjaDash-v0",
+    "base": "http://games.cdn.famobi.com/html5games/s/sushi-ninja-dash/v3/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "SushiNinjaDash-v0.js"
+    ],
+    "resources": [
+      "js/all.js",
+      "data.js",
+      "loading-logo.png",
+      "images/hitbox-sheet0.png",
+      "images/maintile.png",
+      "images/box-sheet0.png",
+      "images/box-sheet1.png",
+      "images/toptile.png",
+      "images/coin-sheet0.png",
+      "images/badtile.png",
+      "images/camera-sheet0.png",
+      "images/playbtn-sheet0.png",
+      "images/menubtn-sheet0.png",
+      "images/levelmap-sheet0.png",
+      "images/timebtn-sheet0.png",
+      "images/timebtn-sheet1.png",
+      "images/maintile2.png",
+      "images/badbox-sheet0.png",
+      "images/stain-sheet0.png",
+      "images/coinsplash.png",
+      "images/texture.png",
+      "images/bg.png",
+      "images/shleif.png",
+      "images/back-sheet0.png",
+      "images/dust-sheet0.png",
+      "images/logo-sheet0.png",
+      "images/cheeze-sheet0.png",
+      "images/title-sheet0.png",
+      "images/scoretitle-sheet0.png",
+      "images/bamboo-sheet0.png",
+      "images/soundbtn-sheet0.png",
+      "images/soundbtn-sheet1.png",
+      "images/trophy-sheet0.png",
+      "images/menucamera-sheet0.png",
+      "images/stoptrigger-sheet0.png",
+      "images/trophyingame-sheet0.png",
+      "images/ninjaslogo-sheet0.png",
+      "images/selection-sheet0.png",
+      "fg_i18n/en/images/resetgame-sheet0.png",
+      "images/yes-sheet0.png",
+      "images/no-sheet0.png",
+      "images/submitscorebtn-sheet0.png",
+      "images/moregamesbtn-sheet0.png",
+      "media/costume.ogg",
+      "media/wood%20click.ogg",
+      "media/ninjatheme.ogg",
+      "media/ninjastep.ogg",
+      "media/gong.ogg",
+      "media/switchninja.ogg",
+      "media/drum.ogg",
+      "fg_i18n/en/images/scoretitle-sheet0.png"
+    ],
+    "processors": [
+      "SushiNinjaDash-v0",
+      "path-unescape",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "sushi-ninja-dash"
+    },
+    "width": 320,
+    "height": 470,
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp"]
   }
 ]
