@@ -1123,6 +1123,14 @@ var EnvSpecs = []*EnvSpec{
 			"KeyD",
 		},
 	},
+
+	{
+		Name:    "100GolfBalls-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/0/100-golf-balls/3-30f6bb/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
