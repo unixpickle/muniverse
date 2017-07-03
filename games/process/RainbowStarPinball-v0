@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Format famobi_gameJS properly.
+mv "$DIR/index.html" "$DIR/index_pre_rainbowstarpinball.html"
+cat "$DIR/index_pre_rainbowstarpinball.html" |
+  sed -E 's/"game\.min\.js",//g' |
+  sed -E 's/(<\/body>)/<script src="game\.min\.js"><\/script>\1/g' \
+  > "$DIR/index.html"
+
+# Inject hooks.
+mv "$DIR/game.min.js" "$DIR/game.min.preproc.js"
+cat "$DIR/game.min.preproc.js" |
+  sed -E 's/(b.scenes.Menu=function\(e,t,i,s,n\)\{)/\1 window.globalMenu=this,/g' |
+  sed -E 's/(b.scenes.Game=function\(e,t,i,s,n\)\{)/\1 window.globalGame=this,/g' \
+  > "$DIR/game.min.js"

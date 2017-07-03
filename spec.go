@@ -1104,6 +1104,25 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 	},
+
+	{
+		Name:    "RainbowStarPinball-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/r/rainbow-star-pinball/v2/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+			"KeyW",
+			"KeyA",
+			"KeyS",
+			"KeyD",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

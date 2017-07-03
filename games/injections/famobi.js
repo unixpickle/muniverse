@@ -56,7 +56,12 @@ fg_api.prototype.levelUp = function() {
 
 fg_api.prototype.log = function() {
   console.log('Famobi log:', arguments);
-}
+};
+
+fg_api.prototype.hasFeature = function(feature) {
+  return feature in this._data.features &&
+    this._data.features[feature];
+};
 
 window.famobi_analytics = {
   trackScreen: function() {},
