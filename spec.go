@@ -1131,6 +1131,14 @@ var EnvSpecs = []*EnvSpec{
 		Height:  480,
 		Options: "{}",
 	},
+
+	{
+		Name:    "KittyBubbles-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/k/kitty-bubbles/v100/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

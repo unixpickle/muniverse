@@ -5753,5 +5753,57 @@
     "width": 320,
     "height": 480,
     "key_whitelist": []
+  },
+  {
+    "name": "KittyBubbles-v0",
+    "base": "http://games.cdn.famobi.com/html5games/k/kitty-bubbles/v100/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "SmartyBubbles-v0.js",
+      "KittyBubbles-v0.js"
+    ],
+    "resources": [
+      "styles.min.css",
+      "js/all.js",
+      "res/strings.json",
+      "res/statistics.png",
+      "res/sprites_1_hd.png",
+      "res/sprites_1_hd.json",
+      "res/sprites_1.png",
+      "res/sprites_1.json",
+      "res/sprites_0.png",
+      "res/sprites_0.json",
+      "res/kitty.png",
+      "res/kitty.json",
+      "res/gameover.png",
+      "res/font.png",
+      "res/font.fnt",
+      "res/dialog_pause.png",
+      "res/bg.jpg",
+      "res/sounds/ogg/tap.ogg",
+      "res/sounds/ogg/start.ogg",
+      "res/sounds/ogg/snap.ogg",
+      "res/sounds/ogg/shoot.ogg",
+      "res/sounds/ogg/new_row.ogg",
+      "res/sounds/ogg/game_over_success.ogg",
+      "res/sounds/ogg/game_over_failure.ogg",
+      "res/sounds/ogg/burst.ogg",
+      "res/sounds/ogg/bounce.ogg",
+      "res/sounds/ogg/bonus.ogg"
+    ],
+    "processors": [
+      "KittyBubbles-v0",
+      "famobi"
+    ],
+    "metadata": {
+      "famobi_id": "kitty-bubbles"
+    },
+    "width": 320,
+    "height": 480,
+    "key_whitelist": []
   }
 ]
