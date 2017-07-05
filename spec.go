@@ -1139,6 +1139,38 @@ var EnvSpecs = []*EnvSpec{
 		Height:  480,
 		Options: "{}",
 	},
+
+	{
+		Name:    "JungleRun-v0",
+		BaseURL: "http://games.cdn.famobi.com/html5games/j/jungle-run/v120/",
+		Width:   540,
+		Height:  360,
+		Options: "{\"player\":\"Kiba\"}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+	},
+
+	{
+		Name:    "JungleRun-v1",
+		BaseURL: "http://games.cdn.famobi.com/html5games/j/jungle-run/v120/",
+		Width:   540,
+		Height:  360,
+		Options: "{\"player\":\"Kumba\"}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+
+		VariantOf: "JungleRun-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

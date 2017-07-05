@@ -1,0 +1,29 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Format famobi_gameJS properly.
+mv "$DIR/index.html" "$DIR/index_pre_junglerun.html"
+cat "$DIR/index_pre_junglerun.html" |
+  sed -E "s/'js\\/all\\.js',//g" |
+  sed -E 's/"junglerun\.js\?ignore",//g' |
+  sed -E 's/(<\/body>)/<script src="js\/all\.js"><\/script>\1/g' |
+  sed -E 's/(<\/body>)/<script src="junglerun.js"><\/script>\1/g' \
+  > "$DIR/index.html"
+
+# Do the following:
+# - Inject JS hook for hitting play button
+# - Inject JS hook for selecting character
+# - Inject game over detection
+# - Inject hook for getting score
+# - Disable pause button
+# - Disable pre-game tutorial
+mv "$DIR/junglerun.js" "$DIR/junglerun.preproc.js"
+cat "$DIR/junglerun.preproc.js" |
+  sed -E 's/(function Wa\(\)\{)/\1 window.globalWa=this;/g' |
+  sed -E 's/(function lc\(\)\{)/\1 window.globallc=this;/g' |
+  sed -E 's/(function Bc\(\)\{)/\1 window.globalGameOver=true;/g' |
+  sed -E 's/(function U\(a\)\{)/\1 window.globalU=this;/g' |
+  sed -E 's/(nA:function\(\)\{)/\1 return;/g' |
+  sed -E 's/set\("showTutorial"\)/set\("foobar123"\)/g' \
+  > "$DIR/junglerun.js"

@@ -63,6 +63,10 @@ fg_api.prototype.hasFeature = function(feature) {
     this._data.features[feature];
 };
 
+fg_api.prototype.getCurrentLanguage = function() {
+  return 'en';
+};
+
 window.famobi_analytics = {
   trackScreen: function() {},
   trackEvent: function() {}
