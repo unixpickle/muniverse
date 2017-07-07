@@ -31,10 +31,17 @@
           cr_getC2Runtime().lg.every((x) => x.complete) &&
           loadingPercent() === 100;
       }).then(function() {
+        // Capture game over in various ways.
         kongregateAPI.getAPI().stats.submit = (name, score) => {
           gameOver = true;
           endgameScore = score;
         };
+        ["740282538406785", "866265273138339"].forEach((sid) => {
+          cr_getC2Runtime().$d[sid].La = () => {
+            gameOver = true;
+            endgameScore = rawScore();
+          };
+        });
 
         faketime.pause();
 
@@ -57,5 +64,20 @@
       return Promise.resolve(gameOver ? endgameScore : rawScore());
     }
   };
+
+  // Log Construct2 actions:
+  //
+  //     var actions = [];
+  //     var actsBySid = cr_getC2Runtime().$d;
+  //     Object.keys(actsBySid).forEach((sid) => {
+  //       var oldTrigger = actsBySid[sid].La;
+  //       actsBySid[sid].La = function() {
+  //         if (actions.indexOf(sid) < 0) {
+  //           actions.push(sid);
+  //         }
+  //         return oldTrigger.apply(this, arguments);
+  //       };
+  //     });
+  //
 
 })();
