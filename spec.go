@@ -1183,6 +1183,49 @@ var EnvSpecs = []*EnvSpec{
 			"KeyZ",
 		},
 	},
+
+	{
+		Name:    "Pixlaser-v0",
+		BaseURL: "https://game266022.konggames.com/gamez/0026/6022/live/",
+		Width:   550,
+		Height:  550,
+		Options: "{\"colors\":2}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"KeyD",
+		},
+	},
+
+	{
+		Name:    "Pixlaser-v1",
+		BaseURL: "https://game266022.konggames.com/gamez/0026/6022/live/",
+		Width:   550,
+		Height:  550,
+		Options: "{\"colors\":3}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"KeyD",
+		},
+
+		VariantOf: "Pixlaser-v0",
+	},
+
+	{
+		Name:    "Pixlaser-v2",
+		BaseURL: "https://game266022.konggames.com/gamez/0026/6022/live/",
+		Width:   550,
+		Height:  550,
+		Options: "{\"colors\":4}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"KeyD",
+		},
+
+		VariantOf: "Pixlaser-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

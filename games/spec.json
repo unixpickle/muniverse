@@ -5978,5 +5978,79 @@
     "width": 320,
     "height": 570,
     "key_whitelist": ["KeyZ"]
+  },
+  {
+    "name": "Pixlaser-v0",
+    "base": "https://game266022.konggames.com/gamez/0026/6022/live/",
+    "top_injections": [
+      "faketime.js",
+      "kongregate.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "Pixlaser-v0.js"
+    ],
+    "resources": [
+      "jquery-2.1.1.min.js",
+      "c2runtime.js",
+      "c2webappstart.js",
+      "data.js",
+      "images/pl_2-sheet0.png",
+      "images/pl_1-sheet0.png",
+      "images/star_1-sheet0.png",
+      "images/star_1-sheet1.png",
+      "images/star_2-sheet0.png",
+      "images/cen-sheet0.png",
+      "images/sprite4-sheet0.png",
+      "images/sprite8-sheet0.png",
+      "images/vr_green-sheet0.png",
+      "images/vr_red-sheet0.png",
+      "images/spritefont.png",
+      "images/sprite5-sheet0.png",
+      "images/sprite6-sheet0.png",
+      "images/sprite7-sheet0.png",
+      "images/pl_3-sheet0.png",
+      "images/pl_4-sheet0.png",
+      "images/vr_blue-sheet0.png",
+      "images/vr_grow-sheet0.png",
+      "images/pa_vr_red.png",
+      "images/pa_vr_green.png",
+      "images/particles.png",
+      "images/particles2.png",
+      "images/sprite-sheet0.png",
+      "images/sprite2-sheet2.png",
+      "images/sprite2-sheet0.png",
+      "images/sprite2-sheet1.png",
+      "images/sprite3-sheet0.png",
+      "images/sprite9-sheet0.png",
+      "images/sprite10-sheet0.png",
+      "images/sprite10-sheet1.png",
+      "media/petruxa_2.ogg"
+    ],
+    "processors": [
+      "kongregate",
+      "strip-bom"
+    ],
+    "metadata": {},
+    "width": 550,
+    "height": 550,
+    "key_whitelist": ["KeyA", "KeyD"],
+    "options": {
+      "colors": 2
+    }
+  },
+  {
+    "name": "Pixlaser-v1",
+    "variant_of": "Pixlaser-v0",
+    "options": {
+      "colors": 3
+    }
+  },
+  {
+    "name": "Pixlaser-v2",
+    "variant_of": "Pixlaser-v0",
+    "options": {
+      "colors": 4
+    }
   }
 ]
