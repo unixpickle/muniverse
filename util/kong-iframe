@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# Get the iframe URL for a given game on kongregate.
+# Input argument is the URL of the game, like
+# http://www.kongregate.com/games/hoqpe/s-135.
+
+if [ $# -ne 1 ]; then
+  echo 'Usage: kong-iframe <game url>' >&2
+  exit 1
+fi
+
+curl -s "$1" |
+  grep '"iframe_url":"[^"]*"' |
+  sed -E 's/^.*"iframe_url":"([^"]*)".*$/\1/g' |
+  sed -E 's/\\u0026/\&/g'

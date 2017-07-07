@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DIR="$1"
+
+mv "$DIR/index.html" "$DIR/index_pre_kongregate.html"
+cat "$DIR/index_pre_kongregate.html" |
+  sed -E 's/ manifest="offline\.appcache"//g' |
+  sed -E 's/<script src="https:\/\/ssl.kongcdn.com\/javascripts\/kongregate_api\.js"><\/script>//g' \
+  > "$DIR/index.html"

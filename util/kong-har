@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# Get the resource names for a kongregate game.
+# Similar to famobi-har.
+
+jq -r '.log.entries[] | .request.url' |
+  grep '/live' |
+  grep -v 'index.html' |
+  sed -E 's/^.*gamez\/[0-9]{4}\/[0-9]{4}\/live\/(.*)\??.*$/"\1",/g'
