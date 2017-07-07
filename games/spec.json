@@ -5920,5 +5920,63 @@
     "options": {
       "player": "Kumba"
     }
+  },
+  {
+    "name": "S135-v0",
+    "base": "https://game265272.konggames.com/gamez/0026/5272/live/",
+    "top_injections": [
+      "faketime.js",
+      "kongregate.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "S135-v0.js"
+    ],
+    "resources": [
+      "jquery-2.1.1.min.js",
+      "c2runtime.js",
+      "c2webappstart.js",
+      "data.js",
+      "images/sprite6-sheet0.png",
+      "images/sprite8-sheet0.png",
+      "images/sprite8-sheet1.png",
+      "images/sprite7-sheet0.png",
+      "images/sprite9-sheet0.png",
+      "media/click.ogg",
+      "images/sprite-sheet0.png",
+      "images/pl_g-sheet0.png",
+      "images/pl_g-sheet1.png",
+      "images/pl_r-sheet0.png",
+      "images/pl_r-sheet1.png",
+      "images/sprite4-sheet0.png",
+      "images/vr_1-sheet0.png",
+      "images/vr_1-sheet1.png",
+      "images/vr_1-sheet2.png",
+      "images/vr_2-sheet0.png",
+      "images/vr_2-sheet1.png",
+      "images/vr_2-sheet2.png",
+      "images/score_f.png",
+      "images/sprite2-sheet0.png",
+      "images/sprite3-sheet0.png",
+      "images/sprite3-sheet1.png",
+      "images/sprite5-sheet0.png",
+      "images/sprite5-sheet1.png",
+      "images/ms_1-sheet0.png",
+      "images/regime-sheet0.png",
+      "images/info-sheet0.png",
+      "images/info-sheet1.png",
+      "images/user_manual-sheet0.png",
+      "images/score_hard.png",
+      "images/color-sheet0.png",
+      "images/sprite10-sheet0.png"
+    ],
+    "processors": [
+      "kongregate",
+      "strip-bom"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 570,
+    "key_whitelist": ["KeyZ"]
   }
 ]

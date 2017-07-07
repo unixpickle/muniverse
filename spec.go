@@ -1171,6 +1171,18 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "JungleRun-v0",
 	},
+
+	{
+		Name:    "S135-v0",
+		BaseURL: "https://game265272.konggames.com/gamez/0026/5272/live/",
+		Width:   320,
+		Height:  570,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"KeyZ",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
