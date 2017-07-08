@@ -6114,6 +6114,6 @@
     "metadata": {},
     "width": 320,
     "height": 480,
-    "key_whitelist": ["KeyLeft", "KeyRight", "KeyUp"]
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp"]
   }
 ]

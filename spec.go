@@ -1235,9 +1235,9 @@ var EnvSpecs = []*EnvSpec{
 		Options: "{}",
 
 		KeyWhitelist: []string{
-			"KeyLeft",
-			"KeyRight",
-			"KeyUp",
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
 		},
 	},
 }
