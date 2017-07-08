@@ -2,6 +2,9 @@
 
   var LOAD_TIMEOUT = 60000;
 
+  // Game depends on a certain framerate.
+  window.faketime.animationFrameRate = 60;
+
   localStorage.clear();
 
   function gameObj() {
