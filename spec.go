@@ -1226,6 +1226,20 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "Pixlaser-v0",
 	},
+
+	{
+		Name:    "DoodleJump-v0",
+		BaseURL: "https://cdn.cloudgames.com/games/doodle-jump-new-en-s-iga-cloud/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"KeyLeft",
+			"KeyRight",
+			"KeyUp",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

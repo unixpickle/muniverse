@@ -6052,5 +6052,68 @@
     "options": {
       "colors": 4
     }
+  },
+  {
+    "name": "DoodleJump-v0",
+    "base": "https://cdn.cloudgames.com/games/doodle-jump-new-en-s-iga-cloud/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "DoodleJump-v0.js"
+    ],
+    "resources": [
+      "index.html",
+      "js/phaser.min.js",
+      "js/fulltilt.min.js",
+      "js/build/production.min.js",
+      "js/NoSleep.min.js",
+      "js/main.js",
+      "assets/images/Preloader2.png",
+      "assets/images/Preloader21.png",
+      "assets/images/Preloader22.png",
+      "assets/images/atlas.png",
+      "assets/images/atlas.json",
+      "assets/images/atlas2.png",
+      "assets/images/atlas2.json",
+      "assets/images/atlas3.png",
+      "assets/images/atlas3.json",
+      "assets/images/popupAtlas.png",
+      "assets/images/popupAtlas.json",
+      "assets/images/playerSheet.png",
+      "assets/images/appstore.png",
+      "assets/images/googleplay.png",
+      "assets/audio/white.mp3",
+      "assets/audio/ufo_warning.mp3",
+      "assets/audio/ufo_kill.mp3",
+      "assets/audio/ufo_abduct.mp3",
+      "assets/audio/spring.mp3",
+      "assets/audio/shoot2.mp3",
+      "assets/audio/shoot.mp3",
+      "assets/audio/propeller.mp3",
+      "assets/audio/monster_warning.mp3",
+      "assets/audio/monster_kill.mp3",
+      "assets/audio/monster_hit.mp3",
+      "assets/audio/jumponmonster.mp3",
+      "assets/audio/jump.mp3",
+      "assets/audio/jetpack.mp3",
+      "assets/audio/falling.mp3",
+      "assets/audio/black_hole.mp3",
+      "assets/audio/beake_platfrom.mp3",
+      "assets/fonts/bitmapFont_0.png",
+      "assets/fonts/bitmapFont.fnt",
+      "assets/fonts/bitmapFont2_0.png",
+      "assets/fonts/bitmapFont2.fnt",
+      "assets/data/skin0Scenes.json",
+      "assets/data/statachieve.json"
+    ],
+    "processors": [
+      "DoodleJump-v0"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 480,
+    "key_whitelist": ["KeyLeft", "KeyRight", "KeyUp"]
   }
 ]

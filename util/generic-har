@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# Get the resource names for a generic game.
+# Similar to famobi-har.
+
+jq -r '.log.entries[] | .request.url' |
+  sed -E 's/^https?:\/\///g' |
+  sed -E 's/^[^\/]*(.*)/"\1",/g'

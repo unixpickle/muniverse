@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DIR="$1"
+
+mv "$DIR/index.html" "$DIR/index_pre_doodlejump.html"
+cat "$DIR/index_pre_doodlejump.html" |
+  sed -E 's/<script type="text\/javascript" src="\/\/cloudgames\.com\/js\/game\.js"><\/script>//g' |
+  sed -E "s/document\\.domain = 'cloudgames\\.com'/window.CloudAPI={init: () => false}/g" \
+  > "$DIR/index.html"
