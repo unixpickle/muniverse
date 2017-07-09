@@ -1240,6 +1240,19 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 	},
+
+	{
+		Name:    "Valto-v0",
+		BaseURL: "https://www.yiv.com/games/Valto/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
