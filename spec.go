@@ -1253,6 +1253,34 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 	},
+
+	{
+		Name:    "CatchTheClown-v0",
+		BaseURL: "http://game205756.konggames.com/gamez/0020/5756/live/",
+		Width:   640,
+		Height:  512,
+		Options: "{\"difficulty\":\"easy\"}",
+	},
+
+	{
+		Name:    "CatchTheClown-v1",
+		BaseURL: "http://game205756.konggames.com/gamez/0020/5756/live/",
+		Width:   640,
+		Height:  512,
+		Options: "{\"difficulty\":\"medium\"}",
+
+		VariantOf: "CatchTheClown-v0",
+	},
+
+	{
+		Name:    "CatchTheClown-v2",
+		BaseURL: "http://game205756.konggames.com/gamez/0020/5756/live/",
+		Width:   640,
+		Height:  512,
+		Options: "{\"difficulty\":\"hard\"}",
+
+		VariantOf: "CatchTheClown-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

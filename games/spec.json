@@ -6167,5 +6167,62 @@
     "width": 320,
     "height": 480,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
+  },
+  {
+    "name": "CatchTheClown-v0",
+    "base": "http://game205756.konggames.com/gamez/0020/5756/live/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "CatchTheClown-v0.js"
+    ],
+    "resources": [
+      "html5game/CatchTheClown.js",
+      "html5game/tph_kongAPIextension.js",
+      "html5game/uph_SimpleLoadingBar.js",
+      "html5game/CatchTheClown_texture_0.png",
+      "html5game/particles/IDR_GIF2.png",
+      "html5game/particles/IDR_GIF3.png",
+      "html5game/particles/IDR_GIF4.png",
+      "html5game/particles/IDR_GIF5.png",
+      "html5game/particles/IDR_GIF6.png",
+      "html5game/particles/IDR_GIF7.png",
+      "html5game/particles/IDR_GIF8.png",
+      "html5game/particles/IDR_GIF9.png",
+      "html5game/particles/IDR_GIF10.png",
+      "html5game/particles/IDR_GIF11.png",
+      "html5game/particles/IDR_GIF12.png",
+      "html5game/particles/IDR_GIF13.png",
+      "html5game/particles/IDR_GIF14.png",
+      "html5game/particles/IDR_GIF15.png",
+      "html5game/sndBounce.ogg",
+      "html5game/sndClick.ogg",
+      "html5game/sndButtonClick.ogg",
+      "html5game/sndMusic.ogg"
+    ],
+    "processors": [],
+    "metadata": {},
+    "width": 640,
+    "height": 512,
+    "key_whitelist": [],
+    "options": {
+      "difficulty": "easy"
+    }
+  },
+  {
+    "name": "CatchTheClown-v1",
+    "variant_of": "CatchTheClown-v0",
+    "options": {
+      "difficulty": "medium"
+    }
+  },
+  {
+    "name": "CatchTheClown-v2",
+    "variant_of": "CatchTheClown-v0",
+    "options": {
+      "difficulty": "hard"
+    }
   }
 ]
