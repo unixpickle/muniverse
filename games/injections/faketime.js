@@ -20,7 +20,7 @@
 
     // Used to pass time normally when time is not
     // being manipulated.
-    this._realtimeInterval = null;
+    this._realtimeTimeout = null;
 
     // Backups of overridden window functions.
     this._backups = {};
@@ -32,24 +32,30 @@
   // Play the application at normal speed.
   FakeTime.prototype.play = function(speed) {
     speed = speed || 1;
-    if (this._realtimeInterval !== null) {
-      return;
+    if (this._realtimeTimeout !== null) {
+      // Allow re-playing at a different speed.
+      this.pause();
     }
     var lastTime = this._realTime();
-    var backup = this._backups.setInterval.bind(window);
-    this._realtimeInterval = backup.call(window, function() {
+    var backup = this._backups.setTimeout.bind(window);
+    var timePerTick = 1000 / FRAME_RATE;
+    var tickFunc = function() {
+      this.advance(speed * timePerTick);
       var newTime = this._realTime();
-      this.advance(speed*Math.max(0, newTime-lastTime));
+      var elapsed = newTime - lastTime;
+      var timeoutTime = Math.max(1, timePerTick-elapsed);
+      this._realtimeTimeout = backup.call(window, tickFunc, timeoutTime);
       lastTime = newTime;
-    }.bind(this), 1000/FRAME_RATE);
+    }.bind(this);
+    tickFunc();
   };
 
   // Stop the application from running at normal speed.
   // Time will only advance if advance() is called.
   FakeTime.prototype.pause = function() {
-    if (this._realtimeInterval !== null) {
-      this._backups.clearInterval.call(window, this._realtimeInterval);
-      this._realtimeInterval = null;
+    if (this._realtimeTimeout !== null) {
+      this._backups.clearTimeout.call(window, this._realtimeTimeout);
+      this._realtimeTimeout = null;
     }
   };
 
