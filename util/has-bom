@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# Check if a webpage has a byte-order mark.
+
+if [ $# -ne 1 ]; then
+  echo 'Usage: has-bom <url>' >&2
+  exit 1
+fi
+
+contents=$(curl -s $1 | xxd -p -l 3)
+if [ "$contents" = "efbbbf" ]; then
+  echo 'UTF-8 BOM detected.'
+else
+  echo 'no BOM detected.'
+fi
