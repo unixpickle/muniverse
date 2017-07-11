@@ -3,8 +3,8 @@
 DIR="$1"
 
 # Remove ads and service worker.
-mv "$DIR/index.html" "$DIR/index_pre_valto.html"
-cat "$DIR/index_pre_valto.html" |
+mv "$DIR/index.html" "$DIR/index_pre_yiv.html"
+cat "$DIR/index_pre_yiv.html" |
   sed -E 's/<div style="display:none;">.*(<\/body>)/\1/g' |
   sed -E 's/navigator\.serviceWorker\.register\(/\/\//g' \
   > "$DIR/index.html"

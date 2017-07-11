@@ -6160,7 +6160,7 @@
       "images/sitelogo2-sheet0.png"
     ],
     "processors": [
-      "Valto-v0",
+      "yiv-c2game",
       "strip-bom"
     ],
     "metadata": {},
@@ -6274,5 +6274,83 @@
     "width": 320,
     "height": 525,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
+  },
+  {
+    "name": "PopPop-v0",
+    "base": "https://www.yiv.com/games/Pop-Pop/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "PopPop-v0.js"
+    ],
+    "resources": [
+      "jquery-2.1.1.min.js",
+      "c2runtime.js",
+      "data.js",
+      "loading-logo.png",
+      "images/levelfailed-sheet0.png",
+      "images/logo-sheet0.png",
+      "images/spritefontbestscore.png",
+      "images/spritefontbestscore2.png",
+      "images/youwinmodal-sheet0.png",
+      "images/howtoplaymodal-sheet0.png",
+      "images/facebook-sheet0.png",
+      "images/google-sheet0.png",
+      "images/helpbtn-sheet0.png",
+      "images/home-sheet0.png",
+      "images/leaderboard-sheet0.png",
+      "images/moregames-sheet0.png",
+      "images/music-sheet0.png",
+      "images/restart-sheet0.png",
+      "images/sound-sheet0.png",
+      "images/start-sheet0.png",
+      "images/twitter-sheet0.png",
+      "images/keepgoingbtn-sheet0.png",
+      "images/chesseffectonnext-sheet0.png",
+      "images/explosionofpurplecandy-sheet0.png",
+      "images/explosionofpurplecandy-sheet1.png",
+      "images/explosionofpurplecandy-sheet2.png",
+      "images/explosionofpurplecandy3-sheet0.png",
+      "images/explosionofpurplecandy3-sheet1.png",
+      "images/particles11.png",
+      "images/particles2.png",
+      "images/particles3.png",
+      "images/gamemodalsprite-sheet0.png",
+      "images/tile-sheet0.png",
+      "images/tile-sheet1.png",
+      "images/chess-sheet0.png",
+      "images/chess-sheet1.png",
+      "images/chess-sheet2.png",
+      "images/chessfaketarget-sheet0.png",
+      "images/chessfaketarget-sheet1.png",
+      "images/chessfaketarget-sheet2.png",
+      "images/chessrandom1-sheet0.png",
+      "images/toleftconnecttiled.png",
+      "images/tobottomconnecttiled.png",
+      "images/glow2-sheet0.png",
+      "images/utilitysprite-sheet0.png",
+      "images/sitelogo-sheet0.png",
+      "images/sitelogo2-sheet0.png",
+      "media/navtap.ogg",
+      "media/star3.ogg",
+      "media/startgame.ogg",
+      "media/move.ogg",
+      "media/background.ogg",
+      "media/hit-target.ogg",
+      "media/cannot_move.ogg",
+      "media/candy_selected.ogg",
+      "media/match.ogg",
+      "media/gameover.ogg"
+    ],
+    "processors": [
+      "yiv-c2game",
+      "strip-bom"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 568,
+    "key_whitelist": []
   }
 ]

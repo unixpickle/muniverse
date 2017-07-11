@@ -1296,6 +1296,14 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 	},
+
+	{
+		Name:    "PopPop-v0",
+		BaseURL: "https://www.yiv.com/games/Pop-Pop/",
+		Width:   320,
+		Height:  568,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
