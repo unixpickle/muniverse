@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DIR="$1"
+
+mv "$DIR/index.html" "$DIR/index_pre_meatboyclicker.html"
+cat "$DIR/index_pre_meatboyclicker.html" |
+  sed -E 's/<div class="link[12]">.*<\/div>//g' \
+  > "$DIR/index.html"

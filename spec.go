@@ -1281,6 +1281,19 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "CatchTheClown-v0",
 	},
+
+	{
+		Name:    "MeatBoyClicker-v0",
+		BaseURL: "http://flashok.ru/files/game/meat-boy-clicker/",
+		Width:   320,
+		Height:  525,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

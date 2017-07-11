@@ -6224,5 +6224,55 @@
     "options": {
       "difficulty": "hard"
     }
+  },
+  {
+    "name": "MeatBoyClicker-v0",
+    "base": "http://flashok.ru/files/game/meat-boy-clicker/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "MeatBoyClicker-v0.js"
+    ],
+    "resources": [
+      "index.html",
+      "phaser.min.js",
+      "main.js",
+      "style.css",
+      "img/btn1.png",
+      "img/btn2.png",
+      "img/btn-sound.png",
+      "img/background1.png",
+      "img/man.png",
+      "data/man.json",
+      "img/rip.png",
+      "img/time-container.png",
+      "img/time-bar.png",
+      "img/background.png",
+      "img/trunk1.png",
+      "img/trunk2.png",
+      "img/branch1.png",
+      "img/branch2.png",
+      "img/stump.png",
+      "img/numbers.png",
+      "data/numbers.json",
+      "img/levelNumbers.png",
+      "data/numbers.json",
+      "img/level.png",
+      "img/game-over.png",
+      "img/btn-play.png",
+      "sons/cut.wav",
+      "sons/menu.ogg",
+      "sons/death.wav",
+      "sons/theme.ogg"
+    ],
+    "processors": [
+      "MeatBoyClicker-v0"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 525,
+    "key_whitelist": ["ArrowLeft", "ArrowRight"]
   }
 ]
