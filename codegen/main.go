@@ -92,7 +92,9 @@ func formatOptionsField(spec []map[string]interface{}) error {
 	return nil
 }
 
-var TemplateSource = `package muniverse
+var TemplateSource = `// This file was auto-generated.
+
+package muniverse
 
 // An EnvSpec contains meta-data about an environment.
 type EnvSpec struct {

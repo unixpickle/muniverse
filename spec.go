@@ -1,3 +1,5 @@
+// This file was auto-generated.
+
 package muniverse
 
 // An EnvSpec contains meta-data about an environment.
