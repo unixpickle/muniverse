@@ -6352,5 +6352,125 @@
     "width": 320,
     "height": 568,
     "key_whitelist": []
+  },
+  {
+    "name": "FrontInvaders-v0",
+    "base": "http://end3r.com/games/frontinvaders/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "FrontInvaders-v0.js"
+    ],
+    "resources": [
+      "css/style.css",
+      "js/lib/mibbu.js",
+      "js/game.js",
+      "js/config.js",
+      "js/input.js",
+      "js/utils.js",
+      "img/frontinvaders.jpg",
+      "img/player.png",
+      "img/enemies.png",
+      "img/explosion.png",
+      "img/bg.jpg",
+      "img/panel.png",
+      "img/life.jpg",
+      "img/enclavegames.png",
+      "img/aliens.jpg",
+      "img/rocket.jpg",
+      "img/howtoplay.jpg",
+      "img/keys.jpg",
+      "img/bullet.png",
+      "img/alerts.jpg"
+    ],
+    "processors": [
+      "FrontInvaders-v0"
+    ],
+    "metadata": {},
+    "width": 700,
+    "height": 400,
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp"],
+    "options": {
+      "level": 1
+    }
+  },
+  {
+    "name": "FrontInvaders-v1",
+    "variant_of": "FrontInvaders-v0",
+    "options": {
+      "level": 2
+    }
+  },
+  {
+    "name": "FrontInvaders-v2",
+    "variant_of": "FrontInvaders-v0",
+    "options": {
+      "level": 3
+    }
+  },
+  {
+    "name": "FrontInvaders-v3",
+    "variant_of": "FrontInvaders-v0",
+    "options": {
+      "level": 4
+    }
+  },
+  {
+    "name": "FrontInvaders-v4",
+    "variant_of": "FrontInvaders-v0",
+    "options": {
+      "level": 5
+    }
+  },
+  {
+    "name": "FrontInvaders-v5",
+    "variant_of": "FrontInvaders-v0",
+    "options": {
+      "level": 6
+    }
+  },
+  {
+    "name": "FrontInvaders-v6",
+    "variant_of": "FrontInvaders-v0",
+    "options": {
+      "level": 7
+    }
+  },
+  {
+    "name": "FrontInvaders-v7",
+    "variant_of": "FrontInvaders-v0",
+    "options": {
+      "level": 8
+    }
+  },
+  {
+    "name": "FrontInvaders-v8",
+    "variant_of": "FrontInvaders-v0",
+    "options": {
+      "level": 9
+    }
+  },
+  {
+    "name": "FrontInvaders-v9",
+    "variant_of": "FrontInvaders-v0",
+    "options": {
+      "level": 10
+    }
+  },
+  {
+    "name": "FrontInvaders-v10",
+    "variant_of": "FrontInvaders-v0",
+    "options": {
+      "level": 11
+    }
+  },
+  {
+    "name": "FrontInvaders-v11",
+    "variant_of": "FrontInvaders-v0",
+    "options": {
+      "level": 12
+    }
   }
 ]

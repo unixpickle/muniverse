@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DIR="$1"
+
+mv "$DIR/index.html" "$DIR/index_pre_frontinvaders.html"
+cat "$DIR/index_pre_frontinvaders.html" |
+  sed -E 's/<iframe.*<\/iframe>//g' |
+  sed -E 's/<script.*apis.google.com.*$//g' |
+  sed -E 's/<script.*platform.twitter.com.*$//g' |
+  sed -E 's/\}\)\(\);/\}\);/g' \
+  > "$DIR/index.html"

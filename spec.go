@@ -1304,6 +1304,196 @@ var EnvSpecs = []*EnvSpec{
 		Height:  568,
 		Options: "{}",
 	},
+
+	{
+		Name:    "FrontInvaders-v0",
+		BaseURL: "http://end3r.com/games/frontinvaders/",
+		Width:   700,
+		Height:  400,
+		Options: "{\"level\":1}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+	},
+
+	{
+		Name:    "FrontInvaders-v1",
+		BaseURL: "http://end3r.com/games/frontinvaders/",
+		Width:   700,
+		Height:  400,
+		Options: "{\"level\":2}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+
+		VariantOf: "FrontInvaders-v0",
+	},
+
+	{
+		Name:    "FrontInvaders-v2",
+		BaseURL: "http://end3r.com/games/frontinvaders/",
+		Width:   700,
+		Height:  400,
+		Options: "{\"level\":3}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+
+		VariantOf: "FrontInvaders-v0",
+	},
+
+	{
+		Name:    "FrontInvaders-v3",
+		BaseURL: "http://end3r.com/games/frontinvaders/",
+		Width:   700,
+		Height:  400,
+		Options: "{\"level\":4}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+
+		VariantOf: "FrontInvaders-v0",
+	},
+
+	{
+		Name:    "FrontInvaders-v4",
+		BaseURL: "http://end3r.com/games/frontinvaders/",
+		Width:   700,
+		Height:  400,
+		Options: "{\"level\":5}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+
+		VariantOf: "FrontInvaders-v0",
+	},
+
+	{
+		Name:    "FrontInvaders-v5",
+		BaseURL: "http://end3r.com/games/frontinvaders/",
+		Width:   700,
+		Height:  400,
+		Options: "{\"level\":6}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+
+		VariantOf: "FrontInvaders-v0",
+	},
+
+	{
+		Name:    "FrontInvaders-v6",
+		BaseURL: "http://end3r.com/games/frontinvaders/",
+		Width:   700,
+		Height:  400,
+		Options: "{\"level\":7}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+
+		VariantOf: "FrontInvaders-v0",
+	},
+
+	{
+		Name:    "FrontInvaders-v7",
+		BaseURL: "http://end3r.com/games/frontinvaders/",
+		Width:   700,
+		Height:  400,
+		Options: "{\"level\":8}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+
+		VariantOf: "FrontInvaders-v0",
+	},
+
+	{
+		Name:    "FrontInvaders-v8",
+		BaseURL: "http://end3r.com/games/frontinvaders/",
+		Width:   700,
+		Height:  400,
+		Options: "{\"level\":9}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+
+		VariantOf: "FrontInvaders-v0",
+	},
+
+	{
+		Name:    "FrontInvaders-v9",
+		BaseURL: "http://end3r.com/games/frontinvaders/",
+		Width:   700,
+		Height:  400,
+		Options: "{\"level\":10}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+
+		VariantOf: "FrontInvaders-v0",
+	},
+
+	{
+		Name:    "FrontInvaders-v10",
+		BaseURL: "http://end3r.com/games/frontinvaders/",
+		Width:   700,
+		Height:  400,
+		Options: "{\"level\":11}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+
+		VariantOf: "FrontInvaders-v0",
+	},
+
+	{
+		Name:    "FrontInvaders-v11",
+		BaseURL: "http://end3r.com/games/frontinvaders/",
+		Width:   700,
+		Height:  400,
+		Options: "{\"level\":12}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+
+		VariantOf: "FrontInvaders-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

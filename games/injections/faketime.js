@@ -265,6 +265,7 @@
         callback.call(callback, performance.now());
       }, 1000/this.animationFrameRate);
     }.bind(this);
+    window.webkitRequestAnimationFrame = window.requestAnimationFrame;
     window.cancelAnimationFrame = function(id) {
       clearTimeout(id);
     }
