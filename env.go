@@ -264,7 +264,9 @@ func (r *rawEnv) Step(t time.Duration, events ...interface{}) (reward float64,
 		case *chrome.MouseEvent:
 			err = r.devConn.DispatchMouseEvent(ctx, event)
 		case *chrome.KeyEvent:
-			err = r.devConn.DispatchKeyEvent(ctx, event)
+			if r.allowKeyCode(event.Code) {
+				err = r.devConn.DispatchKeyEvent(ctx, event)
+			}
 		default:
 			err = fmt.Errorf("unsupported event type: %T", event)
 		}
@@ -353,6 +355,15 @@ func (r *rawEnv) envURL() string {
 		baseName = r.spec.VariantOf
 	}
 	return "http://" + r.gameHost + "/" + baseName
+}
+
+func (r *rawEnv) allowKeyCode(code string) bool {
+	for _, c := range r.spec.KeyWhitelist {
+		if c == code {
+			return true
+		}
+	}
+	return false
 }
 
 func callCtx() (context.Context, context.CancelFunc) {
