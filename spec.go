@@ -1494,6 +1494,14 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "FrontInvaders-v0",
 	},
+
+	{
+		Name:    "ClickThemAll-v0",
+		BaseURL: "http://game205682.konggames.com/gamez/0020/5682/live/",
+		Width:   480,
+		Height:  360,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

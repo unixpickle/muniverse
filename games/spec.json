@@ -6472,5 +6472,38 @@
     "options": {
       "level": 12
     }
+  },
+  {
+    "name": "ClickThemAll-v0",
+    "base": "http://game205682.konggames.com/gamez/0020/5682/live/",
+    "top_injections": [
+      "faketime.js",
+      "kongregate.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "ClickThemAll-v0.js"
+    ],
+    "resources": [
+      "jquery-2.0.0.min.js",
+      "c2runtime.js",
+      "c2webappstart.js",
+      "loading-logo.png",
+      "images/circle-sheet0.png",
+      "images/circle-sheet1.png",
+      "images/title-sheet0.png",
+      "images/stick-sheet0.png",
+      "images/stick-sheet1.png",
+      "media/william%20tell%20overture.ogg"
+    ],
+    "processors": [
+      "kongregate",
+      "strip-bom",
+      "path-unescape"
+    ],
+    "metadata": {},
+    "width": 480,
+    "height": 360,
+    "key_whitelist": []
   }
 ]
