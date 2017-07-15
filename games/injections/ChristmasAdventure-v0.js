@@ -1,12 +1,13 @@
 (function() {
 
   var LOAD_TIMEOUT = 60000;
+  var scoreUID = null;
 
   localStorage.clear();
   localStorage.SaveLevels = '20';
 
   function rawScore() {
-    return parseInt(cr_getC2Runtime().Me[756].text);
+    return parseInt(cr_getC2Runtime().Me[scoreUID].text);
   }
 
   function hijackActions(sids, cb) {
@@ -29,6 +30,10 @@
         cr_getC2Runtime().Ch[options.level].Op();
 
         faketime.advance(100);
+
+        scoreUID = Object.keys(cr_getC2Runtime().Me).find((k) => {
+          return cr_getC2Runtime().Me[k].text === '0';
+        });
 
         var pauseActions = [
           "9559227022866180",

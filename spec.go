@@ -1525,6 +1525,295 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 	},
+
+	{
+		Name:    "ChirstmasAdventure-v1",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":2}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v2",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":3}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v3",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":4}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v4",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":5}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v5",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":6}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v6",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":7}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v7",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":8}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v8",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":9}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v10",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":11}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v11",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":12}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v12",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":13}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v13",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":14}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v14",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":15}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v15",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":16}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v16",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":17}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v17",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":18}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
+
+	{
+		Name:    "ChirstmasAdventure-v18",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":19}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+
+		VariantOf: "ChristmasAdventure-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

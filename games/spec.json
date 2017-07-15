@@ -6725,5 +6725,125 @@
     "options": {
       "level": 1
     }
+  },
+
+  {
+    "name": "ChirstmasAdventure-v1",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 2
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v2",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 3
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v3",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 4
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v4",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 5
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v5",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 6
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v6",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 7
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v7",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 8
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v8",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 9
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v10",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 11
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v11",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 12
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v12",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 13
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v13",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 14
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v14",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 15
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v15",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 16
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v16",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 17
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v17",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 18
+    }
+  },
+  {
+    "name": "ChirstmasAdventure-v18",
+    "variant_of": "ChristmasAdventure-v0",
+    "options": {
+      "level": 19
+    }
   }
 ]
