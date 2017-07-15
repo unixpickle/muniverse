@@ -6505,5 +6505,51 @@
     "width": 480,
     "height": 360,
     "key_whitelist": []
+  },
+  {
+    "name": "100BallsOnline-v0",
+    "base": "https://h5.4j.com/games/100-Balls-Online/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "100BallsOnline-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/playbg-sheet0.png",
+      "images/ball-sheet0.png",
+      "images/bkt-sheet0.png",
+      "images/border-sheet0.png",
+      "images/door_left-sheet0.png",
+      "images/door_right-sheet0.png",
+      "images/bkt_coll-sheet0.png",
+      "images/bkt_bianjie-sheet0.png",
+      "images/playbtn-sheet0.png",
+      "images/cntreline-sheet0.png",
+      "images/circle_coll-sheet0.png",
+      "images/play-sheet0.png",
+      "images/main-sheet0.png",
+      "images/quan-sheet0.png",
+      "images/endbg-sheet0.png",
+      "images/exit-sheet0.png",
+      "images/replay-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "images/gameover-sheet0.png",
+      "media/bg.ogg"
+    ],
+    "processors": [
+      "100BallsOnline-v0",
+      "strip-bom"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 533,
+    "key_whitelist": []
   }
 ]

@@ -1502,6 +1502,14 @@ var EnvSpecs = []*EnvSpec{
 		Height:  360,
 		Options: "{}",
 	},
+
+	{
+		Name:    "100BallsOnline-v0",
+		BaseURL: "https://h5.4j.com/games/100-Balls-Online/",
+		Width:   320,
+		Height:  533,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
