@@ -1510,6 +1510,21 @@ var EnvSpecs = []*EnvSpec{
 		Height:  533,
 		Options: "{}",
 	},
+
+	{
+		Name:    "ChristmasAdventure-v0",
+		BaseURL: "https://www.yiv.com/games/Christmas-Adventure/",
+		Width:   533,
+		Height:  320,
+		Options: "{\"level\":1}",
+
+		KeyWhitelist: []string{
+			"KeyA",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowUp",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
