@@ -1822,6 +1822,21 @@ var EnvSpecs = []*EnvSpec{
 		Height:  320,
 		Options: "{}",
 	},
+
+	{
+		Name:    "MiniRacer-v0",
+		BaseURL: "https://h5.4j.com/games/Mini-Racer/",
+		Width:   320,
+		Height:  512,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
