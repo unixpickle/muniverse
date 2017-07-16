@@ -7047,5 +7047,73 @@
     "width": 320,
     "height": 426,
     "key_whitelist": ["ArrowLeft", "ArrowRight", "Space"]
+  },
+  {
+    "name": "PineapplePen-v0",
+    "base": "https://h5.4j.com/games/Pineapple-Pen-Online/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "PineapplePen-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/apple-sheet0.png",
+      "images/goldapple-sheet0.png",
+      "images/goldapple-sheet1.png",
+      "images/pineapple-sheet0.png",
+      "images/pineapple-sheet1.png",
+      "images/pen-sheet0.png",
+      "images/pen-sheet1.png",
+      "images/gamebackground-sheet0.png",
+      "images/logo-sheet0.png",
+      "images/pp_tap_to_shoot-sheet0.png",
+      "images/sprite-sheet0.png",
+      "images/poko-sheet0.png",
+      "images/poko-sheet1.png",
+      "images/poko-sheet2.png",
+      "images/language-sheet0.png",
+      "images/language-sheet1.png",
+      "images/ppapbg-sheet0.png",
+      "images/coin-sheet0.png",
+      "images/weijing-sheet0.png",
+      "images/erji-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "images/bestscore_sprite-sheet0.png",
+      "images/score_sprite-sheet0.png",
+      "images/shop_button-sheet0.png",
+      "images/cont-sheet0.png",
+      "images/top_line-sheet0.png",
+      "images/back-sheet0.png",
+      "images/not_selected_pen-sheet0.png",
+      "images/locked_pen-sheet0.png",
+      "images/selected_pen-sheet0.png",
+      "images/music_btn-sheet0.png",
+      "images/music_btn-sheet1.png",
+      "images/perfect-sheet0.png",
+      "media/gameover.ogg",
+      "media/ppap.ogg",
+      "media/applepen.ogg",
+      "media/pineapple.ogg",
+      "media/coins_splash6_hit.ogg",
+      "media/armor_hit_1.ogg",
+      "media/ppap_1.ogg"
+    ],
+    "processors": [
+      "4j-c2game",
+      "strip-bom"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 533,
+    "key_whitelist": []
   }
 ]

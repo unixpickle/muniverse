@@ -1851,6 +1851,14 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 	},
+
+	{
+		Name:    "PineapplePen-v0",
+		BaseURL: "https://h5.4j.com/games/Pineapple-Pen-Online/",
+		Width:   320,
+		Height:  533,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
