@@ -1814,6 +1814,14 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "ChristmasAdventure-v0",
 	},
+
+	{
+		Name:    "CandySuperLines-v0",
+		BaseURL: "https://www.yiv.com/games/Candy-Super-Lines-Match3/",
+		Width:   568,
+		Height:  320,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

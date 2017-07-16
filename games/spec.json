@@ -6845,5 +6845,73 @@
     "options": {
       "level": 19
     }
+  },
+  {
+    "name": "CandySuperLines-v0",
+    "base": "https://www.yiv.com/games/Candy-Super-Lines-Match3/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "CandySuperLines-v0.js"
+    ],
+    "resources": [
+      "index.html",
+      "jquery-2.1.1.min.js",
+      "c2runtime.js",
+      "data.js",
+      "loading-logo.png",
+      "images/highscoremenufont.png",
+      "images/gameicon-sheet0.png",
+      "images/loading-sheet0.png",
+      "images/loadingbar-sheet0.png",
+      "images/loadingbarback-sheet0.png",
+      "images/loadingball-sheet0.png",
+      "images/sitelogo-sheet0.png",
+      "media/supertouching.ogg",
+      "media/match.ogg",
+      "media/selectbuttons.ogg",
+      "media/superbutton.ogg",
+      "media/musictheme.ogg",
+      "images/chess-sheet0.png",
+      "images/tile-sheet0.png",
+      "images/btnno-sheet0.png",
+      "images/btnno-sheet1.png",
+      "images/btnback-sheet0.png",
+      "images/btnback-sheet1.png",
+      "images/btnclear-sheet0.png",
+      "images/btnclear-sheet1.png",
+      "images/btnmelody-sheet0.png",
+      "images/btnmelody-sheet1.png",
+      "images/btnrestart-sheet0.png",
+      "images/btnrestart-sheet1.png",
+      "images/btnsound-sheet0.png",
+      "images/btnsound-sheet1.png",
+      "images/btnyes-sheet0.png",
+      "images/btnyes-sheet1.png",
+      "images/cursor-sheet0.png",
+      "images/cursorhover-sheet0.png",
+      "images/frame.png",
+      "images/framedss-sheet0.png",
+      "images/framertg-sheet0.png",
+      "images/frameyas-sheet0.png",
+      "images/btnmoregames-sheet0.png",
+      "images/btnmoregames-sheet1.png",
+      "images/btnplay-sheet0.png",
+      "images/btnplay-sheet1.png",
+      "images/gamelogo-sheet0.png",
+      "images/allscorefont.png",
+      "images/background-sheet0.png",
+      "images/gamebackground-sheet0.png"
+    ],
+    "processors": [
+      "yiv-c2game",
+      "strip-bom"
+    ],
+    "metadata": {},
+    "width": 568,
+    "height": 320,
+    "key_whitelist": []
   }
 ]
