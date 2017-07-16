@@ -1837,6 +1837,20 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowDown",
 		},
 	},
+
+	{
+		Name:    "ChaseRacingCars-v0",
+		BaseURL: "https://h5.4j.com/games/Chase-Racing-Cars/",
+		Width:   320,
+		Height:  426,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"Space",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
