@@ -6514,6 +6514,8 @@
     ],
     "bottom_injections": [
       "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
       "100BallsOnline-v0.js"
     ],
     "resources": [
@@ -6544,7 +6546,7 @@
       "media/bg.ogg"
     ],
     "processors": [
-      "100BallsOnline-v0",
+      "4j-c2game",
       "strip-bom"
     ],
     "metadata": {},

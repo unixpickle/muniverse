@@ -2,8 +2,8 @@
 
 DIR="$1"
 
-mv "$DIR/index.html" "$DIR/index_pre_100ballsonline.html"
-cat "$DIR/index_pre_100ballsonline.html" |
+mv "$DIR/index.html" "$DIR/index_pre_4j_c2game.html"
+cat "$DIR/index_pre_4j_c2game.html" |
   sed -E 's/\/\/h5\.4j\.com\/forgame\/css\/game\.css/game.css/g' |
   sed -E 's/\/\/h5\.4j\.com\/forgame\/js\/jquery-2.1.1.min.js/jquery.js/g' |
   sed -E 's/<script src="\/\/.*<\/script>//g' \
