@@ -7169,5 +7169,47 @@
     "width": 320,
     "height": 533,
     "key_whitelist": []
+  },
+  {
+    "name": "BeachKiss-v0",
+    "base": "https://www.yiv.com/games/Beach-Kiss/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "BeachKiss-v0.js"
+    ],
+    "resources": [
+      "launcher/egret_require.js",
+      "launcher/egret_loader.js",
+      "launcher/game-min.js",
+      "resource/resource.json",
+      "resource/assets/yia.json",
+      "resource/assets/yia_swf.json",
+      "resource/assets/yia.png",
+      "resource/assets/Game/Game.json",
+      "resource/assets/Game/Game_swf.json",
+      "resource/assets/Game/Game.png",
+      "resource/assets/Game/big_images/img_bg_bg.png",
+      "resource/assets/Game/big_images/img_gamebg.png",
+      "resource/assets/Game/big_images/img_game_ren.png",
+      "resource/assets/Game/big_images/img_lose.png",
+      "resource/assets/Game/big_images/img_manren.png",
+      "resource/assets/Game/big_images/img_nv1.png",
+      "resource/assets/Game/big_images/img_sprite268.png",
+      "resource/assets/Game/big_images/img_sprite300.png",
+      "resource/assets/Game/big_images/img_win.png",
+      "resource/assets/Game/big_images/img_xin_bg1.png",
+      "resource/assets/Game/big_images/img_title_nan.png",
+      "resource/assets/Game/big_images/img_title_nv.png"
+    ],
+    "processors": [
+      "BeachKiss-v0"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 533,
+    "key_whitelist": []
   }
 ]

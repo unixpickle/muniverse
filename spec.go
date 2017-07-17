@@ -1867,6 +1867,14 @@ var EnvSpecs = []*EnvSpec{
 		Height:  533,
 		Options: "{}",
 	},
+
+	{
+		Name:    "BeachKiss-v0",
+		BaseURL: "https://www.yiv.com/games/Beach-Kiss/",
+		Width:   320,
+		Height:  533,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

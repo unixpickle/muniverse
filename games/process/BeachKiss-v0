@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DIR="$1"
+
+# Remove ads.
+mv "$DIR/index.html" "$DIR/index_pre_beachkiss.html"
+cat "$DIR/index_pre_beachkiss.html" |
+  sed -E 's/<div style="display:none;">.*(<\/body>)/\1/g' |
+  sed -E 's/<script src="[^"]*GameApi\.js[^"]*"><\/script>//g' \
+  > "$DIR/index.html"
