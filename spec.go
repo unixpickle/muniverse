@@ -1875,6 +1875,19 @@ var EnvSpecs = []*EnvSpec{
 		Height:  533,
 		Options: "{}",
 	},
+
+	{
+		Name:    "BallsVsBlocks-v0",
+		BaseURL: "http://h5.4j.com/games/Balls-Vs-Blocks-Online/",
+		Width:   320,
+		Height:  533,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

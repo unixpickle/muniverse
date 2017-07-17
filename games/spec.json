@@ -7211,5 +7211,55 @@
     "width": 320,
     "height": 533,
     "key_whitelist": []
+  },
+  {
+    "name": "BallsVsBlocks-v0",
+    "base": "http://h5.4j.com/games/Balls-Vs-Blocks-Online/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "BallsVsBlocks-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/bg-sheet0.png",
+      "images/border-sheet0.png",
+      "images/border-sheet1.png",
+      "images/box-sheet0.png",
+      "images/box-sheet1.png",
+      "images/play_btn-sheet0.png",
+      "images/props-sheet0.png",
+      "images/props-sheet1.png",
+      "images/tail-sheet0.png",
+      "images/top-sheet0.png",
+      "images/gameover_sprite-sheet0.png",
+      "images/replay_btn-sheet0.png",
+      "images/particles.png",
+      "images/score_sprite-sheet0.png",
+      "images/tile_sprite-sheet0.png",
+      "images/gameover_bg-sheet0.png",
+      "images/input-sheet0.png",
+      "images/input-sheet1.png",
+      "images/com4j_logo-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "media/hp.ogg",
+      "media/coll.ogg",
+      "media/boom.ogg",
+      "media/bg.ogg"
+    ],
+    "processors": [
+      "4j-c2game"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 533,
+    "key_whitelist": ["ArrowLeft", "ArrowRight"]
   }
 ]
