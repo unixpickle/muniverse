@@ -7115,5 +7115,59 @@
     "width": 320,
     "height": 533,
     "key_whitelist": []
+  },
+  {
+    "name": "TapTapDash-v0",
+    "base": "https://h5.4j.com/games/Tap-Tap-Dash-Online/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "TapTapDash-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/road_sp-sheet0.png",
+      "images/arrow-sheet1.png",
+      "images/arrow-sheet0.png",
+      "images/starting-sheet0.png",
+      "images/player-sheet1.png",
+      "images/player-sheet0.png",
+      "images/start-sheet0.png",
+      "images/lose-sheet0.png",
+      "images/replay_btn-sheet0.png",
+      "images/playbutton-sheet0.png",
+      "images/biaoti-sheet0.png",
+      "images/over-sheet0.png",
+      "images/sprite3-sheet0.png",
+      "images/bindingsp-sheet0.png",
+      "images/bindingsp-sheet1.png",
+      "images/origin-sheet0.png",
+      "images/die-sheet0.png",
+      "images/sprite-sheet0.png",
+      "images/getpos-sheet0.png",
+      "images/menu-sheet0.png",
+      "images/music-sheet0.png",
+      "images/music-sheet1.png",
+      "images/sprite2-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/sprite4-sheet0.png",
+      "images/sprite5-sheet0.png",
+      "media/gamemusic.ogg"
+    ],
+    "processors": [
+      "4j-c2game",
+      "strip-bom"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 533,
+    "key_whitelist": []
   }
 ]

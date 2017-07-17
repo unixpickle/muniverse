@@ -1859,6 +1859,14 @@ var EnvSpecs = []*EnvSpec{
 		Height:  533,
 		Options: "{}",
 	},
+
+	{
+		Name:    "TapTapDash-v0",
+		BaseURL: "https://h5.4j.com/games/Tap-Tap-Dash-Online/",
+		Width:   320,
+		Height:  533,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
