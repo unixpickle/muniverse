@@ -1913,6 +1913,21 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 	},
+
+	{
+		Name:    "Cars-v0",
+		BaseURL: "https://h5.4j.com/games/Cars/",
+		Width:   320,
+		Height:  512,
+		Options: "{\"exit\":[\"8480831502092825\",\"190710987972732\",\"2135357787493767\",\"9835750250435948\"]}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

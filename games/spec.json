@@ -7430,5 +7430,73 @@
         "629012887341791"
       ]
     }
+  },
+  {
+    "name": "Cars-v0",
+    "base": "https://h5.4j.com/games/Cars/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "MiniRacer-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/highscorefont.png",
+      "images/scorefont.png",
+      "images/timefont.png",
+      "images/brake-sheet0.png",
+      "images/exit-sheet0.png",
+      "images/gas-sheet0.png",
+      "images/moregames-sheet0.png",
+      "images/play-sheet0.png",
+      "images/sound-sheet0.png",
+      "images/sound-sheet1.png",
+      "images/turnleft-sheet0.png",
+      "images/turnright-sheet0.png",
+      "images/menu-sheet0.png",
+      "images/borderleft.png",
+      "images/borderright.png",
+      "images/cars-sheet0.png",
+      "images/collision-sheet0.png",
+      "images/ground.png",
+      "images/player-sheet0.png",
+      "images/tires-sheet0.png",
+      "images/trees.png",
+      "images/road.png",
+      "images/background-sheet0.png",
+      "images/explosion-sheet0.png",
+      "images/explosion-sheet1.png",
+      "images/com4j_logo-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "media/brake.ogg",
+      "media/buttons.ogg",
+      "media/crash.ogg",
+      "media/engine.ogg",
+      "media/gas.ogg",
+      "media/menutheme.ogg",
+      "media/gametheme.ogg"
+    ],
+    "processors": [
+      "4j-c2game"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 512,
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"],
+    "options": {
+      "exit": [
+        "8480831502092825",
+        "190710987972732",
+        "2135357787493767",
+        "9835750250435948"
+      ]
+    }
   }
 ]
