@@ -1888,6 +1888,14 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 	},
+
+	{
+		Name:    "RunIntoDeath-v0",
+		BaseURL: "http://h5.4j.com/games/Run-Into-Death/",
+		Width:   480,
+		Height:  320,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
