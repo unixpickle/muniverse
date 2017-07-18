@@ -6972,7 +6972,7 @@
     "metadata": {},
     "width": 320,
     "height": 512,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"]
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Space"]
   },
   {
     "name": "ChaseRacingCars-v0",
@@ -7355,5 +7355,65 @@
     "width": 480,
     "height": 320,
     "key_whitelist": []
+  },
+  {
+    "name": "TrackRacer-v0",
+    "base": "https://h5.4j.com/games/Track-Racer/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "TrackRacer-v0.js"
+    ],
+    "resources": [
+      "",
+      "c2runtime.js",
+      "data.js",
+      "images/player-sheet0.png",
+      "images/trafficcars-sheet0.png",
+      "images/trafficcars-sheet1.png",
+      "images/trafficcars-sheet2.png",
+      "images/turnleft-sheet0.png",
+      "images/turnright-sheet0.png",
+      "images/gas-sheet0.png",
+      "images/brake-sheet0.png",
+      "images/collision-sheet0.png",
+      "images/back-sheet0.png",
+      "images/tires-sheet0.png",
+      "images/road.png",
+      "images/ground.png",
+      "images/border.png",
+      "images/sound-sheet0.png",
+      "images/sound-sheet1.png",
+      "images/scorefont.png",
+      "images/truck-sheet0.png",
+      "images/background-sheet0.png",
+      "images/trackracer-sheet0.png",
+      "images/play-sheet0.png",
+      "images/sitelogo-sheet0.png",
+      "images/sitelogo2-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "media/brake.ogg",
+      "media/buttons.ogg",
+      "media/crash.ogg",
+      "media/engine.ogg",
+      "media/gas.ogg",
+      "media/menutheme.ogg",
+      "media/gametheme.ogg"
+    ],
+    "processors": [
+      "4j-c2game",
+      "strip-bom"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 512,
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Space"]
   }
 ]

@@ -1835,6 +1835,7 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"ArrowUp",
 			"ArrowDown",
+			"Space",
 		},
 	},
 
@@ -1895,6 +1896,22 @@ var EnvSpecs = []*EnvSpec{
 		Width:   480,
 		Height:  320,
 		Options: "{}",
+	},
+
+	{
+		Name:    "TrackRacer-v0",
+		BaseURL: "https://h5.4j.com/games/Track-Racer/",
+		Width:   320,
+		Height:  512,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+			"Space",
+		},
 	},
 }
 
