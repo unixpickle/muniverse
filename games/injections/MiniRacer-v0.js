@@ -6,7 +6,7 @@
   var c2 = window.construct2api;
 
   window.muniverse = {
-    init: function() {
+    init: function(options) {
       return init4j().then(function() {
         faketime.pause();
         cr_getC2Runtime().doChangeLayout(cr_getC2Runtime().layouts.Game);
@@ -16,12 +16,7 @@
         c2.globalVar('HighScore').data = -1;
 
         // Disable exit game button.
-        c2.disableActions([
-          "7020333949850896",
-          "7439249625248278",
-          "2135357787493767",
-          "8480831502092825"
-        ]);
+        c2.disableActions(options.exit);
       });
     },
     step: function(millis) {

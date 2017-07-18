@@ -1828,7 +1828,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "https://h5.4j.com/games/Mini-Racer/",
 		Width:   320,
 		Height:  512,
-		Options: "{}",
+		Options: "{\"exit\":[\"7020333949850896\",\"7439249625248278\",\"2135357787493767\",\"8480831502092825\"]}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",
@@ -1903,7 +1903,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL: "https://h5.4j.com/games/Track-Racer/",
 		Width:   320,
 		Height:  512,
-		Options: "{}",
+		Options: "{\"exit\":[\"942555504266250\",\"474343296605419\",\"710812321871081\",\"629012887341791\"]}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",

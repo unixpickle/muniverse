@@ -6972,7 +6972,15 @@
     "metadata": {},
     "width": 320,
     "height": 512,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Space"]
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Space"],
+    "options": {
+      "exit": [
+        "7020333949850896",
+        "7439249625248278",
+        "2135357787493767",
+        "8480831502092825"
+      ]
+    }
   },
   {
     "name": "ChaseRacingCars-v0",
@@ -7366,10 +7374,9 @@
       "utils.js",
       "4j-c2game.js",
       "construct2.js",
-      "TrackRacer-v0.js"
+      "MiniRacer-v0.js"
     ],
     "resources": [
-      "",
       "c2runtime.js",
       "data.js",
       "images/player-sheet0.png",
@@ -7414,6 +7421,14 @@
     "metadata": {},
     "width": 320,
     "height": 512,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Space"]
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Space"],
+    "options": {
+      "exit": [
+        "942555504266250",
+        "474343296605419",
+        "710812321871081",
+        "629012887341791"
+      ]
+    }
   }
 ]
