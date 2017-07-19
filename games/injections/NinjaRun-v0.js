@@ -1,6 +1,6 @@
 (function() {
 
-  var GAME_OVER_TEXTURE = 'images/gameover-sheet0.png';
+  var RESTART_TEXTURE = 'images/btnrestart-sheet0.png';
 
   var c2 = construct2api;
 
@@ -30,12 +30,15 @@
 
         // No consistent actions for game over, and no
         // high score variable to hijack.
-        // Instead, we wait for the gameover sheet.
+        // Also, the game over sheet is somewhat shady since
+        // there is a separate victory dialog asset.
+        // So, to detect game over, we wait for the restart
+        // button to move (it gets moved over the dialog).
         var objsByUid = cr_getC2Runtime().objectsByUid;
         var objects = Object.keys(objsByUid).map((x) => objsByUid[x]);
         var views = objects.filter((x) => x.curFrame);
-        var popup = views.find((x) => x.curFrame.texture_file === GAME_OVER_TEXTURE);
-        popup.set_bbox_changed = () => {
+        var button = views.find((x) => x.curFrame.texture_file === RESTART_TEXTURE);
+        button.set_bbox_changed = () => {
           gameOver = true;
           endgameScore = rawScore();
         };
@@ -49,6 +52,8 @@
         ]);
 
         // Disable restart.
+        // Conveniently makes it impossible to get passed the
+        // game over dialog.
         c2.disableActions([
           "9251491818357576",
           "9296648633567888",
