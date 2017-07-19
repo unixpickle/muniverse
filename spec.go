@@ -1928,6 +1928,14 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowDown",
 		},
 	},
+
+	{
+		Name:    "PopUp-v0",
+		BaseURL: "http://h5.4j.com/games/Pop-Up/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DIR="$1"
+
+mv "$DIR/c2runtime.js" "$DIR/c2runtime_pre_popup.js"
+cat "$DIR/c2runtime_pre_popup.js" |
+  sed -E 's/this.go_loading_finished\(\);/MGDelegate.addEventListener(MGEvent.ENTER_GAME, this.go_loading_finished, this);/g' \
+  > "$DIR/c2runtime.js"

@@ -7498,5 +7498,50 @@
         "9835750250435948"
       ]
     }
+  },
+  {
+    "name": "PopUp-v0",
+    "base": "http://h5.4j.com/games/Pop-Up/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "PopUp-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/ball-sheet0.png",
+      "images/line-sheet0.png",
+      "images/line2-sheet0.png",
+      "images/board-sheet0.png",
+      "images/shaker-sheet0.png",
+      "images/buttons-sheet0.png",
+      "images/buttons-sheet1.png",
+      "images/buttons2-sheet0.png",
+      "images/buttons2-sheet1.png",
+      "images/tiledbackground.png",
+      "images/tutop-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "media/fall.ogg",
+      "media/select.ogg",
+      "media/wrong.ogg",
+      "media/pop.ogg"
+    ],
+    "processors": [
+      "strip-bom",
+      "4j-c2game",
+      "PopUp-v0"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 480,
+    "key_whitelist": []
   }
 ]
