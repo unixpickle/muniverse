@@ -71,6 +71,7 @@ Here's a (non-exhaustive) to-do list:
  * Gym integration.
  * Get WebGL to work without occasional failures.
  * Better way to verify connection to keep-alive socket.
+ * Look into the shady "you win" sheet in NinjaRun.
 
 # License
 
