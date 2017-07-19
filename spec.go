@@ -1936,6 +1936,34 @@ var EnvSpecs = []*EnvSpec{
 		Height:  480,
 		Options: "{}",
 	},
+
+	{
+		Name:    "NinjaRun-v0",
+		BaseURL: "http://h5.4j.com/games/Ninja-Run/",
+		Width:   568,
+		Height:  320,
+		Options: "{\"scoreMode\":\"stars\"}",
+	},
+
+	{
+		Name:    "NinjaRun-v1",
+		BaseURL: "http://h5.4j.com/games/Ninja-Run/",
+		Width:   568,
+		Height:  320,
+		Options: "{\"scoreMode\":\"distance\"}",
+
+		VariantOf: "NinjaRun-v0",
+	},
+
+	{
+		Name:    "NinjaRun-v2",
+		BaseURL: "http://h5.4j.com/games/Ninja-Run/",
+		Width:   568,
+		Height:  320,
+		Options: "{\"scoreMode\":\"coins\"}",
+
+		VariantOf: "NinjaRun-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

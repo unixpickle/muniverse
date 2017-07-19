@@ -7543,5 +7543,95 @@
     "width": 320,
     "height": 480,
     "key_whitelist": []
+  },
+  {
+    "name": "NinjaRun-v0",
+    "base": "http://h5.4j.com/games/Ninja-Run/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "NinjaRun-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/roads-sheet1.png",
+      "images/roads-sheet2.png",
+      "images/roads-sheet0.png",
+      "images/player-sheet0.png",
+      "images/player-sheet1.png",
+      "images/player-sheet2.png",
+      "images/water.png",
+      "images/coin-sheet0.png",
+      "images/bomb-sheet0.png",
+      "images/box-sheet0.png",
+      "images/sky-sheet0.png",
+      "images/sky-sheet1.png",
+      "images/tiledbackground.png",
+      "images/moon-sheet0.png",
+      "images/coinsfont.png",
+      "images/coingui-sheet0.png",
+      "images/btnrestart-sheet0.png",
+      "images/btnsound-sheet0.png",
+      "images/btnsound-sheet1.png",
+      "images/btnmelody-sheet0.png",
+      "images/btnmelody-sheet1.png",
+      "images/btnpause-sheet0.png",
+      "images/btnpause-sheet1.png",
+      "images/framegui-sheet0.png",
+      "images/distancegui-sheet0.png",
+      "images/scoregui-sheet0.png",
+      "images/btnspeed-sheet0.png",
+      "images/btnspeed-sheet1.png",
+      "images/gameover-sheet0.png",
+      "images/gameover-sheet1.png",
+      "images/ninjarun-sheet0.png",
+      "images/btnplay-sheet0.png",
+      "images/collision-sheet0.png",
+      "images/prize-sheet0.png",
+      "images/background-sheet0.png",
+      "images/loading-sheet0.png",
+      "images/loadnigtext-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "media/bomb.ogg",
+      "media/box.ogg",
+      "media/buttons.ogg",
+      "media/coin.ogg",
+      "media/water.ogg",
+      "media/jump.ogg",
+      "media/musictheme.ogg"
+    ],
+    "processors": [
+      "strip-bom",
+      "4j-c2game"
+    ],
+    "metadata": {},
+    "width": 568,
+    "height": 320,
+    "key_whitelist": [],
+    "options": {
+      "scoreMode": "stars"
+    }
+  },
+  {
+    "name": "NinjaRun-v1",
+    "variant_of": "NinjaRun-v0",
+    "options": {
+      "scoreMode": "distance"
+    }
+  },
+  {
+    "name": "NinjaRun-v2",
+    "variant_of": "NinjaRun-v0",
+    "options": {
+      "scoreMode": "coins"
+    }
   }
 ]
