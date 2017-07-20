@@ -7633,5 +7633,48 @@
     "options": {
       "scoreMode": "coins"
     }
+  },
+  {
+    "name": "AmazingNinja-v0",
+    "base": "http://h5.4j.com/games/Amazing-Ninja/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "AmazingNinja-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/tiledbackground.png",
+      "images/blockbottom.png",
+      "images/player-sheet0.png",
+      "images/panel-sheet0.png",
+      "images/playbtn-sheet0.png",
+      "images/tapjumpbutton-sheet0.png",
+      "images/scoretxt.png",
+      "images/bestscoretxt.png",
+      "images/sound-sheet0.png",
+      "images/title-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "media/theme.ogg",
+      "media/hit.ogg",
+      "media/jump.ogg",
+      "media/point.ogg"
+    ],
+    "processors": [
+      "strip-bom",
+      "4j-c2game"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 480,
+    "key_whitelist": []
   }
 ]

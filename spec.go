@@ -1964,6 +1964,14 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "NinjaRun-v0",
 	},
+
+	{
+		Name:    "AmazingNinja-v0",
+		BaseURL: "http://h5.4j.com/games/Amazing-Ninja/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
