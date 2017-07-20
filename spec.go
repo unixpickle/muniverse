@@ -1972,6 +1972,14 @@ var EnvSpecs = []*EnvSpec{
 		Height:  480,
 		Options: "{}",
 	},
+
+	{
+		Name:    "RibbitRacer-v0",
+		BaseURL: "http://h5.4j.com/games/Ribbit-Racer/",
+		Width:   320,
+		Height:  452,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

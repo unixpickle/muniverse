@@ -7676,5 +7676,70 @@
     "width": 320,
     "height": 480,
     "key_whitelist": []
+  },
+  {
+    "name": "RibbitRacer-v0",
+    "base": "http://h5.4j.com/games/Ribbit-Racer/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "RibbitRacer-v0.js"
+    ],
+    "resources": [
+      "data.js",
+      "images/arr-sheet0.png",
+      "images/best-sheet0.png",
+      "images/blackbg.png",
+      "images/boco.png",
+      "images/bosong.png",
+      "images/cau.png",
+      "images/com4j_logo-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fbbutton-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/gameover-sheet0.png",
+      "images/grass-sheet0.png",
+      "images/lacay-sheet0.png",
+      "images/lacay-sheet1.png",
+      "images/leftboder-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/playbutton-sheet0.png",
+      "images/playbutton-sheet1.png",
+      "images/player-sheet0.png",
+      "images/player-sheet1.png",
+      "images/rive-sheet0.png",
+      "images/rive-sheet1.png",
+      "images/river.png",
+      "images/score.png",
+      "images/shadow-sheet0.png",
+      "images/soid.png",
+      "images/soundbutton-sheet0.png",
+      "images/soundbutton-sheet1.png",
+      "images/tapicon-sheet0.png",
+      "images/title-sheet0.png",
+      "images/tree-sheet0.png",
+      "images/tree-sheet1.png",
+      "images/tut-sheet0.png",
+      "images/twbutton-sheet0.png",
+      "images/unblock-sheet0.png",
+      "media/cau.ogg",
+      "media/crash.ogg",
+      "media/mus_game.ogg",
+      "media/mus_menu.ogg",
+      "media/newcar.ogg",
+      "media/touch.ogg",
+      "c2runtime.js"
+    ],
+    "processors": [
+      "4j-c2game"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 452,
+    "key_whitelist": []
   }
 ]
