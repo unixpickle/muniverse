@@ -7754,5 +7754,58 @@
     "width": 569,
     "height": 320,
     "key_whitelist": []
+  },
+  {
+    "name": "RiseUp-v0",
+    "base": "https://h5.4j.com/games/Rise-Up/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "RiseUp-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/left1-sheet0.png",
+      "images/above-sheet0.png",
+      "images/player-sheet0.png",
+      "images/player-sheet1.png",
+      "images/centerspawn-sheet0.png",
+      "images/leftspawn-sheet0.png",
+      "images/rightspawn-sheet0.png",
+      "images/collide-sheet0.png",
+      "images/leftnew-sheet0.png",
+      "images/white-sheet0.png",
+      "images/level-sheet0.png",
+      "images/levelpoint.png",
+      "images/sprite-sheet0.png",
+      "images/die-sheet0.png",
+      "images/whiteman-sheet0.png",
+      "images/scoreboard-sheet0.png",
+      "images/restart-sheet0.png",
+      "images/riseup-sheet0.png",
+      "images/playnew-sheet0.png",
+      "images/buttons2-sheet0.png",
+      "images/buttons2-sheet1.png",
+      "images/btnfullscreen-sheet0.png",
+      "images/btnfullscreen-sheet1.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "media/jump.ogg",
+      "media/die.ogg",
+      "media/select.ogg"
+    ],
+    "processors": [
+      "4j-c2game"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 480,
+    "key_whitelist": []
   }
 ]

@@ -1980,6 +1980,14 @@ var EnvSpecs = []*EnvSpec{
 		Height:  320,
 		Options: "{}",
 	},
+
+	{
+		Name:    "RiseUp-v0",
+		BaseURL: "https://h5.4j.com/games/Rise-Up/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

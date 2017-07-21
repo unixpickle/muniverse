@@ -90,7 +90,7 @@
   //       var old = cr_getC2Runtime().actsBySid[x].run;
   //       cr_getC2Runtime().actsBySid[x].run = function() {
   //         if (actions.indexOf(x) < 0) actions.push(x);
-  //         old.apply(cr_getC2Runtime().actsBySid[x], arguments);
+  //         return old.apply(cr_getC2Runtime().actsBySid[x], arguments);
   //       }
   //     });
   //
