@@ -1988,6 +1988,19 @@ var EnvSpecs = []*EnvSpec{
 		Height:  480,
 		Options: "{}",
 	},
+
+	{
+		Name:    "ColorTease-v0",
+		BaseURL: "http://h5.4j.com/games/Color-Tease/",
+		Width:   320,
+		Height:  569,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

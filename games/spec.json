@@ -7807,5 +7807,59 @@
     "width": 320,
     "height": 480,
     "key_whitelist": []
+  },
+  {
+    "name": "ColorTease-v0",
+    "base": "http://h5.4j.com/games/Color-Tease/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "ColorTease-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/touchcontroller-sheet0.png",
+      "images/ballparticle-sheet0.png",
+      "images/background.png",
+      "images/center-sheet0.png",
+      "images/ball-sheet0.png",
+      "images/obstacle-sheet0.png",
+      "images/winanim-sheet0.png",
+      "images/ui_blackoverlay-sheet0.png",
+      "images/ui_checkbox-sheet1.png",
+      "images/ui_checkbox-sheet0.png",
+      "images/ui_button-sheet0.png",
+      "images/ui_dialog.png",
+      "images/ui_image-sheet2.png",
+      "images/ui_image-sheet0.png",
+      "images/ui_image-sheet1.png",
+      "images/ui_animation-sheet0.png",
+      "images/ui_animation-sheet1.png",
+      "images/particles_death.png",
+      "images/trail.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "media/click.ogg",
+      "media/hit.ogg",
+      "media/collect.ogg",
+      "config.txt",
+      "stylesheet.css",
+      "varelaround-regular-webfont.woff2"
+    ],
+    "processors": [
+      "strip-bom",
+      "4j-c2game"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 569,
+    "key_whitelist": ["ArrowLeft", "ArrowRight"]
   }
 ]
