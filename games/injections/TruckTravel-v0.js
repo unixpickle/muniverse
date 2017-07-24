@@ -1,6 +1,7 @@
 (function() {
 
   var FONT_LOAD_TIME = 1000;
+  var PAUSE_UID = 26;
   var c2 = construct2api;
 
   function rawScore() {
@@ -19,6 +20,7 @@
         rt.doChangeLayout(rt.layouts.character);
         faketime.advance(50);
 
+        // Select character via a click.
         var gameCanvas = $('#gameCanvas');
         var y = gameCanvas.height() / 2;
         var x = (gameCanvas.width() / 3) * (options.character + 1);
@@ -29,6 +31,12 @@
           gameCanvas.trigger(e);
         });
         faketime.advance(50);
+
+        var pauseButton = rt.objectsByUid[PAUSE_UID];
+        pauseButton.y = -300;
+        pauseButton.set_bbox_changed();
+        faketime.advance(50);
+
         var oldSetValue = c2.globalVar('gameover').setValue
         c2.globalVar('gameover').setValue = function(val) {
           if (val && !gameOver) {
