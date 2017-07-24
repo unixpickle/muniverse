@@ -7861,5 +7861,69 @@
     "width": 320,
     "height": 569,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
+  },
+  {
+    "name": "TRexRunner-v0",
+    "base": "http://h5.4j.com/games/T-Rex-Runner/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "TRexRunner-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/background-sheet0.png",
+      "images/trex-sheet0.png",
+      "images/element_creation-sheet0.png",
+      "images/cacto_1-sheet0.png",
+      "images/element_ground-sheet0.png",
+      "images/pter-sheet0.png",
+      "images/pter-sheet1.png",
+      "images/background_trees-sheet0.png",
+      "images/background_ground-sheet0.png",
+      "images/element_final-sheet0.png",
+      "images/element_camera-sheet0.png",
+      "images/background_woods-sheet0.png",
+      "images/dust-sheet0.png",
+      "images/blow-sheet0.png",
+      "images/blow-sheet1.png",
+      "images/blow-sheet2.png",
+      "images/cacto_2-sheet0.png",
+      "images/cacto_3-sheet0.png",
+      "images/element_enemies-sheet0.png",
+      "images/logo_trex_runner-sheet0.png",
+      "images/bt_sound-sheet0.png",
+      "images/bt_sound-sheet1.png",
+      "images/share_facebook-sheet0.png",
+      "images/share_twitter-sheet0.png",
+      "images/info_points_txt.png",
+      "images/info_record-sheet0.png",
+      "images/info_record_txt.png",
+      "images/effect_up-sheet0.png",
+      "images/effect_down-sheet0.png",
+      "images/info_record_star-sheet0.png",
+      "images/tutorial-sheet0.png",
+      "images/tutorial-sheet1.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "media/trex_blow.ogg",
+      "media/trex_music.ogg",
+      "media/trex_pter.ogg",
+      "media/trex_run.ogg"
+    ],
+    "processors": [
+      "4j-c2game"
+    ],
+    "metadata": {},
+    "width": 569,
+    "height": 320,
+    "key_whitelist": ["ArrowUp", "Space"]
   }
 ]

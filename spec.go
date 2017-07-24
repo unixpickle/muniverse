@@ -2001,6 +2001,19 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 	},
+
+	{
+		Name:    "TRexRunner-v0",
+		BaseURL: "http://h5.4j.com/games/T-Rex-Runner/",
+		Width:   569,
+		Height:  320,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowUp",
+			"Space",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
