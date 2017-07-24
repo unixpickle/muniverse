@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd $(dirname $0)
+./generic-har | grep '/games/' | sed -E 's/"\/games\/[a-zA-Z0-9\-]*\//"/g'

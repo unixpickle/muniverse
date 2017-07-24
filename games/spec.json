@@ -7925,5 +7925,85 @@
     "width": 569,
     "height": 320,
     "key_whitelist": ["ArrowUp", "Space"]
+  },
+  {
+    "name": "TruckTravel-v0",
+    "base": "http://h5.4j.com/games/Truck-Travel/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "TruckTravel-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/sprite-sheet0.png",
+      "images/sprite2-sheet0.png",
+      "images/sprite3-sheet0.png",
+      "images/sprite4-sheet0.png",
+      "images/sprite5-sheet0.png",
+      "images/sprite7-sheet0.png",
+      "images/sprite8-sheet0.png",
+      "images/sprite9-sheet0.png",
+      "images/sprite6-sheet0.png",
+      "images/sprite10-sheet0.png",
+      "images/sprite11-sheet0.png",
+      "images/sprite12-sheet0.png",
+      "images/sprite13-sheet0.png",
+      "images/sprite14-sheet0.png",
+      "images/sprite15-sheet0.png",
+      "images/sprite16-sheet0.png",
+      "images/sprite17-sheet0.png",
+      "images/sprite18-sheet1.png",
+      "images/sprite18-sheet0.png",
+      "images/sprite20-sheet0.png",
+      "images/sprite21-sheet0.png",
+      "images/sprite22-sheet0.png",
+      "images/sprite23-sheet0.png",
+      "images/sprite24-sheet0.png",
+      "images/sprite25-sheet0.png",
+      "images/sprite26-sheet0.png",
+      "images/sprite27-sheet0.png",
+      "images/sprite28-sheet0.png",
+      "images/sprite29-sheet0.png",
+      "images/sprite30-sheet0.png",
+      "images/sprite32-sheet0.png",
+      "images/sprite35-sheet0.png",
+      "images/sprite36-sheet0.png",
+      "images/tiledbackground.png",
+      "images/sprite37-sheet0.png",
+      "images/sprite40-sheet0.png",
+      "images/sprite41-sheet0.png",
+      "images/sprite42-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "media/pickup_coin25.ogg",
+      "media/swords_collide-sound_explorer-2015600826.ogg",
+      "stylesheet.css",
+      "alpha_echo-webfont.woff"
+    ],
+    "processors": [
+      "strip-bom",
+      "4j-c2game"
+    ],
+    "metadata": {},
+    "width": 569,
+    "height": 320,
+    "key_whitelist": ["ArrowUp", "ArrowDown"],
+    "options": {
+      "character": 0
+    }
+  },
+  {
+    "name": "TruckTravel-v1",
+    "variant_of": "TruckTravel-v0",
+    "options": {
+      "character": 1
+    }
   }
 ]

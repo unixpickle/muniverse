@@ -2014,6 +2014,34 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 	},
+
+	{
+		Name:    "TruckTravel-v0",
+		BaseURL: "http://h5.4j.com/games/Truck-Travel/",
+		Width:   569,
+		Height:  320,
+		Options: "{\"character\":0}",
+
+		KeyWhitelist: []string{
+			"ArrowUp",
+			"ArrowDown",
+		},
+	},
+
+	{
+		Name:    "TruckTravel-v1",
+		BaseURL: "http://h5.4j.com/games/Truck-Travel/",
+		Width:   569,
+		Height:  320,
+		Options: "{\"character\":1}",
+
+		KeyWhitelist: []string{
+			"ArrowUp",
+			"ArrowDown",
+		},
+
+		VariantOf: "TruckTravel-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
