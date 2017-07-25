@@ -2042,6 +2042,24 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "TruckTravel-v0",
 	},
+
+	{
+		Name:    "PanicDrop-v0",
+		BaseURL: "http://h5.4j.com/games/Panic-Drop/",
+		Width:   320,
+		Height:  569,
+		Options: "{\"scoreMode\":\"distance\"}",
+	},
+
+	{
+		Name:    "PanicDrop-v1",
+		BaseURL: "http://h5.4j.com/games/Panic-Drop/",
+		Width:   320,
+		Height:  569,
+		Options: "{\"scoreMode\":\"coins\"}",
+
+		VariantOf: "PanicDrop-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

@@ -8005,5 +8005,70 @@
     "options": {
       "character": 1
     }
+  },
+  {
+    "name": "PanicDrop-v0",
+    "base": "http://h5.4j.com/games/Panic-Drop/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "PanicDrop-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/player-sheet0.png",
+      "images/ground-sheet0.png",
+      "images/coin-sheet0.png",
+      "images/ballparticle-sheet0.png",
+      "images/background.png",
+      "images/coinanim-sheet0.png",
+      "images/obstaclebar.png",
+      "images/halo-sheet0.png",
+      "images/ui_blackoverlay-sheet0.png",
+      "images/ui_checkbox-sheet0.png",
+      "images/ui_button-sheet0.png",
+      "images/ui_dialog.png",
+      "images/ui_image-sheet2.png",
+      "images/ui_image-sheet0.png",
+      "images/ui_image-sheet1.png",
+      "images/ui_animation-sheet0.png",
+      "images/ui_animation-sheet1.png",
+      "images/scrollingbackground_1.png",
+      "images/center-sheet0.png",
+      "images/blackbars.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "media/click.ogg",
+      "media/collect.ogg",
+      "media/die.ogg",
+      "media/fly.ogg",
+      "config.txt",
+      "stylesheet.css",
+      "varelaround-regular-webfont.woff2"
+    ],
+    "processors": [
+      "4j-c2game"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 569,
+    "key_whitelist": [],
+    "options": {
+      "scoreMode": "distance"
+    }
+  },
+  {
+    "name": "PanicDrop-v1",
+    "variant_of": "PanicDrop-v0",
+    "options": {
+      "scoreMode": "coins"
+    }
   }
 ]
