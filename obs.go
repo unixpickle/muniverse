@@ -3,6 +3,7 @@ package muniverse
 import (
 	"bytes"
 	"image"
+	"image/jpeg"
 	"image/png"
 
 	"github.com/unixpickle/essentials"
@@ -92,6 +93,13 @@ type pngObs []byte
 func (p pngObs) Image() (img image.Image, err error) {
 	defer essentials.AddCtxTo("decode PNG observation", &err)
 	return png.Decode(bytes.NewReader(p))
+}
+
+type jpegObs []byte
+
+func (j jpegObs) Image() (img image.Image, err error) {
+	defer essentials.AddCtxTo("decode JPEG observation", &err)
+	return jpeg.Decode(bytes.NewReader(j))
 }
 
 type imageObs struct {

@@ -122,32 +122,35 @@ func (b *Server) specForName(call *Call) *Response {
 }
 
 func (b *Server) newEnv(call *Call) *Response {
-	var env muniverse.Env
+	var spec *muniverse.EnvSpec
+	var opts *muniverse.Options
 	var err error
 	switch true {
 	case call.NewEnv != nil:
-		if call.NewEnv.Spec == nil {
-			err = errors.New("null specification")
-		} else {
-			env, err = muniverse.NewEnv(call.NewEnv.Spec)
-		}
+		spec = call.NewEnv.Spec
+		opts = &muniverse.Options{}
 	case call.NewEnvContainer != nil:
-		if call.NewEnvContainer.Spec == nil {
-			err = errors.New("null specification")
-		} else {
-			env, err = muniverse.NewEnvContainer(call.NewEnvContainer.Container,
-				call.NewEnvContainer.Spec)
+		spec = call.NewEnvContainer.Spec
+		opts = &muniverse.Options{
+			CustomImage: call.NewEnvContainer.Container,
 		}
 	case call.NewEnvChrome != nil:
-		if call.NewEnvChrome.Spec == nil {
-			err = errors.New("null specification")
-		} else {
-			env, err = muniverse.NewEnvChrome(call.NewEnvChrome.Host,
-				call.NewEnvChrome.GameHost, call.NewEnvChrome.Spec)
+		spec = call.NewEnvContainer.Spec
+		opts = &muniverse.Options{
+			DevtoolsHost: call.NewEnvChrome.Host,
+			GameHost:     call.NewEnvChrome.GameHost,
 		}
 	default:
 		panic("unreachable")
 	}
+
+	var env muniverse.Env
+	if spec == nil {
+		err = errors.New("null specification")
+	} else {
+		env, err = muniverse.NewEnvOptions(spec, opts)
+	}
+
 	response := &Response{}
 	if err != nil {
 		message := err.Error()

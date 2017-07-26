@@ -96,41 +96,106 @@ type rawEnv struct {
 	lastScore   float64
 	needsReset  bool
 
+	compression        bool
+	compressionQuality int
+
 	// Used to garbage collect the container if we
 	// exit ungracefully.
 	killSocket net.Conn
 }
 
+// Options specifies how to configure a new Env.
+//
+// By default, environments run inside of Docker.
+// In this case, the Docker image can be manually
+// specified with CustomImage, and/or a custom games
+// directory can be specified with GamesDir.
+//
+// Sometimes, it might be desirable to run an Env directly
+// inside an arbitrary instance of Chrome without starting
+// a Docker container.
+// In this case, you can set the DevtoolsHost field.
+// You will also need to manually start a file-system
+// server for your downloaded_games directory and point
+// GameHost to this server.
+type Options struct {
+	// ImageName, if non-empty, specifies a custom
+	// Docker image to use for the environment.
+	CustomImage string
+
+	// GamesDir, if non-empty, specifies a directory on
+	// the host to mount into the Docker container as a
+	// downloaded_games folder.
+	GamesDir string
+
+	// DevtoolsHost, if non-empty, specifies the host of
+	// an already-running Chrome's DevTools server.
+	//
+	// If this is non-empty, a Docker container will not
+	// be launched, and the CustomImage and GamesDir
+	// options should not be used.
+	// Further, the GameHost field must be set.
+	DevtoolsHost string
+
+	// GameHost, if non-empty, specifies the host for the
+	// downloaded_games file server.
+	// This can only be used in conjunction with
+	// DevtoolsHost.
+	GameHost string
+
+	// Compression, if set, allows observations to be
+	// compressed in a lossy fashion.
+	// Using compression may provide a performance boost, but
+	// at the expense of observation integrity.
+	Compression bool
+
+	// CompressionQuality controls the quality of compressed
+	// observations if Compression is set.
+	// The value ranges from 0 to 100 (inclusive).
+	CompressionQuality int
+}
+
 // NewEnv creates a new environment inside the default
-// Docker image.
+// Docker image with the default settings.
+//
 // This may take a few minutes to run the first time,
 // since it has to download a large Docker image.
+// If the download takes too long, NewEnv may time out.
+// If this happens, it is recommended that you download
+// the image manually.
 func NewEnv(spec *EnvSpec) (Env, error) {
-	return NewEnvContainer(defaultImage, spec)
+	return NewEnvOptions(spec, &Options{})
 }
 
-// NewEnvContainer creates a new environment inside a
-// new Docker container of the given Docker image.
-func NewEnvContainer(image string, spec *EnvSpec) (Env, error) {
-	return newEnvDocker(image, "", spec)
-}
-
-// NewEnvGamesDir creates a new environment with a custom
-// games directory.
-// The directory should contain subdirectories for each
-// base game, similar to the downloaded_games directory in
-// the default image.
-//
-// The directory path is slightly restricted.
-// In particular, it cannot contain a ':' (colon).
-// See https://github.com/moby/moby/issues/8604 for more.
-func NewEnvGamesDir(dir string, spec *EnvSpec) (Env, error) {
-	return newEnvDocker(defaultImage, dir, spec)
-}
-
-func newEnvDocker(image, volume string, spec *EnvSpec) (env Env, err error) {
+// NewEnvOptions creates a new environment with the given
+// set of options.
+func NewEnvOptions(spec *EnvSpec, opts *Options) (e Env, err error) {
 	defer essentials.AddCtxTo("create environment", &err)
+	var res *rawEnv
+	if opts.DevtoolsHost != "" {
+		if opts.GameHost == "" {
+			return nil, errors.New("must set GameHost with DevtoolsHost")
+		}
+		res, err = newEnvChrome(opts.DevtoolsHost, opts.GameHost, spec)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		image := opts.CustomImage
+		if image == "" {
+			image = defaultImage
+		}
+		res, err = newEnvDocker(image, opts.GamesDir, spec)
+		if err != nil {
+			return nil, err
+		}
+	}
+	res.compression = opts.Compression
+	res.compressionQuality = opts.CompressionQuality
+	return res, nil
+}
 
+func newEnvDocker(image, volume string, spec *EnvSpec) (env *rawEnv, err error) {
 	ctx, cancel := callCtx()
 	defer cancel()
 
@@ -175,26 +240,13 @@ func newEnvDocker(image, volume string, spec *EnvSpec) (env Env, err error) {
 	}, nil
 }
 
-// NewEnvChrome connects to an existing Chrome DevTools
-// server and runs an environment in there.
-//
-// The gameHost argument specifies where to load games.
-// For example, gameHost might be "localhost:8080" if the
-// game "Foobar" should be loaded from
-// "http://localhost/Foobar".
-//
-// The Chrome instance must have at least one page open,
-// since an open page is selected and used to run the
-// environment.
-func NewEnvChrome(host, gameHost string, spec *EnvSpec) (env Env, err error) {
-	defer essentials.AddCtxTo("create environment", &err)
-
+func newEnvChrome(host, gameHost string, spec *EnvSpec) (*rawEnv, error) {
 	ctx, cancel := callCtx()
 	defer cancel()
 
 	conn, err := connectDevTools(ctx, host)
 	if err != nil {
-		return
+		return nil, err
 	}
 
 	return &rawEnv{
@@ -298,14 +350,24 @@ func (r *rawEnv) Step(t time.Duration, events ...interface{}) (reward float64,
 }
 
 func (r *rawEnv) Observe() (obs Obs, err error) {
+	defer essentials.AddCtxTo("observe environment", &err)
+
 	ctx, cancel := callCtx()
 	defer cancel()
 
-	pngData, err := r.devConn.ScreenshotPNG(ctx)
-	if err != nil {
-		return
+	if !r.compression {
+		data, err := r.devConn.ScreenshotPNG(ctx)
+		if err != nil {
+			return nil, err
+		}
+		return pngObs(data), nil
+	} else {
+		data, err := r.devConn.ScreenshotJPEG(ctx, r.compressionQuality)
+		if err != nil {
+			return nil, err
+		}
+		return jpegObs(data), nil
 	}
-	return pngObs(pngData), nil
 }
 
 func (r *rawEnv) Close() (err error) {
