@@ -8070,5 +8070,127 @@
     "options": {
       "scoreMode": "coins"
     }
+  },
+  {
+    "name": "BlockSnake-v0",
+    "base": "http://h5.4j.com/games/Block-Snake/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "BlockSnake-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/cabeca-sheet0.png",
+      "images/tiledbackground.png",
+      "images/barreira_direita-sheet0.png",
+      "images/barreira_esquerda-sheet0.png",
+      "images/barreira_esquerda2-sheet0.png",
+      "images/barreira_esquerda3-sheet0.png",
+      "images/barreira_esquerda4-sheet0.png",
+      "images/base_personagem-sheet0.png",
+      "images/corpo-sheet0.png",
+      "images/barreira_direita2-sheet0.png",
+      "images/barreira_direita3-sheet0.png",
+      "images/comida2-sheet0.png",
+      "images/particles_1.png",
+      "images/top10bottomcon-sheet0.png",
+      "images/medalhaouro-sheet0.png",
+      "images/bg_menu-sheet0.png",
+      "images/logo_txt1-sheet0.png",
+      "images/logo_txt2-sheet0.png",
+      "images/menu_home1-sheet0.png",
+      "images/menu_home2-sheet0.png",
+      "images/bg_black-sheet0.png",
+      "images/bg_black2-sheet0.png",
+      "images/fase1-sheet0.png",
+      "images/fase1-sheet1.png",
+      "images/btn_main_menu-sheet0.png",
+      "images/bg_menu2-sheet0.png",
+      "images/linha_barreira.png",
+      "images/linha_chegada.png",
+      "images/txt_game_over-sheet0.png",
+      "images/txt_your_score-sheet0.png",
+      "images/btn_home-sheet0.png",
+      "images/btn_restart-sheet0.png",
+      "images/score.png",
+      "images/bg_vitoria-sheet0.png",
+      "images/btn_continue-sheet0.png",
+      "images/particles_2.png",
+      "images/particles_3.png",
+      "images/particles_4.png",
+      "images/particles_5.png",
+      "images/particles_6.png",
+      "images/bg_loading-sheet0.png",
+      "images/bg_barra_loading-sheet0.png",
+      "images/barra_loading-sheet0.png",
+      "images/controlea-sheet0.png",
+      "images/controleb-sheet0.png",
+      "images/guia_controles-sheet0.png",
+      "images/btn_main_menu_tutorial-sheet0.png",
+      "images/bg_equipe-sheet0.png",
+      "images/som-sheet0.png",
+      "images/som-sheet1.png",
+      "images/sprite-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "media/colisao.ogg",
+      "media/comida.ogg",
+      "media/music_home.ogg",
+      "media/click_menu.ogg",
+      "media/musica_game.ogg",
+      "media/level_failed.ogg"
+    ],
+    "processors": [
+      "4j-c2game"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 569,
+    "key_whitelist": ["ArrowLeft", "ArrowRight"],
+    "options": {
+      "level": 1
+    }
+  },
+  {
+    "name": "BlockSnake-v1",
+    "variant_of": "BlockSnake-v0",
+    "options": {
+      "level": 2
+    }
+  },
+  {
+    "name": "BlockSnake-v2",
+    "variant_of": "BlockSnake-v0",
+    "options": {
+      "level": 3
+    }
+  },
+  {
+    "name": "BlockSnake-v3",
+    "variant_of": "BlockSnake-v0",
+    "options": {
+      "level": 4
+    }
+  },
+  {
+    "name": "BlockSnake-v4",
+    "variant_of": "BlockSnake-v0",
+    "options": {
+      "level": 5
+    }
+  },
+  {
+    "name": "BlockSnake-v5",
+    "variant_of": "BlockSnake-v0",
+    "options": {
+      "level": 6
+    }
   }
 ]

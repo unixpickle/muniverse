@@ -2060,6 +2060,94 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "PanicDrop-v0",
 	},
+
+	{
+		Name:    "BlockSnake-v0",
+		BaseURL: "http://h5.4j.com/games/Block-Snake/",
+		Width:   320,
+		Height:  569,
+		Options: "{\"level\":1}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
+
+	{
+		Name:    "BlockSnake-v1",
+		BaseURL: "http://h5.4j.com/games/Block-Snake/",
+		Width:   320,
+		Height:  569,
+		Options: "{\"level\":2}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+
+		VariantOf: "BlockSnake-v0",
+	},
+
+	{
+		Name:    "BlockSnake-v2",
+		BaseURL: "http://h5.4j.com/games/Block-Snake/",
+		Width:   320,
+		Height:  569,
+		Options: "{\"level\":3}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+
+		VariantOf: "BlockSnake-v0",
+	},
+
+	{
+		Name:    "BlockSnake-v3",
+		BaseURL: "http://h5.4j.com/games/Block-Snake/",
+		Width:   320,
+		Height:  569,
+		Options: "{\"level\":4}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+
+		VariantOf: "BlockSnake-v0",
+	},
+
+	{
+		Name:    "BlockSnake-v4",
+		BaseURL: "http://h5.4j.com/games/Block-Snake/",
+		Width:   320,
+		Height:  569,
+		Options: "{\"level\":5}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+
+		VariantOf: "BlockSnake-v0",
+	},
+
+	{
+		Name:    "BlockSnake-v5",
+		BaseURL: "http://h5.4j.com/games/Block-Snake/",
+		Width:   320,
+		Height:  569,
+		Options: "{\"level\":6}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+
+		VariantOf: "BlockSnake-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
