@@ -8192,5 +8192,81 @@
     "options": {
       "level": 6
     }
+  },
+  {
+    "name": "TrafficRacer-v0",
+    "base": "http://h5.4j.com/games/Traffic-Racer/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "TrafficRacer-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/car-sheet0.png",
+      "images/car-sheet1.png",
+      "images/road-sheet0.png",
+      "images/leftbutton-sheet0.png",
+      "images/leftbutton-sheet1.png",
+      "images/rightbutton-sheet0.png",
+      "images/rightbutton-sheet1.png",
+      "images/forwardbutton-sheet0.png",
+      "images/forwardbutton-sheet1.png",
+      "images/stopbutton-sheet0.png",
+      "images/stopbutton-sheet1.png",
+      "images/camera-sheet0.png",
+      "images/car_enemy-sheet0.png",
+      "images/cer_enemy2-sheet0.png",
+      "images/pausebutton-sheet0.png",
+      "images/pausebutton-sheet1.png",
+      "images/gamepausedtext-sheet0.png",
+      "images/blacksprite-sheet0.png",
+      "images/endtable-sheet0.png",
+      "images/newbestlogo-sheet0.png",
+      "images/okbutton-sheet0.png",
+      "images/roadmenu-sheet0.png",
+      "images/tablemenu-sheet0.png",
+      "images/playbutton-sheet0.png",
+      "images/shopbutton-sheet0.png",
+      "images/achievementsbutton-sheet0.png",
+      "images/moneyui-sheet0.png",
+      "images/levelui-sheet0.png",
+      "images/lvlbackground-sheet0.png",
+      "images/lvl.png",
+      "images/backbutton-sheet0.png",
+      "images/carshop1-sheet0.png",
+      "images/carshop1-sheet1.png",
+      "images/carshop2-sheet0.png",
+      "images/carshop2-sheet1.png",
+      "images/carshop2-sheet2.png",
+      "images/carshop3-sheet0.png",
+      "images/carshop3-sheet1.png",
+      "images/carshop3-sheet2.png",
+      "images/carshop4-sheet0.png",
+      "images/carshop4-sheet1.png",
+      "images/carshop4-sheet2.png",
+      "images/achievement1-sheet0.png",
+      "images/achievementget1-sheet0.png",
+      "images/achievement2-sheet0.png",
+      "images/achievementget2-sheet0.png",
+      "images/achievement3-sheet0.png",
+      "images/achievementget3-sheet0.png",
+      "images/grass.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png"
+    ],
+    "processors": [
+      "4j-c2game"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 480,
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"]
   }
 ]

@@ -2148,6 +2148,21 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "BlockSnake-v0",
 	},
+
+	{
+		Name:    "TrafficRacer-v0",
+		BaseURL: "http://h5.4j.com/games/Traffic-Racer/",
+		Width:   320,
+		Height:  480,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
