@@ -23,7 +23,7 @@ const (
 
 const (
 	callTimeout           = time.Minute * 2
-	chromeConnectAttempts = 10
+	chromeConnectAttempts = 20
 )
 
 // This error message occurs very infrequently when doing
