@@ -8268,5 +8268,36 @@
     "width": 320,
     "height": 480,
     "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"]
+  },
+  {
+    "name": "FlappyBird-v0",
+    "base": "http://flappybird.io/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "FlappyBird-v0.js"
+    ],
+    "resources": [
+      "app.js",
+      "style/app.css",
+      "img/logo.png",
+      "img/bird.png",
+      "img/background.png",
+      "img/ground.png",
+      "img/pipe.png",
+      "img/restart.png",
+      "img/score.png",
+      "img/share.png",
+      "img/add-to-leaderboard.png"
+    ],
+    "processors": [
+      "FlappyBird-v0"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 512,
+    "key_whitelist": ["Space"]
   }
 ]

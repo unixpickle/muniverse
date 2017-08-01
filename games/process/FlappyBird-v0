@@ -1,0 +1,14 @@
+#!/bin/bash
+
+DIR="$1"
+curl -s https://code.jquery.com/jquery-3.2.1.min.js > "$DIR/jquery.js"
+
+# Remove google analytics, inject jQuery, etc.
+mv "$DIR/index.html" "$DIR/index_pre_flappybird.html"
+cat "$DIR/index_pre_flappybird.html" |
+  sed -E 's/src=".*\.js"/src="jquery.js"/g' |
+  sed -E 's/\/app\.js/app.js/g' |
+  sed -E "s/\(window,document,'script',.*'ga');/;/g" |
+  sed -E 's/ga\(.*\)//g' |
+  sed -E 's/\/style/style/g' \
+  > "$DIR/index.html"

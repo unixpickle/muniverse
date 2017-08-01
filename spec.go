@@ -2163,6 +2163,18 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowDown",
 		},
 	},
+
+	{
+		Name:    "FlappyBird-v0",
+		BaseURL: "http://flappybird.io/",
+		Width:   320,
+		Height:  512,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"Space",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
