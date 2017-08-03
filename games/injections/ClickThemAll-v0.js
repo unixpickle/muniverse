@@ -6,6 +6,10 @@
     return cr_getC2Runtime().Qi.find((v) => v.name === name);
   }
 
+  function rawScore() {
+    return globalVar('Point').data;
+  }
+
   var gameOver = false;
   var endgameScore = 0;
   window.muniverse = {
@@ -24,8 +28,23 @@
         faketime.advance(100);
 
         kongregateAPI.getAPI().stats.submit = (name, val) => {
-          gameOver = true;
-          if (name === 'score') {
+          if (!gameOver) {
+            gameOver = true;
+            if (name === 'score') {
+              endgameScore = rawScore();
+            }
+          }
+        };
+
+        // Hijack setValue to detect negative score.
+        // The kongregate submit API is not called when the
+        // game ends due to too many skull clicks.
+        var pointsVar = globalVar('Point');
+        var oldSet = pointsVar.md;
+        pointsVar.md = function(val) {
+          oldSet.apply(this, arguments);
+          if (val < 0 && !gameOver) {
+            gameOver = true;
             endgameScore = val;
           }
         };
@@ -36,7 +55,7 @@
       return Promise.resolve(gameOver);
     },
     score: function() {
-      return Promise.resolve(gameOver ? endgameScore : globalVar('Point').data);
+      return Promise.resolve(gameOver ? endgameScore : rawScore());
     }
   };
 
