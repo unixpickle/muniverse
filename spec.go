@@ -2175,6 +2175,21 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 	},
+
+	{
+		Name:    "PacMan-v0",
+		BaseURL: "https://fir.sh/",
+		Width:   256,
+		Height:  240,
+		Options: "{\"game\":\"PacMan-v0\"}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

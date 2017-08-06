@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DIR="$1"
+
+mv "$DIR/projects/jsnes/index.html" "$DIR/index.html"
+mv "$DIR/projects/jsnes/roms" "$DIR/roms"
+
+# Strip external APIs and insert a JS hook.
+mv "$DIR/index.html" "$DIR/index_pre_jsnes.html"
+cat "$DIR/index_pre_jsnes.html" |
+  sed -E 's/((src|href)=")\//\1/g' |
+  sed -E 's/\}\)\(\);/})/g' |
+  sed -E "s/\\(document, 'script', 'facebook-jssdk'\\)//g" |
+  sed -E 's/.*platform\.twitter\.com.*//g' |
+  sed -E 's/.*typekit\.com.*//g' |
+  sed -E 's/(new JSNES)/window.globalJSNES = \1/g' \
+  > "$DIR/index.html"

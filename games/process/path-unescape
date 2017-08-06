@@ -4,5 +4,10 @@ cd "$1"
 find . -name '*%20*' |
   while read line
   do
-    mv "$line" "$(echo "$line" | sed -E 's/%20/ /g')"
+    mv "$line" "$(echo "$line" | sed -E 's/%20/ /g' |
+                                 sed -E 's/%28/\(/g' |
+                                 sed -E 's/%29/\)/g' |
+                                 sed -E 's/%21/\!/g' |
+                                 sed -E 's/%5B/\[/g' |
+                                 sed -E 's/%5D/\]/g')"
   done
