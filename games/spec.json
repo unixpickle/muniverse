@@ -8302,21 +8302,17 @@
   },
   {
     "name": "PacMan-v0",
-    "base": "https://fir.sh/",
+    "base": "https://fir.sh/projects/jsnes/",
     "top_injections": [
       "faketime.js"
     ],
     "bottom_injections": [
       "utils.js",
-      "jsnes.js"
+      "jsnes.js",
+      "PacMan-v0.js"
     ],
     "resources": [
-      "projects/jsnes/index.html",
-      "js/jquery-1.4.2.min.js",
-      "js/dynamicaudio-0.2.min.js",
-      "js/jsnes-37cb0ecea5bc768a4899a1403d6335f5b0dbaa35.js",
-      "css/style.css",
-      "projects/jsnes/roms/Pac-Man%20%28U%29%20%5B%21%5D.nes"
+      "roms/Pac-Man%20%28U%29%20%5B%21%5D.nes"
     ],
     "processors": [
       "path-unescape",
@@ -8325,9 +8321,29 @@
     "metadata": {},
     "width": 256,
     "height": 240,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"],
-    "options": {
-      "game": "PacMan-v0"
-    }
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"]
+  },
+  {
+    "name": "Tetris-v0",
+    "base": "https://fir.sh/projects/jsnes/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "jsnes.js",
+      "Tetris-v0.js"
+    ],
+    "resources": [
+      "roms/Tetris%20%28U%29%20%5B%21%5D.nes"
+    ],
+    "processors": [
+      "path-unescape",
+      "jsnes"
+    ],
+    "metadata": {},
+    "width": 256,
+    "height": 240,
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowDown", "KeyX", "KeyY"]
   }
 ]

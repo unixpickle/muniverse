@@ -2178,16 +2178,32 @@ var EnvSpecs = []*EnvSpec{
 
 	{
 		Name:    "PacMan-v0",
-		BaseURL: "https://fir.sh/",
+		BaseURL: "https://fir.sh/projects/jsnes/",
 		Width:   256,
 		Height:  240,
-		Options: "{\"game\":\"PacMan-v0\"}",
+		Options: "{}",
 
 		KeyWhitelist: []string{
 			"ArrowLeft",
 			"ArrowRight",
 			"ArrowUp",
 			"ArrowDown",
+		},
+	},
+
+	{
+		Name:    "Tetris-v0",
+		BaseURL: "https://fir.sh/projects/jsnes/",
+		Width:   256,
+		Height:  240,
+		Options: "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowDown",
+			"KeyX",
+			"KeyY",
 		},
 	},
 }
