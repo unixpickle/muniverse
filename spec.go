@@ -2206,6 +2206,14 @@ var EnvSpecs = []*EnvSpec{
 			"KeyY",
 		},
 	},
+
+	{
+		Name:    "CubeNinja-v0",
+		BaseURL: "http://h5.4j.com/games/Cube-Ninja/",
+		Width:   480,
+		Height:  320,
+		Options: "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
