@@ -32,3 +32,35 @@ func TestEnvs(t *testing.T) {
 		})
 	}
 }
+
+func BenchmarkEnvObserve(b *testing.B) {
+	for _, envName := range []string{"PopUp-v0", "FlappyBird-v0"} {
+		for _, compression := range []bool{false, true} {
+			name := envName
+			if compression {
+				name += "-Compressed"
+			}
+			b.Run(name, func(b *testing.B) {
+				opts := &Options{}
+				if compression {
+					opts.Compression = true
+					opts.CompressionQuality = 100
+				}
+				env, err := NewEnvOptions(SpecForName(envName), opts)
+				if err != nil {
+					b.Fatal(err)
+				}
+				defer env.Close()
+				if err := env.Reset(); err != nil {
+					b.Fatal(err)
+				}
+				b.ResetTimer()
+				for i := 0; i < b.N; i++ {
+					if _, err := env.Observe(); err != nil {
+						b.Fatal(err)
+					}
+				}
+			})
+		}
+	}
+}
