@@ -10,3 +10,25 @@ cat "$DIR/index_pre_dontcrash.html" |
   tail -c +4 |
   sed -E 's/(<\/body>)/<script src="dist\/all\.js"><\/script>\1/g' \
   > "$DIR/index.html"
+
+###########################
+# Taken from DoggyDive-v0 #
+###########################
+
+# Download font stylesheet and raw fonts.
+mkdir "$DIR/anton"
+cssData="$(curl -s 'https://fonts.googleapis.com/css?family=Anton')"
+urls="$(echo "$cssData" | grep 'https://' | sed -E 's/^.*url\(([^\)]*)\).*$/\1/g')"
+for url in $urls
+do
+  base="$(echo "$url" | sed -E 's/^.*\/([^\/]*.(woff2|ttf))$/\1/g')"
+  curl -s "$url" > "$DIR/anton/$base"
+done
+cssData="$(echo "$cssData" | sed -E 's/url\(.*\/([^\/]*.(woff2|ttf))\)/url\(\1\)/g')"
+echo "$cssData" > "$DIR/anton/anton.css"
+
+# Inject font into script.
+mv "$DIR/data.js" "$DIR/data.preproc.js"
+cat "$DIR/data.preproc.js" |
+  sed -E 's/http:\/\/fonts\.googleapis\.com\/css\?family=Anton/anton\/anton.css/g' \
+  > "$DIR/data.js"
