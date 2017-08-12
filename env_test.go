@@ -1,6 +1,7 @@
 package muniverse
 
 import (
+	"math"
 	"testing"
 	"time"
 )
@@ -27,6 +28,62 @@ func TestEnvs(t *testing.T) {
 					t.Error(err)
 					t.Log(env.Log())
 					break
+				}
+			}
+		})
+	}
+}
+
+func TestEnvObserve(t *testing.T) {
+	if testing.Short() {
+		t.Skip("skipping in short mode")
+	}
+	for _, spec := range EnvSpecs {
+		if !spec.AllCanvas {
+			continue
+		}
+		t.Run(spec.Name, func(t *testing.T) {
+			env, err := NewEnv(spec)
+			if err != nil {
+				t.Error(err)
+				return
+			}
+			defer env.Close()
+			if err := env.Reset(); err != nil {
+				t.Log(env.Log())
+				t.Fatal(err)
+			}
+			if _, _, err := env.Step(time.Millisecond * 30); err != nil {
+				t.Log(env.Log())
+				t.Fatal(err)
+			}
+			actualObs, err := env.Observe()
+			if err != nil {
+				t.Fatal(err)
+			}
+			env.(*rawEnv).spec.AllCanvas = false
+			expectedObs, err := env.Observe()
+			if err != nil {
+				t.Fatal(err)
+			}
+
+			actual, actualWidth, actualHeight, err := RGB(actualObs)
+			if err != nil {
+				t.Fatal(err)
+			}
+			expected, expectedWidth, expectedHeight, err := RGB(expectedObs)
+			if err != nil {
+				t.Fatal(err)
+			}
+			if actualWidth != expectedWidth || actualHeight != expectedHeight {
+				t.Fatalf("dimensions should be %dx%d but got %dx%d",
+					expectedWidth, expectedHeight, actualWidth, actualHeight)
+			}
+			for i, a := range actual {
+				x := expected[i]
+				diff := math.Abs(float64(x) - float64(a))
+				if math.Abs(diff) > 10 {
+					t.Fatalf("pixel %d: got %d, expected %d", i, a, x)
 				}
 			}
 		})

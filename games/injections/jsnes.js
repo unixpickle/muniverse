@@ -41,7 +41,7 @@
         var elem = $('.nes');
         document.body.textContent = '';
         $(document.body).append(elem);
-        $('canvas').css({position: 'fixed'});
+        $('canvas').css({position: 'fixed', background: 'black'});
         $(document.body).css({margin: 0, overflow: 'hidden'});
 
         // Start loading the ROM (uses AJAX)

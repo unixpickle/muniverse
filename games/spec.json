@@ -94,6 +94,7 @@
     },
     "width": 320,
     "height": 427,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -150,6 +151,7 @@
     },
     "width": 320,
     "height": 497,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
@@ -577,6 +579,7 @@
     },
     "width": 480,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
@@ -625,6 +628,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
@@ -699,6 +703,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight", "Space"],
     "options": {
       "car": 0,
@@ -816,6 +821,7 @@
     },
     "width": 480,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -865,6 +871,7 @@
     },
     "width": 480,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -958,6 +965,7 @@
     },
     "width": 320,
     "height": 497,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
@@ -1103,6 +1111,7 @@
     },
     "width": 480,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -1360,6 +1369,7 @@
     },
     "width": 320,
     "height": 533,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
@@ -1404,6 +1414,7 @@
     },
     "width": 480,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -1492,6 +1503,7 @@
     },
     "width": 480,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
@@ -1536,6 +1548,7 @@
     },
     "width": 480,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": [],
     "options": {
       "level": 1
@@ -1596,6 +1609,7 @@
     },
     "width": 560,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": [],
     "options": {
       "character": 0
@@ -1659,6 +1673,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
@@ -1889,6 +1904,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -2081,6 +2097,7 @@
     },
     "width": 480,
     "height": 270,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -2147,6 +2164,7 @@
     },
     "width": 480,
     "height": 380,
+    "all_canvas": true,
     "key_whitelist": ["ArrowUp", "ArrowDown", "ArrowRight", "ArrowLeft"]
   },
   {
@@ -2218,6 +2236,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
@@ -2275,6 +2294,7 @@
     },
     "width": 270,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -2340,6 +2360,7 @@
     },
     "width": 270,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -2398,6 +2419,7 @@
     },
     "width": 320,
     "height": 486,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -2639,6 +2661,7 @@
     },
     "width": 480,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -2669,6 +2692,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -2820,6 +2844,7 @@
     },
     "width": 480,
     "height": 270,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -2935,6 +2960,7 @@
     },
     "width": 480,
     "height": 288,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -2990,6 +3016,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
@@ -3281,6 +3308,7 @@
     },
     "width": 430,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": [],
     "options": {
       "level": 1
@@ -3349,6 +3377,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -3517,6 +3546,7 @@
     },
     "width": 320,
     "height": 455,
+    "all_canvas": true,
     "key_whitelist": [],
     "options": {
       "level": 0
@@ -3678,6 +3708,7 @@
     },
     "width": 320,
     "height": 544,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -3733,6 +3764,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": ["Space"]
   },
   {
@@ -3790,6 +3822,7 @@
     },
     "width": 320,
     "height": 550,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -3835,6 +3868,7 @@
     },
     "width": 320,
     "height": 487,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -3918,6 +3952,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -4066,6 +4101,7 @@
     },
     "width": 320,
     "height": 533,
+    "all_canvas": true,
     "key_whitelist": [],
     "options": {
       "level": 0
@@ -4220,6 +4256,7 @@
     },
     "width": 320,
     "height": 544,
+    "all_canvas": true,
     "key_whitelist": ["Space", "ArrowLeft", "ArrowRight"]
   },
   {
@@ -4438,6 +4475,7 @@
     },
     "width": 320,
     "height": 460,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -4569,6 +4607,7 @@
     },
     "width": 480,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": [],
     "options": {
       "scoreMode": "distance"
@@ -4748,6 +4787,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
@@ -4800,6 +4840,7 @@
     },
     "width": 320,
     "height": 533,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -4850,6 +4891,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -4978,6 +5020,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": [],
     "options": {
       "mode": "time"
@@ -5178,6 +5221,7 @@
     },
     "width": 320,
     "height": 646,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -5252,6 +5296,7 @@
     },
     "width": 320,
     "height": 498,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"],
     "options": {
       "scoreMode": "distance"
@@ -5310,6 +5355,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": [],
     "options": {
       "difficulty": "normal"
@@ -5397,6 +5443,7 @@
     },
     "width": 320,
     "height": 470,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp"]
   },
   {
@@ -5630,6 +5677,7 @@
     },
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight",
@@ -6034,6 +6082,7 @@
     "metadata": {},
     "width": 550,
     "height": 550,
+    "all_canvas": true,
     "key_whitelist": ["KeyA", "KeyD"],
     "options": {
       "colors": 2
@@ -6114,6 +6163,7 @@
     "metadata": {},
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp"]
   },
   {
@@ -6166,6 +6216,7 @@
     "metadata": {},
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
@@ -6206,6 +6257,7 @@
     "metadata": {},
     "width": 640,
     "height": 512,
+    "all_canvas": true,
     "key_whitelist": [],
     "options": {
       "difficulty": "easy"
@@ -6351,6 +6403,7 @@
     "metadata": {},
     "width": 320,
     "height": 568,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -6504,6 +6557,7 @@
     "metadata": {},
     "width": 480,
     "height": 360,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -6723,6 +6777,7 @@
     "metadata": {},
     "width": 533,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": ["KeyA", "ArrowRight", "ArrowLeft", "ArrowUp"],
     "options": {
       "level": 1
@@ -6914,6 +6969,7 @@
     "metadata": {},
     "width": 568,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -6972,6 +7028,7 @@
     "metadata": {},
     "width": 320,
     "height": 512,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Space"],
     "options": {
       "exit": [
@@ -7054,6 +7111,7 @@
     "metadata": {},
     "width": 320,
     "height": 426,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight", "Space"]
   },
   {
@@ -7122,6 +7180,7 @@
     "metadata": {},
     "width": 320,
     "height": 533,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -7176,6 +7235,7 @@
     "metadata": {},
     "width": 320,
     "height": 533,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -7218,6 +7278,7 @@
     "metadata": {},
     "width": 320,
     "height": 533,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -7268,6 +7329,7 @@
     "metadata": {},
     "width": 320,
     "height": 533,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
@@ -7362,6 +7424,7 @@
     "metadata": {},
     "width": 480,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -7542,6 +7605,7 @@
     "metadata": {},
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -7675,6 +7739,7 @@
     "metadata": {},
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -7753,6 +7818,7 @@
     "metadata": {},
     "width": 569,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -7806,6 +7872,7 @@
     "metadata": {},
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -7860,6 +7927,7 @@
     "metadata": {},
     "width": 320,
     "height": 569,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
   },
   {
@@ -7994,6 +8062,7 @@
     "metadata": {},
     "width": 569,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": ["ArrowUp", "ArrowDown"],
     "options": {
       "character": 0
@@ -8059,6 +8128,7 @@
     "metadata": {},
     "width": 320,
     "height": 569,
+    "all_canvas": true,
     "key_whitelist": [],
     "options": {
       "scoreMode": "distance"
@@ -8153,6 +8223,7 @@
     "metadata": {},
     "width": 320,
     "height": 569,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"],
     "options": {
       "level": 1
@@ -8267,6 +8338,7 @@
     "metadata": {},
     "width": 320,
     "height": 480,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"]
   },
   {
@@ -8298,6 +8370,7 @@
     "metadata": {},
     "width": 320,
     "height": 512,
+    "all_canvas": true,
     "key_whitelist": ["Space"]
   },
   {
@@ -8321,6 +8394,7 @@
     "metadata": {},
     "width": 256,
     "height": 240,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"]
   },
   {
@@ -8344,6 +8418,7 @@
     "metadata": {},
     "width": 256,
     "height": 240,
+    "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowDown", "KeyX", "KeyY"]
   },
   {
@@ -8423,6 +8498,7 @@
     "metadata": {},
     "width": 480,
     "height": 320,
+    "all_canvas": true,
     "key_whitelist": []
   }
 ]

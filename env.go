@@ -18,7 +18,7 @@ import (
 
 const (
 	portRange    = "9000-9999"
-	defaultImage = "unixpickle/muniverse:0.103.0"
+	defaultImage = "unixpickle/muniverse:0.103.1"
 )
 
 const (
@@ -356,11 +356,15 @@ func (r *rawEnv) Observe() (obs Obs, err error) {
 	defer cancel()
 
 	if !r.compression {
-		data, err := r.devConn.ScreenshotPNG(ctx)
-		if err != nil {
-			return nil, err
+		if r.spec.AllCanvas {
+			return r.observeCanvas(ctx)
+		} else {
+			data, err := r.devConn.ScreenshotPNG(ctx)
+			if err != nil {
+				return nil, err
+			}
+			return pngObs(data), nil
 		}
-		return pngObs(data), nil
 	} else {
 		data, err := r.devConn.ScreenshotJPEG(ctx, r.compressionQuality)
 		if err != nil {
@@ -368,6 +372,34 @@ func (r *rawEnv) Observe() (obs Obs, err error) {
 		}
 		return jpegObs(data), nil
 	}
+}
+
+func (r *rawEnv) observeCanvas(ctx context.Context) (Obs, error) {
+	var pngData []byte
+	code := fmt.Sprintf(`
+		Promise.resolve((function() {
+			var canvas = document.getElementsByTagName('canvas')[0];
+
+			// Most of the time, canvases are scaled for retina
+			// displays or for the largest supported window size.
+			var desiredWidth = %d;
+			var desiredHeight = %d;
+			if (canvas.width !== desiredWidth || canvas.height !== desiredHeight) {
+				var dst = document.createElement('canvas');
+				dst.width = desiredWidth;
+				dst.height = desiredHeight;
+				dst.getContext('2d').drawImage(canvas, 0, 0, desiredWidth, desiredHeight);
+				canvas = dst;
+			}
+
+			var prefixLen = 'data:image/png;base64,'.length;
+			return canvas.toDataURL('image/png').slice(prefixLen);
+		})());
+	`, r.spec.Width, r.spec.Height)
+	if err := r.devConn.EvalPromise(ctx, code, &pngData); err != nil {
+		return nil, err
+	}
+	return pngObs(pngData), nil
 }
 
 func (r *rawEnv) Close() (err error) {

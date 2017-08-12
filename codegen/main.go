@@ -98,11 +98,12 @@ package muniverse
 
 // An EnvSpec contains meta-data about an environment.
 type EnvSpec struct {
-	Name    string ` + "`bson:\"Name\"`" + `
-	BaseURL string ` + "`bson:\"BaseURL\"`" + `
-	Width   int    ` + "`bson:\"Width\"`" + `
-	Height  int    ` + "`bson:\"Height\"`" + `
-	Options string ` + "`bson:\"Options\"`" + `
+	Name      string ` + "`bson:\"Name\"`" + `
+	BaseURL   string ` + "`bson:\"BaseURL\"`" + `
+	Width     int    ` + "`bson:\"Width\"`" + `
+	Height    int    ` + "`bson:\"Height\"`" + `
+	AllCanvas bool   ` + "`bson:\"AllCanvas\"`" + `
+	Options   string ` + "`bson:\"Options\"`" + `
 
 	KeyWhitelist []string ` + "`bson:\"KeyWhitelist,omitempty\"`" + `
 
@@ -111,11 +112,12 @@ type EnvSpec struct {
 
 var EnvSpecs = []*EnvSpec{ {{- range .}}
 	{
-		Name:    "{{.name}}",
-		BaseURL: "{{.base}}",
-		Width:   {{.width}},
-		Height:  {{.height}},
-		Options: {{.options}},
+		Name:      "{{.name}}",
+		BaseURL:   "{{.base}}",
+		Width:     {{.width}},
+		Height:    {{.height}},
+		AllCanvas: {{if .all_canvas}}true{{else}}false{{end}},
+		Options:   {{.options}},
 		{{- $length := len .key_whitelist -}}
 		{{if gt $length 0}}
 

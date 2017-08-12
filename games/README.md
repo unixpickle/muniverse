@@ -67,6 +67,7 @@ The fields in a base object have the following meaning:
  * **metadata:** game-specific meta-data. This may be used to provide information to processor scripts.
  * **width:** desired browser viewport width.
  * **height:** desired browser viewport height.
+ * **all_canvas:** (optional) boolean indicating if the game consists of a single full-screen canvas. You should only set this to `true` if the DOM contains one `<canvas>` which fills up the entire page. If this is `true`, observations may be taken directly from the canvas.
  * **key_whitelist:** a list of allowed key codes.
  * **options:** (optional) object to be passed as an argument to `window.muniverse.init()`. If absent, `{}` is used as a default.
 
