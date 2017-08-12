@@ -119,7 +119,7 @@ type rawEnv struct {
 // server for your downloaded_games directory and point
 // GameHost to this server.
 type Options struct {
-	// ImageName, if non-empty, specifies a custom
+	// CustomImage, if non-empty, specifies a custom
 	// Docker image to use for the environment.
 	CustomImage string
 
