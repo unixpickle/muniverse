@@ -110,6 +110,7 @@ func BenchmarkEnvObserve(b *testing.B) {
 					b.Fatal(err)
 				}
 				defer env.Close()
+				defer b.StopTimer()
 				if err := env.Reset(); err != nil {
 					b.Fatal(err)
 				}
@@ -133,6 +134,7 @@ func BenchmarkEnvReset(b *testing.B) {
 				b.Fatal(err)
 			}
 			defer env.Close()
+			defer b.StopTimer()
 			if err := env.Reset(); err != nil {
 				b.Fatal(err)
 			}
