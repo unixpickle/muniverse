@@ -94,7 +94,9 @@ type rawEnv struct {
 	containerID string
 	devConn     *chrome.Conn
 	lastScore   float64
-	needsReset  bool
+
+	needsReset         bool
+	hasNavigatedBefore bool
 
 	compression        bool
 	compressionQuality int
@@ -268,9 +270,17 @@ func (r *rawEnv) Reset() (err error) {
 	ctx, cancel := callCtx()
 	defer cancel()
 
-	err = r.devConn.NavigateSafe(ctx, r.envURL())
-	if err != nil {
-		return
+	if !r.hasNavigatedBefore {
+		err = r.devConn.NavigateSafe(ctx, r.envURL())
+		if err != nil {
+			return
+		}
+		r.hasNavigatedBefore = true
+	} else {
+		err = r.devConn.NavigateSync(ctx, r.envURL())
+		if err != nil {
+			return
+		}
 	}
 
 	var is404 bool
