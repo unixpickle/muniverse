@@ -6,6 +6,8 @@ import (
 	"time"
 )
 
+var BenchmarkEnvs = []string{"PopUp-v0", "FlappyBird-v0"}
+
 func TestEnvs(t *testing.T) {
 	if testing.Short() {
 		t.Skip("skipping in short mode")
@@ -91,7 +93,7 @@ func TestEnvObserve(t *testing.T) {
 }
 
 func BenchmarkEnvObserve(b *testing.B) {
-	for _, envName := range []string{"PopUp-v0", "FlappyBird-v0"} {
+	for _, envName := range BenchmarkEnvs {
 		for _, compression := range []bool{false, true} {
 			name := envName
 			if compression {
@@ -119,5 +121,27 @@ func BenchmarkEnvObserve(b *testing.B) {
 				}
 			})
 		}
+	}
+}
+
+func BenchmarkEnvReset(b *testing.B) {
+	for _, envName := range BenchmarkEnvs {
+		name := envName
+		b.Run(name, func(b *testing.B) {
+			env, err := NewEnv(SpecForName(envName))
+			if err != nil {
+				b.Fatal(err)
+			}
+			defer env.Close()
+			if err := env.Reset(); err != nil {
+				b.Fatal(err)
+			}
+			b.ResetTimer()
+			for i := 0; i < b.N; i++ {
+				if err := env.Reset(); err != nil {
+					b.Fatal(err)
+				}
+			}
+		})
 	}
 }
