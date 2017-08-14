@@ -2401,6 +2401,36 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: true,
 		Options:   "{}",
 	},
+
+	{
+		Name:      "SuperCowboyRun-v0",
+		BaseURL:   "http://h5.4j.com/games/Super-Cowboy-Run/",
+		Width:     569,
+		Height:    320,
+		AllCanvas: true,
+		Options:   "{\"scoreMode\":\"distance\"}",
+
+		KeyWhitelist: []string{
+			"ArrowUp",
+			"Space",
+		},
+	},
+
+	{
+		Name:      "SuperCowboyRun-v1",
+		BaseURL:   "http://h5.4j.com/games/Super-Cowboy-Run/",
+		Width:     569,
+		Height:    320,
+		AllCanvas: true,
+		Options:   "{\"scoreMode\":\"money\"}",
+
+		KeyWhitelist: []string{
+			"ArrowUp",
+			"Space",
+		},
+
+		VariantOf: "SuperCowboyRun-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
