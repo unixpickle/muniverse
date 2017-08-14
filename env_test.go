@@ -84,7 +84,7 @@ func TestEnvObserve(t *testing.T) {
 			for i, a := range actual {
 				x := expected[i]
 				diff := math.Abs(float64(x) - float64(a))
-				if math.Abs(diff) > 10 {
+				if math.Abs(diff) > 30 {
 					t.Fatalf("pixel %d: got %d, expected %d", i, a, x)
 				}
 			}
