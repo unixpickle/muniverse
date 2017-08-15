@@ -8631,5 +8631,66 @@
     "options": {
       "scoreMode": "money"
     }
+  },
+  {
+    "name": "SpikeBird-v0",
+    "base": "http://h5.4j.com/games/Spike-Bird/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "SpikeBird-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/player-sheet0.png",
+      "images/player-sheet1.png",
+      "images/ground-sheet0.png",
+      "images/obstacle-sheet0.png",
+      "images/coin-sheet0.png",
+      "images/coin-sheet1.png",
+      "images/ballparticle-sheet0.png",
+      "images/birdselect-sheet0.png",
+      "images/background.png",
+      "images/cloud-sheet0.png",
+      "images/fence-sheet0.png",
+      "images/center-sheet0.png",
+      "images/ui_blackoverlay-sheet0.png",
+      "images/ui_checkbox-sheet0.png",
+      "images/ui_checkbox-sheet1.png",
+      "images/ui_button-sheet0.png",
+      "images/ui_dialog.png",
+      "images/ui_image-sheet0.png",
+      "images/ui_animation-sheet0.png",
+      "images/ui_animation-sheet1.png",
+      "images/particles_stars.png",
+      "images/birdtrail.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "media/move.ogg",
+      "media/die.ogg",
+      "media/click.ogg",
+      "media/gameover.ogg",
+      "media/collect.ogg",
+      "media/newround.ogg",
+      "config.txt",
+      "stylesheet.css",
+      "varelaround-regular-webfont.woff2",
+      "varelaround-regular-webfont.woff"
+    ],
+    "processors": [
+      "4j-c2game"
+    ],
+    "metadata": {},
+    "width": 214,
+    "height": 380,
+    "all_canvas": true,
+    "key_whitelist": []
   }
 ]

@@ -2431,6 +2431,15 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "SuperCowboyRun-v0",
 	},
+
+	{
+		Name:      "SpikeBird-v0",
+		BaseURL:   "http://h5.4j.com/games/Spike-Bird/",
+		Width:     214,
+		Height:    380,
+		AllCanvas: true,
+		Options:   "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
