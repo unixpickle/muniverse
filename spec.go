@@ -2435,8 +2435,8 @@ var EnvSpecs = []*EnvSpec{
 	{
 		Name:      "SpikeBird-v0",
 		BaseURL:   "http://h5.4j.com/games/Spike-Bird/",
-		Width:     214,
-		Height:    380,
+		Width:     288,
+		Height:    512,
 		AllCanvas: true,
 		Options:   "{}",
 	},
