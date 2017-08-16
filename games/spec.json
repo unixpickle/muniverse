@@ -8692,5 +8692,58 @@
     "height": 380,
     "all_canvas": true,
     "key_whitelist": []
+  },
+  {
+    "name": "GeoJump-v0",
+    "base": "http://h5.4j.com/games/Geo-Jump/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "GeoJump-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/exit-sheet0.png",
+      "images/fb-sheet0.png",
+      "images/back-sheet0.png",
+      "images/pause-sheet0.png",
+      "images/pause-sheet1.png",
+      "images/play-sheet0.png",
+      "images/replay-sheet0.png",
+      "images/rate-sheet0.png",
+      "images/tw-sheet0.png",
+      "images/bg-sheet0.png",
+      "images/player-sheet1.png",
+      "images/player-sheet0.png",
+      "images/player-sheet2.png",
+      "images/line-sheet0.png",
+      "images/ground-sheet0.png",
+      "images/spritefont.png",
+      "images/best-sheet0.png",
+      "images/gametittle-sheet0.png",
+      "images/ring-sheet0.png",
+      "images/popup-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "media/click.ogg",
+      "media/jump.ogg",
+      "media/electrix_nes.ogg"
+    ],
+    "processors": [
+      "4j-c2game",
+      "strip-bom"
+    ],
+    "metadata": {},
+    "width": 288,
+    "height": 512,
+    "all_canvas": true,
+    "key_whitelist": ["ArrowLeft", "ArrowRight"]
   }
 ]

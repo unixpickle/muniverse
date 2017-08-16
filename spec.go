@@ -2440,6 +2440,20 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: true,
 		Options:   "{}",
 	},
+
+	{
+		Name:      "GeoJump-v0",
+		BaseURL:   "http://h5.4j.com/games/Geo-Jump/",
+		Width:     288,
+		Height:    512,
+		AllCanvas: true,
+		Options:   "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
