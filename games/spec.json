@@ -8745,5 +8745,115 @@
     "height": 512,
     "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight"]
+  },
+  {
+    "name": "JumpyShark-v0",
+    "base": "http://h5.4j.com/games/Jumpy-Shark/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "JumpyShark-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/shark-sheet0.png",
+      "images/bottompipe-sheet0.png",
+      "images/toppipe-sheet0.png",
+      "images/sprite-sheet0.png",
+      "images/enemyshark-sheet1.png",
+      "images/enemyshark-sheet0.png",
+      "images/goldcoin-sheet0.png",
+      "images/scoreshark-sheet0.png",
+      "images/sharkgold-sheet0.png",
+      "images/mainbutton-sheet0.png",
+      "images/musicon-sheet0.png",
+      "images/musicoff-sheet0.png",
+      "images/particles.png",
+      "images/shell-sheet0.png",
+      "images/shell-sheet1.png",
+      "images/underwater.png",
+      "images/frontelements.png",
+      "images/energybar-sheet0.png",
+      "images/bluefish-sheet0.png",
+      "images/yellowfish-sheet0.png",
+      "images/orangefish-sheet0.png",
+      "images/gameover-sheet0.png",
+      "images/restart-sheet0.png",
+      "images/menu-sheet0.png",
+      "images/sprite2-sheet0.png",
+      "images/pause-sheet0.png",
+      "images/continue-sheet0.png",
+      "images/sprite3-sheet0.png",
+      "images/sprite4-sheet0.png",
+      "images/energybar_empty-sheet0.png",
+      "images/sprite6-sheet0.png",
+      "images/sprite7-sheet0.png",
+      "images/sprite8-sheet0.png",
+      "images/sprite10-sheet0.png",
+      "images/particles2.png",
+      "images/sprite9-sheet0.png",
+      "images/sprite11-sheet0.png",
+      "images/sprite12-sheet0.png",
+      "images/sprite13-sheet0.png",
+      "images/sprite5-sheet0.png",
+      "images/sprite5-sheet1.png",
+      "images/firepower-sheet0.png",
+      "images/sprite14-sheet0.png",
+      "images/sprite15-sheet1.png",
+      "images/sprite15-sheet0.png",
+      "images/credits-sheet0.png",
+      "images/share-sheet0.png",
+      "images/androidsmall-sheet0.png",
+      "images/appstoresmall-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "media/toychime2.ogg",
+      "media/thud%202.ogg",
+      "media/hit3.ogg",
+      "media/menu%20click%202.ogg",
+      "media/munch.ogg",
+      "media/bubble.ogg",
+      "media/boing.ogg",
+      "media/boingreverse.ogg",
+      "media/wet2.ogg",
+      "media/bump4.ogg",
+      "media/sharkthemelong.ogg",
+      "media/sharkthemelong.ogg",
+      "media/sharkthemelong.ogg"
+    ],
+    "processors": [
+      "4j-c2game",
+      "strip-bom",
+      "path-unescape"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 480,
+    "all_canvas": true,
+    "key_whitelist": [],
+    "options": {
+      "difficulty": "easy"
+    }
+  },
+  {
+    "name": "JumpyShark-v1",
+    "variant_of": "JumpyShark-v0",
+    "options": {
+      "difficulty": "normal"
+    }
+  },
+  {
+    "name": "JumpyShark-v2",
+    "variant_of": "JumpyShark-v0",
+    "options": {
+      "difficulty": "hard"
+    }
   }
 ]

@@ -2454,6 +2454,37 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 	},
+
+	{
+		Name:      "JumpyShark-v0",
+		BaseURL:   "http://h5.4j.com/games/Jumpy-Shark/",
+		Width:     320,
+		Height:    480,
+		AllCanvas: true,
+		Options:   "{\"difficulty\":\"easy\"}",
+	},
+
+	{
+		Name:      "JumpyShark-v1",
+		BaseURL:   "http://h5.4j.com/games/Jumpy-Shark/",
+		Width:     320,
+		Height:    480,
+		AllCanvas: true,
+		Options:   "{\"difficulty\":\"normal\"}",
+
+		VariantOf: "JumpyShark-v0",
+	},
+
+	{
+		Name:      "JumpyShark-v2",
+		BaseURL:   "http://h5.4j.com/games/Jumpy-Shark/",
+		Width:     320,
+		Height:    480,
+		AllCanvas: true,
+		Options:   "{\"difficulty\":\"hard\"}",
+
+		VariantOf: "JumpyShark-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

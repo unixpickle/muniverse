@@ -22,7 +22,7 @@ go get github.com/unixpickle/muniverse
 The first time you use µniverse, it will pull a somewhat large Docker container. I recommend you do this manually before you use µniverse:
 
 ```
-docker pull unixpickle/muniverse:0.106.0
+docker pull unixpickle/muniverse:0.107.0
 ```
 
 Once you have µniverse installed, you may want to install [bindings](bindings) for other languages such as Python. If you want to use µniverse from Go, [muniverse-agent](https://github.com/unixpickle/muniverse-agent) might serve as a good starting point. You may also want to checkout the [GoDoc](https://godoc.org/github.com/unixpickle/muniverse) for API details.
@@ -71,6 +71,9 @@ Here's a (non-exhaustive) to-do list:
  * Gym integration.
  * Get WebGL to work without occasional failures.
  * Better way to verify connection to keep-alive socket.
+ * Rewrite download script in Go:
+   * Faster (jq is slow)
+   * Support absolute paths? (how to specify destination...)
 
 # License
 
