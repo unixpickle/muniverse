@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"net"
 	"os/exec"
+	"runtime"
 	"strconv"
 	"strings"
 	"sync"
@@ -221,13 +222,18 @@ func newEnvDocker(image, volume string, spec *EnvSpec) (env *rawEnv, err error) 
 		return
 	}
 
-	conn, err := connectDevTools(ctx, "localhost:"+ports["9222/tcp"])
+	addr, err := dockerIPAddress(ctx, id)
+	if err != nil {
+		return
+	}
+
+	conn, err := connectDevTools(ctx, addr+":"+ports["9222/tcp"])
 	if err != nil {
 		return
 	}
 
 	killSock, err := (&net.Dialer{}).DialContext(ctx, "tcp",
-		"localhost:"+ports["1337/tcp"])
+		addr+":"+ports["1337/tcp"])
 	if err != nil {
 		conn.Close()
 		return
@@ -534,6 +540,28 @@ func dockerBoundPorts(ctx context.Context,
 		mapping[containerPort] = hostPorts[0].HostPort
 	}
 	return
+}
+
+func dockerIPAddress(ctx context.Context, containerID string) (addr string, err error) {
+	if runtime.GOOS != "windows" {
+		return "localhost", nil
+	}
+	defer essentials.AddCtxTo("docker inspect", &err)
+	ipData, err := dockerCommand(
+		ctx,
+		"inspect",
+		"--format",
+		"{{ .NetworkSettings.Networks.nat.IPAddress }}",
+		containerID,
+	)
+	if err != nil {
+		return "", err
+	}
+	ipStr := strings.TrimSpace(string(ipData))
+	if ipStr == "<no value>" {
+		return "", errors.New("no NAT IP address")
+	}
+	return ipStr, nil
 }
 
 var dockerLock sync.Mutex
