@@ -547,21 +547,24 @@ func dockerIPAddress(ctx context.Context, containerID string) (addr string, err 
 		return "localhost", nil
 	}
 	defer essentials.AddCtxTo("docker inspect", &err)
-	ipData, err := dockerCommand(
-		ctx,
-		"inspect",
-		"--format",
-		"{{ .NetworkSettings.Networks.nat.IPAddress }}",
-		containerID,
-	)
-	if err != nil {
-		return "", err
+	for _, network := range []string{"bridge", "nat"} {
+		ipData, err := dockerCommand(
+			ctx,
+			"inspect",
+			"--format",
+			"{{ .NetworkSettings.Networks."+network+".IPAddress }}",
+			containerID,
+		)
+		if err != nil {
+			return "", err
+		}
+		ipStr := strings.TrimSpace(string(ipData))
+		if ipStr == "<no value>" || ipStr == "" {
+			continue
+		}
+		return ipStr, nil
 	}
-	ipStr := strings.TrimSpace(string(ipData))
-	if ipStr == "<no value>" {
-		return "", errors.New("no NAT IP address")
-	}
-	return ipStr, nil
+	return "", errors.New("unable to find container IP address")
 }
 
 var dockerLock sync.Mutex
