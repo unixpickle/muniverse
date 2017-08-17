@@ -546,25 +546,20 @@ func dockerIPAddress(ctx context.Context, containerID string) (addr string, err 
 	if runtime.GOOS != "windows" {
 		return "localhost", nil
 	}
-	defer essentials.AddCtxTo("docker inspect", &err)
-	for _, network := range []string{"bridge", "nat"} {
-		ipData, err := dockerCommand(
-			ctx,
-			"inspect",
-			"--format",
-			"{{ .NetworkSettings.Networks."+network+".IPAddress }}",
-			containerID,
-		)
-		if err != nil {
-			return "", err
-		}
-		ipStr := strings.TrimSpace(string(ipData))
-		if ipStr == "<no value>" || ipStr == "" {
-			continue
-		}
-		return ipStr, nil
+	defer essentials.AddCtxTo("get IP of Docker VM", &err)
+	cmd := exec.CommandContext(ctx, "docker-machine", "ip", "default")
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		return "", err
 	}
-	return "", errors.New("unable to find container IP address")
+	cleanIP := strings.TrimSpace(string(output))
+
+	// Will detect pretty much any error message.
+	if strings.ContainsAny(cleanIP, " \n\t") {
+		return "", errors.New("unexpected output: " + string(output))
+	}
+
+	return cleanIP, nil
 }
 
 var dockerLock sync.Mutex
