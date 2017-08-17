@@ -74,6 +74,7 @@ Here's a (non-exhaustive) to-do list:
  * Rewrite download script in Go:
    * Faster (jq is slow)
    * Support absolute paths? (how to specify destination...)
+ * Cleaner Windows IP address lookups
 
 # License
 
