@@ -13,7 +13,11 @@ import (
 	"golang.org/x/net/context"
 )
 
-func dockerRun(ctx context.Context, container, volume string,
+// dockerRun starts a new environment Docker container.
+//
+// If volume is non-empty, it is treated as a local path
+// and is mounted to "/downloaded_games".
+func dockerRun(ctx context.Context, image, volume string,
 	spec *EnvSpec) (id string, err error) {
 	args := []string{
 		"run",
@@ -32,7 +36,7 @@ func dockerRun(ctx context.Context, container, volume string,
 		}
 		args = append(args, "-v", volume+":/downloaded_games")
 	}
-	args = append(args, container,
+	args = append(args, image,
 		fmt.Sprintf("--window-size=%d,%d", spec.Width, spec.Height))
 
 	output, err := dockerCommand(ctx, args...)
@@ -44,6 +48,10 @@ func dockerRun(ctx context.Context, container, volume string,
 	return strings.TrimSpace(string(output)), nil
 }
 
+// dockerBoundPorts returns a mapping from container ports
+// to host ports.
+//
+// For example, the result might map "9222/tcp" to "9233".
 func dockerBoundPorts(ctx context.Context,
 	containerID string) (mapping map[string]string, err error) {
 	defer essentials.AddCtxTo("docker inspect", &err)
@@ -75,6 +83,11 @@ func dockerBoundPorts(ctx context.Context,
 	return
 }
 
+// dockerIPAddress returns an IP address which can be used
+// to connect to the given container.
+//
+// This is intended to fix an issue with Docker on Windows
+// where exposed ports aren't available on localhost.
 func dockerIPAddress(ctx context.Context, containerID string) (addr string, err error) {
 	if runtime.GOOS != "windows" {
 		return "localhost", nil
@@ -95,8 +108,14 @@ func dockerIPAddress(ctx context.Context, containerID string) (addr string, err 
 	return cleanIP, nil
 }
 
+// dockerLock is used to synchronize Docker calls.
+//
+// This exists to fix a race condition in Docker:
+// https://github.com/docker/libnetwork/issues/1740.
 var dockerLock sync.Mutex
 
+// dockerCommand runs a Docker sub-command with the given
+// arguments.
 func dockerCommand(ctx context.Context, args ...string) (output []byte, err error) {
 	dockerLock.Lock()
 	defer dockerLock.Unlock()
