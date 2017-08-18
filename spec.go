@@ -2485,6 +2485,15 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "JumpyShark-v0",
 	},
+
+	{
+		Name:      "StickSanta-v0",
+		BaseURL:   "http://h5.4j.com/games/Stick-Santa/",
+		Width:     288,
+		Height:    512,
+		AllCanvas: true,
+		Options:   "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

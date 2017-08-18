@@ -8855,5 +8855,55 @@
     "options": {
       "difficulty": "hard"
     }
+  },
+  {
+    "name": "StickSanta-v0",
+    "base": "http://h5.4j.com/games/Stick-Santa/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "StickSanta-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/player-sheet0.png",
+      "images/bridge-sheet0.png",
+      "images/platform1-sheet0.png",
+      "images/red-sheet0.png",
+      "images/background-sheet0.png",
+      "images/buttonplay-sheet0.png",
+      "images/sprite-sheet0.png",
+      "images/bgshare-sheet0.png",
+      "images/particles.png",
+      "images/btnhighscores-sheet0.png",
+      "images/title-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "media/snd_bridge.ogg",
+      "media/snd_fall.ogg",
+      "media/snd_perfect.ogg",
+      "media/snd_walk.ogg",
+      "media/snd_crash.ogg",
+      "media/snd_music.ogg",
+      "media/bells.ogg",
+      "media/hoho.ogg",
+      "stylesheet.css"
+    ],
+    "processors": [
+      "4j-c2game",
+      "strip-bom"
+    ],
+    "metadata": {},
+    "width": 288,
+    "height": 512,
+    "all_canvas": true,
+    "key_whitelist": []
   }
 ]
