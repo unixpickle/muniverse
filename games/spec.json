@@ -8905,5 +8905,53 @@
     "height": 512,
     "all_canvas": true,
     "key_whitelist": []
+  },
+  {
+    "name": "BlockIt-v0",
+    "base": "http://h5.4j.com/games/Block-It-Online/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "BlockIt-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/paddleblu-sheet0.png",
+      "images/element_blue_rectangle-sheet0.png",
+      "images/ball-sheet0.png",
+      "images/replay_btn-sheet0.png",
+      "images/player-sheet0.png",
+      "images/bg-sheet0.png",
+      "images/title-sheet0.png",
+      "images/ball_tail-sheet0.png",
+      "images/bestscore-sheet0.png",
+      "images/bestscore-sheet1.png",
+      "images/scoresprite-sheet0.png",
+      "images/gameoversprite-sheet0.png",
+      "images/gameoversprite-sheet1.png",
+      "images/gameoversprite-sheet2.png",
+      "images/gameoverbg-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "images/imaginary-sheet0.png",
+      "images/music_btn-sheet0.png",
+      "images/guide_sprite-sheet0.png"
+    ],
+    "processors": [
+      "4j-c2game",
+      "strip-bom"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 533,
+    "all_canvas": true,
+    "key_whitelist": []
   }
 ]

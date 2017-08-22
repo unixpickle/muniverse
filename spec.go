@@ -2494,6 +2494,15 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: true,
 		Options:   "{}",
 	},
+
+	{
+		Name:      "BlockIt-v0",
+		BaseURL:   "http://h5.4j.com/games/Block-It-Online/",
+		Width:     320,
+		Height:    533,
+		AllCanvas: true,
+		Options:   "{}",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
