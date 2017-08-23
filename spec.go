@@ -2503,6 +2503,21 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: true,
 		Options:   "{}",
 	},
+
+	{
+		Name:      "MagicRun-v0",
+		BaseURL:   "http://h5.4j.com/games/Magic-Run/",
+		Width:     320,
+		Height:    569,
+		AllCanvas: true,
+		Options:   "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

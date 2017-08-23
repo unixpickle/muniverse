@@ -8953,5 +8953,72 @@
     "height": 533,
     "all_canvas": true,
     "key_whitelist": []
+  },
+  {
+    "name": "MagicRun-v0",
+    "base": "http://h5.4j.com/games/Magic-Run/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "MagicRun-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/logo-sheet0.png",
+      "images/bg-sheet0.png",
+      "images/ray-sheet0.png",
+      "images/sprite-sheet0.png",
+      "images/sprite-sheet1.png",
+      "images/sprite2-sheet0.png",
+      "images/bg2-sheet0.png",
+      "images/bg2-sheet1.png",
+      "images/sprite3-sheet0.png",
+      "images/sprite4-sheet0.png",
+      "images/sprite5-sheet0.png",
+      "images/sprite6-sheet1.png",
+      "images/sprite6-sheet0.png",
+      "images/tiledbackground.png",
+      "images/tiledbackground2.png",
+      "images/sprite7-sheet0.png",
+      "images/spritefont.png",
+      "images/sprite9-sheet0.png",
+      "images/sprite10-sheet0.png",
+      "images/sprite11-sheet0.png",
+      "images/sprite12-sheet0.png",
+      "images/sprite13-sheet0.png",
+      "images/spritefont2.png",
+      "images/sprite14-sheet0.png",
+      "images/deadzone-sheet0.png",
+      "images/sprite8-sheet0.png",
+      "images/clon-sheet0.png",
+      "images/sprite15-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "images/creditsbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "media/pickup_gembells03.ogg",
+      "media/jump2.ogg",
+      "media/diaoluo.ogg",
+      "media/kick.ogg",
+      "media/kick2.ogg",
+      "media/pickup_magic01.ogg",
+      "media/pickup_magic08.ogg",
+      "media/pickup_specialfilm01.ogg",
+      "media/button.ogg"
+    ],
+    "processors": [
+      "4j-c2game",
+      "strip-bom"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 569,
+    "all_canvas": true,
+    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp"]
   }
 ]
