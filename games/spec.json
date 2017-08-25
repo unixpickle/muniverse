@@ -9020,5 +9020,80 @@
     "height": 569,
     "all_canvas": true,
     "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp"]
+  },
+  {
+    "name": "HopHero-v0",
+    "base": "http://h5.4j.com/games/Hop-Hero/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "4j-c2game.js",
+      "construct2.js",
+      "HopHero-v0.js"
+    ],
+    "resources": [
+      "c2runtime.js",
+      "data.js",
+      "images/player-sheet0.png",
+      "images/ground-sheet0.png",
+      "images/coin-sheet0.png",
+      "images/ballparticle-sheet0.png",
+      "images/background.png",
+      "images/birdselect-sheet0.png",
+      "images/coinanim-sheet0.png",
+      "images/obstacle.png",
+      "images/ringbottom-sheet0.png",
+      "images/ringtop-sheet0.png",
+      "images/ringspikescollision-sheet0.png",
+      "images/ui_blackoverlay-sheet0.png",
+      "images/ui_checkbox-sheet0.png",
+      "images/ui_button-sheet0.png",
+      "images/ui_dialog.png",
+      "images/ui_image-sheet2.png",
+      "images/ui_image-sheet0.png",
+      "images/ui_image-sheet1.png",
+      "images/ui_animation-sheet0.png",
+      "images/ui_animation-sheet1.png",
+      "images/birdtrail.png",
+      "images/scrollingbackground_1.png",
+      "images/scrollingbackground_2.png",
+      "images/spikesbottom.png",
+      "images/spikestop.png",
+      "images/scrollingbackground_3.png",
+      "images/center-sheet0.png",
+      "images/tiledbackground.png",
+      "images/creditsbtn-sheet0.png",
+      "images/com4j_logo-sheet0.png",
+      "images/fullscreenbtn-sheet0.png",
+      "images/morebtn-sheet0.png",
+      "media/click.ogg",
+      "media/move.ogg",
+      "media/collect.ogg",
+      "media/die.ogg",
+      "config.txt",
+      "stylesheet.css",
+      "varelaround-regular-webfont.woff2"
+    ],
+    "processors": [
+      "4j-c2game",
+      "strip-bom"
+    ],
+    "metadata": {},
+    "width": 320,
+    "height": 569,
+    "all_canvas": true,
+    "key_whitelist": ["Space", "ArrowUp"],
+    "options": {
+      "scoreMode": "distance"
+    }
+  },
+  {
+    "name": "HopHero-v1",
+    "variant_of": "HopHero-v0",
+    "options": {
+      "scoreMode": "coins"
+    }
   }
 ]

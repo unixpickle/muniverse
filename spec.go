@@ -2518,6 +2518,36 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 	},
+
+	{
+		Name:      "HopHero-v0",
+		BaseURL:   "http://h5.4j.com/games/Hop-Hero/",
+		Width:     320,
+		Height:    569,
+		AllCanvas: true,
+		Options:   "{\"scoreMode\":\"distance\"}",
+
+		KeyWhitelist: []string{
+			"Space",
+			"ArrowUp",
+		},
+	},
+
+	{
+		Name:      "HopHero-v1",
+		BaseURL:   "http://h5.4j.com/games/Hop-Hero/",
+		Width:     320,
+		Height:    569,
+		AllCanvas: true,
+		Options:   "{\"scoreMode\":\"coins\"}",
+
+		KeyWhitelist: []string{
+			"Space",
+			"ArrowUp",
+		},
+
+		VariantOf: "HopHero-v0",
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
