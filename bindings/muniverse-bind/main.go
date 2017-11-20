@@ -135,7 +135,7 @@ func (b *Server) newEnv(call *Call) *Response {
 			CustomImage: call.NewEnvContainer.Container,
 		}
 	case call.NewEnvChrome != nil:
-		spec = call.NewEnvContainer.Spec
+		spec = call.NewEnvChrome.Spec
 		opts = &muniverse.Options{
 			DevtoolsHost: call.NewEnvChrome.Host,
 			GameHost:     call.NewEnvChrome.GameHost,
