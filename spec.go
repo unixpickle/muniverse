@@ -2548,6 +2548,23 @@ var EnvSpecs = []*EnvSpec{
 
 		VariantOf: "HopHero-v0",
 	},
+
+	{
+		Name:      "Spacecraft-v0",
+		BaseURL:   "https://js13kgames.com/games/spacecraft/",
+		Width:     320,
+		Height:    480,
+		AllCanvas: false,
+		Options:   "{}",
+
+		KeyWhitelist: []string{
+			"Space",
+			"ArrowUp",
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowDown",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

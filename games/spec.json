@@ -9261,5 +9261,32 @@
     "options": {
       "scoreMode": "coins"
     }
+  },
+  {
+    "name": "Spacecraft-v0",
+    "base": "https://js13kgames.com/games/spacecraft/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "Spacecraft-v0.js"
+    ],
+    "resources": [
+      "index.html",
+      "style.css",
+      "script.js"
+    ],
+    "processors": [],
+    "metadata": {},
+    "width": 320,
+    "height": 480,
+    "key_whitelist": [
+      "Space",
+      "ArrowUp",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowDown"
+    ]
   }
 ]
