@@ -152,7 +152,10 @@
     "width": 320,
     "height": 497,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "Jewelish-v0",
@@ -380,7 +383,9 @@
     },
     "width": 522,
     "height": 348,
-    "key_whitelist": ["Space"]
+    "key_whitelist": [
+      "Space"
+    ]
   },
   {
     "name": "PenguinSkip-v0",
@@ -580,7 +585,10 @@
     "width": 480,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "MinimalDots-v0",
@@ -629,7 +637,10 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "BurninRubber-v0",
@@ -704,7 +715,11 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "Space"],
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "Space"
+    ],
     "options": {
       "car": 0,
       "weapon": 0
@@ -966,7 +981,10 @@
     "width": 320,
     "height": 497,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "GoldMinerTom-v0",
@@ -1263,7 +1281,10 @@
     },
     "width": 480,
     "height": 321,
-    "key_whitelist": ["Space", "ArrowUp"]
+    "key_whitelist": [
+      "Space",
+      "ArrowUp"
+    ]
   },
   {
     "name": "BirdyRush-v0",
@@ -1370,7 +1391,10 @@
     "width": 320,
     "height": 533,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "HexBlitz-v0",
@@ -1504,7 +1528,10 @@
     "width": 480,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "NutRush-v0",
@@ -1674,7 +1701,10 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "BurgerMaker-v0",
@@ -2165,7 +2195,12 @@
     "width": 480,
     "height": 380,
     "all_canvas": true,
-    "key_whitelist": ["ArrowUp", "ArrowDown", "ArrowRight", "ArrowLeft"]
+    "key_whitelist": [
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowRight",
+      "ArrowLeft"
+    ]
   },
   {
     "name": "Twins-v0",
@@ -2237,7 +2272,10 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "Babel-v0",
@@ -2575,7 +2613,10 @@
     },
     "width": 321,
     "height": 480,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"],
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ],
     "options": {
       "scoreMode": "distance"
     }
@@ -3017,7 +3058,10 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "Shards-v0",
@@ -3765,7 +3809,9 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": ["Space"]
+    "key_whitelist": [
+      "Space"
+    ]
   },
   {
     "name": "ColorCircles-v1",
@@ -3998,7 +4044,12 @@
     },
     "width": 320,
     "height": 480,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"],
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown"
+    ],
     "options": {
       "level": 1
     }
@@ -4257,7 +4308,11 @@
     "width": 320,
     "height": 544,
     "all_canvas": true,
-    "key_whitelist": ["Space", "ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "Space",
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "BubbleHamsters-v0",
@@ -4788,7 +4843,10 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "StickFreak-v0",
@@ -5250,7 +5308,11 @@
     "metadata": {},
     "width": 600,
     "height": 150,
-    "key_whitelist": ["ArrowUp", "ArrowDown", "Space"]
+    "key_whitelist": [
+      "ArrowUp",
+      "ArrowDown",
+      "Space"
+    ]
   },
   {
     "name": "HopDontStop-v0",
@@ -5297,7 +5359,12 @@
     "width": 320,
     "height": 498,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"],
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown"
+    ],
     "options": {
       "scoreMode": "distance"
     }
@@ -5444,7 +5511,11 @@
     "width": 320,
     "height": 470,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp"
+    ]
   },
   {
     "name": "RainbowStarPinball-v0",
@@ -5957,7 +6028,12 @@
     },
     "width": 540,
     "height": 360,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"],
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown"
+    ],
     "options": {
       "player": "Kiba"
     }
@@ -6025,7 +6101,9 @@
     "metadata": {},
     "width": 320,
     "height": 570,
-    "key_whitelist": ["KeyZ"]
+    "key_whitelist": [
+      "KeyZ"
+    ]
   },
   {
     "name": "Pixlaser-v0",
@@ -6083,7 +6161,10 @@
     "width": 550,
     "height": 550,
     "all_canvas": true,
-    "key_whitelist": ["KeyA", "KeyD"],
+    "key_whitelist": [
+      "KeyA",
+      "KeyD"
+    ],
     "options": {
       "colors": 2
     }
@@ -6164,7 +6245,11 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp"
+    ]
   },
   {
     "name": "Valto-v0",
@@ -6217,7 +6302,10 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "CatchTheClown-v0",
@@ -6325,7 +6413,10 @@
     "metadata": {},
     "width": 320,
     "height": 525,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "PopPop-v0",
@@ -6444,7 +6535,11 @@
     "metadata": {},
     "width": 700,
     "height": 400,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp"],
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp"
+    ],
     "options": {
       "level": 1
     }
@@ -6778,12 +6873,16 @@
     "width": 533,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": ["KeyA", "ArrowRight", "ArrowLeft", "ArrowUp"],
+    "key_whitelist": [
+      "KeyA",
+      "ArrowRight",
+      "ArrowLeft",
+      "ArrowUp"
+    ],
     "options": {
       "level": 1
     }
   },
-
   {
     "name": "ChirstmasAdventure-v1",
     "variant_of": "ChristmasAdventure-v0",
@@ -7029,7 +7128,13 @@
     "width": 320,
     "height": 512,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Space"],
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown",
+      "Space"
+    ],
     "options": {
       "exit": [
         "7020333949850896",
@@ -7112,7 +7217,11 @@
     "width": 320,
     "height": 426,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "Space"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "Space"
+    ]
   },
   {
     "name": "PineapplePen-v0",
@@ -7330,7 +7439,10 @@
     "width": 320,
     "height": 533,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "RunIntoDeath-v0",
@@ -7484,7 +7596,13 @@
     "metadata": {},
     "width": 320,
     "height": 512,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Space"],
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown",
+      "Space"
+    ],
     "options": {
       "exit": [
         "942555504266250",
@@ -7552,7 +7670,12 @@
     "metadata": {},
     "width": 320,
     "height": 512,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"],
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown"
+    ],
     "options": {
       "exit": [
         "8480831502092825",
@@ -7928,7 +8051,10 @@
     "width": 320,
     "height": 569,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "TRexRunner-v0",
@@ -7992,7 +8118,10 @@
     "metadata": {},
     "width": 569,
     "height": 320,
-    "key_whitelist": ["ArrowUp", "Space"]
+    "key_whitelist": [
+      "ArrowUp",
+      "Space"
+    ]
   },
   {
     "name": "TruckTravel-v0",
@@ -8063,7 +8192,10 @@
     "width": 569,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": ["ArrowUp", "ArrowDown"],
+    "key_whitelist": [
+      "ArrowUp",
+      "ArrowDown"
+    ],
     "options": {
       "character": 0
     }
@@ -8224,7 +8356,10 @@
     "width": 320,
     "height": 569,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"],
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ],
     "options": {
       "level": 1
     }
@@ -8339,7 +8474,12 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown"
+    ]
   },
   {
     "name": "FlappyBird-v0",
@@ -8371,7 +8511,9 @@
     "width": 320,
     "height": 512,
     "all_canvas": true,
-    "key_whitelist": ["Space"]
+    "key_whitelist": [
+      "Space"
+    ]
   },
   {
     "name": "PacMan-v0",
@@ -8395,7 +8537,12 @@
     "width": 256,
     "height": 240,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown"
+    ]
   },
   {
     "name": "Tetris-v0",
@@ -8419,7 +8566,13 @@
     "width": 256,
     "height": 240,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowDown", "KeyX", "KeyY"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowDown",
+      "KeyX",
+      "KeyY"
+    ]
   },
   {
     "name": "CubeNinja-v0",
@@ -8620,7 +8773,10 @@
     "width": 569,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": ["ArrowUp", "Space"],
+    "key_whitelist": [
+      "ArrowUp",
+      "Space"
+    ],
     "options": {
       "scoreMode": "distance"
     }
@@ -8744,7 +8900,10 @@
     "width": 288,
     "height": 512,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   },
   {
     "name": "JumpyShark-v0",
@@ -9019,7 +9178,11 @@
     "width": 320,
     "height": 569,
     "all_canvas": true,
-    "key_whitelist": ["ArrowLeft", "ArrowRight", "ArrowUp"]
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp"
+    ]
   },
   {
     "name": "HopHero-v0",
@@ -9084,7 +9247,10 @@
     "width": 320,
     "height": 569,
     "all_canvas": true,
-    "key_whitelist": ["Space", "ArrowUp"],
+    "key_whitelist": [
+      "Space",
+      "ArrowUp"
+    ],
     "options": {
       "scoreMode": "distance"
     }
