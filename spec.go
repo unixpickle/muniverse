@@ -519,7 +519,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL:   "http://games.cdn.famobi.com/html5games/p/pizza-ninja-3/v090/",
 		Width:     480,
 		Height:    288,
-		AllCanvas: true,
+		AllCanvas: false,
 		Options:   "{}",
 	},
 
@@ -719,7 +719,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL:   "http://games.cdn.famobi.com/html5games/t/tower-mania/v3/",
 		Width:     320,
 		Height:    455,
-		AllCanvas: true,
+		AllCanvas: false,
 		Options:   "{\"level\":0}",
 	},
 
@@ -728,7 +728,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL:   "http://games.cdn.famobi.com/html5games/t/tower-mania/v3/",
 		Width:     320,
 		Height:    455,
-		AllCanvas: true,
+		AllCanvas: false,
 		Options:   "{\"level\":1}",
 
 		VariantOf: "TowerMania-v0",
@@ -739,7 +739,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL:   "http://games.cdn.famobi.com/html5games/t/tower-mania/v3/",
 		Width:     320,
 		Height:    455,
-		AllCanvas: true,
+		AllCanvas: false,
 		Options:   "{\"level\":2}",
 
 		VariantOf: "TowerMania-v0",
@@ -750,7 +750,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL:   "http://games.cdn.famobi.com/html5games/t/tower-mania/v3/",
 		Width:     320,
 		Height:    455,
-		AllCanvas: true,
+		AllCanvas: false,
 		Options:   "{\"level\":3}",
 
 		VariantOf: "TowerMania-v0",
@@ -913,7 +913,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL:   "http://games.cdn.famobi.com/html5games/j/jewel-explode/v080/",
 		Width:     320,
 		Height:    533,
-		AllCanvas: true,
+		AllCanvas: false,
 		Options:   "{\"level\":0}",
 	},
 
@@ -922,7 +922,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL:   "http://games.cdn.famobi.com/html5games/j/jewel-explode/v080/",
 		Width:     320,
 		Height:    533,
-		AllCanvas: true,
+		AllCanvas: false,
 		Options:   "{\"level\":1}",
 
 		VariantOf: "JewelExplode-v0",
@@ -933,7 +933,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL:   "http://games.cdn.famobi.com/html5games/j/jewel-explode/v080/",
 		Width:     320,
 		Height:    533,
-		AllCanvas: true,
+		AllCanvas: false,
 		Options:   "{\"level\":2}",
 
 		VariantOf: "JewelExplode-v0",
@@ -944,7 +944,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL:   "http://games.cdn.famobi.com/html5games/j/jewel-explode/v080/",
 		Width:     320,
 		Height:    533,
-		AllCanvas: true,
+		AllCanvas: false,
 		Options:   "{\"level\":3}",
 
 		VariantOf: "JewelExplode-v0",
@@ -955,7 +955,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL:   "http://games.cdn.famobi.com/html5games/j/jewel-explode/v080/",
 		Width:     320,
 		Height:    533,
-		AllCanvas: true,
+		AllCanvas: false,
 		Options:   "{\"level\":4}",
 
 		VariantOf: "JewelExplode-v0",
@@ -1033,7 +1033,7 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL:   "http://games.cdn.famobi.com/html5games/s/stick-freak/89f33144/",
 		Width:     320,
 		Height:    533,
-		AllCanvas: true,
+		AllCanvas: false,
 		Options:   "{}",
 	},
 

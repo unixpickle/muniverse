@@ -35,7 +35,7 @@
           window.game.state.current === 'mainMenu' &&
           window.game.load.hasLoaded &&
           window.game.stage.children &&
-          window.game.stage.children.length === 1 &&
+          [1, 2].indexOf(window.game.stage.children.length) !== -1 &&
           window.game.stage.children[0].children &&
           window.game.stage.children[0].children.length === 20;
       }).then(function() {

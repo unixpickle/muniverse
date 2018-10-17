@@ -81,3 +81,5 @@ do
   mv "$dldir" "$DEST"
   echo "Successfully downloaded $name"
 done
+
+python link_sounds.py

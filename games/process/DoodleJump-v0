@@ -7,3 +7,8 @@ cat "$DIR/index_pre_doodlejump.html" |
   sed -E 's/<script type="text\/javascript" src="\/\/cloudgames\.com\/js\/game\.js"><\/script>//g' |
   sed -E "s/document\\.domain = 'cloudgames\\.com'/window.CloudAPI={init: () => false}/g" \
   > "$DIR/index.html"
+mv "$DIR/js/phaser.min.js" "$DIR/js/phaser_old.min.js"
+cat "$DIR/js/phaser_old.min.js" |
+  sed -E 's/getContext\("webgl/getContext("foobar/g' |
+  sed -E 's/getContext\("experimental/getContext("foobar/g' \
+  > "$DIR/js/phaser.min.js"

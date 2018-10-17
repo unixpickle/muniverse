@@ -3001,7 +3001,6 @@
     },
     "width": 480,
     "height": 288,
-    "all_canvas": true,
     "key_whitelist": []
   },
   {
@@ -3590,7 +3589,6 @@
     },
     "width": 320,
     "height": 455,
-    "all_canvas": true,
     "key_whitelist": [],
     "options": {
       "level": 0
@@ -4152,7 +4150,6 @@
     },
     "width": 320,
     "height": 533,
-    "all_canvas": true,
     "key_whitelist": [],
     "options": {
       "level": 0
@@ -4898,7 +4895,6 @@
     },
     "width": 320,
     "height": 533,
-    "all_canvas": true,
     "key_whitelist": []
   },
   {
