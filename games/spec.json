@@ -9284,5 +9284,98 @@
       "ArrowRight",
       "ArrowDown"
     ]
+  },
+  {
+    "name": "3Mice-v0",
+    "base": "https://games.cdn.famobi.com/html5games/0/3-mice/v020/",
+    "top_injections": [
+      "faketime.js",
+      "famobi.js"
+    ],
+    "bottom_injections": [
+      "utils.js",
+      "construct2.js",
+      "3Mice-v0.js"
+    ],
+    "resources": [
+      "js/all.js",
+      "data.js",
+      "images/backgroundtile.png",
+      "images/player-sheet0.png",
+      "images/solidtile.png",
+      "images/movingsolidtile.png",
+      "images/jumpthrutile.png",
+      "images/sprite-sheet0.png",
+      "images/sprite2-sheet0.png",
+      "images/sprite2-sheet1.png",
+      "images/sprite3-sheet0.png",
+      "images/sprite3-sheet1.png",
+      "images/hrdina-sheet0.png",
+      "images/pruzina-sheet0.png",
+      "images/solidtile3.png",
+      "images/sprite6-sheet0.png",
+      "images/minca-sheet0.png",
+      "images/gombik-sheet0.png",
+      "images/gombik-sheet1.png",
+      "images/rampa-sheet0.png",
+      "images/rampa-sheet1.png",
+      "images/sprite4-sheet0.png",
+      "images/sprite4-sheet1.png",
+      "images/sprite4-sheet2.png",
+      "images/sprite5-sheet0.png",
+      "images/dlharampa-sheet0.png",
+      "images/sprite7-sheet0.png",
+      "images/sprite8-sheet0.png",
+      "images/hrdina2-sheet0.png",
+      "fg_i18n/en/images/sprite9-sheet0.png",
+      "images/sprite10-sheet0.png",
+      "images/sprite11-sheet0.png",
+      "images/sprite12-sheet0.png",
+      "images/menuikona-sheet0.png",
+      "images/sprite15-sheet0.png",
+      "images/hranica-sheet0.png",
+      "images/sprite17-sheet0.png",
+      "images/camera-sheet0.png",
+      "images/stred-sheet0.png",
+      "images/tiledbackground.png",
+      "images/spritefont.png",
+      "images/end-sheet0.png",
+      "images/sprite19-sheet0.png",
+      "fg_i18n/en/images/sprite20-sheet0.png",
+      "images/sprite21-sheet0.png",
+      "fg_i18n/en/images/sprite22-sheet0.png",
+      "fg_i18n/en/images/sprite24-sheet0.png",
+      "images/sprite25-sheet0.png",
+      "images/sprite26-sheet0.png",
+      "images/sprite13-sheet0.png",
+      "images/ostne.png",
+      "images/boxik-sheet0.png",
+      "images/smrt-sheet0.png",
+      "images/sprite16-sheet0.png",
+      "images/button-sheet0.png",
+      "media/dropmoj.ogg",
+      "media/bing.ogg",
+      "media/dugov.ogg",
+      "media/potlesk.ogg",
+      "media/puttazke.ogg",
+      "media/smyk.ogg",
+      "media/svyhmecov,.ogg",
+      "media/vybratieakodugov.ogg",
+      "media/zavrznutie.ogg"
+    ],
+    "processors": [
+      "famobi",
+      "3Mice-v0"
+    ],
+    "metadata": {
+      "famobi_id": "3-mice"
+    },
+    "width": 360,
+    "height": 360,
+    "all_canvas": true,
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ]
   }
 ]

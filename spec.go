@@ -2565,6 +2565,20 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowDown",
 		},
 	},
+
+	{
+		Name:      "3Mice-v0",
+		BaseURL:   "https://games.cdn.famobi.com/html5games/0/3-mice/v020/",
+		Width:     360,
+		Height:    360,
+		AllCanvas: true,
+		Options:   "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
