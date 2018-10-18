@@ -10,8 +10,8 @@ function fg_api(data) {
 
 fg_api.EMPTY_IMAGE = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 
-fg_api.prototype.__ = function(key) {
-  if (key === 'preload_image') {
+fg_api.prototype.__ = function (key) {
+  if (key === 'preload_image' || key == 'more_games_image') {
     return fg_api.EMPTY_IMAGE;
   }
   var res = this._data.game_i18n.en[key] ||

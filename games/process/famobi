@@ -21,7 +21,8 @@ famid="$(cat "$DIR/info.json" | jq -r '.metadata.famobi_id')"
 pageData="$(curl -s "https://play.famobi.com/$famid" || exit 1)"
 playURL=$(echo "$pageData" | grep 'href="https://games.cdn.famobi.com/html5games' |
           sed -E $'s/[ \t]*<a href="//g' |
-          sed -E 's/">.*//g')
+          sed -E 's/">.*//g' |
+          sed -E 's/" style=".*//g')
 fgPID=$(echo "$playURL" | sed -E 's/.*fg_pid=([0-9A-Za-z\-]*).*/\1/g')
 fgUID=$(echo "$playURL" | sed -E 's/.*fg_uid=([0-9A-Za-z\-]*).*/\1/g')
 escapedURL=$(echo "$playURL" |
