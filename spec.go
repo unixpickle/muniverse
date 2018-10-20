@@ -11,7 +11,9 @@ type EnvSpec struct {
 	AllCanvas bool   `bson:"AllCanvas"`
 	Options   string `bson:"Options"`
 
-	KeyWhitelist []string `bson:"KeyWhitelist,omitempty"`
+	KeyWhitelist  []string `bson:"KeyWhitelist,omitempty"`
+	MouseType     string   `bson:"MouseType"`
+	MouseRequired bool     `bson:"MouseRequired"`
 
 	VariantOf string `bson:"VariantOf"`
 }
@@ -24,6 +26,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    427,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -38,6 +43,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -47,6 +55,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    433,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -60,6 +71,9 @@ var EnvSpecs = []*EnvSpec{
 		KeyWhitelist: []string{
 			"Space",
 		},
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -74,6 +88,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -88,6 +105,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -103,6 +123,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"Space",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -118,6 +141,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"Space",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 
 		VariantOf: "BurninRubber-v0",
 	},
@@ -136,6 +162,9 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 
+		MouseType:     "general",
+		MouseRequired: false,
+
 		VariantOf: "BurninRubber-v0",
 	},
 
@@ -153,6 +182,9 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 
+		MouseType:     "general",
+		MouseRequired: false,
+
 		VariantOf: "BurninRubber-v0",
 	},
 
@@ -163,6 +195,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -172,6 +207,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -181,6 +219,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -195,6 +236,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -204,6 +248,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -213,6 +260,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 
 		VariantOf: "GoldMinerTom-v0",
 	},
@@ -229,6 +279,9 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 			"ArrowUp",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: false,
 	},
 
 	{
@@ -243,6 +296,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -252,6 +308,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -266,6 +325,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -275,6 +337,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{\"level\":1}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -284,6 +349,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{\"level\":2}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 
 		VariantOf: "NutRush-v0",
 	},
@@ -296,6 +364,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: true,
 		Options:   "{\"level\":3}",
 
+		MouseType:     "tap",
+		MouseRequired: true,
+
 		VariantOf: "NutRush-v0",
 	},
 
@@ -306,6 +377,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{\"character\":0}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -315,6 +389,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{\"character\":1}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 
 		VariantOf: "KibaKumbaShadowRun-v0",
 	},
@@ -331,6 +408,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -340,6 +420,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    420,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -349,6 +432,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -358,6 +444,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{\"planeType\":\"yellow\"}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "PaperPlaneFlight-v0",
 	},
@@ -370,6 +459,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: true,
 		Options:   "{\"planeType\":\"violetSecond\"}",
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "PaperPlaneFlight-v0",
 	},
 
@@ -380,6 +472,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    510,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -389,6 +484,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    270,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -405,6 +503,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"ArrowLeft",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -419,6 +520,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -428,6 +532,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -437,6 +544,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -446,6 +556,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    486,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -460,6 +573,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -475,6 +591,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 
+		MouseType:     "general",
+		MouseRequired: false,
+
 		VariantOf: "CartoonFlight-v0",
 	},
 
@@ -485,6 +604,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -494,6 +616,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -503,6 +628,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    640,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -512,6 +640,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    270,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -521,6 +652,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    288,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -535,6 +669,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -544,6 +681,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    512,
 		AllCanvas: false,
 		Options:   "{\"level\":0}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -553,6 +693,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    512,
 		AllCanvas: false,
 		Options:   "{\"level\":1}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "Shards-v0",
 	},
@@ -565,6 +708,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: false,
 		Options:   "{\"level\":2}",
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "Shards-v0",
 	},
 
@@ -576,6 +722,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: false,
 		Options:   "{\"level\":3}",
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "Shards-v0",
 	},
 
@@ -586,6 +735,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -595,6 +747,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "Zop-v0",
 	},
@@ -606,6 +761,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: false,
 		Options:   "{\"bonus\":false,\"mode\":\"time\"}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -615,6 +773,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: false,
 		Options:   "{\"bonus\":false,\"mode\":\"moves\"}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "DotsMania-v0",
 	},
@@ -627,6 +788,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: false,
 		Options:   "{\"bonus\":true,\"mode\":\"time\"}",
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "DotsMania-v0",
 	},
 
@@ -638,6 +802,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: false,
 		Options:   "{\"bonus\":true,\"mode\":\"moves\"}",
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "DotsMania-v0",
 	},
 
@@ -648,6 +815,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{\"level\":1}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -657,6 +827,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{\"level\":2}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "FitItQuick-v0",
 	},
@@ -669,6 +842,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: true,
 		Options:   "{\"level\":3}",
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "FitItQuick-v0",
 	},
 
@@ -679,6 +855,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{\"level\":4}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "FitItQuick-v0",
 	},
@@ -691,6 +870,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: true,
 		Options:   "{\"level\":5}",
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "FitItQuick-v0",
 	},
 
@@ -701,6 +883,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -710,6 +895,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    390,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 
 		VariantOf: "StackTowerClassic-v0",
 	},
@@ -721,6 +909,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    455,
 		AllCanvas: false,
 		Options:   "{\"level\":0}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -730,6 +921,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    455,
 		AllCanvas: false,
 		Options:   "{\"level\":1}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 
 		VariantOf: "TowerMania-v0",
 	},
@@ -742,6 +936,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: false,
 		Options:   "{\"level\":2}",
 
+		MouseType:     "tap",
+		MouseRequired: true,
+
 		VariantOf: "TowerMania-v0",
 	},
 
@@ -753,6 +950,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: false,
 		Options:   "{\"level\":3}",
 
+		MouseType:     "tap",
+		MouseRequired: true,
+
 		VariantOf: "TowerMania-v0",
 	},
 
@@ -763,6 +963,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    544,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -776,6 +979,9 @@ var EnvSpecs = []*EnvSpec{
 		KeyWhitelist: []string{
 			"Space",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: false,
 	},
 
 	{
@@ -790,6 +996,9 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 
+		MouseType:     "tap",
+		MouseRequired: false,
+
 		VariantOf: "ColorCircles-v0",
 	},
 
@@ -800,6 +1009,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    550,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -809,6 +1021,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    487,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -818,6 +1033,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -834,6 +1052,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 			"ArrowDown",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: false,
 	},
 
 	{
@@ -850,6 +1071,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 			"ArrowDown",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: false,
 
 		VariantOf: "FruitPulp-v0",
 	},
@@ -869,6 +1093,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowDown",
 		},
 
+		MouseType:     "tap",
+		MouseRequired: false,
+
 		VariantOf: "FruitPulp-v0",
 	},
 
@@ -886,6 +1113,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 			"ArrowDown",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: false,
 
 		VariantOf: "FruitPulp-v0",
 	},
@@ -905,6 +1135,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowDown",
 		},
 
+		MouseType:     "tap",
+		MouseRequired: false,
+
 		VariantOf: "FruitPulp-v0",
 	},
 
@@ -915,6 +1148,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    533,
 		AllCanvas: false,
 		Options:   "{\"level\":0}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -924,6 +1160,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    533,
 		AllCanvas: false,
 		Options:   "{\"level\":1}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "JewelExplode-v0",
 	},
@@ -936,6 +1175,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: false,
 		Options:   "{\"level\":2}",
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "JewelExplode-v0",
 	},
 
@@ -947,6 +1189,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: false,
 		Options:   "{\"level\":3}",
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "JewelExplode-v0",
 	},
 
@@ -957,6 +1202,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    533,
 		AllCanvas: false,
 		Options:   "{\"level\":4}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "JewelExplode-v0",
 	},
@@ -974,6 +1222,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -981,8 +1232,11 @@ var EnvSpecs = []*EnvSpec{
 		BaseURL:   "http://games.cdn.famobi.com/html5games/b/bubble-hamsters/5-1bbcb7/",
 		Width:     320,
 		Height:    460,
-		AllCanvas: true,
+		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -992,6 +1246,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{\"scoreMode\":\"distance\"}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -1001,6 +1258,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{\"scoreMode\":\"stars\"}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "FlyingSchool-v0",
 	},
@@ -1012,6 +1272,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    570,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -1026,6 +1289,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -1035,6 +1301,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    533,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -1044,6 +1313,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -1053,6 +1325,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    390,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 
 		VariantOf: "Lectro-v0",
 	},
@@ -1064,6 +1339,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{\"mode\":\"time\"}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -1073,6 +1351,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    360,
 		AllCanvas: true,
 		Options:   "{\"mode\":\"time\"}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "StreetBallStar-v0",
 	},
@@ -1085,6 +1366,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: true,
 		Options:   "{\"mode\":\"challenge\"}",
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "StreetBallStar-v0",
 	},
 
@@ -1096,6 +1380,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: true,
 		Options:   "{\"mode\":\"challenge\"}",
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "StreetBallStar-v0",
 	},
 
@@ -1106,6 +1393,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -1115,6 +1405,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    646,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -1124,6 +1417,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "SoccerGirl-v0",
 	},
@@ -1141,6 +1437,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowDown",
 			"Space",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 	},
 
 	{
@@ -1157,6 +1456,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 			"ArrowDown",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -1174,6 +1476,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowDown",
 		},
 
+		MouseType:     "general",
+		MouseRequired: false,
+
 		VariantOf: "HopDontStop-v0",
 	},
 
@@ -1184,6 +1489,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{\"difficulty\":\"normal\"}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -1193,6 +1501,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{\"difficulty\":\"hard\"}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "FitzColor-v0",
 	},
@@ -1210,6 +1521,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"ArrowUp",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -1230,6 +1544,9 @@ var EnvSpecs = []*EnvSpec{
 			"KeyS",
 			"KeyD",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -1239,6 +1556,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -1248,6 +1568,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -1264,6 +1587,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 			"ArrowDown",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 	},
 
 	{
@@ -1281,6 +1607,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowDown",
 		},
 
+		MouseType:     "none",
+		MouseRequired: false,
+
 		VariantOf: "JungleRun-v0",
 	},
 
@@ -1295,6 +1624,9 @@ var EnvSpecs = []*EnvSpec{
 		KeyWhitelist: []string{
 			"KeyZ",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: false,
 	},
 
 	{
@@ -1309,6 +1641,9 @@ var EnvSpecs = []*EnvSpec{
 			"KeyA",
 			"KeyD",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 	},
 
 	{
@@ -1323,6 +1658,9 @@ var EnvSpecs = []*EnvSpec{
 			"KeyA",
 			"KeyD",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 
 		VariantOf: "Pixlaser-v0",
 	},
@@ -1340,6 +1678,9 @@ var EnvSpecs = []*EnvSpec{
 			"KeyD",
 		},
 
+		MouseType:     "none",
+		MouseRequired: false,
+
 		VariantOf: "Pixlaser-v0",
 	},
 
@@ -1356,6 +1697,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"ArrowUp",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: false,
 	},
 
 	{
@@ -1370,6 +1714,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 	},
 
 	{
@@ -1379,6 +1726,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    512,
 		AllCanvas: true,
 		Options:   "{\"difficulty\":\"easy\"}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -1388,6 +1738,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    512,
 		AllCanvas: true,
 		Options:   "{\"difficulty\":\"medium\"}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "CatchTheClown-v0",
 	},
@@ -1399,6 +1752,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    512,
 		AllCanvas: true,
 		Options:   "{\"difficulty\":\"hard\"}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "CatchTheClown-v0",
 	},
@@ -1415,6 +1771,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -1424,6 +1783,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    568,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -1439,6 +1801,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"ArrowUp",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 	},
 
 	{
@@ -1454,6 +1819,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"ArrowUp",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 
 		VariantOf: "FrontInvaders-v0",
 	},
@@ -1472,6 +1840,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "none",
+		MouseRequired: false,
+
 		VariantOf: "FrontInvaders-v0",
 	},
 
@@ -1488,6 +1859,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"ArrowUp",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 
 		VariantOf: "FrontInvaders-v0",
 	},
@@ -1506,6 +1880,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "none",
+		MouseRequired: false,
+
 		VariantOf: "FrontInvaders-v0",
 	},
 
@@ -1522,6 +1899,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"ArrowUp",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 
 		VariantOf: "FrontInvaders-v0",
 	},
@@ -1540,6 +1920,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "none",
+		MouseRequired: false,
+
 		VariantOf: "FrontInvaders-v0",
 	},
 
@@ -1556,6 +1939,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"ArrowUp",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 
 		VariantOf: "FrontInvaders-v0",
 	},
@@ -1574,6 +1960,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "none",
+		MouseRequired: false,
+
 		VariantOf: "FrontInvaders-v0",
 	},
 
@@ -1590,6 +1979,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"ArrowUp",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 
 		VariantOf: "FrontInvaders-v0",
 	},
@@ -1608,6 +2000,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "none",
+		MouseRequired: false,
+
 		VariantOf: "FrontInvaders-v0",
 	},
 
@@ -1625,6 +2020,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "none",
+		MouseRequired: false,
+
 		VariantOf: "FrontInvaders-v0",
 	},
 
@@ -1635,6 +2033,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    360,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -1644,6 +2045,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    533,
 		AllCanvas: false,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -1660,6 +2064,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowUp",
 		},
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -1676,6 +2083,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowUp",
 		},
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "ChristmasAdventure-v0",
 	},
@@ -1695,6 +2105,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "ChristmasAdventure-v0",
 	},
 
@@ -1712,6 +2125,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowUp",
 		},
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "ChristmasAdventure-v0",
 	},
@@ -1731,6 +2147,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "ChristmasAdventure-v0",
 	},
 
@@ -1748,6 +2167,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowUp",
 		},
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "ChristmasAdventure-v0",
 	},
@@ -1767,6 +2189,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "ChristmasAdventure-v0",
 	},
 
@@ -1784,6 +2209,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowUp",
 		},
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "ChristmasAdventure-v0",
 	},
@@ -1803,6 +2231,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "ChristmasAdventure-v0",
 	},
 
@@ -1820,6 +2251,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowUp",
 		},
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "ChristmasAdventure-v0",
 	},
@@ -1839,6 +2273,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "ChristmasAdventure-v0",
 	},
 
@@ -1856,6 +2293,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowUp",
 		},
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "ChristmasAdventure-v0",
 	},
@@ -1875,6 +2315,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "ChristmasAdventure-v0",
 	},
 
@@ -1892,6 +2335,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowUp",
 		},
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "ChristmasAdventure-v0",
 	},
@@ -1911,6 +2357,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "ChristmasAdventure-v0",
 	},
 
@@ -1928,6 +2377,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowUp",
 		},
+
+		MouseType:     "general",
+		MouseRequired: true,
 
 		VariantOf: "ChristmasAdventure-v0",
 	},
@@ -1947,6 +2399,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "ChristmasAdventure-v0",
 	},
 
@@ -1965,6 +2420,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 		},
 
+		MouseType:     "general",
+		MouseRequired: true,
+
 		VariantOf: "ChristmasAdventure-v0",
 	},
 
@@ -1975,6 +2433,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -1992,6 +2453,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowDown",
 			"Space",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -2007,6 +2471,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"Space",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -2016,6 +2483,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    533,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -2025,6 +2495,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    533,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -2034,6 +2507,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    533,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -2048,6 +2524,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 	},
 
 	{
@@ -2057,6 +2536,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -2074,6 +2556,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowDown",
 			"Space",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 	},
 
 	{
@@ -2090,6 +2575,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 			"ArrowDown",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 	},
 
 	{
@@ -2099,6 +2587,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -2108,6 +2599,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: false,
 		Options:   "{\"scoreMode\":\"stars\"}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -2117,6 +2611,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: false,
 		Options:   "{\"scoreMode\":\"distance\"}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 
 		VariantOf: "NinjaRun-v0",
 	},
@@ -2129,6 +2626,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: false,
 		Options:   "{\"scoreMode\":\"coins\"}",
 
+		MouseType:     "tap",
+		MouseRequired: true,
+
 		VariantOf: "NinjaRun-v0",
 	},
 
@@ -2139,6 +2639,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -2148,6 +2651,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "general",
+		MouseRequired: true,
 	},
 
 	{
@@ -2157,6 +2663,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -2171,6 +2680,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -2185,6 +2697,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 			"Space",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: false,
 	},
 
 	{
@@ -2199,6 +2714,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 			"ArrowDown",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: false,
 	},
 
 	{
@@ -2214,6 +2732,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowDown",
 		},
 
+		MouseType:     "tap",
+		MouseRequired: false,
+
 		VariantOf: "TruckTravel-v0",
 	},
 
@@ -2224,6 +2745,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    569,
 		AllCanvas: true,
 		Options:   "{\"scoreMode\":\"distance\"}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -2233,6 +2757,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    569,
 		AllCanvas: true,
 		Options:   "{\"scoreMode\":\"coins\"}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 
 		VariantOf: "PanicDrop-v0",
 	},
@@ -2249,6 +2776,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -2263,6 +2793,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 
 		VariantOf: "BlockSnake-v0",
 	},
@@ -2280,6 +2813,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 
+		MouseType:     "general",
+		MouseRequired: false,
+
 		VariantOf: "BlockSnake-v0",
 	},
 
@@ -2295,6 +2831,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 
 		VariantOf: "BlockSnake-v0",
 	},
@@ -2312,6 +2851,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 		},
 
+		MouseType:     "general",
+		MouseRequired: false,
+
 		VariantOf: "BlockSnake-v0",
 	},
 
@@ -2327,6 +2869,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 
 		VariantOf: "BlockSnake-v0",
 	},
@@ -2345,6 +2890,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 			"ArrowDown",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 	},
 
 	{
@@ -2358,6 +2906,9 @@ var EnvSpecs = []*EnvSpec{
 		KeyWhitelist: []string{
 			"Space",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: false,
 	},
 
 	{
@@ -2374,6 +2925,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 			"ArrowDown",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 	},
 
 	{
@@ -2391,6 +2945,9 @@ var EnvSpecs = []*EnvSpec{
 			"KeyX",
 			"KeyY",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 	},
 
 	{
@@ -2400,6 +2957,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    320,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -2414,6 +2974,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowUp",
 			"Space",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 	},
 
 	{
@@ -2429,6 +2992,9 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 		},
 
+		MouseType:     "none",
+		MouseRequired: false,
+
 		VariantOf: "SuperCowboyRun-v0",
 	},
 
@@ -2439,6 +3005,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    512,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -2453,6 +3022,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 
 	{
@@ -2462,6 +3034,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{\"difficulty\":\"easy\"}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -2471,6 +3046,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    480,
 		AllCanvas: true,
 		Options:   "{\"difficulty\":\"normal\"}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 
 		VariantOf: "JumpyShark-v0",
 	},
@@ -2483,6 +3061,9 @@ var EnvSpecs = []*EnvSpec{
 		AllCanvas: true,
 		Options:   "{\"difficulty\":\"hard\"}",
 
+		MouseType:     "tap",
+		MouseRequired: true,
+
 		VariantOf: "JumpyShark-v0",
 	},
 
@@ -2493,6 +3074,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    512,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -2502,6 +3086,9 @@ var EnvSpecs = []*EnvSpec{
 		Height:    533,
 		AllCanvas: true,
 		Options:   "{}",
+
+		MouseType:     "tap",
+		MouseRequired: true,
 	},
 
 	{
@@ -2517,6 +3104,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"ArrowUp",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: false,
 	},
 
 	{
@@ -2531,6 +3121,9 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 			"ArrowUp",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: false,
 	},
 
 	{
@@ -2545,6 +3138,9 @@ var EnvSpecs = []*EnvSpec{
 			"Space",
 			"ArrowUp",
 		},
+
+		MouseType:     "tap",
+		MouseRequired: false,
 
 		VariantOf: "HopHero-v0",
 	},
@@ -2564,6 +3160,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowRight",
 			"ArrowDown",
 		},
+
+		MouseType:     "none",
+		MouseRequired: false,
 	},
 
 	{
@@ -2578,6 +3177,9 @@ var EnvSpecs = []*EnvSpec{
 			"ArrowLeft",
 			"ArrowRight",
 		},
+
+		MouseType:     "general",
+		MouseRequired: false,
 	},
 }
 

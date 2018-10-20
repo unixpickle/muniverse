@@ -105,7 +105,9 @@ type EnvSpec struct {
 	AllCanvas bool   ` + "`bson:\"AllCanvas\"`" + `
 	Options   string ` + "`bson:\"Options\"`" + `
 
-	KeyWhitelist []string ` + "`bson:\"KeyWhitelist,omitempty\"`" + `
+	KeyWhitelist  []string ` + "`bson:\"KeyWhitelist,omitempty\"`" + `
+	MouseType     string   ` + "`bson:\"MouseType\"`" + `
+	MouseRequired bool     ` + "`bson:\"MouseRequired\"`" + `
 
 	VariantOf string ` + "`bson:\"VariantOf\"`" + `
 }
@@ -125,6 +127,9 @@ var EnvSpecs = []*EnvSpec{ {{- range .}}
 			{{- range .key_whitelist}}
 			"{{.}}", {{- end}}
 		}, {{- end}}
+
+		MouseType:     "{{.mouseType}}",
+		MouseRequired: {{if .mouseRequired}}true{{else}}false{{end}},
 		{{- if .variant_of}}
 
 		VariantOf: "{{.variant_of}}",

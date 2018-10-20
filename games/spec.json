@@ -95,7 +95,9 @@
     "width": 320,
     "height": 427,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "MiniRaceRush-v0",
@@ -155,7 +157,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "Jewelish-v0",
@@ -249,7 +253,9 @@
     },
     "width": 320,
     "height": 433,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "BubblesShooter-v0",
@@ -385,7 +391,9 @@
     "height": 348,
     "key_whitelist": [
       "Space"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "PenguinSkip-v0",
@@ -588,7 +596,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "MinimalDots-v0",
@@ -640,7 +650,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "BurninRubber-v0",
@@ -720,6 +732,8 @@
       "ArrowRight",
       "Space"
     ],
+    "mouseType": "general",
+    "mouseRequired": false,
     "options": {
       "car": 0,
       "weapon": 0
@@ -837,7 +851,9 @@
     "width": 480,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "DontCrash-v0",
@@ -887,7 +903,9 @@
     "width": 480,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "SmartyBubbles-v0",
@@ -927,7 +945,9 @@
     },
     "width": 320,
     "height": 480,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "StreetPursuit-v0",
@@ -984,7 +1004,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "GoldMinerTom-v0",
@@ -1130,7 +1152,9 @@
     "width": 480,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "GoldMinerTom-v1",
@@ -1284,7 +1308,9 @@
     "key_whitelist": [
       "Space",
       "ArrowUp"
-    ]
+    ],
+    "mouseType": "tap",
+    "mouseRequired": false
   },
   {
     "name": "BirdyRush-v0",
@@ -1394,7 +1420,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "HexBlitz-v0",
@@ -1439,7 +1467,9 @@
     "width": 480,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "RedHead-v0",
@@ -1531,7 +1561,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "NutRush-v0",
@@ -1577,6 +1609,8 @@
     "height": 320,
     "all_canvas": true,
     "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true,
     "options": {
       "level": 1
     }
@@ -1638,6 +1672,8 @@
     "height": 320,
     "all_canvas": true,
     "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true,
     "options": {
       "character": 0
     }
@@ -1704,7 +1740,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "BurgerMaker-v0",
@@ -1784,7 +1822,9 @@
     },
     "width": 560,
     "height": 420,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "PaperPlaneFlight-v0",
@@ -1935,7 +1975,9 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "PaperPlaneFlight-v1",
@@ -2042,7 +2084,9 @@
     },
     "width": 320,
     "height": 510,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "RabbitPunch-v0",
@@ -2128,7 +2172,9 @@
     "width": 480,
     "height": 270,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "KumbaKarate-v0",
@@ -2200,7 +2246,9 @@
       "ArrowDown",
       "ArrowRight",
       "ArrowLeft"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "Twins-v0",
@@ -2275,7 +2323,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "Babel-v0",
@@ -2333,7 +2383,9 @@
     "width": 270,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "SpringPanda-v0",
@@ -2399,7 +2451,9 @@
     "width": 270,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "Traffic-v0",
@@ -2458,7 +2512,9 @@
     "width": 320,
     "height": 486,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "CartoonFlight-v0",
@@ -2617,6 +2673,8 @@
       "ArrowLeft",
       "ArrowRight"
     ],
+    "mouseType": "general",
+    "mouseRequired": false,
     "options": {
       "scoreMode": "distance"
     }
@@ -2703,7 +2761,9 @@
     "width": 480,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "Basketball-v0",
@@ -2734,7 +2794,9 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "ProtectThePlanet-v0",
@@ -2800,7 +2862,9 @@
     },
     "width": 1024,
     "height": 640,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "FruitBreak-v0",
@@ -2886,7 +2950,9 @@
     "width": 480,
     "height": 270,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "PizzaNinja3-v0",
@@ -3001,7 +3067,9 @@
     },
     "width": 480,
     "height": 288,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "TimberMan-v0",
@@ -3060,7 +3128,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "Shards-v0",
@@ -3134,6 +3204,8 @@
     "width": 320,
     "height": 512,
     "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true,
     "options": {
       "level": 0
     }
@@ -3183,7 +3255,9 @@
     },
     "width": 320,
     "height": 480,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "Zop-v1",
@@ -3249,6 +3323,8 @@
     "width": 320,
     "height": 480,
     "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true,
     "options": {
       "mode": "time",
       "bonus": false
@@ -3353,6 +3429,8 @@
     "height": 320,
     "all_canvas": true,
     "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true,
     "options": {
       "level": 1
     }
@@ -3421,7 +3499,9 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "StackTowerClassic-v1",
@@ -3590,6 +3670,8 @@
     "width": 320,
     "height": 455,
     "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true,
     "options": {
       "level": 0
     }
@@ -3751,7 +3833,9 @@
     "width": 320,
     "height": 544,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "ColorCircles-v0",
@@ -3809,7 +3893,9 @@
     "all_canvas": true,
     "key_whitelist": [
       "Space"
-    ]
+    ],
+    "mouseType": "tap",
+    "mouseRequired": false
   },
   {
     "name": "ColorCircles-v1",
@@ -3867,7 +3953,9 @@
     "width": 320,
     "height": 550,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "Multisquare-v0",
@@ -3913,7 +4001,9 @@
     "width": 320,
     "height": 487,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "Colorpop-v0",
@@ -3997,7 +4087,9 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "FruitPulp-v0",
@@ -4048,6 +4140,8 @@
       "ArrowUp",
       "ArrowDown"
     ],
+    "mouseType": "tap",
+    "mouseRequired": false,
     "options": {
       "level": 1
     }
@@ -4151,6 +4245,8 @@
     "width": 320,
     "height": 533,
     "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true,
     "options": {
       "level": 0
     }
@@ -4309,7 +4405,9 @@
       "Space",
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "BubbleHamsters-v0",
@@ -4527,8 +4625,10 @@
     },
     "width": 320,
     "height": 460,
-    "all_canvas": true,
-    "key_whitelist": []
+    "all_canvas": false,
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "FlyingSchool-v0",
@@ -4661,6 +4761,8 @@
     "height": 320,
     "all_canvas": true,
     "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true,
     "options": {
       "scoreMode": "distance"
     }
@@ -4740,7 +4842,9 @@
     },
     "width": 320,
     "height": 570,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "DoggyDive-v0",
@@ -4843,7 +4947,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "StickFreak-v0",
@@ -4895,7 +5001,9 @@
     },
     "width": 320,
     "height": 533,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "Lectro-v0",
@@ -4946,7 +5054,9 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "Lectro-v1",
@@ -5076,6 +5186,8 @@
     "height": 480,
     "all_canvas": true,
     "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true,
     "options": {
       "mode": "time"
     }
@@ -5234,7 +5346,9 @@
     },
     "width": 320,
     "height": 480,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "SoccerGirl-v0",
@@ -5276,7 +5390,9 @@
     "width": 320,
     "height": 646,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "SoccerGirl-v1",
@@ -5308,7 +5424,9 @@
       "ArrowUp",
       "ArrowDown",
       "Space"
-    ]
+    ],
+    "mouseType": "none",
+    "mouseRequired": false
   },
   {
     "name": "HopDontStop-v0",
@@ -5361,6 +5479,8 @@
       "ArrowUp",
       "ArrowDown"
     ],
+    "mouseType": "general",
+    "mouseRequired": false,
     "options": {
       "scoreMode": "distance"
     }
@@ -5420,6 +5540,8 @@
     "height": 480,
     "all_canvas": true,
     "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true,
     "options": {
       "difficulty": "normal"
     }
@@ -5511,7 +5633,9 @@
       "ArrowLeft",
       "ArrowRight",
       "ArrowUp"
-    ]
+    ],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "RainbowStarPinball-v0",
@@ -5754,7 +5878,9 @@
       "KeyA",
       "KeyS",
       "KeyD"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "100GolfBalls-v0",
@@ -5867,7 +5993,9 @@
     },
     "width": 320,
     "height": 480,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "KittyBubbles-v0",
@@ -5919,7 +6047,9 @@
     },
     "width": 320,
     "height": 480,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "JungleRun-v0",
@@ -6030,6 +6160,8 @@
       "ArrowUp",
       "ArrowDown"
     ],
+    "mouseType": "none",
+    "mouseRequired": false,
     "options": {
       "player": "Kiba"
     }
@@ -6099,7 +6231,9 @@
     "height": 570,
     "key_whitelist": [
       "KeyZ"
-    ]
+    ],
+    "mouseType": "tap",
+    "mouseRequired": false
   },
   {
     "name": "Pixlaser-v0",
@@ -6161,6 +6295,8 @@
       "KeyA",
       "KeyD"
     ],
+    "mouseType": "none",
+    "mouseRequired": false,
     "options": {
       "colors": 2
     }
@@ -6245,7 +6381,9 @@
       "ArrowLeft",
       "ArrowRight",
       "ArrowUp"
-    ]
+    ],
+    "mouseType": "tap",
+    "mouseRequired": false
   },
   {
     "name": "Valto-v0",
@@ -6301,7 +6439,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "none",
+    "mouseRequired": false
   },
   {
     "name": "CatchTheClown-v0",
@@ -6343,6 +6483,8 @@
     "height": 512,
     "all_canvas": true,
     "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true,
     "options": {
       "difficulty": "easy"
     }
@@ -6412,7 +6554,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "PopPop-v0",
@@ -6491,7 +6635,9 @@
     "width": 320,
     "height": 568,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "FrontInvaders-v0",
@@ -6536,6 +6682,8 @@
       "ArrowRight",
       "ArrowUp"
     ],
+    "mouseType": "none",
+    "mouseRequired": false,
     "options": {
       "level": 1
     }
@@ -6649,7 +6797,9 @@
     "width": 480,
     "height": 360,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "100BallsOnline-v0",
@@ -6697,7 +6847,9 @@
     "metadata": {},
     "width": 320,
     "height": 533,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "ChristmasAdventure-v0",
@@ -6875,6 +7027,8 @@
       "ArrowLeft",
       "ArrowUp"
     ],
+    "mouseType": "general",
+    "mouseRequired": true,
     "options": {
       "level": 1
     }
@@ -7065,7 +7219,9 @@
     "width": 568,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "MiniRacer-v0",
@@ -7131,6 +7287,8 @@
       "ArrowDown",
       "Space"
     ],
+    "mouseType": "general",
+    "mouseRequired": false,
     "options": {
       "exit": [
         "7020333949850896",
@@ -7217,7 +7375,9 @@
       "ArrowLeft",
       "ArrowRight",
       "Space"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "PineapplePen-v0",
@@ -7286,7 +7446,9 @@
     "width": 320,
     "height": 533,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "TapTapDash-v0",
@@ -7341,7 +7503,9 @@
     "width": 320,
     "height": 533,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "BeachKiss-v0",
@@ -7384,7 +7548,9 @@
     "width": 320,
     "height": 533,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "BallsVsBlocks-v0",
@@ -7438,7 +7604,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "none",
+    "mouseRequired": false
   },
   {
     "name": "RunIntoDeath-v0",
@@ -7533,7 +7701,9 @@
     "width": 480,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "TrackRacer-v0",
@@ -7599,6 +7769,8 @@
       "ArrowDown",
       "Space"
     ],
+    "mouseType": "none",
+    "mouseRequired": false,
     "options": {
       "exit": [
         "942555504266250",
@@ -7672,6 +7844,8 @@
       "ArrowUp",
       "ArrowDown"
     ],
+    "mouseType": "none",
+    "mouseRequired": false,
     "options": {
       "exit": [
         "8480831502092825",
@@ -7725,7 +7899,9 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "NinjaRun-v0",
@@ -7799,6 +7975,8 @@
     "width": 568,
     "height": 320,
     "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true,
     "options": {
       "scoreMode": "stars"
     }
@@ -7859,7 +8037,9 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "StickmanArcher-v0",
@@ -7938,7 +8118,9 @@
     "width": 569,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "general",
+    "mouseRequired": true
   },
   {
     "name": "RiseUp-v0",
@@ -7992,7 +8174,9 @@
     "width": 320,
     "height": 480,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "ColorTease-v0",
@@ -8050,7 +8234,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "TRexRunner-v0",
@@ -8117,7 +8303,9 @@
     "key_whitelist": [
       "ArrowUp",
       "Space"
-    ]
+    ],
+    "mouseType": "tap",
+    "mouseRequired": false
   },
   {
     "name": "TruckTravel-v0",
@@ -8192,6 +8380,8 @@
       "ArrowUp",
       "ArrowDown"
     ],
+    "mouseType": "tap",
+    "mouseRequired": false,
     "options": {
       "character": 0
     }
@@ -8258,6 +8448,8 @@
     "height": 569,
     "all_canvas": true,
     "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true,
     "options": {
       "scoreMode": "distance"
     }
@@ -8356,6 +8548,8 @@
       "ArrowLeft",
       "ArrowRight"
     ],
+    "mouseType": "general",
+    "mouseRequired": false,
     "options": {
       "level": 1
     }
@@ -8475,7 +8669,9 @@
       "ArrowRight",
       "ArrowUp",
       "ArrowDown"
-    ]
+    ],
+    "mouseType": "none",
+    "mouseRequired": false
   },
   {
     "name": "FlappyBird-v0",
@@ -8509,7 +8705,9 @@
     "all_canvas": true,
     "key_whitelist": [
       "Space"
-    ]
+    ],
+    "mouseType": "tap",
+    "mouseRequired": false
   },
   {
     "name": "PacMan-v0",
@@ -8538,7 +8736,9 @@
       "ArrowRight",
       "ArrowUp",
       "ArrowDown"
-    ]
+    ],
+    "mouseType": "none",
+    "mouseRequired": false
   },
   {
     "name": "Tetris-v0",
@@ -8568,7 +8768,9 @@
       "ArrowDown",
       "KeyX",
       "KeyY"
-    ]
+    ],
+    "mouseType": "none",
+    "mouseRequired": false
   },
   {
     "name": "CubeNinja-v0",
@@ -8648,7 +8850,9 @@
     "width": 480,
     "height": 320,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "SuperCowboyRun-v0",
@@ -8773,6 +8977,8 @@
       "ArrowUp",
       "Space"
     ],
+    "mouseType": "none",
+    "mouseRequired": false,
     "options": {
       "scoreMode": "distance"
     }
@@ -8843,7 +9049,9 @@
     "width": 288,
     "height": 512,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "GeoJump-v0",
@@ -8899,7 +9107,9 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   },
   {
     "name": "JumpyShark-v0",
@@ -8993,6 +9203,8 @@
     "height": 480,
     "all_canvas": true,
     "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true,
     "options": {
       "difficulty": "easy"
     }
@@ -9059,7 +9271,9 @@
     "width": 288,
     "height": 512,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "BlockIt-v0",
@@ -9107,7 +9321,9 @@
     "width": 320,
     "height": 533,
     "all_canvas": true,
-    "key_whitelist": []
+    "key_whitelist": [],
+    "mouseType": "tap",
+    "mouseRequired": true
   },
   {
     "name": "MagicRun-v0",
@@ -9178,7 +9394,9 @@
       "ArrowLeft",
       "ArrowRight",
       "ArrowUp"
-    ]
+    ],
+    "mouseType": "tap",
+    "mouseRequired": false
   },
   {
     "name": "HopHero-v0",
@@ -9247,6 +9465,8 @@
       "Space",
       "ArrowUp"
     ],
+    "mouseType": "tap",
+    "mouseRequired": false,
     "options": {
       "scoreMode": "distance"
     }
@@ -9283,7 +9503,9 @@
       "ArrowLeft",
       "ArrowRight",
       "ArrowDown"
-    ]
+    ],
+    "mouseType": "none",
+    "mouseRequired": false
   },
   {
     "name": "3Mice-v0",
@@ -9376,6 +9598,8 @@
     "key_whitelist": [
       "ArrowLeft",
       "ArrowRight"
-    ]
+    ],
+    "mouseType": "general",
+    "mouseRequired": false
   }
 ]
