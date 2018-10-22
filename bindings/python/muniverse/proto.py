@@ -8,6 +8,7 @@ import bson
 
 from .errors import ProtoError
 
+
 def read_object(pipe):
     """
     Read and decode a BSON object.
@@ -23,6 +24,7 @@ def read_object(pipe):
         return bson.loads(payload)
     except ValueError as exc:
         raise ProtoError('BSON decode error: ' + str(exc))
+
 
 def write_object(pipe, obj):
     """

@@ -2,11 +2,13 @@
 Error types for muniverse.
 """
 
+
 class MuniverseError(Exception):
     """
     Exception base class used for muniverse APIs.
     """
     pass
+
 
 class ProtoError(MuniverseError):
     """
@@ -14,11 +16,13 @@ class ProtoError(MuniverseError):
     """
     pass
 
+
 class CallError(MuniverseError):
     """
     Error returned by muniverse API.
     """
     pass
+
 
 class LaunchError(MuniverseError):
     """

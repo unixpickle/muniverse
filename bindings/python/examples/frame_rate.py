@@ -4,10 +4,11 @@ environment.
 """
 
 import sys
-sys.path.insert(0, '..')
-
-import muniverse
 import time
+
+sys.path.insert(0, '..')
+import muniverse  # noqa: E402
+
 
 def main():
     print('Looking up environment...')
@@ -29,6 +30,7 @@ def main():
 
     finally:
         env.close()
+
 
 if __name__ == '__main__':
     main()

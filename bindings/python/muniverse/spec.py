@@ -4,6 +4,7 @@ API for dealing with environment specifications.
 
 from .handle import Handle
 
+
 def spec_for_name(name):
     """
     Find an environment specification for the given name.

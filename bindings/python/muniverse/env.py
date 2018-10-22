@@ -6,10 +6,12 @@ import numpy as np
 
 from .handle import Handle
 
+
 class Env:
     """
     An environment instance.
     """
+
     def __init__(self, spec, container=None, chrome_host=None, game_host=None):
         """
         Create a new environment from the specification.
@@ -27,14 +29,14 @@ class Env:
         """
         if (chrome_host is None) != (game_host is None):
             raise ValueError('must set both chrome_host and game_host')
-        elif (not container is None) and (not chrome_host is None):
+        elif (container is not None) and (chrome_host is not None):
             raise ValueError('cannot mix chrome_host and container options')
         call_obj = {'Spec': spec}
         call_name = 'NewEnv'
-        if not container is None:
+        if container is not None:
             call_obj['Container'] = container
             call_name = 'NewEnvContainer'
-        elif not chrome_host is None:
+        elif chrome_host is not None:
             call_obj['Host'] = chrome_host
             call_obj['GameHost'] = game_host
             call_name = 'NewEnvChrome'

@@ -18,10 +18,12 @@ _CURRENT_SESSION_LOCK = threading.Lock()
 _CURRENT_SESSION = None
 _CURRENT_SESSION_REFS = 0
 
+
 class Handle:
     """
     A thread-safe handle on a muniverse-bind instance.
     """
+
     def __init__(self):
         """
         Create a new handle.
@@ -98,17 +100,19 @@ class Handle:
             raise CallError(res['Error'])
         return res
 
+
 class _Session:
     """
     Manages an instance of muniverse-bind.
     """
+
     def __init__(self):
         try:
             self.proc = subprocess.Popen(['muniverse-bind'],
                                          stdin=subprocess.PIPE,
                                          stdout=subprocess.PIPE)
         except OSError:
-            if not 'GOPATH' in os.environ:
+            if 'GOPATH' not in os.environ:
                 raise LaunchError('failed to run muniverse-bind command')
             try:
                 gopath = os.environ['GOPATH']
@@ -169,12 +173,12 @@ class _Session:
         try:
             while True:
                 payload = proto.read_object(self.proc.stdout)
-                if not 'ID' in payload:
+                if 'ID' not in payload:
                     raise ProtoError('missing ID in response')
                 call_id = payload['ID']
                 self.waiting_lock.acquire()
                 try:
-                    if not call_id in self.waiting:
+                    if call_id not in self.waiting:
                         raise ProtoError('unregistered call ID: ' + call_id)
                     waiting = self.waiting[call_id]
                     waiting['payload'] = payload

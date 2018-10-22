@@ -4,9 +4,10 @@ game that takes keyboard events.
 """
 
 import sys
-sys.path.insert(0, '..')
 
-import muniverse
+sys.path.insert(0, '..')
+import muniverse  # noqa: E402
+
 
 def main():
     print('Looking up environment...')
@@ -28,6 +29,7 @@ def main():
 
     finally:
         env.close()
+
 
 if __name__ == '__main__':
     main()

@@ -4,8 +4,6 @@ Types for environment actions.
 
 from .handle import Handle
 
-# Allow more than 5 arguments to a constructor.
-# pylint: disable=R0913
 
 def key_for_code(code):
     """
@@ -27,10 +25,12 @@ def key_for_code(code):
     finally:
         handle.close()
 
+
 class MouseAction:
     """
     The action type for mouse events.
     """
+
     def __init__(self, event, x=0, y=0, button="left", click_count=0):
         """
         Create a new mouse event.
@@ -61,10 +61,12 @@ class MouseAction:
         res.bson_obj = dict(self.bson_obj, Type=event)
         return res
 
+
 class KeyAction:
     """
     The action type for keyboard events.
     """
+
     def __init__(self, event, modifiers=0, timestamp=0, text="", key="",
                  unmodified_text="", key_identifier="", code="",
                  auto_repeat=False, is_keypad=False, is_system_key=False,

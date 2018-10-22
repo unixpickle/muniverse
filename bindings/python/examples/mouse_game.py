@@ -4,10 +4,11 @@ game that takes mouse events.
 """
 
 import sys
-sys.path.insert(0, '..')
-
-import muniverse
 import numpy as np
+
+sys.path.insert(0, '..')
+import muniverse  # noqa: E402
+
 
 def main():
     print('Looking up environment...')
@@ -36,6 +37,7 @@ def main():
     finally:
         env.close()
 
+
 def ascii_art(img):
     brightness = np.sum(img, axis=2) / 3
     downsampled = brightness[::14, ::7]
@@ -51,6 +53,7 @@ def ascii_art(img):
             else:
                 res += ' '
     return res
+
 
 if __name__ == '__main__':
     main()
