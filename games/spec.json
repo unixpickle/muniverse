@@ -9601,5 +9601,35 @@
     ],
     "mouseType": "general",
     "mouseRequired": false
+  },
+  {
+    "name": "StickAvalanche-v0",
+    "base": "https://raw.githubusercontent.com/unixpickle/stick-avalanche/master/",
+    "top_injections": [
+      "faketime.js"
+    ],
+    "bottom_injections": [
+      "StickAvalanche-v0.js"
+    ],
+    "resources": [
+      "index.html",
+      "scripts/game.js",
+      "scripts/grav.js",
+      "scripts/player.js",
+      "scripts/polygon.js",
+      "scripts/power_up.js",
+      "scripts/rock.js",
+      "css/style.css"
+    ],
+    "processors": [],
+    "metadata": {},
+    "width": 600,
+    "height": 400,
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight"
+    ],
+    "mouseType": "none",
+    "mouseRequired": false
   }
 ]

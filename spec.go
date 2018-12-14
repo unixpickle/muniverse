@@ -3181,6 +3181,23 @@ var EnvSpecs = []*EnvSpec{
 		MouseType:     "general",
 		MouseRequired: false,
 	},
+
+	{
+		Name:      "StickAvalanche-v0",
+		BaseURL:   "https://raw.githubusercontent.com/unixpickle/stick-avalanche/master/",
+		Width:     600,
+		Height:    400,
+		AllCanvas: false,
+		Options:   "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+		},
+
+		MouseType:     "none",
+		MouseRequired: false,
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the
