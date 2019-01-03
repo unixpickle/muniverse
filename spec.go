@@ -3198,6 +3198,25 @@ var EnvSpecs = []*EnvSpec{
 		MouseType:     "none",
 		MouseRequired: false,
 	},
+
+	{
+		Name:      "Pong3D-v0",
+		BaseURL:   "https://raw.githubusercontent.com/unixpickle/pong3d/master/",
+		Width:     480,
+		Height:    320,
+		AllCanvas: false,
+		Options:   "{}",
+
+		KeyWhitelist: []string{
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowUp",
+			"ArrowDown",
+		},
+
+		MouseType:     "none",
+		MouseRequired: false,
+	},
 }
 
 // SpecForName finds the first entry in EnvSpecs with the

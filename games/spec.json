@@ -9631,5 +9631,37 @@
     ],
     "mouseType": "none",
     "mouseRequired": false
+  },
+  {
+    "name": "Pong3D-v0",
+    "base": "https://raw.githubusercontent.com/unixpickle/pong3d/master/",
+    "top_injections": [
+      "faketime.js",
+      "utils.js"
+    ],
+    "bottom_injections": [
+      "Pong3D-v0.js"
+    ],
+    "resources": [
+      "index.html",
+      "assets/style.css",
+      "assets/deps/three.min.js",
+      "assets/js/ball.js",
+      "assets/js/game.js",
+      "assets/js/paddle.js",
+      "assets/js/tunnel.js"
+    ],
+    "processors": [],
+    "metadata": {},
+    "width": 480,
+    "height": 320,
+    "key_whitelist": [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown"
+    ],
+    "mouseType": "none",
+    "mouseRequired": false
   }
 ]
